@@ -9,7 +9,7 @@
     "PublishDate": "08-07-2022",
     "EditDate": "25-07-2022",
     "Tags": [],
-    "Img": "http://dummyimage.com/158x219.png/5fa2dd/ffffff"
+    "Img": "https://i.imgur.com/8fGqtlE.jpg"
   },
   {
     "RecipeId": 2,
@@ -21,7 +21,7 @@
     "PublishDate": "12-06-2022",
     "EditDate": "13-06-2022",
     "Tags": [],
-    "Img": "http://dummyimage.com/135x204.png/dddddd/000000"
+    "Img": "https://i.imgur.com/BXxveSO.jpg"
   },
   {
     "RecipeId": 3,
@@ -33,7 +33,7 @@
     "PublishDate": "19-05-2022",
     "EditDate": "19-05-2022",
     "Tags": [],
-    "Img": "http://dummyimage.com/192x101.png/cc0000/ffffff"
+    "Img": "https://i.imgur.com/Ouy7Tw1.jpg"
   },
   {
     "RecipeId": 4,
@@ -45,7 +45,7 @@
     "PublishDate": "23-04-2022",
     "EditDate": "23-04-2022",
     "Tags": [ "Khaki", "Red", "Puce", "Fuscia" ],
-    "Img": "http://dummyimage.com/162x124.png/5fa2dd/ffffff"
+    "Img": "https://i.imgur.com/UAAnqx7.jpg"
   },
   {
     "RecipeId": 5,
@@ -57,7 +57,7 @@
     "PublishDate": "24-11-2022",
     "EditDate": "24-11-2022",
     "Tags": [ "Yellow", "Orange" ],
-    "Img": "http://dummyimage.com/126x380.png/5fa2dd/ffffff"
+    "Img": "https://i.imgur.com/FGLTjFa.jpg"
   }
 ]
 
