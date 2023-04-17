@@ -5,8 +5,8 @@ namespace ContosoCrafts.WebSite.Models
 {
     public class RecipeModel
     {
-        public string RecipeID{get;set;}
-        public string AuthorID{get;set;}
+        public int RecipeID{get;set;}
+        public int AuthorID{get;set;}
         public string FirstName{get;set;}
         public string LastName{get;set;}
         public string Title{get;set;}
@@ -15,7 +15,7 @@ namespace ContosoCrafts.WebSite.Models
         public string EditDate{get;set;}
         public string[] Tags{get;set;}
         [JsonPropertyName("Img")]
-        public string Img{get;set;}
+        public string Image{get;set;}
 
         public override string ToString() => JsonSerializer.Serialize<RecipeModel>(this);
  

@@ -1,0 +1,22 @@
+@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonFileProductService ProductService
+@inject JsonFileRecipeService RecipeService
+
+<div class="card-columns">
+@foreach (var recipe in RecipeService.GetRecipes())
+{
+    <div class="card">
+        <div class="card-img" style="background-image: url('@recipe.Image');">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@recipe.Title</h5>
+        </div>
+    </div>
+}
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
