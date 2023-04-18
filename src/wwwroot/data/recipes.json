@@ -58,6 +58,18 @@
     "EditDate": "24-11-2022",
     "Tags": [ "Yellow", "Orange" ],
     "Img": "https://i.imgur.com/FGLTjFa.jpg"
+  },
+  {
+    "RecipeId": 6,
+    "AuthorId": 1,
+    "FirstName": "Jenna",
+    "LastName": "Urben",
+    "Title": "Vegan Acai Bowl",
+    "Description": "-1 Acai: Find frozen acai puree in the freezer section of your local grocery store\n- 2 Milk: Use your favorite plant based milk or whatever you have on hand. I typically use oat milk, almond milk, macadamia nut milk, or coconut milk\n- 3 Fruit: To ensure a thick and creamy smoothie bowl, use frozen fruit for blending. Common fruit mixes include blueberries, raspberries, and blackberries. Include a banana to naturally sweeten the acai bowl.\n- 4 Toppings: I like my acai bowls to have a crunch and be topped with a variety of fresh fruit, nuts, and seeds. My secret ingredients is a little spoonful of almond butter!",
+    "PublishDate": "15-07-2019",
+    "EditDate": "15-07-2019",
+    "Tags": [ "Vegan", "Acai", "Smoothie", "Granola", "Fresh", "Fruit" ],
+    "Img": "https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-7.jpg"
   }
 ]
 
