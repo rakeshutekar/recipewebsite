@@ -5,10 +5,24 @@ using Microsoft.Extensions.Logging;
 
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoCrafts.WebSite.Pages
 
-{ 
+{
+
+    // Need to add logic to actually perform the search
+    public class SearchController : Controller
+    {
+        public IActionResult Index(string request)
+        {
+            // Perform the search using the query parameter
+            // ...
+
+            return View();
+        }
+    }
+
 
     public class IndexModel : PageModel
     {

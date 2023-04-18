@@ -12,6 +12,8 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar border-bottom box-shadow mb-3">
+
+
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Recipe Repo</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -49,7 +51,14 @@
 
                 </div>
             </div>
+
+            <form class="form-inline my-2 my-lg-0" method="get" action="@Url.Action("Index", "Search")">
+                <input class="form-control mr-sm-2" type="search" placeholder="Find A Recipe" aria-label="Search" name="request">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Go</button>
+            </form>
+
         </nav>
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
