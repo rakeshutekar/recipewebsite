@@ -20,51 +20,7 @@
 
 
 
-<div class="row mb-3">
-    <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Search" @bind="searchTerm" />
-    </div>
-    <div class="col-md-6">
-        <button class="btn btn-primary" @onclick="Search">Search</button>
-    </div>
-</div>
 
-<div class="row">
-    @foreach (var recipe in RecipeService.GetRecipes())
-    {
-        <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="@recipe.Image" alt="@recipe.Title">
-                <div class="card-body">
-                    <p class="card-text">@recipe.Title</p>
-                </div>
-            </div>
-        </div>
-    }
-</div>
-
-@code {
-    private string searchTerm = "";
-
-    private List<RecipeModel> recipes = new List<RecipeModel>();
-
-    // OnInitialized method to initially display all of the availabe recipes
-    protected override void OnInitialized() {
-        recipes = RecipeService.GetRecipes().ToList();
-    }
-
-    private void Search() {
-        // TODO: edit searchTerm
-        if (!string.IsNullOrEmpty(searchTerm))
-        {
-            recipes = recipes.Where(p => p.Title.Contains(searchTerm)).ToList();
-        }
-        else
-        {
-            recipes = RecipeService.GetRecipes().ToList();
-        }
-    }
-}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
