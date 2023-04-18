@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+using System.Linq;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
@@ -18,10 +19,32 @@ namespace ContosoCrafts.WebSite.Controllers
 
         public JsonFileRecipeService RecipeService { get; }
 
+        /**
         [HttpGet]
         public IEnumerable<RecipeModel> Get()
         {
             return RecipeService.GetRecipes();
         }
+
+        */
+
+        
+        [HttpGet]
+
+        // The Get method takes in an optional searchTerm parameter
+        // For the search bar ****
+        public IEnumerable<RecipeModel> Get(string searchTerm = null)
+        {
+            var recipes = RecipeService.GetRecipes();
+
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                recipes = recipes.Where(r => r.Title.Contains(searchTerm) || r.Description.Contains(searchTerm));
+            }
+
+            return recipes;
+        }
     }
+
+ 
 }
