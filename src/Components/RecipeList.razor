@@ -5,16 +5,16 @@
 @inject JsonFileRecipeService RecipeService
 
 <div class="card-columns">
-@foreach (var recipe in RecipeService.GetRecipes())
-{
-    <div class="card">
-        <div class="card-img" style="background-image: url('@recipe.Image');">
+    @foreach (var recipe in RecipeService.GetRecipes())
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('@recipe.Image');">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@recipe.Title</h5>
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">@recipe.Title</h5>
-        </div>
-    </div>
-}
+    }
 </div>
 
 
