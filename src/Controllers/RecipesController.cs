@@ -28,7 +28,8 @@ namespace ContosoCrafts.WebSite.Controllers
 
         */
 
-        
+
+
         [HttpGet]
 
         // The Get method takes in an optional searchTerm parameter

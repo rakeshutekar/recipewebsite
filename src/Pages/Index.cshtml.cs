@@ -8,7 +8,6 @@ using ContosoCrafts.WebSite.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoCrafts.WebSite.Pages
-
 {
     public class IndexModel : PageModel
     {
