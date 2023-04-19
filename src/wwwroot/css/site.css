@@ -3,7 +3,7 @@
 }
 
 .fa-star {
-  cursor: pointer;
+  cursor: finger;
 }
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -15,8 +15,9 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .card-columns .card-body {
     height: 100px;
-    font-family: 'Nunito', sans-serif;
-    background: #fbfafd;
+    font-family: 'Times New Roman', serif;
+    color: white;
+    background: #737177;
 }
 
 .card-columns .card-img {
@@ -41,7 +42,7 @@ for details on configuring this project to bundle and minify static web assets. 
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
 .card-footer {
-    background: #fbfafd;
+    background: #656468;
 }
 
 
@@ -87,10 +88,10 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #656468;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #656468;
 }
 
 .box-shadow {
@@ -114,13 +115,13 @@ body {
   margin-bottom: 60px;
 }
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Times New Roman', serif; 
 }
 h1 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Times New Roman', serif;
 }
 ul {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Times New Roman', serif;
 }
 .footer {
     position: absolute;
