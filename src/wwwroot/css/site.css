@@ -2,9 +2,17 @@
   color: orange;
 }
 
+
 .fa-star {
   cursor: finger;
 }
+
+
+.icon-container {
+    cursor: url('https://cdn-icons-png.flaticon.com/512/2909/2909894.png'), pointer;
+}
+
+
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
@@ -113,6 +121,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  // background-color: gold;
 }
 p {
     font-family: 'Times New Roman', serif; 
@@ -144,3 +153,5 @@ ul {
     background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
     background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
 }
+
+

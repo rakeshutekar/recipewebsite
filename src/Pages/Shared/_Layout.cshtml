@@ -39,12 +39,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/About">About Us</a>
                         </li>
 
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                          <div class="ml-auto">
                         <a class="btn btn-primary" asp-area="" asp-page="/Account">Sign In</a>
                         </div>
+=======
+>>>>>>> 7497f80607e6d88cbd93e699c5f409044f252c71
                     </ul>
 
                    
@@ -63,17 +66,35 @@
         </nav>
 
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+
     <footer class="border-top footer text-muted bg-footer">
         <div class="container">
+            <div class="text-left mt-4">
+                <h4 style="letter-spacing: 2px; color: lightgrey;font-weight: bold">Contact</h4>
+                <ul class="list-unstyled">
+                    <li>
+                        <span><i class="fa fa-envelope-o" style="margin-right: 5px;"></i></span>
+                        <span style="color: lightgrey;">contact@reciperepo.com</span>
+                    </li>
+
+                </ul>
+            </div>
+
+
             &copy; 2023 - Recipe Repo - <a asp-area="" asp-page="/Privacy">Privacy</a>
+
+            
         </div>
     </footer>
+
+
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
