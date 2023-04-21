@@ -19,11 +19,14 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         public JsonFileRecipeService RecipeService { get; set; }
 
 
-        public IEnumerable<RecipeModel> Recipes { get; private set; }
+        public RecipeModel Recipe { get; private set; }
 
-        public void OnGet()
+        public int RecipeID;
+
+        public void OnGet(int id)
         {
-            Recipes = RecipeService.GetRecipes();
+            RecipeID = id;
+            Recipe = RecipeService.GetRecipes().FirstOrDefault(x => x.RecipeID == RecipeID);
         }
     }
 }
