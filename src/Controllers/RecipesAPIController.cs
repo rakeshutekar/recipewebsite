@@ -10,9 +10,9 @@ namespace ContosoCrafts.WebSite.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class RecipesController : ControllerBase
+    public class RecipesAPIController : ControllerBase
     {
-        public RecipesController(JsonFileRecipeService recipeService)
+        public RecipesAPIController(JsonFileRecipeService recipeService)
         {
             RecipeService = recipeService;
         }
@@ -27,8 +27,6 @@ namespace ContosoCrafts.WebSite.Controllers
         }
 
         */
-
-
 
         [HttpGet]
 
