@@ -5,4 +5,10 @@
     <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Pages\Recipes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Recipes\" />
+  </ItemGroup>
 </Project>
