@@ -1,7 +1,7 @@
-﻿@page "1"
-@model ContosoCrafts.WebSite.Pages.Recipes.RecipePageModel
+﻿@page "{id:int}"
+@model ContosoCrafts.WebSite.Pages.Recipes.ReadModel
 @{
     ViewData["Title"] = "Recipe page";
 }
 
-<h1>Recipe Page</h1>
+<h1>@Model.RecipeID</h1>
