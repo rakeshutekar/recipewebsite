@@ -11,18 +11,28 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
 {
 	public class ReadModel : PageModel
     {
+        /// <summary>
+        /// Constructor of the ReadModel class
+        /// </summary>
+        /// <param name="recipeService"></param>
         public ReadModel(JsonFileRecipeService recipeService)
         {
             RecipeService = recipeService;
         }
 
+        // Json service to-be-injected via constructor
         public JsonFileRecipeService RecipeService { get; set; }
 
-
+        // Individual recipe model
         public RecipeModel Recipe { get; private set; }
 
+        // ID of the recipe passed in via URL/Path
         public int RecipeID;
 
+        /// <summary>
+        /// Retrieves the specified recipe by its ID passed in via the URL
+        /// </summary>
+        /// <param name="id"></param>
         public void OnGet(int id)
         {
             RecipeID = id;
