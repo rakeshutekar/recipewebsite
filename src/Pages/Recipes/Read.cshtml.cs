@@ -9,9 +9,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContosoCrafts.WebSite.Pages.Recipes
 {
-	public class RecipePageModel : PageModel
+	public class ReadModel : PageModel
     {
-        public RecipePageModel(JsonFileRecipeService recipeService)
+        public ReadModel(JsonFileRecipeService recipeService)
         {
             RecipeService = recipeService;
         }
