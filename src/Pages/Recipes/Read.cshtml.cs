@@ -9,7 +9,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContosoCrafts.WebSite.Pages.Recipes
 {
-	public class ReadModel : PageModel
+    /// <summary>
+    /// The ReadModel class is the backbone for an individual full screen recipe page.
+    /// The class pulls in the JsonRecipe service to retrieve an individual recipe's
+    /// data from the JSON "Database"
+    /// </summary>
+    public class ReadModel : PageModel
     {
         /// <summary>
         /// Constructor of the ReadModel class
