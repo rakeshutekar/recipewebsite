@@ -41,7 +41,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         public void OnGet(int id)
         {
             RecipeID = id;
-            Recipe = RecipeService.GetRecipes().FirstOrDefault(x => x.RecipeID == RecipeID);
+            Recipe = RecipeService.GetRecipe(id);
         }
     }
 }
