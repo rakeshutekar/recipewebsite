@@ -35,6 +35,18 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        public RecipeModel GetRecipe(int recipeID)
+        {
+            using (var jsonFileReader = File.OpenText(JsonFileName))
+            {
+                return JsonSerializer.Deserialize<RecipeModel[]>(jsonFileReader.ReadToEnd(),
+                    new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    }).First(x => x.RecipeID == recipeID);
+            }
+        }
+
 
 
     }
