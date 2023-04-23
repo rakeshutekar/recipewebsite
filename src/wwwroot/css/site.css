@@ -1,4 +1,13 @@
-﻿.checked {
+﻿:root {
+    /*Image settings*/
+    --img-height-500px: 500px;
+}
+
+.img-recipe-page {
+    max-height: var(--img-height-500px);
+}
+
+.checked {
   color: orange;
 }
 
