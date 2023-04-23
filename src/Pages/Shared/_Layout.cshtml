@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -12,8 +12,6 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar border-bottom box-shadow mb-3">
-
-
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index" style="font-family: 'Pacifico', cursive;">Recipe Repo</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -38,41 +36,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/About">About Us</a>
                         </li>
-
-@* <<<<<<< HEAD *@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                          <div class="ml-auto">
                         <a class="btn btn-primary" asp-area="" asp-page="/Account">Sign In</a>
                         </div>
-@* =======
->>>>>>> 7497f80607e6d88cbd93e699c5f409044f252c71 *@
                     </ul>
-
-                   
-
                 </div>
             </div>
-
             <form class="form-inline my-2 my-lg-0" method="get" action="@Url.Action("Search", "Recipes")">
                 <input class="form-control mr-sm-2" type="search" placeholder="Find A Recipe" aria-label="Search" name="query" style="font-family: 'Times New Roman', Times, serif; margin-left: auto;">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="font-family: 'Times New Roman', Times, serif; color: #fff;">Go</button>
             </form>
-
-
-
-
         </nav>
-
     </header>
-
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
 
     <footer class="border-top footer text-muted bg-footer">
         <div class="container">
@@ -86,16 +69,9 @@
 
                 </ul>
             </div>
-
-
             &copy; 2023 - Recipe Repo - <a asp-area="" asp-page="/Privacy">Privacy</a>
-
-            
         </div>
     </footer>
-
-
-
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
