@@ -8,8 +8,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <figure class="figure">
-            <img src="@Model.Recipe.Image" class="figure-img img-fluid rounded" alt="Image of @Model.Recipe.Title">
+            @*CJH - Included css variable class (--img-height-500px) to set the max height for the images used on recipe pages
+                img-recipe-page is the class used in site.css *@
+            <img src="@Model.Recipe.Image" class="figure-img img-fluid rounded img-recipe-page" alt="Image of @Model.Recipe.Title">
             <figcaption class="figure-caption">Caption to be added</figcaption>
+            @*To be expanded to include additional recipe information*@
         </figure>
     </div>   
 </div>
