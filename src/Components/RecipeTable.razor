@@ -1,0 +1,28 @@
+@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonFileRecipeService RecipeService
+
+<div>
+    <h2>Recipe Index</h2>
+    <table>
+        
+        @foreach (var recipe in RecipeService.GetRecipes())
+        {
+            <tr>
+                <th>
+                    <h5>@recipe.Title</h5>         
+                </th>
+                <th>
+                    <a href="/Index">Read</a>
+                </th>        
+            </tr>
+        }
+    </table>
+    
+    
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
