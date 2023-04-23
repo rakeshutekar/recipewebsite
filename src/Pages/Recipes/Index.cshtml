@@ -1,0 +1,12 @@
+@page
+@using ContosoCrafts.WebSite.Components
+@using ContosoCrafts.WebSite.Pages.Recipes
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@(await Html.RenderComponentAsync<RecipeTable>(RenderMode.ServerPrerendered))
+
+<script src="_framework/blazor.server.js"></script>
