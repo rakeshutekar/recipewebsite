@@ -3,10 +3,28 @@
 @using ContosoCrafts.WebSite.Pages.Recipes
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Index page";
 }
 
+<div class="container">
 
-@(await Html.RenderComponentAsync<RecipeTable>(RenderMode.ServerPrerendered))
+    <a asp-page="Create" class="btn btn-link">+ Create</a>
 
-<script src="_framework/blazor.server.js"></script>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var recipe in Model.Recipes)
+            {
+                <tr>
+                    <td>@recipe.Title</td>
+                    <td><a asp-page="Read" asp-route-id="@recipe.RecipeID">Read</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
