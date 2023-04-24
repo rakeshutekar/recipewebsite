@@ -4,7 +4,7 @@
     ViewData["Title"] = "Recipe page";
 }
 
-<h1>Recipe Page</h1>
+<h1>@Model.Recipe.Title</h1>
 <div class="container">
     <div class="row justify-content-center">
         <figure class="figure">
@@ -13,6 +13,16 @@
             <img src="@Model.Recipe.Image" class="figure-img img-fluid rounded img-recipe-page" alt="Image of @Model.Recipe.Title">
             <figcaption class="figure-caption">Caption to be added</figcaption>
             @*To be expanded to include additional recipe information*@
+
+            
         </figure>
     </div>   
+    
+</div>
+<div>
+    <h5>Description</h5>
+    <p>@Model.Recipe.Description</p>
+</div>
+<div class="clear">
+
 </div>
