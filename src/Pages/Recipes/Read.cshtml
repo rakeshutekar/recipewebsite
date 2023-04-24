@@ -23,6 +23,15 @@
     <h5>Description</h5>
     <p>@Model.Recipe.Description</p>
 </div>
+<div>
+    <h5>Ingredients</h5>
+    <ul>
+        @foreach (var ingredient in Model.Recipe.Ingredients)
+        {
+            <li>@ingredient</li>
+        }
+    </ul>
+</div>
 <div class="clear">
 
 </div>
