@@ -22,6 +22,7 @@ namespace ContosoCrafts.WebSite.Models
                 description = value;
             }
         }
+        public string[] Instructions{get;set;}
         [JsonPropertyName("Ingredients")]
         public string[] Ingredients{get;set;}
         public string PublishDate{get;set;}
