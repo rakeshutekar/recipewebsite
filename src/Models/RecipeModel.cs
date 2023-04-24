@@ -5,12 +5,25 @@ namespace ContosoCrafts.WebSite.Models
 {
     public class RecipeModel
     {
+        private string description = "Default Description";
+
         public int RecipeID{get;set;}
         public int AuthorID{get;set;}
         public string FirstName{get;set;}
         public string LastName{get;set;}
         public string Title{get;set;}
-        public string Description{get;set;}
+        [JsonPropertyName("Description")]
+        public string Description
+        {
+            get => description;
+            set
+            {
+                if (value.Length <= 1) return;
+                description = value;
+            }
+        }
+        [JsonPropertyName("Ingredients")]
+        public string[] Ingredients{get;set;}
         public string PublishDate{get;set;}
         public string EditDate{get;set;}
         public string[] Tags{get;set;}
