@@ -32,6 +32,15 @@
         }
     </ul>
 </div>
+<div>
+    <h5>Instructions</h5>
+    <ol>
+        @foreach (var instruction in Model.Recipe.Instructions)
+        {
+            <li>@instruction</li>
+        }
+    </ol>
+</div>
 <div class="clear">
 
 </div>
