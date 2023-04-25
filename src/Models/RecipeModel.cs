@@ -43,6 +43,8 @@ namespace ContosoCrafts.WebSite.Models
         public string EditDate{get;set;}
         // Tags associated with the recipe, used for filtering
         public string[] Tags{get;set;}
+        // Add a new property for the image caption
+        public string ImageCaption { get; set; }
         // Image URL of imgae associated with the recipe
         [JsonPropertyName("Img")]
         public string Image{get;set;}
