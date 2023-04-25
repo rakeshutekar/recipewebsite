@@ -5,7 +5,7 @@
 }
 
 <h1>@Model.Recipe.Title</h1>
-<div class="container">
+<div class="container" style="background">
     <div class="row justify-content-center">
         <figure class="figure">
             @*CJH - Included css variable class (--img-height-500px) to set the max height for the images used on recipe pages
@@ -13,34 +13,32 @@
             <img src="@Model.Recipe.Image" class="figure-img img-fluid rounded img-recipe-page" alt="Image of @Model.Recipe.Title">
             <figcaption class="figure-caption">Caption to be added</figcaption>
             @*To be expanded to include additional recipe information*@
-
-            
         </figure>
-    </div>   
-    
-</div>
-<div>
+    </div>
     <h5>Description</h5>
-    <p>@Model.Recipe.Description</p>
-</div>
-<div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>@Model.Recipe.Description</p>
+        </div>
+    </div>
     <h5>Ingredients</h5>
-    <ul>
-        @foreach (var ingredient in Model.Recipe.Ingredients)
-        {
-            <li>@ingredient</li>
-        }
-    </ul>
-</div>
-<div>
+    <div class="row">
+        <ul>
+            @foreach (var ingredient in Model.Recipe.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    </div>
     <h5>Instructions</h5>
-    <ol>
-        @foreach (var instruction in Model.Recipe.Instructions)
-        {
-            <li>@instruction</li>
-        }
-    </ol>
+    <div class="row">
+        <ol>
+            @foreach (var instruction in Model.Recipe.Instructions)
+            {
+                <li>@instruction</li>
+            }
+        </ol>
+    </div>
 </div>
 <div class="clear">
-
 </div>
