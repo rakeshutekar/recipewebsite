@@ -12,7 +12,6 @@ namespace ContosoCrafts.WebSite.Models
         public string FirstName{get;set;}
         public string LastName{get;set;}
         public string Title{get;set;}
-        [JsonPropertyName("Description")]
         public string Description
         {
             get => description;
@@ -23,7 +22,6 @@ namespace ContosoCrafts.WebSite.Models
             }
         }
         public string[] Instructions{get;set;}
-        [JsonPropertyName("Ingredients")]
         public string[] Ingredients{get;set;}
         public string PublishDate{get;set;}
         public string EditDate{get;set;}
