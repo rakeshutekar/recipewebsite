@@ -158,6 +158,19 @@ ul {
     background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
 }
 
+/* Change the background color of even rows */
+.table-striped tbody tr:nth-child(even) {
+    background-color: #edede9;
+}
+
+/* Change the background color of odd rows */
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #cad2c5;
+}
+
+.table-header {
+    background-color: #84a98c;
+}
 
 /* Clear div for vertical margins*/
 .clear{clear: both; height: 500px}
