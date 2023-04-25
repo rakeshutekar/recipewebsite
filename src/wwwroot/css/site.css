@@ -172,5 +172,10 @@ ul {
     background-color: #84a98c;
 }
 
+/*Change the instruction font of the Read page to Nunito*/
+.instruction-font {
+    font-family: 'Nunito', sans-serif;
+}
+
 /* Clear div for vertical margins*/
 .clear{clear: both; height: 500px}
