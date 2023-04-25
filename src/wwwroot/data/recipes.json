@@ -2,21 +2,21 @@
   {
     "RecipeId": 1,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
-    "Title": "Prawn and Avacado Omelette",
-    "Description": " ",
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
-    "Instructions" : [
+    "FirstName": "Serge",
+    "LastName": "Swinden",
+    "Title": "Prawn and Avocado Omelette",
+    "Description": "Your average omelette gets a spring update in this fresh recipe.",
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
+    "Instructions": [
       "Crack the eggs into a mixing bowl, add a tablespoon of milk and a pinch of salt and pepper, and whisk until well beaten.",
-    "Heat a large non-stick frying pan over medium heat and add a tablespoon of butter or oil. Swirl the pan to coat the bottom evenly.",
-    "Once the butter has melted or oil is hot, pour in the beaten eggs, and let them cook for a minute or until the edges start to set.",
-    "Add the sliced avocado, cooked prawns, and grated cheddar cheese to one side of the omelette.",
-    "Use a spatula to fold the other side of the omelette over the filling.",
-    "Cook for another minute or until the cheese has melted, and the filling is heated through.",
-    "Use a spatula to carefully slide the omelette onto a plate.",
-    "Season with salt and pepper, to taste.",
-    "Serve hot and enjoy your delicious prawn and avocado omelette!"
+      "Heat a large non-stick frying pan over medium heat and add a tablespoon of butter or oil. Swirl the pan to coat the bottom evenly.",
+      "Once the butter has melted or oil is hot, pour in the beaten eggs, and let them cook for a minute or until the edges start to set.",
+      "Add the sliced avocado, cooked prawns, and grated cheddar cheese to one side of the omelette.",
+      "Use a spatula to fold the other side of the omelette over the filling.",
+      "Cook for another minute or until the cheese has melted, and the filling is heated through.",
+      "Use a spatula to carefully slide the omelette onto a plate.",
+      "Season with salt and pepper, to taste.",
+      "Serve hot and enjoy your delicious prawn and avocado omelette!"
     ],
     "PublishDate": " ",
     "EditDate": "",
@@ -26,16 +26,32 @@
   {
     "RecipeId": 2,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Katsu Curry",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "Katsu Curry (Japanese Curry with Tonkatsu Nuggets and Fried Egg)",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [
+      "2 to 3 cardamom pods",
+      "1 (2-inch) cinnamon stick, broken into small pieces",
+      "1 dried bay leaf",
+      "1 tablespoon brown or black mustard seeds",
+      "1 tablespoon coriander seeds",
+      "1 tablespoon fennel seeds",
+      "1 tablespoon cumin seeds",
+      "1 teaspoon fenugreek seeds",
+      "1/2 teaspoon whole cloves",
+      "1 1/2 teaspoons black peppercorns",
+      "1 tablespoon ground ginger",
+      "1 tablespoon ground turmeric",
+      "1 tablespoon fine sea salt",
+      "1 teaspoon sweet paprika",
+      "1 teaspoon cayenne pepper, plus more to taste"
+    ],
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [],
@@ -44,16 +60,16 @@
   {
     "RecipeId": 3,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Beef Taco",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "Elevate a pack of beef mince into vibrant tacos. Go to the extra effort of making your own spice mix for even more flavour, and use soft tortillas",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [],
@@ -62,16 +78,16 @@
   {
     "RecipeId": 4,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Classic Koream Bibimbap",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "Rice mixed with vegetables, meat, an egg, and chili pepper paste",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [],
@@ -81,16 +97,16 @@
   {
     "RecipeId": 5,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Healthy Salad Sandwich",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "This salad sandwich with herb mayo is the perfect quick and easy lunch recipe. Use any fresh vegetables you have to make a delicious, filling meal.",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [],
@@ -99,16 +115,16 @@
   {
     "RecipeId": 6,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Vietnamese Fresh Spring Rolls",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "Traditional Vietnamese fresh spring rolls (goi cuon) consist of pork, shrimp, lettuce and herbs wrapped in soft chewy rice paper. They are beautiful to look at and great as a refreshing appetizer or even a light meal. Your guests will be impressed!",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": " ",
     "EditDate": " ",
     "Tags": [],
@@ -117,16 +133,16 @@
   {
     "RecipeId": 7,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Homemade Hotpot",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "Hot pot is a tasty, festive and communal cooking and dining experience that involves little more than a table set with a portable butane stove, a pot of bubbling broth and platters of raw meat and/or seafood and vegetables.",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": " ",
     "EditDate": " ",
     "Tags": [],
@@ -135,16 +151,16 @@
   {
     "RecipeId": 8,
     "AuthorId": 2,
-    "FirstName": " ",
-    "LastName": " ",
+    "FirstName": "Serge",
+    "LastName": "Swinden",
     "Title": "Thai Basil and Cilantro Salad",
-    "Description": " ",
-    "Instructions" : [
+    "Description": "Thai basil and cilantro salad",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [],
@@ -156,13 +172,13 @@
     "FirstName": "Jenna",
     "LastName": "Urben",
     "Title": "Vegan Acai Bowl",
-    "Description": "-1 Acai: Find frozen acai puree in the freezer section of your local grocery store\n- 2 Milk: Use your favorite plant based milk or whatever you have on hand. I typically use oat milk, almond milk, macadamia nut milk, or coconut milk\n- 3 Fruit: To ensure a thick and creamy smoothie bowl, use frozen fruit for blending. Common fruit mixes include blueberries, raspberries, and blackberries. Include a banana to naturally sweeten the acai bowl.\n- 4 Toppings: I like my acai bowls to have a crunch and be topped with a variety of fresh fruit, nuts, and seeds. My secret ingredients is a little spoonful of almond butter!",
-    "Instructions" : [
+    "Description": "The best Acai Bowl is a thick and creamy smoothie made with acai berry and served in a bowl with a variety of delicious toppings. It’s packed with nutrition and easy to make!-1 Acai: Find frozen acai puree in the freezer section of your local grocery store\n- 2 Milk: Use your favorite plant based milk or whatever you have on hand. I typically use oat milk, almond milk, macadamia nut milk, or coconut milk\n- 3 Fruit: To ensure a thick and creamy smoothie bowl, use frozen fruit for blending. Common fruit mixes include blueberries, raspberries, and blackberries. Include a banana to naturally sweeten the acai bowl.\n- 4 Toppings: I like my acai bowls to have a crunch and be topped with a variety of fresh fruit, nuts, and seeds. My secret ingredients is a little spoonful of almond butter!",
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": "15-07-2019",
     "EditDate": "15-07-2019",
     "Tags": [ "Vegan", "Acai", "Smoothie", "Granola", "Fresh", "Fruit" ],
@@ -174,13 +190,13 @@
     "FirstName": "Serge",
     "LastName": "Swinden",
     "Title": "Toasted Bread",
-    "Description": "Ingredients:\n- Bread of choice\n- 1 tsp of Butter\n\n1. Place bread in toaster for desired amount of time and remove.\n\n2. Spread butter on hot toast.\n\n3. Eat and Enjoy!",
-    "Instructions" : [
-      "Instruction 1",
-      "Instruction 2",
-      "Instruction 3"
+    "Description": "Delicious Toasted Bread!",
+    "Instructions": [
+      "Place bread in toaster for desired amount of time and remove.",
+      "Spread butter on hot toast.",
+      "Eat and Enjoy!"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Bread of choice", "1 tsp of Butter"],
     "PublishDate": "08-07-2022",
     "EditDate": "25-07-2022",
     "Tags": [],
