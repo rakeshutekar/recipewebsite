@@ -25,13 +25,11 @@ namespace ContosoCrafts.WebSite.Controllers
         {
             return RecipeService.GetRecipes();
         }
-
         */
 
         [HttpGet]
-
+        // TODO: Implement the search bar
         // The Get method takes in an optional searchTerm parameter
-        // For the search bar ****
         public IEnumerable<RecipeModel> Get(string searchTerm = null)
         {
             var recipes = RecipeService.GetRecipes();
@@ -43,7 +41,9 @@ namespace ContosoCrafts.WebSite.Controllers
 
             return recipes;
         }
+
+        // TODO: Set the value of the ImageCaption property
     }
 
- 
+
 }
