@@ -196,11 +196,11 @@
       "Spread butter on hot toast.",
       "Eat and Enjoy!"
     ],
-    "Ingredients": [ "Bread of choice", "1 tsp of Butter"],
+    "Ingredients": [ "Bread of choice", "1 tsp of Butter" ],
     "PublishDate": "08-07-2022",
     "EditDate": "25-07-2022",
     "Tags": [],
-    "Img": "https://i.imgur.com/8fGqtlE.jpg"
+    "Img": "https://www.optimistdaily.com/wp-content/uploads/shutterstock_774365320-e1614177159300.jpg"
   },
   {
     "RecipeId": 11,
@@ -209,16 +209,16 @@
     "LastName": "Swinden",
     "Title": "Curried Rice",
     "Description": "- 1 medium onion, finely chopped\n- 3 garlic cloves finely chopped\n- 3 tablespoons olive oil\n- 4 teaspoons curry powder\n- 2 cups long-grain white rice\n- 3 1/4 cups water\n- 2 teaspoons salt\n\n1. Cook onion and garlic in oil in a 3- to 4-quart heavy saucepan over moderately low heat, stirring, until softened. Add curry powder and rice and cook, stirring, 1 minute. Add water and salt and boil, uncovered, without stirring, until surface of rice is covered with steam holes and grains on top appear dry, about 8 minutes.\n\n2. Reduce heat to as low as possible, then cover pan with a tight-fitting lid and cook 15 minutes more.\n\n3. Remove pan from heat and let rice stand, covered, 5 minutes, then fluff with a fork.",
-    "Instructions" : [
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": "19-05-2022",
     "EditDate": "19-05-2022",
     "Tags": [],
-    "Img": "https://i.imgur.com/Ouy7Tw1.jpg"
+    "Img": "https://cookingformysoul.com/wp-content/uploads/2022/03/curry-fried-rice-feat-min.jpg"
   },
   {
     "RecipeId": 12,
@@ -281,16 +281,16 @@
     "LastName": "Tesmond",
     "Title": "Garlic Lemon Green Beans",
     "Description": "- 1 pound green beans fresh, ends trimmed1 tablespoon olive oil\n- 3 garlic cloves finely minced\n- 1 teaspoon lemon juice\n- 2 teaspoons lemon zest\n\n1. Bring a large pot of water to a boil on high heat. Once boiling, add the green beans and cook, boiling, for 3 minutes.\n2. Drain the beans and lay them on a paper towel and gently pat dry.\n3. Heat the olive oil in a large skillet on medium heat. Once hot, add the green beans and garlic. Cooking, stirring often, until the beans just begin to blister. Add the lemon juice and 1 teaspoon of the zest. Cook until the beans are tender but still a bit crunchy.\n4. Sprinkle with remaining zest and serve.",
-    "Instructions" : [
+    "Instructions": [
       "Instruction 1",
       "Instruction 2",
       "Instruction 3"
     ],
-    "Ingredients": ["Ingredient 1", "Ingredient 2", "Ingredient 3"],
+    "Ingredients": [ "Ingredient 1", "Ingredient 2", "Ingredient 3" ],
     "PublishDate": "24-11-2022",
     "EditDate": "24-11-2022",
     "Tags": [ "Yellow", "Orange" ],
-    "Img": "https://i.imgur.com/FGLTjFa.jpg"
+    "Img": "https://www.tastingtable.com/img/gallery/lemon-garlic-green-beans-recipe/l-intro-1648589949.jpg"
   }
 ]
 
