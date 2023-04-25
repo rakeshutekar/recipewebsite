@@ -22,7 +22,6 @@
 }
 
 
-
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 .card-columns .card:hover .card-img {
@@ -32,7 +31,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .card-columns .card-body {
     height: 100px;
-    font-family: 'Times New Roman', serif;
+    font-family: 'Nunito', serif; /******* Change font *******/
     color: white;
     background: #737177;
 }
@@ -62,10 +61,9 @@ for details on configuring this project to bundle and minify static web assets. 
     background: #656468;
 }
 
-
 a.navbar-brand {
     white-space: normal;
-    font-family: 'Yellowtail', cursive;
+    font-family: 'Nunito', cursive; /******* Change font *******/
     font-size: xx-large;
     text-align: center;
     word-break: break-all;
@@ -128,27 +126,27 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  // background-color: gold;
+  /* Margin bottom by footer height changed to 200px to avoid overlap */
+  margin-bottom: 200px;
 }
 p {
-    font-family: 'Times New Roman', serif; 
+    font-family: 'Nunito', serif; /******* Change font *******/
 }
 h1 {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Nunito', serif; /******* Change font *******/
 }
 ul {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Nunito', serif; /******* Change font *******/
 }
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
-    font-family: 'Nunito', sans-serif;
+    line-height: 40px; /* Set the line-height to a smaller value */
+    font-family: 'Nunito', sans-serif; /******* Change font *******/
 }
+
 /*Backgrounds*/
 .bg-navbar {
     background: -webkit-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
