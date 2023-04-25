@@ -11,16 +11,13 @@
   color: orange;
 }
 
-
 .fa-star {
   cursor: finger;
 }
 
-
 .icon-container {
     cursor: url('https://cdn-icons-png.flaticon.com/512/2909/2909894.png'), pointer;
 }
-
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
@@ -32,8 +29,8 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-columns .card-body {
     height: 100px;
     font-family: 'Nunito', serif; /******* Change font *******/
-    color: white;
-    background: #737177;
+    color: #354f52; /*Card text color*/
+    background: #edede9; /*Card text box color*/
 }
 
 .card-columns .card-img {
@@ -58,7 +55,7 @@ for details on configuring this project to bundle and minify static web assets. 
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
 .card-footer {
-    background: #656468;
+    background: #edede9;
 }
 
 a.navbar-brand {
@@ -76,19 +73,19 @@ a {
 
 .btn-primary {
     color: #fff;
-    background-color: #252152;
+    background-color: #52796f; /*sign-in button color*/
     border-color: #252152;
 }
 .btn-primary:hover {
-    color: #fff;
-    background-color: #e9a8a6;
-    border-color: #e9a8a6;
+        color: #fff;
+        background-color: #84a98c;
+        border-color: #84a98c;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #84a98c;
+    border-color: #84a98c;
 }
 
 /* Sticky footer styles
@@ -149,10 +146,10 @@ ul {
 
 /*Backgrounds*/
 .bg-navbar {
-    background: -webkit-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
-    background: -o-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
-    background: -moz-linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
-    background: linear-gradient(110deg, #e9a8a6 60%, #252152 60%);
+    background: -webkit-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+    background: -o-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+    background: -moz-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+    background: linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
 }
 .bg-footer {
     background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
