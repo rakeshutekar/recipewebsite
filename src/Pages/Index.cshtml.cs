@@ -20,12 +20,9 @@ namespace ContosoCrafts.WebSite.Pages
             _logger = logger;
             RecipeService = recipeService;
         }
-        // Provides access to an instance of the JsonFileProductService class.
-        public JsonFileProductService ProductService { get; }
+
         // Provides access to an instance of the JsonFileRecipeService class.
         public JsonFileRecipeService RecipeService{get;}
-        // Stores a collection of ProductModel instances.
-        public IEnumerable<ProductModel> Products { get; private set; }
         // Stores a collection of RecipeModel instances.
         public IEnumerable<RecipeModel> Recipes {get; private set;}
 
