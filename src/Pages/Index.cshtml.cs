@@ -9,11 +9,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoCrafts.WebSite.Pages
 {
-    // Define the IndexModel class that represents the model for the Index page
+    /// <summary>
+    /// Defines the IndexModel class that represents the model for the Index
+    /// page. This is the landing page for the / route of the website
+    /// </summary>
     public class IndexModel : PageModel
     {
+        // Private logger class field
         private readonly ILogger<IndexModel> _logger;
-        // Constructor that takes in a logger and a recipe service dependency
+
+        /// <summary>
+        /// Constructor that takes in a logger and a recipe service dependency
+        /// </summary>
+        /// <param name="logger">Logger service injected via DI</param>
+        /// <param name="recipeService">Recipe service injected via DI</param>
         public IndexModel(ILogger<IndexModel> logger,
             JsonFileRecipeService recipeService)
         {
