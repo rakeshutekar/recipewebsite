@@ -49,7 +49,10 @@ namespace ContosoCrafts.WebSite.Models
         [JsonPropertyName("Img")]
         public string Image{get;set;}
 
-        // Overridden ToString method to serialize the object's data
+        /// <summary>
+        /// Overridden ToString method to serialize the object's data
+        /// </summary>
+        /// <returns>String/JSON representation of object</returns>
         public override string ToString() => JsonSerializer.Serialize<RecipeModel>(this);
  
     }
