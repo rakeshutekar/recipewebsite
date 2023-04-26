@@ -8,15 +8,25 @@ using System.Linq;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
+    /// <summary>
+    /// RecipesAPIController is an API to access Recipe information via HTTP
+    /// requests, either directly from the URL or embedded as HTTP requests
+    /// within the rest of the application.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class RecipesAPIController : ControllerBase
     {
+        /// <summary>
+        /// Default constructor takes in the JsonFileRecipeService via DI
+        /// </summary>
+        /// <param name="recipeService">DI service to access JSON data</param>
         public RecipesAPIController(JsonFileRecipeService recipeService)
         {
             RecipeService = recipeService;
         }
 
+        // The service to access the JSON file storing recipe data
         public JsonFileRecipeService RecipeService { get; }
 
         /**
@@ -27,9 +37,13 @@ namespace ContosoCrafts.WebSite.Controllers
         }
         */
 
+        /// <summary>
+        /// Gets the recipe(s) using either no search term or the parameter
+        /// search term
+        /// </summary>
+        /// <param name="recipeService">DI service to access JSON data</param>
         [HttpGet]
         // TODO: Implement the search bar
-        // The Get method takes in an optional searchTerm parameter
         public IEnumerable<RecipeModel> Get(string searchTerm = null)
         {
             var recipes = RecipeService.GetRecipes();
