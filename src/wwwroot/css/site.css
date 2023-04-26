@@ -158,18 +158,6 @@ ul {
     background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
 }
 
-/*Make the search bar and the account dropdown menu appear inline
-  when the browser is not in full screen*/
-@media (max-width: 767px) {
-    .form-inline {
-        margin-right: 0;
-    }
-
-    .dropdown.ml-auto {
-        margin-left: 10px;
-    }
-}
-
 /* Change the background color of even rows */
 .table-striped tbody tr:nth-child(even) {
     background-color: #edede9;
