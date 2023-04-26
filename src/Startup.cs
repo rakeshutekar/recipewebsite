@@ -35,7 +35,6 @@ namespace ContosoCrafts.WebSite
             services.AddServerSideBlazor();
             services.AddHttpClient();
             services.AddControllers();
-            services.AddTransient<JsonFileProductService>();
             services.AddTransient<JsonFileRecipeService>();
         }
 
