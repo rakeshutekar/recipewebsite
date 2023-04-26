@@ -4,19 +4,25 @@ using System;
 
 namespace ContosoCrafts.WebSite
 {
+    /// <summary>
+    /// Represents the entry point for the application.
+    /// </summary>
     public class Program
     {
         /// <summary>
-        /// Entry point in to program.
+        /// The main entry point for the application.
         /// </summary>
+        /// <param name="args">An array of command-line arguments.</param>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
         /// <summary>
-        /// Create host builder using Startup class.
+        /// Creates a host builder using the Startup class.
         /// </summary>
+        /// <param name="args">An array of command-line arguments.</param>
+        /// <returns>The configured host builder.</returns>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
@@ -24,4 +30,5 @@ namespace ContosoCrafts.WebSite
                     webBuilder.UseStartup<Startup>();
                 });
     }
+
 }
