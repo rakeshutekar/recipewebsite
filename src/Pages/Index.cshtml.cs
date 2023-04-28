@@ -35,7 +35,9 @@ namespace ContosoCrafts.WebSite.Pages
         // Stores a collection of RecipeModel instances.
         public IEnumerable<RecipeModel> Recipes {get; private set;}
 
-        // Handler method for HTTP GET requests to the Index page
+        /// <summary>
+        /// Handler method for HTTP GET requests to the Index page
+        /// </summary>
         public void OnGet()
         {
             // Get the list of recipes from the recipe service
