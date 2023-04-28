@@ -4,6 +4,11 @@
     ViewData["Title"] = "Recipe page";
 }
 
+<div class="container">
+    <div class="row justify-content-end">
+        <a class="btn btn-sm btn-danger" asp-page="Delete" asp-route-id="@Model.Recipe.RecipeID">Delete</a>
+    </div>
+</div> 
 <h1>@Model.Recipe.Title</h1>
 <div class="container" style="background">
     <div class="row justify-content-center">
