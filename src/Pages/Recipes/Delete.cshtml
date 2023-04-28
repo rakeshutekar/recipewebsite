@@ -1,5 +1,24 @@
-﻿@page
+﻿@page "{id:int}"
 @model ContosoCrafts.WebSite.Pages.Recipes.DeleteModel
 @{
+    ViewData["Title"] = "Delete recipe page";
 }
 
+<p class="h3 my-3">Are you sure you want to delete the recipe?</p>
+<div class="container">
+    <form method="post">
+        <div class="form-group mb-3">
+            <label asp-for="@Model.Recipe.AuthorID" class="control-label">Author</label>
+            <input asp-for="@Model.Recipe.Title" type="text" class="form-control" placeholder="@Model.Recipe.FirstName @Model.Recipe.LastName" id="@Model.Recipe.AuthorID" readonly />
+        </div>
+        <div class="form-group mb-3">
+            <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
+            <input asp-for="@Model.Recipe.Title" type="text" class="form-control" placeholder="@Model.Recipe.Title" readonly />
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
+            <textarea asp-for="@Model.Recipe.Description" type="text" class="form-control" placeholder="@Model.Recipe.Description" readonly></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</div>
