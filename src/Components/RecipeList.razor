@@ -2,6 +2,7 @@
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileRecipeService RecipeService
+@inject NavigationManager NavigationManager
 
 
 <div class="card-columns">
@@ -13,12 +14,29 @@
             <div class="card-body">
                 <h5 class="card-title">@recipe.Title</h5>
             </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                    <button @onclick="() => GoTo(recipe.RecipeID)"
+                            data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                        More Info
+                    </button>
+                </small>
+            </div>
         </div>
     }
 </div>
 
-
-
+@code {
+    /// <summary>
+    /// Method links to the given Recipe/Read/{recipeID} route to show the user the Read page for the given recipe
+    /// </summary>
+    /// <param name="recipeId">RecipeID of the recipe</param>
+    void GoTo(int recipeId)
+    {
+        string route = "/Recipes/Read/" + recipeId.ToString();
+        NavigationManager.NavigateTo(route, true);
+    }
+}
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
