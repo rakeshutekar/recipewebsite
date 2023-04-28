@@ -38,7 +38,11 @@ namespace ContosoCrafts.WebSite
             services.AddTransient<JsonFileRecipeService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app">App injected via DI</param>
+        /// <param name="env">env injected via DI</param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
