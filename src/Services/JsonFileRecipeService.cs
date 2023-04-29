@@ -99,7 +99,17 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name="recipes">Collection of recipes</param>
         private void SaveRecipes(IEnumerable<RecipeModel> recipes)
         {
-            
+            using (var outputStream = File.OpenWrite(JsonFileName))
+            {
+                JsonSerializer.Serialize<IEnumerable<RecipeModel>>(
+                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
+                    {
+                        SkipValidation = true,
+                        Indented = true
+                    }),
+                    recipes
+                );
+            }
         }
     }
 }
