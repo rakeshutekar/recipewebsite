@@ -43,5 +43,26 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             Recipe = RecipeService.GetRecipe(id);
             fullName = Recipe.FirstName + " " + Recipe.LastName;
         }
+
+        /// <summary>
+        /// Updates the designated recipe on the page to Deleted = true, saves
+        /// the change using the RecipeService and returns the caller to the
+        /// root page
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult OnPost(int id)
+        {
+            RecipeID = id;
+            Recipe = RecipeService.GetRecipe(id);
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            RecipeService.DeleteRecipe(Recipe.RecipeID);
+
+            return Redirect("../Index");
+        }
     }
 }
