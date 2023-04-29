@@ -8,21 +8,24 @@
 <div class="card-columns">
     @foreach (var recipe in RecipeService.GetRecipes())
     {
-        <div class="card">
-            <div class="card-img" style="background-image: url('@recipe.Image');">
+        if(recipe.Deleted == false)
+        {
+            <div class="card">
+                <div class="card-img" style="background-image: url('@recipe.Image');">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@recipe.Title</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <button @onclick="() => GoTo(recipe.RecipeID)"
+                                data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                            More Info
+                        </button>
+                    </small>
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">@recipe.Title</h5>
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">
-                    <button @onclick="() => GoTo(recipe.RecipeID)"
-                            data-toggle="modal" data-target="#productModal" class="btn btn-primary">
-                        More Info
-                    </button>
-                </small>
-            </div>
-        </div>
+        }   
     }
 </div>
 
