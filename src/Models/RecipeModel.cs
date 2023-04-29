@@ -13,6 +13,8 @@ namespace ContosoCrafts.WebSite.Models
         private string description = "Default Description";
 
         /*PUBLIC VARIABLES*/
+        // Deleted flag to indicate whether to show or not
+        public bool Deleted {get;set;}
         // ID of the recipe from the JSON file
         public int RecipeID{get;set;}
         // ID of the author from the JSON file
