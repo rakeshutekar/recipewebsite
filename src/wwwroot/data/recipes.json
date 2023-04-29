@@ -1,6 +1,6 @@
 ﻿[
   {
-    "Deleted":"false",
+    "Deleted": false,
     "RecipeId": 1,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -38,7 +38,7 @@
     "Img": "https://img.delicious.com.au/TzM-Ms96/w759-h506-cfill/del/2019/10/super-greens-keto-omelette-with-prawn-and-avocado-116259-3.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 2,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -75,7 +75,7 @@
     "Img": "https://www.foodandwine.com/thmb/hicXzmGIIpkwyX3Q55IYiupQjMo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Katsu-Curry-Japanese-Curry-with-Tonkatsu-Nuggets-and-Fried-Egg-FT-RECIPE0922-2000-bd3fa359de3544448906652f53f53bb3.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 3,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -110,7 +110,7 @@
     "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Next-level-tacos-e163429.jpg?quality=90&webp=true&resize=600,545"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 4,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -152,7 +152,7 @@
   },
 
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 5,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -171,7 +171,7 @@
     "Img": "https://simply-delicious-food.com/wp-content/uploads/2020/07/Easy-salad-sandwiches-with-herb-mayo-1.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 6,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -207,7 +207,7 @@
     "Img": "https://delightfulplate.com/wp-content/uploads/2020/07/Traditional-Vietnamese-Fresh-Spring-Rolls-Goi-cuon-tom-thit.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 7,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -247,7 +247,7 @@
     "Img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/03/18/0/FNK_HOT_POT_AT_HOME_OPENER_H_f_s4x3.jpg.rend.hgtvcom.826.620.suffix/1616107469470.jpeg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 8,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -276,6 +276,7 @@
     "Img": "https://chatelaine.com/wp-content/uploads/2018/06/Thai-basil-and-cilantro-salad-800x800.jpg"
   },
   {
+    "Deleted": false,
     "RecipeId": 9,
     "AuthorId": 4,
     "FirstName": "Jenna",
@@ -304,7 +305,7 @@
     "Img": "https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-7.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 10,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -323,7 +324,7 @@
     "Img": "https://www.optimistdaily.com/wp-content/uploads/shutterstock_774365320-e1614177159300.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 11,
     "AuthorId": 2,
     "FirstName": "Serge",
@@ -353,7 +354,7 @@
     "Img": "https://cookingformysoul.com/wp-content/uploads/2022/03/curry-fried-rice-feat-min.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 12,
     "AuthorId": 2,
     "FirstName": " ",
@@ -400,7 +401,7 @@
     "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/12/Crossing-The-Bridge-Noodles-c951e67.jpg?quality=90&webp=true&resize=600,545"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 13,
     "AuthorId": 1,
     "FirstName": "Anthea",
@@ -432,7 +433,7 @@
     "Img": "https://i.imgur.com/UAAnqx7.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 14,
     "AuthorId": 3,
     "FirstName": "Paula",
@@ -456,7 +457,7 @@
     "Img": "https://i.imgur.com/BXxveSO.jpg"
   },
   {
-    "Deleted": "false",
+    "Deleted": false,
     "RecipeId": 15,
     "AuthorId": 1,
     "FirstName": "Anthea",
