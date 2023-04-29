@@ -30,6 +30,9 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         // ID of the recipe passed in via URL/Path
         public int RecipeID;
 
+        // Combined Name for use with display
+        public string fullName;
+
         /// <summary>
         /// Retrieves the specified recipe by its ID passed in via the URL
         /// </summary>
@@ -38,6 +41,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         {
             RecipeID = id;
             Recipe = RecipeService.GetRecipe(id);
+            fullName = Recipe.FirstName + " " + Recipe.LastName;
         }
     }
 }
