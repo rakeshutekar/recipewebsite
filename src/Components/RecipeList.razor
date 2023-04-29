@@ -8,6 +8,7 @@
 <div class="card-columns">
     @foreach (var recipe in RecipeService.GetRecipes())
     {
+        @* Only show recipes that are not marked as delete*@
         if(recipe.Deleted == false)
         {
             <div class="card">
