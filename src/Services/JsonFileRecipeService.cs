@@ -70,5 +70,36 @@ namespace ContosoCrafts.WebSite.Services
                     }).First(x => x.RecipeID == recipeID);
             }
         }
+
+        /// <summary>
+        /// Sets the Deleted flag of a Recipe to true, updates the Enumerable and
+        /// overwrites the existing file with the new data
+        /// </summary>
+        /// <param name="recipeID">ID of the recipe to delete</param>
+        /// <returns>The updated RecipeModel</returns>
+        public RecipeModel DeleteRecipe(int recipeID)
+        {
+            // Retrieve the specified recipe, set Deleted flag to true
+            var data = GetRecipe(recipeID);
+            data.Deleted = true;
+
+            // Retrieve all data not including the to-be-delete recipe, then 
+            // save back to the file, then serialize to update file
+            var updatedRecipes = GetRecipes().Where(x => x.RecipeID != recipeID).ToList();
+            updatedRecipes.Add(data);
+            SaveRecipes(updatedRecipes);
+
+            return data;
+        }
+
+        /// <summary>
+        /// Private helper function to serialize the RecipeModel with new data
+        /// back to JSON
+        /// </summary>
+        /// <param name="recipes">Collection of recipes</param>
+        private void SaveRecipes(IEnumerable<RecipeModel> recipes)
+        {
+            
+        }
     }
 }
