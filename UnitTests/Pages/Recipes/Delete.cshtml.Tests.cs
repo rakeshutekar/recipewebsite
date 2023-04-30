@@ -72,7 +72,32 @@ namespace UnitTests.Pages.Recipes
         [Test]
         public void OnPost_InValid_Model_NotValid_Return_Page()
         {
-            
+            // Arrange - create a new fake recipe
+            pageModel.Recipe = new ContosoCrafts.WebSite.Models.RecipeModel
+            {
+                Deleted = false,
+                RecipeID = 999,
+                AuthorID = 999,
+                FirstName = "Bogus",
+                LastName = "Bogus",
+                Title = "Bogus",
+                Description = "Bogus",
+                Instructions = { },
+                Ingredients = { },  
+                PublishDate = "12/31/9999",
+                EditDate = "12/31/9999",
+                Tags = { },
+                ImageCaption = "Bogus",
+                Image = "https://www.google.com"
+            };
+
+            pageModel.ModelState.AddModelError("Fake Error", "Fake Error");
+
+            // Act
+            var pagePostResult = pageModel.OnPost(pageModel.Recipe.RecipeID) as ActionResult;
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
 
         #endregion OnPostAsync
