@@ -25,7 +25,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
 
         // Individual recipe model
         [BindProperty]
-        public RecipeModel Recipe { get; private set; }
+        public RecipeModel Recipe { get; set; }
 
         // ID of the recipe passed in via URL/Path
         public int RecipeID;
@@ -52,9 +52,6 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// <returns></returns>
         public IActionResult OnPost(int id)
         {
-            RecipeID = id;
-            Recipe = RecipeService.GetRecipe(id);
-
             if (!ModelState.IsValid)
             {
                 return Page();
