@@ -20,28 +20,28 @@ namespace UnitTests
 
             // This will copy over the latest version of the database files
 
-            //var DataWebPath = "../../../../src/bin/Debug/net6.0/wwwroot/data";
-            //var DataUTDirectory = "wwwroot";
-            //var DataUTPath = DataUTDirectory + "/data";
+            var DataWebPath = "../../../../src/bin/Debug/net6.0/wwwroot/data";
+            var DataUTDirectory = "wwwroot";
+            var DataUTPath = DataUTDirectory + "/data";
 
             //// Delete the Detination folder
-            //if (Directory.Exists(DataUTDirectory))
-            //{
-            //    Directory.Delete(DataUTDirectory, true);
-            //}
+            if (Directory.Exists(DataUTDirectory))
+            {
+                Directory.Delete(DataUTDirectory, true);
+            }
 
-            //// Make the directory
-            //Directory.CreateDirectory(DataUTPath);
+            // Make the directory
+            Directory.CreateDirectory(DataUTPath);
 
-            //// Copy over all data files
-            //var filePaths = Directory.GetFiles(DataWebPath);
-            //foreach (var filename in filePaths)
-            //{
-            //    string OriginalFilePathName = filename.ToString();
-            //    var newFilePathName = OriginalFilePathName.Replace(DataWebPath, DataUTPath);
+            // Copy over all data files
+            var filePaths = Directory.GetFiles(DataWebPath);
+            foreach (var filename in filePaths)
+            {
+                string OriginalFilePathName = filename.ToString();
+                var newFilePathName = OriginalFilePathName.Replace(DataWebPath, DataUTPath);
 
-            //    File.Copy(OriginalFilePathName, newFilePathName);
-            //}
+                File.Copy(OriginalFilePathName, newFilePathName);
+            }
         }
 
         [OneTimeTearDown]
