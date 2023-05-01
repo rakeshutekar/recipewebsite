@@ -9,8 +9,12 @@ namespace UnitTests.Pages.Recipes
     public class ReadTests
     {
         #region TestSetup
+        // Page model for testing
         public static ReadModel pageModel;
 
+        /// <summary>
+        /// Initialize test environment for Read Tests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
