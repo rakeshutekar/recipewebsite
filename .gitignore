@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/.config/dotnet-tools.json
+/src/Properties/ServiceDependencies/ContosoCraftsWebSite20230410181012 - Web Deploy/profile.arm.json
