@@ -50,7 +50,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// root page
         /// </summary>
         /// <returns></returns>
-        public IActionResult OnPost(int id)
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
 
             RecipeService.DeleteRecipe(Recipe.RecipeID);
 
-            return Redirect("~/Index");
+            return RedirectToPage("~/Index");
         }
     }
 }
