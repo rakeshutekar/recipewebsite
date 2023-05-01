@@ -11,4 +11,9 @@
   <ItemGroup>
     <Folder Include="Pages\Recipes\" />
   </ItemGroup>
+	<ItemGroup>
+		<Content Update="wwwroot\data\recipes.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 </Project>
