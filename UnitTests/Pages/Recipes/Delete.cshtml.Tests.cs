@@ -53,16 +53,31 @@ namespace UnitTests.Pages.Recipes
 
         #region OnPostAsync
         /// <summary>
-        /// Tests succesful deletion of a recipe. Requires creating a fake recipe
-        /// and add to the Test data set. Once created, test that the model is valid,
-        /// that the page returns to the Index, and that the recipe is no longer part
-        /// of the dataset
+        /// Tests succesful deletion of a recipe. Prepares a page model with
+        /// the first item int he actual dataset. Once created, test that the model is 
+        /// valid, that the page returns to the Index, and that the recipe is no longer
+        /// part of the dataset
         /// </summary>
         [Test]
         public void OnPost_Valid_Model_Should_Return_Products()
         {
-            // Requires creation of fake data, then confirming the pageModel is valid
-            // and returns a redirect, and then finally confirming the results are truly deleted
+            // Arrange
+            // Preparing a valid productID from the current dataset
+            var validProductId = 1;
+            var validProductTitle = "Prawn and Avocado Omelette";
+            pageModel.OnGet(validProductId);
+
+            // Act
+            // Delete the prepared recipe page
+            // redirect to /Index occurs
+            var result = pageModel.OnPost() as RedirectToPageResult;
+            var deletedRecipe = TestHelper.RecipeService.GetRecipe(validProductId);
+
+            // Assert
+            // Confirm that the model is valid after the delete, redirect occurs, and delete confirmed
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Index"));
+            Assert.AreEqual(true, deletedRecipe.Deleted);
         }
 
         /// <summary>
@@ -94,7 +109,7 @@ namespace UnitTests.Pages.Recipes
             pageModel.ModelState.AddModelError("Fake Error", "Fake Error");
 
             // Act
-            var pagePostResult = pageModel.OnPost(pageModel.Recipe.RecipeID) as ActionResult;
+            var pagePostResult = pageModel.OnPost() as ActionResult;
 
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
