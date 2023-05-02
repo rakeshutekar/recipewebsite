@@ -1,0 +1,43 @@
+@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create Recipe";
+}
+
+<style>
+    body {
+        font-family: 'Nunito', sans-serif;
+    }
+
+    h1, h2 {
+        font-family: "Nunito", serif;
+    }
+</style>
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Recipe creation form group -->
+<form action="/create" method="post">
+  <div class="form-group">
+    <label for="img-link">Img link:</label>
+    <input type="text" class="form-control" id="img-link" name="img-link" required>
+  </div>
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea class="form-control" id="description" name="description" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="ingredients">Ingredients:</label>
+    <textarea class="form-control" id="ingredients" name="ingredients" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="directions">Directions:</label>
+    <textarea class="form-control" id="directions" name="directions" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
