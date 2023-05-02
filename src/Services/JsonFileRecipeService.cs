@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -91,6 +92,20 @@ namespace ContosoCrafts.WebSite.Services
 
             return data;
         }
+
+        /// <summary>
+        /// Adds a new recipe model to the database. Appends new model to 
+        /// the end of GetRecipes() IEnumerable and overwrites json file.
+        /// </summary>
+        /// <param name="model"></param>
+        public void AddRecipe(RecipeModel model) => SaveRecipes(GetRecipes().Concat(new[] { model }));
+        
+
+        /// <summary>
+        /// Get next availabe recipe ID.
+        /// </summary>
+        /// <returns>GetRecipes().Count + 1</returns>
+        public int NextRecipeID() => GetRecipes().Count() + 1;
 
         /// <summary>
         /// Private helper function to serialize the RecipeModel with new data
