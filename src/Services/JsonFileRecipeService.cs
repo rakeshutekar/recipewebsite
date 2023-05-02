@@ -99,13 +99,41 @@ namespace ContosoCrafts.WebSite.Services
         /// </summary>
         /// <param name="model"></param>
         public void AddRecipe(RecipeModel model) => SaveRecipes(GetRecipes().Concat(new[] { model }));
-        
 
         /// <summary>
         /// Get next availabe recipe ID.
         /// </summary>
         /// <returns>GetRecipes().Count + 1</returns>
         public int NextRecipeID() => GetRecipes().Count() + 1;
+
+        /// <summary>
+        /// Find the recipe record
+        /// Update the fields
+        /// Save to the recipe store
+        /// </summary>
+        /// <param name="recipe"></param>
+        /// <returns></returns>
+        public RecipeModel UpdateRecipe(RecipeModel recipe)
+        {
+            var recipes = GetRecipes();
+            var recipeToUpdate = recipes.FirstOrDefault(r => r.RecipeID.Equals(recipe.RecipeID));
+            if (recipeToUpdate == null)
+            {
+                return null;
+            }
+
+            // Update the recipe with the new passed in values
+            recipeToUpdate.Title = recipe.Title;
+            recipeToUpdate.Image = recipe.Image;    // Image URL
+            recipeToUpdate.Description = recipe.Description.Trim();
+            recipeToUpdate.Ingredients = recipe.Ingredients;
+            recipeToUpdate.Instructions = recipe.Instructions;
+
+            // Save the updated list of recipes to the JSON file
+            SaveRecipes(recipes);
+
+            return recipeToUpdate;
+        }
 
         /// <summary>
         /// Private helper function to serialize the RecipeModel with new data
