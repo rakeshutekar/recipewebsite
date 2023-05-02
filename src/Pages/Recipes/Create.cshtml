@@ -16,8 +16,9 @@
 
 <h1>@ViewData["Title"]</h1>
 
+
 <!-- Recipe creation form group -->
-<form action="/create" method="post">
+<form action="" method="post">
   <div class="form-group">
     <label for="img-link">Img link:</label>
     <input type="text" class="form-control" id="img-link" name="img-link" required>
@@ -35,8 +36,8 @@
     <textarea class="form-control" id="ingredients" name="ingredients" required></textarea>
   </div>
   <div class="form-group">
-    <label for="directions">Directions:</label>
-    <textarea class="form-control" id="directions" name="directions" required></textarea>
+    <label for="instructions">Instructions:</label>
+        <textarea class="form-control" id="instructions" name="instructions" required></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
