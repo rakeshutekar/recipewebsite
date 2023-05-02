@@ -59,7 +59,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
 
             RecipeService.DeleteRecipe(Recipe.RecipeID);
 
-            return RedirectToPage("~/Index");
+            return RedirectToPage("../Index");
         }
     }
 }
