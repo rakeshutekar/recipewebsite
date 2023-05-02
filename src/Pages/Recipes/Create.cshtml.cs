@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
+using System;
 
 namespace ContosoCrafts.WebSite.Pages
 {
@@ -29,6 +30,7 @@ namespace ContosoCrafts.WebSite.Pages
 
         public IActionResult OnPost()
         {
+            Recipe.RecipeID = _recipeService.NextRecipeID();   
             if (!ModelState.IsValid)
             {
                 return Page();
