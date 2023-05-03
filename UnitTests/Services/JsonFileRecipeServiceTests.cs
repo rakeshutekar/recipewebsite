@@ -74,5 +74,45 @@ namespace UnitTests.Services
             int newRecipeCount = TestHelper.RecipeService.GetRecipes().Count();
             Assert.IsTrue(newRecipeCount - recipeCount == 1);
         }
+
+        [Test]
+        public void JsonFileRecipeService_NextRecipeID_Should_Return_Next_Valid_RecipeID()
+        {
+            var rCount = TestHelper.RecipeService.GetRecipes().Count();
+            Assert.IsTrue(TestHelper.RecipeService.NextRecipeID() == rCount + 1);
+        }
+
+        [Test]
+        public void JsonFileRecipeService_UpdateRecipe_Valid_Recipe_Should_Update_Recipe()
+        {
+            var recipe = TestHelper.RecipeService.GetRecipes().First();
+            const string TEST_VAL = "Test";
+            recipe.Title = TEST_VAL;
+            recipe.Image = TEST_VAL;
+            recipe.Description = TEST_VAL;
+            recipe.Ingredients = new string[] { TEST_VAL };
+            recipe.Instructions = new string[] { TEST_VAL };
+
+            TestHelper.RecipeService.UpdateRecipe(recipe);
+
+            var testRecipe = TestHelper.RecipeService.GetRecipe(recipe.RecipeID);
+            Assert.IsNotNull(testRecipe);
+            Assert.AreEqual(testRecipe.Title, recipe.Title);
+            Assert.AreEqual(testRecipe.Image, recipe.Image);
+            Assert.AreEqual(testRecipe.Description, recipe.Description);
+            Assert.IsTrue(testRecipe.Ingredients.SequenceEqual(recipe.Ingredients));
+            Assert.IsTrue(testRecipe.Instructions.SequenceEqual(recipe.Instructions));
+
+        }
+
+        [Test]
+        public void JsonFileRecipeService_Update_Recipe_Invalid_Recipe_Should_Return_Null()
+        {
+            var recipe = new RecipeModel();
+            recipe.RecipeID = -1;
+            var update = TestHelper.RecipeService.UpdateRecipe(recipe);
+
+            Assert.IsNull(update);
+        }
     }
 }
