@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Recipes;
+using ContosoCrafts.WebSite.Pages; // Add this line
 using System;
 using ContosoCrafts.WebSite.Services;
 using System.Linq;
