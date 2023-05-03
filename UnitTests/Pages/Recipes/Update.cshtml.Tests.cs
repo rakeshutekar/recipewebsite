@@ -17,8 +17,12 @@ namespace UnitTests.Pages.Recipes
     public class UpdateTests
     {
         #region TestSetup
+        // A static page from the UpdateModel class
         public static UpdateModel pageModel;
 
+        /// <summary>
+        /// Initializes the test by calling the TestHelper class and creating a static page
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -31,6 +35,10 @@ namespace UnitTests.Pages.Recipes
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Test the 'OnGet' method with a valid recipe model
+        /// Check that the model state is valid and the recipe title is correct
+        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Recipes()
         {
@@ -49,11 +57,15 @@ namespace UnitTests.Pages.Recipes
         #endregion OnGet
 
         #region OnPost
+        /// <summary>
+        /// Test the 'OnPost'Method
+        /// Check that the model state is valid and it redirects to page name
+        /// contains "Read"
+        /// </summary>
         [Test]
         public void OnPost_Valid_Model_Should_Update_Recipe_And_Redirect_Page()
         {
             // Arrange
-
             pageModel.Recipe  = new RecipeModel
             {
                 RecipeID = 1,
@@ -72,11 +84,15 @@ namespace UnitTests.Pages.Recipes
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
 
+        /// <summary>
+        /// Test 'OnPost' with an invalid model
+        /// Check that the model state is not valid
+        /// </summary>
         [Test]
         public void OnPost_Invalid_Model_NotValid_Return_Page()
         {
             // Arrange
-
+            // Force an invalid error state
             pageModel.ModelState.AddModelError("error", "error");
 
             // Act
