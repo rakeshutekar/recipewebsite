@@ -7,7 +7,7 @@
 <h1>Update Recipe</h1>
 
 <div class="container">
-    <form method="post">
+    <form id="update-form" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @Html.HiddenFor(r => r.Recipe.RecipeID)
 
@@ -40,23 +40,32 @@
             </div>
         </div>
 
-            <div class="form-group">
-                <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
-                <div style="max-height: 200px; overflow-y: auto;">
-                    @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
-                    {
-                        
-                        <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
-                        <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span> 
-                    }
-                </div>
-            </div>
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
+            <div style="max-height: 200px; overflow-y: auto;">
+                @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
+                {
 
-            <button type="submit" class="btn btn-danger">Update</button>
-</form>
+                    <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
+                    <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
+                }
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to update this recipe?')">Update</button>
+    </form>
 </div>
 
 @section Scripts {
+    <script>
+        function confirmUpdate() {
+            var result = confirm("Are you sure you want to update this recipe?");
+                if (result) {
+                    document.getElementById("update-form").submit();
+                }
+        }
+    </script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
