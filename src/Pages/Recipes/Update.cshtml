@@ -1,5 +1,53 @@
-﻿@page
+﻿@page "{id:int}"
 @model ContosoCrafts.WebSite.Pages.Recipes.UpdateModel
 @{
+    ViewData["Title"] = "Update recipe page";
+}
+
+<h1>Update Recipe</h1>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @Html.HiddenFor(r => r.Recipe.RecipeID)
+
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
+            <input asp-for="@Model.Recipe.Title" class="form-control" />
+            <span asp-validation-for="@Model.Recipe.Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
+            <input asp-for="@Model.Recipe.Description" class="form-control"></>
+            <span asp-validation-for="@Model.Recipe.Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
+            <input asp-for="@Model.Recipe.Image" class="form-control" />
+            <span asp-validation-for="@Model.Recipe.Image" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
+            <input asp-for="@Model.Recipe.Ingredients" class="form-control"></>
+            <span asp-validation-for="@Model.Recipe.Ingredients" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
+            <input asp-for="@Model.Recipe.Instructions" class="form-control"></>
+            <span asp-validation-for="@Model.Recipe.Instructions" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Update</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
 
