@@ -24,20 +24,20 @@
     <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required>
   </div>
   <div class="form-group">
-    <label for="title">Title:</label>
-    <input type="text" class="form-control" id="title" name="title" required>
+    <label asp-for="@Model.Recipe.Title" class="control-label">Title:</label>
+    <input asp-for="@Model.Recipe.Title" class="form-control" type="text" required>
   </div>
   <div class="form-group">
-    <label for="description">Description:</label>
-    <textarea class="form-control" id="description" name="description" required></textarea>
+    <label asp-for="@Model.Recipe.Description" class="control-label">Description:</label>
+    <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
   </div>
   <div class="form-group">
-    <label for="ingredients">Ingredients:</label>
-    <textarea class="form-control" id="ingredients" name="ingredients" required></textarea>
+    <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients:</label>
+    <textarea asp-for="@Model.Recipe.Ingredients" class="form-control" required></textarea>
   </div>
   <div class="form-group">
-    <label for="instructions">Instructions:</label>
-        <textarea class="form-control" id="instructions" name="instructions" required></textarea>
+    <label asp-for="@Model.Recipe.Ingredients" class="control-label">Instructions:</label>
+        <textarea asp-for="@Model.Recipe.Ingredients" class="form-control" required></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
