@@ -31,18 +31,29 @@
 
         <div class="form-group">
             <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
-            <input asp-for="@Model.Recipe.Ingredients" class="form-control"></>
-            <span asp-validation-for="@Model.Recipe.Ingredients" class="text-danger"></span>
+            <div style="max-height: 200px; overflow-y: auto;">
+                @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
+                {
+                    <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" />
+                    <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
+                }
+            </div>
         </div>
 
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
-            <input asp-for="@Model.Recipe.Instructions" class="form-control"></>
-            <span asp-validation-for="@Model.Recipe.Instructions" class="text-danger"></span>
-        </div>
+            <div class="form-group">
+                <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
+                <div style="max-height: 200px; overflow-y: auto;">
+                    @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
+                    {
+                        
+                        <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
+                        <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span> 
+                    }
+                </div>
+            </div>
 
-        <button type="submit" class="btn btn-danger">Update</button>
-    </form>
+            <button type="submit" class="btn btn-danger">Update</button>
+</form>
 </div>
 
 @section Scripts {
