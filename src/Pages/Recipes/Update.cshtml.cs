@@ -31,14 +31,17 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         [BindProperty]
         public RecipeModel Recipe { get; set; }
 
+        public int RecipeID;
+
         /// <summary>
         /// REST Get request
         /// Loads the data
         /// </summary>
         /// <param name="id"></param>
-        public void OnGet(string id)
+        public void OnGet(int id)
         {
-            Recipe = RecipeService.GetRecipes().FirstOrDefault(r => r.RecipeID.Equals(id));
+            RecipeID = id;
+            Recipe = RecipeService.GetRecipe(id);
         }
 
         /// <summary>
@@ -57,7 +60,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
 
             RecipeService.UpdateRecipe(Recipe);
 
-            return RedirectToPage("./Index");  
+            return RedirectToPage("./Read", new { id = Recipe.RecipeID});  
         }
     }
 }
