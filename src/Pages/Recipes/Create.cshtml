@@ -19,26 +19,26 @@
 
 <!-- Recipe creation form group -->
 <form action="" method="post">
-  <div class="form-group">
-    <label asp-for="@Model.Recipe.Image" class="control-label">Img link:</label>
-    <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required>
-  </div>
-  <div class="form-group">
-    <label asp-for="@Model.Recipe.Title" class="control-label">Title:</label>
-    <input asp-for="@Model.Recipe.Title" class="form-control" type="text" required>
-  </div>
-  <div class="form-group">
-    <label asp-for="@Model.Recipe.Description" class="control-label">Description:</label>
-    <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
-  </div>
-  <div class="form-group">
-    <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients:</label>
-    <textarea asp-for="@Model.Recipe.Ingredients" class="form-control" required></textarea>
-  </div>
-  <div class="form-group">
-    <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions:</label>
+    <div class="form-group">
+        <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
+        <input asp-for="@Model.Recipe.Title" class="form-control" type="text" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
+        <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
+        <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
+        <textarea asp-for="@Model.Recipe.Ingredients" class="form-control" required></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
         <textarea asp-for="@Model.Recipe.Instructions" class="form-control" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
