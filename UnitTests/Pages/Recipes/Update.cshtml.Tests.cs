@@ -49,6 +49,7 @@ namespace UnitTests.Pages.Recipes
         #endregion OnGet
 
         #region OnPost
+        [Test]
         public void OnPost_Valid_Model_Should_Update_Recipe_And_Redirect_Page()
         {
             // Arrange
@@ -71,6 +72,7 @@ namespace UnitTests.Pages.Recipes
             Assert.AreEqual(true, result.PageName.Contains("Read"));
         }
 
+        [Test]
         public void OnPost_Invalid_Model_NotValid_Return_Page()
         {
             // Arrange
