@@ -29,14 +29,6 @@ namespace ContosoCrafts.WebSite.Controllers
         // The service to access the JSON file storing recipe data
         public JsonFileRecipeService RecipeService { get; }
 
-        /**
-        [HttpGet]
-        public IEnumerable<RecipeModel> Get()
-        {
-            return RecipeService.GetRecipes();
-        }
-        */
-
         /// <summary>
         /// Gets the recipe(s) using either no search term or the parameter
         /// search term
