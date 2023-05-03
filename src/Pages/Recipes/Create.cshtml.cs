@@ -8,7 +8,7 @@ using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using System;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace ContosoCrafts.WebSite.Pages.Recipes
 {
     public class CreateModel : PageModel
     {
