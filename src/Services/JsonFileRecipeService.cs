@@ -116,15 +116,15 @@ namespace ContosoCrafts.WebSite.Services
         public RecipeModel UpdateRecipe(RecipeModel recipe)
         {
             var recipes = GetRecipes();
-            var recipeToUpdate = recipes.FirstOrDefault(r => r.RecipeID.Equals(recipe.RecipeID));
+            var recipeToUpdate = recipes.FirstOrDefault(r => r.RecipeID == recipe.RecipeID);
             if (recipeToUpdate == null)
             {
                 return null;
             }
 
             // Update the recipe with the new passed in values
-            recipeToUpdate.Title = recipe.Title;
-            recipeToUpdate.Image = recipe.Image;    // Image URL
+            recipeToUpdate.Title = recipe.Title;    
+            recipeToUpdate.Image = recipe.Image;    
             recipeToUpdate.Description = recipe.Description.Trim();
             recipeToUpdate.Ingredients = recipe.Ingredients;
             recipeToUpdate.Instructions = recipe.Instructions;
@@ -142,17 +142,28 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name="recipes">Collection of recipes</param>
         private void SaveRecipes(IEnumerable<RecipeModel> recipes)
         {
-            using (var outputStream = File.OpenWrite(JsonFileName))
+            var options = new JsonSerializerOptions
             {
-                JsonSerializer.Serialize<IEnumerable<RecipeModel>>(
-                    new Utf8JsonWriter(outputStream, new JsonWriterOptions
-                    {
-                        SkipValidation = true,
-                        Indented = true
-                    }),
-                    recipes
-                );
-            }
+                WriteIndented = true
+            };
+            var jsonString = JsonSerializer.Serialize(recipes, options);
+            File.WriteAllText(JsonFileName, jsonString);
         }
+
+        //private void SaveRecipes(IEnumerable<RecipeModel> recipes)
+        //{
+        //    using (var outputStream = File.OpenWrite(JsonFileName))
+        //    {
+        //        JsonSerializer.Serialize<IEnumerable<RecipeModel>>(
+        //            new Utf8JsonWriter(outputStream, new JsonWriterOptions
+        //            {
+        //                SkipValidation = true,
+        //                Indented = true
+        //            }),
+        //            recipes,
+        //            options
+        //        );
+        //    }
+        //}
     }
 }
