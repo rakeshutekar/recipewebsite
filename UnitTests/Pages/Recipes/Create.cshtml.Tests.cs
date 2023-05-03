@@ -42,6 +42,23 @@ namespace UnitTests.Pages.Recipes
 
         #region OnPost
         /// <summary>
+        /// Method checks that invalid models return an error
+        /// </summary>
+        [Test]
+        public void OnPost_Invalid_Model_NotValid_Return_Page()
+        {
+            // Arrange
+            // Force an invalid error state
+            pageModel.ModelState.AddModelError("error", "error");
+
+            // Act
+            var result = pageModel.OnPost() as ActionResult;
+
+            // Assert
+            Assert.AreEqual(false, pageModel.ModelState.IsValid);
+        }
+
+        /// <summary>
         /// This method is a unit test that checks the behavior of a web page model's "OnPost" method
         /// when provided with valid recipe data.
         /// </summary>
