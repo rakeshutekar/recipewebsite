@@ -47,9 +47,5 @@ namespace ContosoCrafts.WebSite.Controllers
 
             return recipes;
         }
-
-        // TODO: Set the value of the ImageCaption property
     }
-
-
 }
