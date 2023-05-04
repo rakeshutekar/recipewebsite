@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using System;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
@@ -29,23 +31,40 @@ namespace ContosoCrafts.WebSite.Controllers
         // The service to access the JSON file storing recipe data
         public JsonFileRecipeService RecipeService { get; }
 
-        /// <summary>
-        /// Gets the recipe(s) using either no search term or the parameter
-        /// search term
-        /// </summary>
-        /// <param name="recipeService">DI service to access JSON data</param>
         [HttpGet]
-        // TODO: Implement the search bar
-        public IEnumerable<RecipeModel> Get(string searchTerm = null)
+        public IEnumerable<RecipeModel> Get()
         {
-            var recipes = RecipeService.GetRecipes();
+            return RecipeService.GetRecipes();
+        }
 
-            if (!string.IsNullOrEmpty(searchTerm))
+        /// <summary>
+        /// Search function implementation (case insensitive)
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Search")]
+        public IActionResult Search(string query)
+        {
+            if (string.IsNullOrEmpty(query))
             {
-                recipes = recipes.Where(r => r.Title.Contains(searchTerm) || r.Description.Contains(searchTerm));
+                return BadRequest("Please provide a search term.");
             }
 
-            return recipes;
+            var recipes = RecipeService.GetRecipes();
+
+            var results = recipes.Where(r => r.Title.ToLower().Contains(query.ToLower()) ||
+                                r.Description.ToLower().Contains(query.ToLower()) ||
+                                r.Ingredients.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
+                                r.Instructions.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
+                                r.Tags.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)));
+
+            if (!results.Any())
+            {
+                return NotFound($"No recipes found for query '{query}'.");
+            }
+
+            return RedirectToPage("/Recipes/Search", new { recipes = results });
         }
     }
 }
