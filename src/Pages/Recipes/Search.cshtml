@@ -1,0 +1,21 @@
+﻿@page "{query?}"
+@model ContosoCrafts.WebSite.Pages.Recipes.SearchModel
+
+@{ViewData["Title"] = "Search results page";
+}
+
+<h1>Search Results</h1>
+<!-- Temp For Testing Purpose -->
+@if (Model.SearchResults != null && Model.SearchResults.Any())
+{
+    <ul>
+        @foreach (var result in Model.SearchResults)
+        {
+            <li>@result.Title</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No results found.</p>
+}
