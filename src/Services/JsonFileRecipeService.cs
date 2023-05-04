@@ -149,21 +149,5 @@ namespace ContosoCrafts.WebSite.Services
             var jsonString = JsonSerializer.Serialize(recipes, options);
             File.WriteAllText(JsonFileName, jsonString);
         }
-
-        //private void SaveRecipes(IEnumerable<RecipeModel> recipes)
-        //{
-        //    using (var outputStream = File.OpenWrite(JsonFileName))
-        //    {
-        //        JsonSerializer.Serialize<IEnumerable<RecipeModel>>(
-        //            new Utf8JsonWriter(outputStream, new JsonWriterOptions
-        //            {
-        //                SkipValidation = true,
-        //                Indented = true
-        //            }),
-        //            recipes,
-        //            options
-        //        );
-        //    }
-        //}
     }
 }
