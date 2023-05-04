@@ -29,14 +29,15 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             query = query?.Replace("+", " ");   
 
             var recipes = RecipeService.GetRecipes();
-
+            char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';' };
             if (!string.IsNullOrEmpty(query))
             {
-                SearchResults = recipes.Where(r => r.Title.ToLower().Contains(query.ToLower()) ||
-                                r.Description.ToLower().Contains(query.ToLower()) ||
-                                r.Ingredients.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
-                                r.Instructions.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
-                                r.Tags.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)));
+                // Case-insensitive & ignore space
+                SearchResults = recipes.Where(r => r.Title.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
+                                r.Description.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
+                                r.Ingredients.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
+                                r.Instructions.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
+                                r.Tags.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)));
 
             }
         }
@@ -51,12 +52,12 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             }
 
             var recipes = RecipeService.GetRecipes();
-
-            var results = recipes.Where(r => r.Title.ToLower().Contains(query.ToLower()) ||
-                                r.Description.ToLower().Contains(query.ToLower()) ||
-                                r.Ingredients.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
-                                r.Instructions.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
-                                r.Tags.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)));
+            char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';' };
+            var results = recipes.Where(r => r.Title.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
+                                r.Description.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
+                                r.Ingredients.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
+                                r.Instructions.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
+                                r.Tags.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)));
 
             SearchResults = results;
 
