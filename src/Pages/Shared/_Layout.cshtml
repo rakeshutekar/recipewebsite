@@ -25,9 +25,28 @@
 
                         <ul class="navbar-nav flex-grow-1">
 
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Recipes/Index">Recipes</a>
+                            @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-page="/Recipes/Index">Recipes</a>
+        </li>*@
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Recipes
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/Recipes/Search?Tags=breakfast">Breakfast & Brunch</a>
+                                    <a class="dropdown-item" href="/Recipes/Search?Tags=lunch">Lunch</a>
+                                    <a class="dropdown-item" href="/Recipes/Search?Tags=healthy">Healthy</a>
+                                    <a class="dropdown-item" href="/Recipes/Search?Tags=appetizers">Appetizers & Snacks</a>
+                                    <a class="dropdown-item" href="/Recipes/Search?Tags=salad">Salads</a>
+                                    <a class="dropdown-item" href="/Recipes/Search?Tags=soup">Soups</a>
+                                    <a class="dropdown-item" href="/Recipes/Search?tags=bread">Bread</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item view-all" href="/Recipes/Index">View All</a>
+                                </div>
                             </li>
+
 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Recipes/Create">Submit Recipe</a>
