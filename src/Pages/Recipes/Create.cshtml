@@ -113,6 +113,34 @@
             }
 
         });
+
+        // Function prepared to listen to on-click events of the "+" button under the ingredients
+        // form group and add new ingredients text areas for users to enter in their information
+        const addIngrBtn = document.getElementById("addBtnIngr");
+        addIngrBtn.addEventListener("click", function () {
+
+            const btnIngrContainer = "btnIngrContainer";
+
+            // Retrieve the previous input box to grab its array index
+            var ingrs = document.querySelectorAll('[id ^= "ingr"]');
+            var count = ingrs.length;
+
+            // Create new input element with same attributes as previous, but incremented index
+            var nextTextInput = document.createElement("input");
+            var nameAttr = "Recipe.Ingredients[" + count + "]";
+            var idAttr = "ingr" + count;
+            nextTextInput.setAttribute("id", idAttr);
+            nextTextInput.setAttribute("class", classType);
+            nextTextInput.setAttribute("required", "");
+            nextTextInput.setAttribute("type", textType);
+            nextTextInput.setAttribute("name", nameAttr);
+
+            // Insert the new element before the button div in the form group
+            const parentDiv = document.getElementById(btnIngrContainer).parentNode;
+            const btnDiv = document.getElementById(btnIngrContainer);
+            parentDiv.insertBefore(nextTextInput, btnDiv);
+        });
+
     </script>
 
     @{
