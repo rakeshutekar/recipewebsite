@@ -1,10 +1,20 @@
 ﻿@page "{query?}"
 @model ContosoCrafts.WebSite.Pages.Recipes.SearchModel
 
-@{ViewData["Title"] = "Search results page";
+@{
+    if (!string.IsNullOrEmpty(Model.Query))
+    {
+        ViewData["Title"] = $"Search Results for \"{Model.Query}\"";
+    }
+    else if (Model.Tags != null && Model.Tags.Any())
+    {
+        ViewData["Title"] = $"{string.Join(", ", Model.Tags)} Recipes";
+
+    }
 }
 
-<h1>Search Results</h1>
+<h1>@ViewData["Title"]</h1>
+
 <!-- Keep the Card Style as Index page -->
 @if (Model.SearchResults != null && Model.SearchResults.Any())
 {
