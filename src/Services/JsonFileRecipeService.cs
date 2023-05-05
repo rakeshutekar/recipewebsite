@@ -129,6 +129,7 @@ namespace ContosoCrafts.WebSite.Services
             recipeToUpdate.Description = recipe.Description.Trim();
             recipeToUpdate.Ingredients = recipe.Ingredients;
             recipeToUpdate.Instructions = recipe.Instructions;
+            recipeToUpdate.Tags = recipe.Tags;
 
             // Save the updated list of recipes to the JSON file
             SaveRecipes(recipes);
