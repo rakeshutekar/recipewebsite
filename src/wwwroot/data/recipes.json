@@ -34,7 +34,7 @@
     ],
     "PublishDate": "",
     "EditDate": "",
-    "Tags": [],
+    "Tags": ["breakfast", "healthy", "prawn", "omelette", "brunch"],
     "Img": "https://img.delicious.com.au/TzM-Ms96/w759-h506-cfill/del/2019/10/super-greens-keto-omelette-with-prawn-and-avocado-116259-3.jpg"
   },
   {
@@ -71,7 +71,7 @@
     ],
     "PublishDate": " ",
     "EditDate": "",
-    "Tags": [],
+    "Tags": ["lunch", "japanese", "rice", "curry", "fried"],
     "Img": "https://www.foodandwine.com/thmb/hicXzmGIIpkwyX3Q55IYiupQjMo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Katsu-Curry-Japanese-Curry-with-Tonkatsu-Nuggets-and-Fried-Egg-FT-RECIPE0922-2000-bd3fa359de3544448906652f53f53bb3.jpg"
   },
   {
@@ -106,7 +106,7 @@
     ],
     "PublishDate": " ",
     "EditDate": "",
-    "Tags": [ "Spice Mix", "Pickled Onions", "Beef Mince", "Taco", "Mexico" ],
+    "Tags": [ "Spice Mix", "Pickled Onions", "Beef Mince", "Taco", "Mexico", "appetizers" ],
     "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Next-level-tacos-e163429.jpg?quality=90&webp=true&resize=600,545"
   },
   {
@@ -147,7 +147,7 @@
     ],
     "PublishDate": " ",
     "EditDate": "",
-    "Tags": [],
+    "Tags": ["korean", "rice", "mixed vegetables", "lunch"],
     "Img": "https://www.thespruceeats.com/thmb/r2bG-lIQYgLYecbnwOW36hiLuk8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-korean-bibimbap-recipe-2118765-hero-01-091c0e0f8c20426d8f70747955efa61d.jpg"
   },
   {
@@ -166,7 +166,7 @@
     "Ingredients": [ "Bread", "Freshly salad vegetables", "Cheese", "Mayonnasie", "Fresh herbs", "Lemon juice", "Salt and pepper" ],
     "PublishDate": " ",
     "EditDate": "",
-    "Tags": [],
+    "Tags": ["sandwich", "breakfast", "brunch", "bread", "easy", "quick", "healthy"],
     "Img": "https://simply-delicious-food.com/wp-content/uploads/2020/07/Easy-salad-sandwiches-with-herb-mayo-1.jpg"
   },
   {
@@ -202,7 +202,7 @@
     ],
     "PublishDate": " ",
     "EditDate": " ",
-    "Tags": [],
+    "Tags": ["appetizers", "easy", "quick", "vietnamese", "rice noodles"],
     "Img": "https://delightfulplate.com/wp-content/uploads/2020/07/Traditional-Vietnamese-Fresh-Spring-Rolls-Goi-cuon-tom-thit.jpg"
   },
   {
@@ -242,7 +242,7 @@
     ],
     "PublishDate": " ",
     "EditDate": " ",
-    "Tags": [],
+    "Tags": ["chinese", "soup", "spicy", "mixed", "hot"],
     "Img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/03/18/0/FNK_HOT_POT_AT_HOME_OPENER_H_f_s4x3.jpg.rend.hgtvcom.826.620.suffix/1616107469470.jpeg"
   },
   {
@@ -271,7 +271,7 @@
     ],
     "PublishDate": " ",
     "EditDate": "",
-    "Tags": [],
+    "Tags": ["healthy", "salad", "breakfast", "brunch", "green", "appetizers"],
     "Img": "https://chatelaine.com/wp-content/uploads/2018/06/Thai-basil-and-cilantro-salad-800x800.jpg"
   },
   {
@@ -300,7 +300,7 @@
     ],
     "PublishDate": "15-07-2019",
     "EditDate": "15-07-2019",
-    "Tags": [ "Vegan", "Acai", "Smoothie", "Granola", "Fresh", "Fruit" ],
+    "Tags": [ "Vegan", "Acai", "Smoothie", "Granola", "Fresh", "Fruit", "healthy", "breakfast" ],
     "Img": "https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-7.jpg"
   },
   {
@@ -319,7 +319,7 @@
     "Ingredients": [ "Bread of choice", "1 tsp of butter" ],
     "PublishDate": "08-07-2022",
     "EditDate": "25-07-2022",
-    "Tags": [],
+    "Tags": ["bread", "breakfast", "brunch", "quick", "easy"],
     "Img": "https://www.optimistdaily.com/wp-content/uploads/shutterstock_774365320-e1614177159300.jpg"
   },
   {
@@ -349,7 +349,7 @@
     ],
     "PublishDate": "19-05-2022",
     "EditDate": "19-05-2022",
-    "Tags": [],
+    "Tags": ["curry", "rice", "lunch"],
     "Img": "https://cookingformysoul.com/wp-content/uploads/2022/03/curry-fried-rice-feat-min.jpg"
   },
   {
@@ -396,7 +396,7 @@
     ],
     "PublishDate": " ",
     "EditDate": "",
-    "Tags": [],
+    "Tags": ["chinese", "noodles", "soup", "lunch"],
     "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/12/Crossing-The-Bridge-Noodles-c951e67.jpg?quality=90&webp=true&resize=600,545"
   },
   {
@@ -415,8 +415,6 @@
       "Roast until the tomatoes are tender and golden in places, 20 to 30 minutes.",
       "Once cool, refrigerate the tomatoes in an airtight container for up to 4 days. Reheat in a 400 F oven for about 10 minutes.",
       "To freeze, place the cooled tomatoes in a single layer on a plastic-lined sheet pan, Freeze until solid. Remove from the pan and store in a zip-top freezer bag or container, and use within six months."
-
-
     ],
     "Ingredients": [
       "1 tablespoon olive oil",
@@ -428,7 +426,7 @@
     ],
     "PublishDate": "23-04-2022",
     "EditDate": "23-04-2022",
-    "Tags": [ "Khaki", "Red", "Puce", "Fuscia" ],
+    "Tags": [ "Khaki", "Red", "Puce", "Fuscia", "healthy", "easy", "snacks", "appetizers" ],
     "Img": "https://i.imgur.com/UAAnqx7.jpg"
   },
   {
@@ -452,7 +450,7 @@
     ],
     "PublishDate": "12-06-2022",
     "EditDate": "13-06-2022",
-    "Tags": [],
+    "Tags": ["breakfast", "easy", "quick", "healthy"],
     "Img": "https://i.imgur.com/BXxveSO.jpg"
   },
   {
@@ -478,7 +476,7 @@
     ],
     "PublishDate": "24-11-2022",
     "EditDate": "24-11-2022",
-    "Tags": [ "Yellow", "Orange" ],
+    "Tags": [ "Yellow", "Orange", "green", "healthy", "lunch" ],
     "Img": "https://www.tastingtable.com/img/gallery/lemon-garlic-green-beans-recipe/l-intro-1648589949.jpg"
   }
 ]
