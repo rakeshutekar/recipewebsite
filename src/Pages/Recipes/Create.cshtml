@@ -103,7 +103,6 @@
             const deleteBtn = "deleteBtnInstr";
             var instrs = document.querySelectorAll('[id ^= "instr"]');
             var count = instrs.length;
-            console.log(count);
 
             // Only allow deletion of the text input areas when count > 1
             if (count > 1) {
@@ -139,6 +138,23 @@
             const parentDiv = document.getElementById(btnIngrContainer).parentNode;
             const btnDiv = document.getElementById(btnIngrContainer);
             parentDiv.insertBefore(nextTextInput, btnDiv);
+        });
+
+        // Function prepared to listen to on-click events of the "-" button under the ingredients
+        // form group and remove ingredients text areas 
+        const deleteIngrBtn = document.getElementById("deleteBtnIngr");
+        deleteIngrBtn.addEventListener("click", function () {
+
+            const deleteBtn = "deleteBtnIngr";
+            var instrs = document.querySelectorAll('[id ^= "ingr"]');
+            var count = instrs.length;
+
+            // Only allow deletion of the text input areas when count > 1
+            if (count > 1) {
+                var elemId = "ingr" + (count - 1);
+                var elemToRemove = document.getElementById(elemId);
+                elemToRemove.remove();
+            }
         });
 
     </script>
