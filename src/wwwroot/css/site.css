@@ -179,3 +179,9 @@ ul {
 
 /* Clear div for vertical margins*/
 .clear{clear: both; height: 500px}
+
+/*Change the color and font weight for View All under Recipes*/
+.view-all {
+    color: black; 
+    font-weight: bold;
+}
