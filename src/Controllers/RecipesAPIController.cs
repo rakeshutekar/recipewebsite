@@ -37,34 +37,5 @@ namespace ContosoCrafts.WebSite.Controllers
             return RecipeService.GetRecipes();
         }
 
-        /// <summary>
-        /// Search function implementation (case insensitive)
-        /// </summary>
-        /// <param name="query"></param>
-        /// <returns></returns>
-        [HttpGet]
-        [Route("Search")]
-        public IActionResult Search(string query)
-        {
-            if (string.IsNullOrEmpty(query))
-            {
-                return BadRequest("Please provide a search term.");
-            }
-
-            var recipes = RecipeService.GetRecipes();
-
-            var results = recipes.Where(r => r.Title.ToLower().Contains(query.ToLower()) ||
-                                r.Description.ToLower().Contains(query.ToLower()) ||
-                                r.Ingredients.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
-                                r.Instructions.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)) ||
-                                r.Tags.Any(i => i.Contains(query, StringComparison.OrdinalIgnoreCase)));
-
-            if (!results.Any())
-            {
-                return NotFound($"No recipes found for query '{query}'.");
-            }
-
-            return RedirectToPage("/Recipes/Search", new { recipes = results });
-        }
     }
 }
