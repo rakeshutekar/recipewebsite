@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -133,6 +134,57 @@ namespace ContosoCrafts.WebSite.Services
             SaveRecipes(recipes);
 
             return recipeToUpdate;
+        }
+
+        /// <summary>
+        /// Search function for search bar
+        /// searches for recipes based on a given query by matching the search terms
+        /// with recipe titles, descriptions, tags, ingredients, and instructions,
+        /// and ranks the results based on the weights assigned to each search category.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        public IEnumerable<RecipeModel> SearchRecipes(string query)
+        {
+            // Modify the query
+            query = query?.Replace("+", " ");
+            char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';', '+'};
+            var searchTerm = query.Trim(Mychar).ToLower().Split(' ');
+            var recipes = GetRecipes();
+
+            // Assign weight to each property
+            var titleWeight = 3;
+            var tagsWeight = 3;
+            var descriptionWeight = 2;
+            var ingredientsWeight = 1;
+            var instructionsWeight = 1;
+
+            // Get the filtered recipes in descending order by relevance 
+            var filteredRecipes = recipes.Where(r => searchTerm.All( s =>
+                                              r.Title.ToLower().Contains(s) ||
+                                              r.Description.ToLower().Contains(s) ||
+                                              r.Ingredients.All(i => i.ToLower().Contains(s) ||
+                                              r.Instructions.All(i => i.ToLower().Contains(s)) ||
+                                              r.Tags.Any(i => i.ToLower().Contains(s)))))
+                                         .OrderByDescending(r => titleWeight * searchTerm.Count(s => r.Title.ToLower().Contains(s)) +
+                                              descriptionWeight * searchTerm.Count(s => r.Description.ToLower().Contains(s)) +
+                                              tagsWeight * searchTerm.Count(s => r.Tags.Any(t => t.ToLower().Contains(s))) +
+                                              ingredientsWeight * searchTerm.Count(s => r.Ingredients.All(i => i.ToLower().Contains(s))) +
+                                              instructionsWeight * searchTerm.Count(s => r.Instructions.All(i => i.ToLower().Contains(s))));
+
+            return filteredRecipes;
+        }
+
+        /// <summary>
+        /// Filter recipes by keywords in tags
+        /// Used for individual filtered page under Recipes in navbar
+        /// </summary>
+        /// <param name="tags"></param>
+        /// <returns></returns>
+        public IEnumerable<RecipeModel> FilterRecipesByTags(IEnumerable<string> tags)
+        {
+            var recipes = GetRecipes();
+            return recipes.Where(r => r.Tags.Any(t => tags.Contains(t, StringComparer.OrdinalIgnoreCase)));
         }
 
         /// <summary>
