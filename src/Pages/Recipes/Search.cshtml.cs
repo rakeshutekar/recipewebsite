@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using ContosoCrafts.WebSite.Services;
 using ContosoCrafts.WebSite.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections;
 
 namespace ContosoCrafts.WebSite.Pages.Recipes
 {
@@ -14,55 +16,65 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
     {
         private readonly JsonFileRecipeService RecipeService;
 
+        /// <summary>
+        /// Constructor that injects the recipe service
+        /// </summary>
+        /// <param name="recipeService"></param>
         public SearchModel (JsonFileRecipeService recipeService)
         {
             RecipeService = recipeService;
         }
 
+        // Bind the search results to a property so that it can be used
+        // in the OnGet() and OnPost() methods
         [BindProperty]
         public IEnumerable<RecipeModel> SearchResults { get; set; }
 
+        // Bind the search query to a property so that it can be used
+        // in the OnGet() and OnPost() methods
+        [BindProperty(SupportsGet = true)]
+        public string Query { get; set; }
 
-        public void OnGet(string query)
+        // Bind the selected tags to a property so that they can be used
+        // in the OnGet() and OnPost() methods
+        [BindProperty(SupportsGet = true)]
+        public string[] Tags { get; set; }
+
+        /// <summary>
+        /// Called when the page is loaded with a GET request
+        /// </summary>
+        public void OnGet()
         {
-            // Check if query is not null and replaces any plus sign with a space.
-            query = query?.Replace("+", " ");   
-
-            var recipes = RecipeService.GetRecipes();
-            char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';' };
-            if (!string.IsNullOrEmpty(query))
+            // If tags were selected, filter the recipes by those tags
+            if (Tags != null && Tags.Length > 0)
             {
-                // Case-insensitive & ignore space
-                SearchResults = recipes.Where(r => r.Title.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
-                                r.Description.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
-                                r.Ingredients.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
-                                r.Instructions.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
-                                r.Tags.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)));
-
+                SearchResults = RecipeService.FilterRecipesByTags(Tags);
+            }
+            // If a search query was entered, search for recipes that
+            // match that query
+            else if (!string.IsNullOrEmpty(Query))
+            {
+                SearchResults = RecipeService.SearchRecipes(Query);
             }
         }
 
-        public IActionResult OnPost(string query)
+        /// <summary>
+        /// Called when the search form is submitted with a POST request
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult OnPost()
         {
-            query = query?.Replace("+", " ");
-
-            if (string.IsNullOrEmpty(query))
+            if (Tags != null && Tags.Length > 0)
             {
-                return Page();
+                SearchResults = RecipeService.FilterRecipesByTags(Tags);
+            }
+            else if (!string.IsNullOrEmpty(Query))
+            {
+                SearchResults = RecipeService.SearchRecipes(Query);
             }
 
-            var recipes = RecipeService.GetRecipes();
-            char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';' };
-            var results = recipes.Where(r => r.Title.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
-                                r.Description.ToLower().Contains(query.Trim(Mychar).ToLower()) ||
-                                r.Ingredients.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
-                                r.Instructions.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)) ||
-                                r.Tags.Any(i => i.Contains(query.Trim(Mychar), StringComparison.OrdinalIgnoreCase)));
-
-            SearchResults = results;
-
+            // Return the page with the search results
             return Page();
         }
-
     }
 }
