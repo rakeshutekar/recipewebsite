@@ -31,9 +31,17 @@
         <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
         <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
     </div>
-    <div class="form-group" id="ingredients">
+    <div class="form-group">
         <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
-        <textarea asp-for="@Model.Recipe.Ingredients" class="form-control" required></textarea>
+        <div style="max-height: 400px; overflow-y: auto;">
+            <input id="ingr0" asp-for="@Model.Recipe.Ingredients[0]" class="form-control" required>
+            <div id="btnIngrContainer" class="container-fluid">
+                <div class="row justify-content-center">
+                    <input id="addBtnIngr" class="btn btn-sm btn-success my-1" type="button" value="+ Add Ingredient">
+                    <input id="deleteBtnIngr" class="btn btn-sm btn-danger my-1" type="button" value="- Remove Ingredient">
+                </div>
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
@@ -41,8 +49,8 @@
             <input id="instr0" asp-for="@Model.Recipe.Instructions[0]" class="form-control" required>
             <div id="btnInstrContainer" class="container-fluid">
                 <div class="row justify-content-center">
-                    <input id="addBtnInstr" class="btn btn-success my-1" type="button" value="+ Add Instruction">
-                    <input id="deleteBtnInstr" class="btn btn-danger my-1" type="button" value="- Remove Instruction">
+                    <input id="addBtnInstr" class="btn btn-sm btn-success my-1" type="button" value="+ Add Instruction">
+                    <input id="deleteBtnInstr" class="btn btn-sm btn-danger my-1" type="button" value="- Remove Instruction">
                 </div>
             </div>
         </div>
@@ -53,12 +61,18 @@
 
 @section Scripts {
     <script>
+        // Reference for grabbing count of querySelectorAll result
+        // https://stackoverflow.com/questions/6991494/javascript-getelementbyid-based-on-a-partial-string
+
+        // Variables used across all input forms
+        const textType = "text";
+        const classType = "form-control";
+
         // Function prepared to listen to on-click events of the "+" button under the instructions
         // form group and add new instruction text areas for users to enter in their information
         const addInstrBtn = document.getElementById("addBtnInstr");
         addInstrBtn.addEventListener("click", function () {
 
-            const textType = "text";
             const btnInstrContainer = "btnInstrContainer";
 
             // Retrieve the previous input box to grab its array index
@@ -70,7 +84,7 @@
             var nameAttr = "Recipe.Instructions[" + count + "]";
             var idAttr = "instr" + count;
             nextTextInput.setAttribute("id", idAttr);
-            nextTextInput.setAttribute("class", "form-control");
+            nextTextInput.setAttribute("class", classType);
             nextTextInput.setAttribute("required", "");
             nextTextInput.setAttribute("type", textType);
             nextTextInput.setAttribute("name", nameAttr);
