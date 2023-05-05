@@ -39,16 +39,69 @@
         <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
         <div style="max-height: 400px; overflow-y: auto;">
             <input id="instr0" asp-for="@Model.Recipe.Instructions[0]" class="form-control" required>
-            <div id ="btnInstrContainer" class="container-fluid">
+            <div id="btnInstrContainer" class="container-fluid">
                 <div class="row justify-content-center">
                     <input id="addBtnInstr" class="btn btn-success my-1" type="button" value="+ Add Instruction">
                     <input id="deleteBtnInstr" class="btn btn-danger my-1" type="button" value="- Remove Instruction">
                 </div>
-            </div>  
-        </div>   
+            </div>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 
+@section Scripts {
+    <script>
+        // Function prepared to listen to on-click events of the "+" button under the instructions
+        // form group and add new instruction text areas for users to enter in their information
+        const addInstrBtn = document.getElementById("addBtnInstr");
+        addInstrBtn.addEventListener("click", function () {
 
+            const textType = "text";
+            const btnInstrContainer = "btnInstrContainer";
+
+            // Retrieve the previous input box to grab its array index
+            var instrs = document.querySelectorAll('[id ^= "instr"]');
+            var count = instrs.length;
+
+            // Create new input element with same attributes as previous, but incremented index
+            var nextTextInput = document.createElement("input");
+            var nameAttr = "Recipe.Instructions[" + count + "]";
+            var idAttr = "instr" + count;
+            nextTextInput.setAttribute("id", idAttr);
+            nextTextInput.setAttribute("class", "form-control");
+            nextTextInput.setAttribute("required", "");
+            nextTextInput.setAttribute("type", textType);
+            nextTextInput.setAttribute("name", nameAttr);
+
+            // Insert the new element before the button div in the form group
+            const parentDiv = document.getElementById(btnInstrContainer).parentNode;
+            const btnDiv = document.getElementById(btnInstrContainer);
+            parentDiv.insertBefore(nextTextInput, btnDiv);
+        });
+
+        // Function prepared to listen to on-click events of the "+" button under the instructions
+        // form group and add new instruction text areas for users to enter in their information
+        const deleteInstrBtn = document.getElementById("deleteBtnInstr");
+        deleteInstrBtn.addEventListener("click", function () {
+
+            const deleteBtn = "deleteBtnInstr";
+            var instrs = document.querySelectorAll('[id ^= "instr"]');
+            var count = instrs.length;
+            console.log(count);
+
+            // Only allow deletion of the text input areas when count > 1
+            if (count > 1) {
+                var elemId = "instr" + (count - 1);
+                var elemToRemove = document.getElementById(elemId);
+                elemToRemove.remove();
+            }
+
+        });
+    </script>
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
