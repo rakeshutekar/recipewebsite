@@ -35,15 +35,14 @@
             <div style="max-height: 200px; overflow-y: auto;">
                 @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
                 {
-
-                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" />
+                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" id="tag-@(i+1)" />
                     <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
                 }
             </div>
-            <div id="btnIngrContainer" class="container-fluid">
+            <div id="btnTagsContainer" class="container-fluid">
                 <div class="row justify-content-left">
-                    <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
-                    <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Tag">
+                    <input id="addBtnTags" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
+                    <input id="deleteBtnTags" class="btn btn-outline-danger btn-sm" type="button" value="- Tag">
                 </div>
             </div>
         </div>
@@ -77,10 +76,10 @@
                     <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
                 }
             </div>
-            <div id="btnIngrContainer" class="container-fluid">
+            <div id="btnInstrContainer" class="container-fluid">
                 <div class="row justify-content-left">
-                    <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Instruction">
-                    <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Instruction">
+                    <input id="addBtnInstr" class="btn btn-outline-success btn-sm" type="button" value="+ Instruction">
+                    <input id="deleteBtnInstr" class="btn btn-outline-danger btn-sm" type="button" value="- Instruction">
                 </div>
             </div>
         </div>
@@ -91,7 +90,6 @@
 
 @section Scripts {
     <script>
-
         // Update Confirmation
         function confirmUpdate()
         {
@@ -100,13 +98,105 @@
                     document.getElementById("update-form").submit();
                 }
         }
-
-
-
-
     </script>
 
-    
+    <script>
+        // For Tags creation form group
+        var tagCount = @Model.Recipe.Tags.Length;
+        var tagContainer = $('#btnTagsContainer');
+        var tagAddButton = $('#addBtnTags');
+        var tagDeleteButton = $('#deleteBtnTags');
+
+        // Add button to add tags
+        tagAddButton.click(function () {
+            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']');
+            tagContainer.before(input);
+            tagCount++;
+        });
+
+        // Delete button to delete tags
+        tagDeleteButton.click(function () {
+            var tagName = prompt("Enter the name of the tag you want to delete:");
+            if (tagName) {
+                var tagInputs = $('input[name^="Recipe.Tags"]');
+                var tagDeleted = false;
+                // Keep track of whether the specified tag was deleted
+                tagInputs.each(function (index) {
+                    var tagInput = $(this);
+                    if (tagInput.val() === tagName) {
+                        tagInput.remove();
+                        tagDeleted = true;
+                        tagCount--;
+                        for (var i = index + 1; i < tagInputs.length; i++) {
+                            var input = tagInputs.eq(i);
+                            var newName = 'Recipe.Tags[' + (i - 1) + ']';
+                            input.attr('name', newName);
+                        }
+                        return false; // break out of each loop
+                    }
+                });
+            
+                if (tagDeleted) {
+                    var newTagArray = [];
+                    tagInputs.each(function () {
+                        var tagInput = $(this);
+                        var tagValue = tagInput.val();
+                        if (tagValue) {
+                            newTagArray.push(tagValue);
+                        }
+                    });
+                    $('#Tags').val(newTagArray.join(','));
+                } else {
+                    alert('Tag not found.');
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // For Ingredients creation form group
+        var ingrCount = @Model.Recipe.Ingredients.Length;
+        var ingrContainer = $('#btnIngrContainer');
+        var ingrAddButton = $('#addBtnIngr');
+        var ingrDeleteButton = $('#deleteBtnIngr');
+
+        // Add button to add ingredients
+        ingrAddButton.click(function () {
+            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Ingredients[' + ingrCount + ']');
+            ingrContainer.before(input);
+            ingrCount++;
+        });
+
+        // Delete button to delete ingredients
+        ingrDeleteButton.click(function () {
+
+
+
+        });
+    </script>
+
+    <script>
+        // For Instructions creation form group
+        var instrCount = @Model.Recipe.Instructions.Length;
+        var instrContainer = $('#btnInstrContainer');
+        var instrAddButton = $('#addBtnInstr');
+        var instrDeleteButton = $('#deleteBtnInstr');
+
+        // Add button to add instructions
+        instrAddButton.click(function () {
+            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Instructions[' + instrCount + ']');
+            instrContainer.before(input);
+            instrCount++;
+        });
+
+        // Delete button to delete instructions
+        instrDeleteButton.click(function () {
+
+
+
+
+        });
+    </script>
 
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
