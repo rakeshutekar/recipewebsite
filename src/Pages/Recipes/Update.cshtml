@@ -109,9 +109,15 @@
 
         // Add button to add tags
         tagAddButton.click(function () {
-            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']');
-            tagContainer.before(input);
-            tagCount++;
+            var tagName = prompt("Enter the name of the tag you want to add:");
+            if (tagName) {
+                var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').val(tagName);
+                tagContainer.before(input);
+                tagCount++;
+            } else {
+                // Display a message to the user that the tag name is required
+                alert('Tag name cannot be null.');
+            }
         });
 
         // Delete button to delete tags
@@ -202,4 +208,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-
