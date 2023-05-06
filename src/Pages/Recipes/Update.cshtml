@@ -29,6 +29,26 @@
             <span asp-validation-for="@Model.Recipe.Image" class="text-danger"></span>
         </div>
 
+        <!-- Tags creation form group -->
+        <div class="form-group">
+            <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
+            <div style="max-height: 200px; overflow-y: auto;">
+                @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
+                {
+
+                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" />
+                    <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
+                }
+            </div>
+            <div id="btnIngrContainer" class="container-fluid">
+                <div class="row justify-content-left">
+                    <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Add Tag">
+                    <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Remove Tag">
+                </div>
+            </div>
+        </div>
+
+        <!-- Ingredients creation form group -->
         <div class="form-group">
             <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
             <div style="max-height: 200px; overflow-y: auto;">
@@ -38,8 +58,15 @@
                     <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
                 }
             </div>
+            <div id="btnIngrContainer" class="container-fluid">
+                <div class="row justify-content-left">
+                    <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Add Ingredient">
+                    <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Remove Ingredient">
+                </div>
+            </div>
         </div>
 
+        <!-- Instructions creation form group -->
         <div class="form-group">
             <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
             <div style="max-height: 200px; overflow-y: auto;">
@@ -50,6 +77,12 @@
                     <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
                 }
             </div>
+            <div id="btnIngrContainer" class="container-fluid">
+                <div class="row justify-content-left">
+                    <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Add Instruction">
+                    <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Remove Instruction">
+                </div>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to update this recipe?')">Update</button>
@@ -58,13 +91,22 @@
 
 @section Scripts {
     <script>
-        function confirmUpdate() {
+
+        // Update Confirmation
+        function confirmUpdate()
+        {
             var result = confirm("Are you sure you want to update this recipe?");
                 if (result) {
                     document.getElementById("update-form").submit();
                 }
         }
+
+
+
+
     </script>
+
+    
 
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
