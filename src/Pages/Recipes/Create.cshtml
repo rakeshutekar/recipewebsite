@@ -34,29 +34,37 @@
     <div class="form-group">
         <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
         <div style="max-height: 400px; overflow-y: auto;">
-            <input id="ingr0" asp-for="@Model.Recipe.Ingredients[0]" class="form-control" required>
+            <input id="ingr0" asp-for="@Model.Recipe.Ingredients[0]" class="form-control" required placeholder="Ingredient #1">
             <div id="btnIngrContainer" class="container-fluid">
                 <div class="row justify-content-center">
-                    <input id="addBtnIngr" class="btn btn-sm btn-success my-1" type="button" value="+ Add Ingredient">
-                    <input id="deleteBtnIngr" class="btn btn-sm btn-danger my-1" type="button" value="- Remove Ingredient">
+                    <input id="addBtnIngr" class="btn btn-sm btn-outline-success my-1" type="button" value="+ Add Ingredient">
+                    <input id="deleteBtnIngr" class="btn btn-sm btn-outline-danger my-1" type="button" value="- Remove Ingredient">
                 </div>
             </div>
         </div>
     </div>
     <div class="form-group">
         <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
-        <div style="max-height: 400px; overflow-y: auto;">
-            <input id="instr0" asp-for="@Model.Recipe.Instructions[0]" class="form-control" required>
-            <div id="btnInstrContainer" class="container-fluid">
-                <div class="row justify-content-center">
-                    <input id="addBtnInstr" class="btn btn-sm btn-success my-1" type="button" value="+ Add Instruction">
-                    <input id="deleteBtnInstr" class="btn btn-sm btn-danger my-1" type="button" value="- Remove Instruction">
-                </div>
+        <div style="max-height: 400px; overflow-y: auto;" id="wrapperInstr">
+            <div class="input-group inputGrpInstr">
+                <input id="instr0" asp-for="@Model.Recipe.Instructions[0]" class="form-control" required placeholder="Step #1">
+            </div>
+        </div>
+        <div id="btnInstrContainer" class="container-fluid">
+            <div class="row justify-content-center">
+                <input id="addBtnInstr" class="btn btn-sm btn-outline-success my-1" type="button" value="+ Add Instruction">
             </div>
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<div class="input-group">
+    <input id="ingr0" asp-for="@Model.Recipe.Ingredients[0]" class="form-control" required placeholder="Ingredient #1">
+    <div class="input-group-append">
+        <button class="btn btn-sm btn-outline-danger" type="button">Remove</button>
+    </div>
+</div>
 
 
 @section Scripts {
@@ -67,50 +75,64 @@
         // Variables used across all input forms
         const textType = "text";
         const classType = "form-control";
+        const inptGrp = "input-group";
 
         // Function prepared to listen to on-click events of the "+" button under the instructions
         // form group and add new instruction text areas for users to enter in their information
-        const addInstrBtn = document.getElementById("addBtnInstr");
-        addInstrBtn.addEventListener("click", function () {
-
-            const btnInstrContainer = "btnInstrContainer";
-
-            // Retrieve the previous input box to grab its array index
-            var instrs = document.querySelectorAll('[id ^= "instr"]');
+        $("#addBtnInstr").click(function () {
+            var instrs = $('[id ^= "instr"]');
             var count = instrs.length;
 
-            // Create new input element with same attributes as previous, but incremented index
-            var nextTextInput = document.createElement("input");
+            // prepare html grouping to insert
+            var nextInput = document.createElement("input");
             var nameAttr = "Recipe.Instructions[" + count + "]";
             var idAttr = "instr" + count;
-            nextTextInput.setAttribute("id", idAttr);
-            nextTextInput.setAttribute("class", classType);
-            nextTextInput.setAttribute("required", "");
-            nextTextInput.setAttribute("type", textType);
-            nextTextInput.setAttribute("name", nameAttr);
+            var placeholderAttr = "Step #" + (count + 1);
+            nextInput.setAttribute("id", idAttr);
+            nextInput.setAttribute("class", classType);
+            nextInput.setAttribute("required", "");
+            nextInput.setAttribute("type", textType);
+            nextInput.setAttribute("name", nameAttr);
+            nextInput.setAttribute("placeholder", placeholderAttr);
 
-            // Insert the new element before the button div in the form group
-            const parentDiv = document.getElementById(btnInstrContainer).parentNode;
-            const btnDiv = document.getElementById(btnInstrContainer);
-            parentDiv.insertBefore(nextTextInput, btnDiv);
+
+            var rmvBtn = $("<button></button>");
+            var rmvBtnClass = "btnRmv";
+            rmvBtn.attr("class", "btn btn-sm btn-outline-danger").attr("type", "button").addClass(rmvBtnClass);
+            rmvBtn.html("Remove");
+
+            // set input group innerHTML value to the button created
+            var grpAppend = $("<div></div>");
+            grpAppend.attr("class", "input-group-append");
+            grpAppend.append(rmvBtn);
+
+            var inputDiv = $("<div></div>");
+            var grpClass = "inputGrpInstr";
+            inputDiv.addClass(grpClass).addClass(inptGrp);
+            inputDiv.append(nextInput);
+            inputDiv.append(grpAppend);
+
+            // Insert inside the wrapper
+            $("#wrapperInstr").append(inputDiv);
+
         });
 
-        // Function prepared to listen to on-click events of the "+" button under the instructions
-        // form group and add new instruction text areas for users to enter in their information
-        const deleteInstrBtn = document.getElementById("deleteBtnInstr");
-        deleteInstrBtn.addEventListener("click", function () {
+        // Delete the specific row of using the text area's delete button
+        $("#wrapperInstr").on("click", ".btnRmv", function (e) {
+            e.preventDefault();
+            $(this).parent("div").parent("div").remove();
 
-            const deleteBtn = "deleteBtnInstr";
-            var instrs = document.querySelectorAll('[id ^= "instr"]');
-            var count = instrs.length;
+            // Get the count of the number of rows and re-id them
+            var instrs = $(".inputGrpInstr");
+            var instrCount = instrs.length;
+            var counter = 0;
 
-            // Only allow deletion of the text input areas when count > 1
-            if (count > 1) {
-                var elemId = "instr" + (count - 1);
-                var elemToRemove = document.getElementById(elemId);
-                elemToRemove.remove();
-            }
-
+            // Loop over jquery object set and update the proper model names
+            instrs.each(function () {
+                var name = "Recipe.Instructions[" + counter + "]";
+                $(this).children("input").attr("name", name);
+                counter++;
+            });
         });
 
         // Function prepared to listen to on-click events of the "+" button under the ingredients
