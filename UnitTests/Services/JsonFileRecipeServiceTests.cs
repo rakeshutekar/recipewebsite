@@ -171,10 +171,10 @@ namespace UnitTests.Services
             var firstData = TestHelper.RecipeService.GetRecipes().First();
 
             // Get the title of the first recipe
-            var title = firstData.Title;
+            var query = firstData.Title;
 
             // Call the SearchRecipes method of TestHelper.RecipeService with the retrieved title as the search query
-            var searchResults = TestHelper.RecipeService.SearchRecipes(title);
+            var searchResults = TestHelper.RecipeService.SearchRecipes(query);
 
             // Verify that the returned search results are not null
             Assert.IsNotNull(searchResults);
@@ -192,6 +192,14 @@ namespace UnitTests.Services
 
             // Verify that the retrieved recipe is in the search results
             Assert.IsTrue(recipeInSearch);
+        }
+
+        [Test]
+        public void JsonFileRecipService_SearchRecipes_Invalid_Query_Should_Return_Empty_Results()
+        {
+            var searchResults = TestHelper.RecipeService.SearchRecipes(null);
+            
+            Assert.IsEmpty(searchResults);
         }
 
         /// <summary>
