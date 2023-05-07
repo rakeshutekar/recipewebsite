@@ -172,6 +172,8 @@ ul {
     background-color: #84a98c;
 }
 
+/* Read page style
+-------------------------------------------------- */
 /*Change the instruction font of the Read page to Nunito*/
 .instruction-font {
     font-family: 'Nunito', sans-serif;
@@ -185,3 +187,16 @@ ul {
     color: black; 
     font-weight: bold;
 }
+
+/* Update page style
+-------------------------------------------------- */
+/*Keep the instruction index in line with instruction*/
+.instr-label {
+    margin-right: 10px;
+}
+
+.instrLabel-container input {
+    width: 97%;
+    display: inline-block;
+}
+
