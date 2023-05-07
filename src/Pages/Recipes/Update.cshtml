@@ -71,9 +71,8 @@
             <div style="max-height: 200px; overflow-y: auto;">
                 @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
                 {
-
-                    <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
-                    <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
+                     <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
+                     <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
                 }
             </div>
             <div id="btnInstrContainer" class="container-fluid">
@@ -87,6 +86,7 @@
         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to update this recipe?')">Update</button>
     </form>
 </div>
+
 
 @section Scripts {
     <script>
@@ -109,51 +109,59 @@
 
         // Add button to add tags
         tagAddButton.click(function () {
-            var tagName = prompt("Enter the name of the tag you want to add:");
-            if (tagName) {
-                var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').val(tagName);
-                tagContainer.before(input);
-                tagCount++;
-            } else {
-                // Display a message to the user that the tag name is required
-                alert('Tag name cannot be null.');
+            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').attr('required', '');
+            if (tagCount > 0) {
+                // Check if the previous tag input field is empty
+                var prevInput = $('input[name="Recipe.Tags[' + (tagCount - 1) + ']"]');
+                if (!prevInput.val()) {
+                    alert('Tag cannot be empty. Please enter a valid tag.');
+                    return; // do not proceed with adding the tag
+                }
             }
+
+            tagContainer.before(input);
+            tagCount++;
         });
 
         // Delete button to delete tags
         tagDeleteButton.click(function () {
             var tagName = prompt("Enter the name of the tag you want to delete:");
             if (tagName) {
+                // Get all the tag input fields
                 var tagInputs = $('input[name^="Recipe.Tags"]');
-                var tagDeleted = false;
-                // Keep track of whether the specified tag was deleted
-                tagInputs.each(function (index) {
-                    var tagInput = $(this);
-                    if (tagInput.val() === tagName) {
-                        tagInput.remove();
-                        tagDeleted = true;
-                        tagCount--;
-                        for (var i = index + 1; i < tagInputs.length; i++) {
-                            var input = tagInputs.eq(i);
-                            var newName = 'Recipe.Tags[' + (i - 1) + ']';
-                            input.attr('name', newName);
-                        }
-                        return false; // break out of each loop
-                    }
-                });
-            
-                if (tagDeleted) {
-                    var newTagArray = [];
-                    tagInputs.each(function () {
+                if (tagInputs.length > 1) {
+                    var tagDeleted = false;
+                    // Keep track of whether the specified tag was deleted
+                    tagInputs.each(function (index) {
                         var tagInput = $(this);
-                        var tagValue = tagInput.val();
-                        if (tagValue) {
-                            newTagArray.push(tagValue);
+                        if (tagInput.val() === tagName || tagInput.val() === "" ){
+                            tagInput.remove();
+                            tagDeleted = true;
+                            tagCount--;
+                            for (var i = index + 1; i < tagInputs.length; i++) {
+                                var input = tagInputs.eq(i);
+                                var newName = 'Recipe.Tags[' + (i - 1) + ']';
+                                input.attr('name', newName);
+                            }
+                            return false; // break out of each loop
                         }
                     });
-                    $('#Tags').val(newTagArray.join(','));
+
+                    if (tagDeleted) {
+                        var newTagArray = [];
+                        tagInputs.each(function () {
+                            var tagInput = $(this);
+                            var tagValue = tagInput.val();
+                            if (tagValue) {
+                                newTagArray.push(tagValue);
+                            }
+                        });
+                        $('#Tags').val(newTagArray.join(','));
+                    } else {
+                        alert('No matching tag is found.');
+                    }
                 } else {
-                    alert('Tag not found.');
+                    alert('At least one tag is required.')
                 }
             }
         });
@@ -168,7 +176,16 @@
 
         // Add button to add ingredients
         ingrAddButton.click(function () {
-            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Ingredients[' + ingrCount + ']');
+            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Ingredients[' + ingrCount + ']').attr('required', '');
+
+            if (ingrCount > 0) {
+                // Check if the previous tag input field is empty
+                var prevInput = $('input[name="Recipe.Ingredients[' + (ingrCount - 1) + ']"]');
+                if (!prevInput.val()) {
+                    alert('Ingredient cannot be empty. Please enter a valid ingredient.');
+                    return; // do not proceed with adding the ingredient
+                }
+            }
             ingrContainer.before(input);
             ingrCount++;
         });
@@ -190,17 +207,61 @@
 
         // Add button to add instructions
         instrAddButton.click(function () {
-            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Instructions[' + instrCount + ']');
+            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Instructions[' + instrCount + ']').attr('required', '');
+
+            if (instrCount > 0) {
+                // Check if the previous tag input field is empty
+                var prevInput = $('input[name="Recipe.Instructions[' + (instrCount - 1) + ']"]');
+                if (!prevInput.val()) {
+                    alert('Instruction cannot be empty. Please enter a valid instruction.');
+                    return; // do not proceed with adding the instruction
+                }
+            }
             instrContainer.before(input);
             instrCount++;
         });
 
         // Delete button to delete instructions
         instrDeleteButton.click(function () {
-
-
-
-
+            var indexToDelete = prompt("Enter the index of the instruction you want to delete:");
+            if (indexToDelete) {
+                indexToDelete = parseInt(indexToDelete);
+                // Get all the instruction input fields
+                var instrInputs = $('input[name^="Recipe.Instructions"]');
+                if (instrInputs.length > 1) {
+                    var instrDeleted = false;
+                    // Keep track of whether the specified instruction was deleted
+                    instrInputs.each(function (index) {
+                        var instrInput = $(this);
+                        if (index === indexToDelete || (index === instrInputs.length - 1 && instrInput.val() === "")) {
+                            instrInput.remove();
+                            instrDeleted = true;
+                            instrCount--;
+                            for (var i = index + 1; i < instrInputs.length; i++) {
+                                var input = instrInputs.eq(i);
+                                var newName = 'Recipe.Instructions[' + (i - 1) + ']';
+                                input.attr('name', newName);
+                            }
+                            return false; // break out of each loop
+                        }
+                    });
+                    if (instrDeleted) {
+                        var newInstrArray = [];
+                        instrInputs.each(function () {
+                            var instrInput = $(this);
+                            var instrValue = instrInput.val();
+                            if (instrValue) {
+                                newInstrArray.push(instrValue);
+                            }
+                        });
+                        $('#Instructions').val(newInstrArray.join('\n'));
+                    } else {
+                        alert('Invalid instruction index.');
+                    }
+                } else {
+                    alert('At least one instruction is required.')
+                }
+            }
         });
     </script>
 
