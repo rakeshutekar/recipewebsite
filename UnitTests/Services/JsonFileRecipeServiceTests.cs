@@ -194,11 +194,17 @@ namespace UnitTests.Services
             Assert.IsTrue(recipeInSearch);
         }
 
+        /// <summary>
+        /// This method tests the behavior of the SearchRecipes method in the JsonFileRecipService class 
+        /// when an invalid query is passed as a parameter. The method should return empty results.
+        /// </summary>
         [Test]
         public void JsonFileRecipService_SearchRecipes_Invalid_Query_Should_Return_Empty_Results()
         {
+            // Call the SearchRecipes method with a null query parameter
             var searchResults = TestHelper.RecipeService.SearchRecipes(null);
-            
+
+            // Assert that the searchResults collection is empty
             Assert.IsEmpty(searchResults);
         }
 
