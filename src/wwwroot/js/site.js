@@ -2,6 +2,12 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+
+
+// ------------------------------------------------------------------------------------------------------
+// CREATE PAGE JAVASCRIPT
+// ------------------------------------------------------------------------------------------------------
+
 // Reference for grabbing count of querySelectorAll result
 // https://stackoverflow.com/questions/6991494/javascript-getelementbyid-based-on-a-partial-string
 
@@ -126,3 +132,66 @@ $("#wrapperIngr").on("click", ".btnRmv", function (e) {
         counter++;
     });
 });
+
+// Function prepared to listen to on-click events of the "+" button under the Tags
+// form group and add new tags text areas for users to enter in their information
+$("#addBtnTags").click(function () {
+    var tags = $('[id ^= "tag"]');
+    var count = tags.length;
+
+    // prepare html grouping to insert
+    var nextInput = document.createElement("input");
+    var nameAttr = "Recipe.Tags[" + count + "]";
+    var idAttr = "tag" + count;
+    var placeholderAttr = "Tag #" + (count + 1);
+    nextInput.setAttribute("id", idAttr);
+    nextInput.setAttribute("class", classType);
+    nextInput.setAttribute("required", "");
+    nextInput.setAttribute("type", textType);
+    nextInput.setAttribute("name", nameAttr);
+    nextInput.setAttribute("placeholder", placeholderAttr);
+
+
+    var rmvBtn = $("<button></button>");
+    var rmvBtnClass = "btnRmv";
+    rmvBtn.attr("class", "btn btn-sm btn-outline-danger").attr("type", "button").addClass(rmvBtnClass);
+    rmvBtn.html("Remove");
+
+    // set input group innerHTML value to the button created
+    var grpAppend = $("<div></div>");
+    grpAppend.attr("class", "input-group-append");
+    grpAppend.append(rmvBtn);
+
+    var inputDiv = $("<div></div>");
+    var grpClass = "inputGrpTags";
+    inputDiv.addClass(grpClass).addClass(inptGrp);
+    inputDiv.append(nextInput);
+    inputDiv.append(grpAppend);
+
+    // Insert inside the wrapper
+    $("#wrapperTags").append(inputDiv);
+
+});
+
+// Delete the specific row of using the text area's delete button
+$("#wrapperTags").on("click", ".btnRmv", function (e) {
+    e.preventDefault();
+    $(this).parent("div").parent("div").remove();
+
+    // Get the count of the number of rows and re-id them
+    var tags = $(".inputGrpTags");
+    var tagsCount = tags.length;
+    var counter = 0;
+
+    // Loop over jquery object set and update the proper model names
+    tags.each(function () {
+        var name = "Recipe.Tags[" + counter + "]";
+        $(this).children("input").attr("name", name);
+        counter++;
+    });
+});
+
+
+// ------------------------------------------------------------------------------------------------------
+// UPDATE PAGE JAVASCRIPT
+// ------------------------------------------------------------------------------------------------------
