@@ -147,8 +147,11 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns></returns>
         public IEnumerable<RecipeModel> SearchRecipes(string query)
         {
+            // If query is null return empty results
+            if (query == null) return Enumerable.Empty<RecipeModel>();
             // Modify the query
-            query = query?.Replace("+", " ");
+            query = query.Replace("+", " ");
+            //query = query?.Replace("+", " ");
             char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';', '+'};
             var searchTerm = query.Trim(Mychar).ToLower().Split(' ');
             var recipes = GetRecipes();
