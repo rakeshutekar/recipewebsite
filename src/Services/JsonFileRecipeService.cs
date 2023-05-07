@@ -164,9 +164,9 @@ namespace ContosoCrafts.WebSite.Services
             var filteredRecipes = recipes.Where(r => searchTerm.All( s =>
                                               r.Title.ToLower().Contains(s) ||
                                               r.Description.ToLower().Contains(s) ||
-                                              r.Ingredients.All(i => i.ToLower().Contains(s) ||
-                                              r.Instructions.All(i => i.ToLower().Contains(s)) ||
-                                              r.Tags.Any(i => i.ToLower().Contains(s)))))
+                                              r.Ingredients.Any(i => i.ToLower().Contains(s)) ||
+                                              r.Instructions.Any(i => i.ToLower().Contains(s)) ||
+                                              r.Tags.Any(i => i.ToLower().Contains(s))))
                                          .OrderByDescending(r => titleWeight * searchTerm.Count(s => r.Title.ToLower().Contains(s)) +
                                               descriptionWeight * searchTerm.Count(s => r.Description.ToLower().Contains(s)) +
                                               tagsWeight * searchTerm.Count(s => r.Tags.Any(t => t.ToLower().Contains(s))) +
