@@ -194,5 +194,41 @@ namespace UnitTests.Services
             Assert.IsTrue(recipeInSearch);
         }
 
+        /// <summary>
+        /// This method tests that the FilterRecipesByTags method of the JsonFileRecipeService returns valid RecipeModels.
+        /// It retrieves the first recipe from TestHelper.RecipeService and gets its tags. It then calls the FilterRecipesByTags
+        /// method of TestHelper.RecipeService with the retrieved tags as the filter criteria, and verifies that the returned
+        /// filtered results are not null and contain the retrieved recipe.
+        /// </summary>
+        [Test]
+        public void JsonFileRecipeService_FilterRecipesByTags_Should_Return_Valid_RecipeModels()
+        {
+            // Retrieve the first recipe from TestHelper.RecipeService
+            var recipe = TestHelper.RecipeService.GetRecipes().First();
+
+            // Get the tags of the first recipe
+            var tags = recipe.Tags;
+
+            // Call the FilterRecipesByTags method of TestHelper.RecipeService with the retrieved tags as the filter criteria
+            var filterResults = TestHelper.RecipeService.FilterRecipesByTags(tags);
+
+            // Verify that the returned filtered results are not null
+            Assert.IsNotNull(filterResults);
+
+            // Check if the retrieved recipe is in the filtered results
+            var recipeInFilter = false;
+            foreach (var filter in filterResults)
+            {
+                if (filter.RecipeID == recipe.RecipeID)
+                {
+                    recipeInFilter = true;
+                    break;
+                }
+            }
+
+            // Verify that the retrieved recipe is in the filtered results
+            Assert.IsTrue(recipeInFilter);
+        }
+
     }
 }
