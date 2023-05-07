@@ -95,7 +95,7 @@ namespace UnitTests.Services
             int recipeCount = TestHelper.RecipeService.GetRecipes().Count();
 
             // Create a new RecipeModel instance and add it to the RecipeService instance.
-            RecipeModel newRecipe = new RecipeModel();
+            RecipeModel newRecipe = RecipeModel.TEST_VAL;
             newRecipe.RecipeID = TestHelper.RecipeService.NextRecipeID();
             TestHelper.RecipeService.AddRecipe(newRecipe);
 
