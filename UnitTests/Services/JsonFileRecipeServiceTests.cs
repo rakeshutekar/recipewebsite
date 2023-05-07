@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ContosoCrafts.WebSite.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace UnitTests.Services
 {
@@ -155,6 +156,42 @@ namespace UnitTests.Services
 
             // Verify that the UpdateRecipe method returned null.
             Assert.IsNull(update);
+        }
+
+        /// <summary>
+        /// This method tests that the SearchRecipes method of the JsonFileRecipeService returns valid RecipeModels.
+        /// It retrieves the first recipe from TestHelper.RecipeService and gets its title. It then calls the SearchRecipes
+        /// method of TestHelper.RecipeService with the retrieved title as the search query, and verifies that the returned
+        /// search results are not null and contain the retrieved recipe.
+        /// </summary>
+        [Test]
+        public void JsonFileRecipeService_SearchRecipes_Should_Return_Valid_RecipeModels()
+        {
+            // Retrieve the first recipe from TestHelper.RecipeService
+            var firstData = TestHelper.RecipeService.GetRecipes().First();
+
+            // Get the title of the first recipe
+            var title = firstData.Title;
+
+            // Call the SearchRecipes method of TestHelper.RecipeService with the retrieved title as the search query
+            var searchResults = TestHelper.RecipeService.SearchRecipes(title);
+
+            // Verify that the returned search results are not null
+            Assert.IsNotNull(searchResults);
+
+            // Check if the retrieved recipe is in the search results
+            var recipeInSearch = false;
+            foreach (var recipe in searchResults)
+            {
+                if (recipe.RecipeID == firstData.RecipeID)
+                {
+                    recipeInSearch = true;
+                    break;
+                }
+            }
+
+            // Verify that the retrieved recipe is in the search results
+            Assert.IsTrue(recipeInSearch);
         }
 
     }
