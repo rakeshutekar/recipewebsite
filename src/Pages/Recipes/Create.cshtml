@@ -24,16 +24,29 @@
         <input asp-for="@Model.Recipe.Title" class="form-control" type="text" required>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
-        <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required>
-    </div>
-    <div class="form-group">
         <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
         <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
     </div>
     <div class="form-group">
+        <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
+        <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
+        <div id="wrapperTags">
+            <div class="input-group inputGrpTags">
+                <input id="tag0" asp-for="@Model.Recipe.Tags[0]" class="form-control" required placeholder="Tag #1">
+            </div>
+        </div>
+        <div id="btnTagsContainer" class="container-fluid">
+            <div class="row justify-content-center">
+                <input id="addBtnTags" class="btn btn-sm btn-outline-success my-1" type="button" value="+ Add Tag">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
         <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
-        <div style="max-height: 400px; overflow-y: auto;" id="wrapperIngr">
+        <div id="wrapperIngr">
             <div class="input-group inputGrpIngr">
                 <input id="ingr0" asp-for="@Model.Recipe.Ingredients[0]" class="form-control" required placeholder="Ingredient #1">
             </div>
@@ -46,7 +59,7 @@
     </div>
     <div class="form-group">
         <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
-        <div style="max-height: 400px; overflow-y: auto;" id="wrapperInstr">
+        <div id="wrapperInstr">
             <div class="input-group inputGrpInstr">
                 <input id="instr0" asp-for="@Model.Recipe.Instructions[0]" class="form-control" required placeholder="Step #1">
             </div>
