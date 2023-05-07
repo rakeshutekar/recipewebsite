@@ -19,8 +19,7 @@
 
         <div class="form-group">
             <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
-            <input asp-for="@Model.Recipe.Description" class="form-control"></>
-            <span asp-validation-for="@Model.Recipe.Description" class="text-danger"></span>
+            <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
         </div>
 
         <div class="form-group">
@@ -68,9 +67,13 @@
             <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
             @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
             {
-                <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
-                <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
+                <div class="instrLabel-container">
+                    <label class="instr-label">@($"{i + 1}.")</label>
+                    <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
+                    <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
+                </div>
             }
+
             <div id="btnInstrContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnInstr" class="btn btn-outline-success btn-sm" type="button" value="+ Instruction">
@@ -240,17 +243,19 @@
 
         // Add button to add instructions
         instrAddButton.click(function () {
-            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Instructions[' + instrCount + ']').attr('required', '');
-
-            if (instrCount > 0) {
-                // Check if the previous tag input field is empty
-                var prevInput = $('input[name="Recipe.Instructions[' + (instrCount - 1) + ']"]');
-                if (!prevInput.val()) {
-                    alert('Instruction cannot be empty. Please enter a valid instruction.');
-                    return; // do not proceed with adding the instruction
-                }
+            // Check if the previous tag input field is empty
+            var prevInput = $('input[name="Recipe.Instructions[' + (instrCount - 1) + ']"]');
+            if (instrCount > 0 && !prevInput.val()) {
+                alert('Instruction cannot be empty. Please enter a valid instruction.');
+                return; // do not proceed with adding the instruction
             }
-            instrContainer.before(input);
+
+            var newInput = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Instructions[' + instrCount + ']').attr('required', '');
+            var newLabel = $('<label>').attr('class', 'instr-label').text(instrCount + 1 + '.');
+
+            // Append a new div containing the label and input elements with the updated index
+            var newDiv = $('<div>').addClass('instrLabel-container').append(newLabel).append(newInput);
+            instrContainer.before(newDiv);
             instrCount++;
         });
 
@@ -258,7 +263,7 @@
         instrDeleteButton.click(function () {
             var indexToDelete = prompt("Enter the index of the instruction you want to delete:");
             if (indexToDelete) {
-                indexToDelete = parseInt(indexToDelete);
+                indexToDelete = parseInt(indexToDelete) - 1;
                 // Get all the instruction input fields
                 var instrInputs = $('input[name^="Recipe.Instructions"]');
                 if (instrInputs.length > 1) {
@@ -266,14 +271,21 @@
                     // Keep track of whether the specified instruction was deleted
                     instrInputs.each(function (index) {
                         var instrInput = $(this);
+                        var instrLabel = instrInput.prev('label');
+
                         if (index === indexToDelete || (index === instrInputs.length - 1 && instrInput.val() === "")) {
                             instrInput.remove();
+                            instrLabel.remove();    // remove the deleted instruction label
                             instrDeleted = true;
                             instrCount--;
+
                             for (var i = index + 1; i < instrInputs.length; i++) {
                                 var input = instrInputs.eq(i);
                                 var newName = 'Recipe.Instructions[' + (i - 1) + ']';
                                 input.attr('name', newName);
+                                // Keep updating the index label
+                                input.prev('label').html(i + '.');
+
                             }
                             return false; // break out of each loop
                         }
