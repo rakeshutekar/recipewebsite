@@ -27,14 +27,7 @@ namespace UnitTests.Pages.Recipes
             ILogger<CreateModel> logger = new NullLogger<CreateModel>();
             pageModel = new CreateModel(logger, TestHelper.RecipeService)
             {
-                Recipe = new RecipeModel()
-                {
-                    Image = "https://www.example.com/image.jpg",
-                    Title = "Test Recipe",
-                    Description = "This is a test recipe.",
-                    Ingredients = new string[] { "Ingredient 1", "Ingredient 2" },
-                    Instructions = new string[] { "Step 1", "Step 2" }
-                }
+                Recipe = RecipeModel.TEST_VAL
             };
         }
 
