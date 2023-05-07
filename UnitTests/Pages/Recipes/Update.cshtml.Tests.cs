@@ -73,7 +73,8 @@ namespace UnitTests.Pages.Recipes
                 Image = "URL",
                 Description = "Test",
                 Ingredients = new string[] { "new ingredient", "new ingredient" },
-                Instructions = new string[] { "new instruction", "new instruction" }
+                Instructions = new string[] { "new instruction", "new instruction" },
+                Tags = new string[] { "TEST" },
             };
 
             // Act
