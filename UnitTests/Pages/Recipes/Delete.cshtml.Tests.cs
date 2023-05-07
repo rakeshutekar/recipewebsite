@@ -97,11 +97,11 @@ namespace UnitTests.Pages.Recipes
                 LastName = "Bogus",
                 Title = "Bogus",
                 Description = "Bogus",
-                Instructions = { },
-                Ingredients = { },  
+                Instructions = new string[] { "TEST" },
+                Ingredients = new string[] { "TEST" },
                 PublishDate = "12/31/9999",
                 EditDate = "12/31/9999",
-                Tags = { },
+                Tags = new string[] { "TEST" },
                 ImageCaption = "Bogus",
                 Image = "https://www.google.com"
             };
