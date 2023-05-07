@@ -50,13 +50,11 @@
         <!-- Ingredients creation form group -->
         <div class="form-group">
             <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
-            <div style="max-height: 200px; overflow-y: auto;">
-                @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
-                {
-                    <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" />
-                    <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
-                }
-            </div>
+            @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
+            {
+                <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" />
+                <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
+            }
             <div id="btnIngrContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Ingredient">
@@ -68,13 +66,11 @@
         <!-- Instructions creation form group -->
         <div class="form-group">
             <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
-            <div style="max-height: 200px; overflow-y: auto;">
-                @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
-                {
-                     <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
-                     <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
-                }
-            </div>
+            @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
+            {
+                <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
+                <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
+            }
             <div id="btnInstrContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnInstr" class="btn btn-outline-success btn-sm" type="button" value="+ Instruction">
@@ -192,9 +188,46 @@
 
         // Delete button to delete ingredients
         ingrDeleteButton.click(function () {
+            var ingrName = prompt("Enter the name of the ingredient you want to delete:");
+            if (ingrName) {
+                // Get all the ingredient input fields
+                var ingrInputs = $('input[name^="Recipe.Ingredients"]');
+                if (ingrInputs.length > 1) {
+                    var ingrDeleted = false;
+                    // Keep track of whether the specified ingredient was deleted
+                    ingrInputs.each(function (index) {
+                        var ingrInput = $(this);
+                        //if (ingrInput.val() === ingrName || ingrInput.val() === "") {
+                        if (ingrInput.val() !== "" && ingrInput.val().toLowerCase().indexOf(ingrName.toLowerCase()) !== -1) {
+                            ingrInput.remove();
+                            ingrDeleted = true;
+                            ingrCount--;
+                            for (var i = index + 1; i < ingrInputs.length; i++) {
+                                var input = ingrInputs.eq(i);
+                                var newName = 'Recipe.Ingredients[' + (i - 1) + ']';
+                                input.attr('name', newName);
+                            }
+                            return false; // break out of each loop
+                        }
+                    });
 
-
-
+                    if (ingrDeleted) {
+                        var newIngrArray = [];
+                        ingrInputs.each(function () {
+                            var ingrInput = $(this);
+                            var ingrValue = ingrInput.val();
+                            if (ingrValue) {
+                                newIngrArray.push(ingrValue);
+                            }
+                        });
+                        $('#Ingredients').val(newIngrArray.join(','));
+                    } else {
+                        alert('No matching ingredient is found.');
+                    }
+                } else {
+                    alert('At least one ingredient is required.')
+                }
+            }
         });
     </script>
 
