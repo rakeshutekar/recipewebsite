@@ -57,24 +57,5 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
                 SearchResults = RecipeService.SearchRecipes(Query);
             }
         }
-
-        /// <summary>
-        /// Called when the search form is submitted with a POST request
-        /// </summary>
-        /// <returns></returns>
-        public IActionResult OnPost()
-        {
-            if (Tags != null && Tags.Length > 0)
-            {
-                SearchResults = RecipeService.FilterRecipesByTags(Tags);
-            }
-            else if (!string.IsNullOrEmpty(Query))
-            {
-                SearchResults = RecipeService.SearchRecipes(Query);
-            }
-
-            // Return the page with the search results
-            return Page();
-        }
     }
 }
