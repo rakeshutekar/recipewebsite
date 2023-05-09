@@ -25,6 +25,10 @@ namespace UnitTests.Pages.Recipes
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// This unit test tests that the search results page can succesfully retrieve the recipe when provided
+        /// the tags associated with the first recipe from the database.
+        /// </summary>
         [Test]
         public void OnGet_Tags_Not_Null_And_Length_Not_Zero_Return_Search_Results()
         {
@@ -54,6 +58,11 @@ namespace UnitTests.Pages.Recipes
             Assert.IsTrue(recipeInTagSearch);
         }
 
+        /// <summary>
+        /// This unit test tests that the search results page can succesfully retrieve the recipe when provided
+        /// the title associated with the first recipe from the database and then setting the pageModel's "query"
+        /// field the value with the title.
+        /// </summary>
         [Test]
         public void OnGet_Search_Query_Not_Null_Return_Search_Results()
         {
@@ -84,9 +93,5 @@ namespace UnitTests.Pages.Recipes
         }
 
         #endregion OnGet
-
-        #region OnPost
-
-        #endregion OnPost
     }
 }
