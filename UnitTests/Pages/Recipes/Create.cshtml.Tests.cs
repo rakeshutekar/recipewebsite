@@ -27,7 +27,7 @@ namespace UnitTests.Pages.Recipes
             ILogger<CreateModel> logger = new NullLogger<CreateModel>();
             pageModel = new CreateModel(logger, TestHelper.RecipeService)
             {
-                Recipe = RecipeModel.TEST_VAL
+                Recipe = TestHelper.TEST_RECIPE_MODEL
             };
         }
 
