@@ -13,18 +13,21 @@
 
         <div class="form-group">
             <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
-            <input asp-for="@Model.Recipe.Title" class="form-control" />
+            <input asp-for="@Model.Recipe.Title" class="form-control" required maxlength="100" minlength="1" />
             <span asp-validation-for="@Model.Recipe.Title" class="text-danger"></span>
         </div>
 
+        <!-- Description form -->
         <div class="form-group">
             <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
-            <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
+            <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required maxlength="1000" minlength="1"></textarea>
+            <span id="description-error" class="text-danger"></span>
         </div>
+       
 
         <div class="form-group">
             <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
-            <input asp-for="@Model.Recipe.Image" class="form-control" />
+            <input asp-for="@Model.Recipe.Image" class="form-control" required maxlength="1000" minlength="1" />
             <span asp-validation-for="@Model.Recipe.Image" class="text-danger"></span>
         </div>
 
@@ -34,7 +37,7 @@
             <div style="max-height: 200px; overflow-y: auto;">
                 @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
                 {
-                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" id="tag-@(i+1)" />
+                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" id="tag-@(i+1)" required maxlength="1000" minlength="1" />
                     <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
                 }
             </div>
@@ -51,7 +54,7 @@
             <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
             @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
             {
-                <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" />
+                <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" required maxlength="1000" minlength="1" />
                 <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
             }
             <div id="btnIngrContainer" class="container-fluid">
@@ -69,7 +72,7 @@
             {
                 <div class="instrLabel-container">
                     <label class="instr-label">@($"{i + 1}.")</label>
-                    <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" />
+                    <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" required maxlength="1000" minlength="1" />
                     <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
                 </div>
             }
@@ -88,6 +91,29 @@
 
 
 @section Scripts {
+    
+   <script>
+        // Get the parent form element
+        const formContainer = document.getElementById('update-form');
+
+        // Add an event listener to the parent element for the 'input' and 'textarea' events
+        formContainer.addEventListener('input', validateInput);
+        formContainer.addEventListener('textarea', validateInput);
+
+        function validateInput(event) {
+            const input = event.target;
+            const span = input.nextElementSibling;
+
+            if (input.checkValidity()) {
+                span.textContent = '';
+                span.className = 'text-danger';
+            } else {
+                span.textContent = input.validationMessage;
+                span.className = 'text-danger visible';
+            }
+        }
+    </script>   
+    
     <script>
         // Update Confirmation
         function confirmUpdate()
