@@ -12,6 +12,7 @@ using Moq;
 
 using ContosoCrafts.WebSite.Services;
 using NUnit.Framework.Internal;
+using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests
 {
@@ -39,7 +40,28 @@ namespace UnitTests
         public static TempDataDictionary TempData;
         public static PageContext PageContext;
         public static JsonFileRecipeService RecipeService;
-        
+        public static RecipeModel TEST_RECIPE_MODEL
+        {
+            get
+            {
+                var newRecipe = new RecipeModel();
+                newRecipe.Deleted = false;
+                newRecipe.AuthorID = 0;
+                newRecipe.FirstName = "TEST";
+                newRecipe.LastName = "TEST";
+                newRecipe.Title = "TEST";
+                newRecipe.Instructions = new string[] { "TEST" };
+                newRecipe.Ingredients = new string[] { "TEST" };
+                newRecipe.Tags = new string[] { "TEST" };
+                newRecipe.PublishDate = "TEST";
+                newRecipe.EditDate = "TEST";
+                newRecipe.ImageCaption = "TEST";
+                newRecipe.Image = "TEST";
+                return newRecipe;
+            }
+        }
+
+
 
         /// <summary>
         /// Default Constructor
