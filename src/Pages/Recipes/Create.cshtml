@@ -95,6 +95,8 @@
         formContainer.addEventListener('input', validateInput);
         formContainer.addEventListener('textarea', validateInput);
 
+        // Respond to input and text area events to validate user input
+        // client side and notify user of invalid input
         function validateInput(event) {
             const input = event.target;
             const span = input.nextElementSibling;
