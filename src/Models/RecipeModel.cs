@@ -26,9 +26,8 @@ namespace ContosoCrafts.WebSite.Models
         public string FirstName{get;set;}
         // Last name of the writer
         public string LastName{get;set;}
-        // Replace the following line with the modified Title property
-        // public string Title{get;set;}
 
+        // Replace the following line with the modified Title property
         [Required]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Recipe title must be between 3 and 100 characters.")]
         [RegularExpression(@"^[\w\s\-\,\(\)]+$", ErrorMessage = "Recipe title can only contain letters, numbers, spaces, dashes, commas, and parentheses.")]
@@ -106,19 +105,18 @@ namespace ContosoCrafts.WebSite.Models
         public string[] Tags{get;set;}
         // Add a new property for the image caption
         public string ImageCaption { get; set; }
+
         // Image URL of imgae associated with the recipe
         [JsonPropertyName("Img")]
-         // Required: This attribute specifies that the Image property must have a value; it cannot be null or empty.
-            [Required]
-
-            // Url: This attribute specifies that the Image property must be a valid URL. 
-            // It uses a regular expression (regex) to validate the input as a URL.
-            [Url]
-
-            // Display: This attribute allows us to specify a display name for the Image property. 
-            // In this case, "Image URL" will be used as the display name instead of the property name "Image".
-            [Display(Name = "Image URL")]
-            public string Image { get; set; }
+        // Required: This attribute specifies that the Image property must have a value; it cannot be null or empty.
+        [Required]
+        // Url: This attribute specifies that the Image property must be a valid URL. 
+        // It uses a regular expression (regex) to validate the input as a URL.
+        [Url]
+        // Display: This attribute allows us to specify a display name for the Image property. 
+        // In this case, "Image URL" will be used as the display name instead of the property name "Image".
+        [Display(Name = "Image URL")]
+        public string Image { get; set; }
 
         /// <summary>
         /// Overridden ToString method to serialize the object's data
