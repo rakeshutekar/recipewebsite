@@ -67,6 +67,35 @@ namespace ContosoCrafts.WebSite.Models
         }
         [Instructions]
         public string[] Instructions { get; set; }
+        // Define a custom validation attribute named IngredientsAttribute
+        public class IngredientsAttribute : ValidationAttribute
+        {
+            // Override the IsValid method for custom validation logic
+            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+            {
+                // Try to cast the value to an IList
+                var list = value as IList;
+                
+                // If the cast was successful
+                if (list != null)
+                {
+                    // Iterate through each item in the list
+                    foreach (var item in list)
+                    {
+                        // If the item is null, empty, whitespace, or longer than 200 characters
+                        if (string.IsNullOrWhiteSpace(item as string) || (item as string).Length > 200)
+                        {
+                            // Return a validation result indicating the failure
+                            return new ValidationResult("Each ingredient must be between 1 and 200 characters.");
+                        }
+                    }
+                }
+                
+                // If the list was null or all items passed the validation, return success
+                return ValidationResult.Success;
+            }
+        }
+
         // Array of ingredients for the recipe
         public string[] Ingredients{get;set;}
         // Date of publishing the recipe on the webiste
