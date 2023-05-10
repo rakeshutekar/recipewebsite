@@ -126,26 +126,6 @@ namespace ContosoCrafts.WebSite.Models
         /// <returns>String/JSON representation of object</returns>
         public override string ToString() => JsonSerializer.Serialize<RecipeModel>(this);
 
-        public static RecipeModel TEST_VAL
-        {
-            get
-            {
-                var newRecipe = new RecipeModel();
-                newRecipe.Deleted = false;
-                newRecipe.AuthorID = 0;
-                newRecipe.FirstName = "TEST";
-                newRecipe.LastName = "TEST";
-                newRecipe.Title = "TEST";
-                newRecipe.Instructions = new string[] { "TEST" };
-                newRecipe.Ingredients = new string[] { "TEST" };
-                newRecipe.Tags = new string[] { "TEST" };
-                newRecipe.PublishDate = "TEST";
-                newRecipe.EditDate = "TEST";
-                newRecipe.ImageCaption = "TEST";
-                newRecipe.Image = "TEST";
-                return newRecipe;
-            }
-        }
 
     }
 }
