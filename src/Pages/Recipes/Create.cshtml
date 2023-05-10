@@ -19,20 +19,21 @@
 
 
 <!-- Recipe creation form group -->
-<form action="" method="post">
+<form action="" method="post" id="create-form">
     <div class="form-group">
         <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
-        <input asp-for="@Model.Recipe.Title" class="form-control" type="text" required>
+        <input asp-for="@Model.Recipe.Title" class="form-control" type="text" required placeholder="Title">
         <span asp-validation-for="@Model.Recipe.Title" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
-        <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required></textarea>
+        <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required placeholder="Description"></textarea>
+        <span asp-validation-for="@Model.Recipe.Description" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
-        <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required>
+        <input asp-for="@Model.Recipe.Image" class="form-control" type="text" required placeholder="Image URL">
         <span asp-validation-for="@Model.Recipe.Image" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -40,6 +41,7 @@
         <div id="wrapperTags">
             <div class="input-group inputGrpTags">
                 <input id="tag0" asp-for="@Model.Recipe.Tags[0]" class="form-control" required placeholder="Tag #1">
+                <span asp-validation-for="@Model.Recipe.Tags[0]" class="text-danger"></span>
             </div>
         </div>
         <div id="btnTagsContainer" class="container-fluid">
@@ -84,6 +86,28 @@
 
 @section Scripts {
     <script src="/wwwroot/js/site.js"></script>
+
+    <script>
+        // Get the parent form element
+        const formContainer = document.getElementById('create-form');
+
+        // Add an event listener to the parent element for the 'input' and 'textarea' events
+        formContainer.addEventListener('input', validateInput);
+        formContainer.addEventListener('textarea', validateInput);
+
+        function validateInput(event) {
+            const input = event.target;
+            const span = input.nextElementSibling;
+
+            if (input.checkValidity()) {
+                span.textContent = '';
+                span.className = 'text-danger';
+            } else {
+                span.textContent = input.validationMessage;
+                span.className = 'text-danger visible';
+            }
+        }
+    </script>
 
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
