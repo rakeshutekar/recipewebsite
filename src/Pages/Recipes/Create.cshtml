@@ -1,5 +1,8 @@
 @page
 @model CreateModel
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 @{
     ViewData["Title"] = "Create Recipe";
 }
@@ -47,18 +50,20 @@
         </div>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
-        <div id="wrapperIngr">
-            <div class="input-group inputGrpIngr">
-                <input id="ingr0" asp-for="@Model.Recipe.Ingredients[0]" class="form-control" required placeholder="Ingredient #1">
+        <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
+        <div id="wrapperInstr">
+            <div class="input-group inputGrpInstr">
+                <input id="instr0" asp-for="@Model.Recipe.Instructions[0]" class="form-control" required placeholder="Step #1">
+                <span asp-validation-for="@Model.Recipe.Instructions[0]" class="text-danger"></span>
             </div>
         </div>
-        <div id="btnIngrContainer" class="container-fluid">
+        <div id="btnInstrContainer" class="container-fluid">
             <div class="row justify-content-center">
-                <input id="addBtnIngr" class="btn btn-sm btn-outline-success my-1" type="button" value="+ Add Ingredient">
+                <input id="addBtnInstr" class="btn btn-sm btn-outline-success my-1" type="button" value="+ Add Instruction">
             </div>
         </div>
     </div>
+
     <div class="form-group">
         <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
         <div id="wrapperInstr">
