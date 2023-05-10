@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
@@ -43,7 +45,28 @@ namespace ContosoCrafts.WebSite.Models
             }
         }
         // Array of instructions for the recipe
-        public string[] Instructions{get;set;}
+        // ... Existing RecipeModel.cs content ...
+
+        public class InstructionsAttribute : ValidationAttribute
+        {
+            protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+            {
+                var list = value as IList;
+                if (list != null)
+                {
+                    foreach (var item in list)
+                    {
+                        if (string.IsNullOrWhiteSpace(item as string) || (item as string).Length > 500)
+                        {
+                            return new ValidationResult("Each instruction must be between 1 and 500 characters.");
+                        }
+                    }
+                }
+                return ValidationResult.Success;
+            }
+        }
+        [Instructions]
+        public string[] Instructions { get; set; }
         // Array of ingredients for the recipe
         public string[] Ingredients{get;set;}
         // Date of publishing the recipe on the webiste
