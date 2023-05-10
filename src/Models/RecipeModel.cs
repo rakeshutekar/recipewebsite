@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace ContosoCrafts.WebSite.Models
 {
@@ -23,8 +24,14 @@ namespace ContosoCrafts.WebSite.Models
         public string FirstName{get;set;}
         // Last name of the writer
         public string LastName{get;set;}
-        // Title of the recipe
-        public string Title{get;set;}
+        // Replace the following line with the modified Title property
+        // public string Title{get;set;}
+
+        [Required]
+        [StringLength(100, MinimumLength = 3, ErrorMessage = "Recipe title must be between 3 and 100 characters.")]
+        [RegularExpression(@"^[\w\s\-\,\(\)]+$", ErrorMessage = "Recipe title can only contain letters, numbers, spaces, dashes, commas, and parentheses.")]
+        public string Title { get; set; }
+
         // Short description of the recipe
         public string Description
         {
