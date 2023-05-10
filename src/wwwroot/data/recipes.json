@@ -599,5 +599,210 @@
     ],
     "ImageCaption": null,
     "Img": "https://www.tastingtable.com/img/gallery/lemon-garlic-green-beans-recipe/l-intro-1648589949.jpg"
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 16,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Unagi Don ",
+    "Description": "Grilled eel rice bowl.  \u2018Unagi\u2019 is the Japanese word for \u2018eel\u2019, and this particular one-bowl donburi dish tops servings of white rice with fillets of freshly grilled eel, all seasoned with a homemade unagi sauce.",
+    "Instructions": [
+      "Make the unagi sauce",
+      "Prepare the rice",
+      "Grill the unagi",
+      "Add the unagi sauce",
+      "Serve and enjoy!"
+    ],
+    "Ingredients": [
+      "200g rice",
+      "260 ml water",
+      "2 eel fillets, skin-on",
+      "4 tbsp soy sauce",
+      "2 \u00BD tbsp sugar",
+      "1 \u00BD tbsp cooking sake",
+      "4 tbsp mirin"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "rice",
+      "Japanese ",
+      "eel",
+      "grilled",
+      "lunch"
+    ],
+    "ImageCaption": null,
+    "Img": "https://cdn.media.amplience.net/i/japancentre/recipe-1434-unagi-don-grilled-eel-rice-bowl/recipe-1434-unagi-don-grilled-eel-rice-bowl?$poi$\u0026w=700\u0026h=410\u0026sm=c\u0026fmt=auto"
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 17,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Chicken Tikka Masala ",
+    "Description": "It\u2019s a rich and flavorful Indian chicken curry where pieces of chicken are marinated in yogurt and spices.",
+    "Instructions": [
+      "Marinate the chicken. In a mixing bowl or a Ziploc bag, mix the chicken with yogurt and masala paste (recipe can be found in the recipe card if you scroll down \u2013 it\u2019s very simple!). Let it marinate in the fridge for at least 15 minutes if you\u2019re in a hurry, and preferably for an hour or up to 24 hours. The marinating process will allow the chicken to absorb all of the flavors, and become really tender and delicious (the longer the better!).",
+      "On the Instant Pot press on SAUTE and heat the oil, when a HOT message is displayed add the marinated chicken. Work in batches and brown the chicken on both sides (not cooking it all the way through, just browning it a little on each side), then switch off the saute setting.",
+      "Deglaze the pot with a little bit of water, or the tomato sauce that you will add in the next step to avoid the burn message.",
+      "Add the passata or tomato sauce, 2 tablespoons of the masala paste, and salt. Give it a quick mix.",
+      "Secure the lid and set the vent to SEALING. Select the PRESSURE COOK/MANUAL setting and set the cooking time for 4 minutes at high pressure. The Instant Pot will take around 10 minutes to come to pressure and start cooking. When the cooking program ends, quickly release the steam.",
+      "Carefully open the lid, and push the SAUTE button. Stir in the cream, and allow the sauce to reduce a little. Switch off the SAUTE.",
+      "Serve warm over basmati rice, or Indian jeera cumin rice with chopped fresh parsley, mint or cilantro leaves."
+    ],
+    "Ingredients": [
+      "Chicken thighs",
+      "Yogurt",
+      "Masala paste",
+      "Vegetable oil",
+      "Passata or tomato sauce",
+      "Whipping cream or coconut milk",
+      "Salt"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "rice",
+      "lunch",
+      "chicken",
+      "Indian"
+    ],
+    "ImageCaption": null,
+    "Img": "https://littlesunnykitchen.com/wp-content/uploads/Chicke-tikka-masala-2-7-730x1095.jpg"
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 18,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Guacamole",
+    "Description": "If you need a last-minute appetizer for a cookout this weekend, make this guacamole recipe!",
+    "Instructions": [
+      "Dice the red onion, cilantro, and jalape\u00F1o, and zest and juice the limes. Slice each avocado in half lengthwise, and carefully remove the pit. Score the avocado flesh in a grid pattern, and use a spoon to scoop it into a large bowl.",
+      "Add the remaining ingredients, and gently mash with a fork or a potato masher to reach your desired consistency. ",
+      "Season to taste, and enjoy!"
+    ],
+    "Ingredients": [
+      "Avocado",
+      "Red onion",
+      "Cilantro",
+      "Lime juice and zest",
+      "Jalape\u00F1o",
+      "Salt"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "healthy",
+      "appetizers",
+      "green",
+      "vegetarian"
+    ],
+    "ImageCaption": null,
+    "Img": "https://cdn.loveandlemons.com/wp-content/uploads/2019/04/guacamole-recipe-580x832.jpg"
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 19,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "New England Clam Chowder",
+    "Description": "This is the best New England clam chowder recipe, ever! In the Pacific Northwest, we dig our own razor clams and I grind them for the chowder. Since these aren\u0027t readily available, the canned clams are perfectly acceptable",
+    "Instructions": [
+      "In a Dutch oven, cook bacon over medium heat until crisp. Remove to paper towels to drain; set aside. Saute celery and onion in the drippings until tender. Add garlic; cook 1 minute longer. Stir in the potatoes, water, clam juice, bouillon, pepper and thyme. Bring to a boil. Reduce heat; simmer, uncovered, until potatoes are tender, 15-20 minutes.",
+      "In a small bowl, combine flour and 1 cup half-and-half until smooth. Gradually stir into soup. Bring to a boil; cook and stir until thickened, 1-2 minutes.",
+      "Stir in clams and remaining half-and-half; heat through (do not boil). Crumble the cooked bacon; sprinkle over each serving."
+    ],
+    "Ingredients": [
+      "4 center-cut bacon strips",
+      "2 celery ribs, chopped",
+      "1 garlic clove, minced",
+      "3 small potatoes, peeled and cubed",
+      "1 bottle (8 ounces) clam juice",
+      "3 teaspoons reduced-sodium chicken bouillon granules",
+      "1/4 teaspoon white pepper",
+      "1/4 teaspoon dried thyme",
+      "2 cups fat-free half-and-half, divided",
+      "2 cans (6-1/2 ounces each) chopped clams, undrained"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "soup",
+      "England"
+    ],
+    "ImageCaption": null,
+    "Img": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Contest-Winning-New-England-Clam-Chowder_EXPS_FT20_41095_F_0623_1.jpg"
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 20,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "French Bread Pizza",
+    "Description": "The easiest way to make pizza at home, and it\u2019s ready in no time! Made with soft yet hearty French bread, robust, garlicky and herby pizza sauce, two types of rich cheese and all your favorite toppings! ",
+    "Instructions": [
+      "Prepare oven, and baking sheet: Move oven rack up one level and preheat oven to 425 degrees. Line a rimmed 18 by 13-inch baking sheet with aluminum foil for easier clean up if desired.",
+      "Cut bread: Cut french bread in half evenly through the length, to create two long portions. Cut each portion in half and place on baking sheet.",
+      "Brush bread with oil, lightly toast: Brush both sides with olive oil. Turn upright and bake in preheat oven 4 minutes.",
+      "Add toppings: Spread pizza sauce over each piece, sprinkle evenly with mozzarella and parmesan cheeses, then finish with desired toppings.",
+      "Bake again: Bake in preheated oven until cheese is fully melted, about 10- 13 minutes. If you\u2019d like it more browned then broil during the last 1 minute or so (keep a close eye on it!)."
+    ],
+    "Ingredients": [
+      "French bread",
+      "Pizza sauce",
+      "Mozzarella ",
+      "Parmesan cheese",
+      "Olive oil"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "bread",
+      "quick",
+      "French"
+    ],
+    "ImageCaption": null,
+    "Img": "https://www.cookingclassy.com/wp-content/uploads/2020/08/french-bread-pizza-14.jpg"
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 21,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Healthy Tuna Salad",
+    "Description": "This Healthy Tuna Salad is so filling and flavorful. Crisp vegetables tossed with beans and tuna and a citrusy dressing make this a guilt-free and scrumptious alternative to this classic dish.",
+    "Instructions": [
+      "Prepare the ingredients by chopping, cutting, and dicing the vegetables and herbs in this Healthy Tuna Salad. Then rinse and drain the beans, as well as the tuna.",
+      "Place all of the ingredients into a large mixing bowl, including the lemon juice and oil. Mix well. Season with salt and pepper to taste and then serve."
+    ],
+    "Ingredients": [
+      "Tuna. Albacore tuna fish. Drained.",
+      "Beans. Use your favorite kind, or even chickpeas. Rinsed.",
+      "Tomatoes. Cherry or grape works well, cut into pieces.",
+      "Cucumbers. Peeled and cubed.",
+      "Parsley. Fresh is best. Chopped.",
+      "Lemon Juice. Adds a zesty flavor.",
+      "Salt \u0026 Pepper. To taste.",
+      "Oil. Olive oil or your favorite kind.",
+      "Bell Pepper"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "healthy",
+      "salad",
+      "tuna",
+      "green"
+    ],
+    "ImageCaption": null,
+    "Img": "https://cooktoria.com/wp-content/uploads/2021/06/healthy-tuna-salad-sq-1.jpg"
   }
 ]
