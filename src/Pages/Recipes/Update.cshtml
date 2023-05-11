@@ -13,7 +13,7 @@
 
         <div class="form-group">
             <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
-            <input asp-for="@Model.Recipe.Title" class="form-control" required maxlength="100" minlength="1" />
+            <input asp-for="@Model.Recipe.Title" class="form-control" required maxlength="100" minlength="1" id="Title"/>
             <span asp-validation-for="@Model.Recipe.Title" class="text-danger"></span>
         </div>
 
@@ -93,8 +93,10 @@
    <script>
         // Get the parent form element
         const description = document.getElementById('Description');
+        const title = document.getElementById('Title')
 
         description.addEventListener('input', validateInput);
+        title.addEventListener('input', validateInput);
         
         // Respond to input and text area events to validate user input
         // client side and notify user of invalid input
