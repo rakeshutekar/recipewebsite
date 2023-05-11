@@ -34,13 +34,11 @@
         <!-- Tags creation form group -->
         <div class="form-group">
             <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
-            <div style="max-height: 200px; overflow-y: auto;">
-                @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
-                {
-                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" id="tag-@(i+1)" required maxlength="1000" minlength="1" />
-                    <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
-                }
-            </div>
+            @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
+            {
+                <input asp-for="@Model.Recipe.Tags[i]" class="form-control" id="tag-@(i+1)" required maxlength="1000" minlength="1" />
+                <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
+            }
             <div id="btnTagsContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnTags" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
@@ -148,6 +146,8 @@
 
             tagContainer.before(input);
             tagCount++;
+
+            tagAddButton.show();
         });
 
         // Delete button to delete tags
