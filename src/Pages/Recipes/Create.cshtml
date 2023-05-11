@@ -28,7 +28,7 @@
 
     <div class="form-group">
         <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
-        <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required placeholder="Description"></textarea>
+        <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required placeholder="Description" id="Description"></textarea>
         <span asp-validation-for="@Model.Recipe.Description" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -89,11 +89,9 @@
 
     <script>
         // Get the parent form element
-        const formContainer = document.getElementById('create-form');
+        const description = document.getElementById('Description');
 
-        // Add an event listener to the parent element for the 'input' and 'textarea' events
-        formContainer.addEventListener('input', validateInput);
-        formContainer.addEventListener('textarea', validateInput);
+        description.addEventListener('input', validateInput);
 
         // Respond to input and text area events to validate user input
         // client side and notify user of invalid input
