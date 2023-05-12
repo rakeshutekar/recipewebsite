@@ -118,12 +118,14 @@ namespace ContosoCrafts.WebSite.Models
         [Display(Name = "Image URL")]
         public string Image { get; set; }
 
+        // Array of strings to store comments against the recipe
+        // TODO refactor to separate json file, service, and model
+        public string[] Comments { get; set; }
+
         /// <summary>
         /// Overridden ToString method to serialize the object's data
         /// </summary>
         /// <returns>String/JSON representation of object</returns>
         public override string ToString() => JsonSerializer.Serialize<RecipeModel>(this);
-
-
     }
 }
