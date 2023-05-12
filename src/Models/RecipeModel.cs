@@ -3,6 +3,7 @@ using System.Collections;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace ContosoCrafts.WebSite.Models
 {
@@ -118,9 +119,8 @@ namespace ContosoCrafts.WebSite.Models
         [Display(Name = "Image URL")]
         public string Image { get; set; }
 
-        // Array of strings to store comments against the recipe
-        // TODO refactor to separate json file, service, and model
-        public string[] Comments { get; set; }
+        // List of CommentModels that stores each comment
+        public List<CommentModel> Comments { get; set; } = new List<CommentModel>();
 
         /// <summary>
         /// Overridden ToString method to serialize the object's data
