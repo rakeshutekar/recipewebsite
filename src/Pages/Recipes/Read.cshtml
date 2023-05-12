@@ -1,8 +1,12 @@
 ﻿@page "{id:int}"
 @model ContosoCrafts.WebSite.Pages.Recipes.ReadModel
-@{
-    ViewData["Title"] = "Recipe page";
-}
+@if (Model.RecipeNotFound)
+    {
+    <p>Error: The requested recipe was not found.</p>
+    }
+    else
+    {
+ViewData["Title"] = "Recipe page";
 
 <div class="container">
     <div class="row justify-content-end">
@@ -31,20 +35,22 @@
     <div class="row">
         <ul>
             @foreach (var ingredient in Model.Recipe.Ingredients)
-            {
+                {
                 <li>@ingredient</li>
-            }
+                }
         </ul>
     </div>
     <h5>Instructions</h5>
     <div class="row">
         <ol class="instruction-font">
             @foreach (var instruction in Model.Recipe.Instructions)
-            {
+                {
                 <li>@instruction</li>
-            }
+                }
         </ol>
     </div>
 </div>
 <div class="clear">
 </div>
+
+    }
