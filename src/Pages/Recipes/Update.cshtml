@@ -52,8 +52,11 @@
             <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
             @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
             {
-                <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" required maxlength="1000" minlength="1" />
-                <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
+                    <div class="ingrLabel-container">
+                        <label class="ingr-label">@($"{i + 1}.")</label>
+                        <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" required maxlength="1000" minlength="1" />
+                        <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
+                    </div>
             }
             <div id="btnIngrContainer" class="container-fluid">
                 <div class="row justify-content-left">
@@ -203,24 +206,27 @@
 
         // Add button to add ingredients
         ingrAddButton.click(function () {
-            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Ingredients[' + ingrCount + ']').attr('required', '');
-
-            if (ingrCount > 0) {
-                // Check if the previous tag input field is empty
-                var prevInput = $('input[name="Recipe.Ingredients[' + (ingrCount - 1) + ']"]');
-                if (!prevInput.val()) {
-                    alert('Ingredient cannot be empty. Please enter a valid ingredient.');
-                    return; // do not proceed with adding the ingredient
-                }
+            var prevInput = $('input[name="Recipe.Ingredients[' + (ingrCount - 1) + ']"]');
+            if (ingrCount > 0 && !prevInput.val()) {
+                alert('Ingredient cannot be empty. Please enter a valid ingredient.');
+                return; // do not proceed with adding the ingredients
             }
-            ingrContainer.before(input);
+
+            var newInput = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Ingredients[' + ingrCount + ']').attr('required', '');
+            var newLabel = $('<label>').attr('class', 'ingr-label').text(ingrCount + 1 + '.');
+
+            // Append a new div containing the label and input elements with the updated index
+            var newDiv = $('<div>').addClass('ingrLabel-container').append(newLabel).append(newInput);
+            ingrContainer.before(newDiv);
             ingrCount++;
+
         });
 
         // Delete button to delete ingredients
         ingrDeleteButton.click(function () {
-            var ingrName = prompt("Enter the name of the ingredient you want to delete:");
-            if (ingrName) {
+            var indexToDelete = prompt("Enter the index of the ingredient you want to delete:");
+            if (indexToDelete) {
+                indexToDelete = parseInt(indexToDelete) - 1;
                 // Get all the ingredient input fields
                 var ingrInputs = $('input[name^="Recipe.Ingredients"]');
                 if (ingrInputs.length > 1) {
@@ -228,20 +234,21 @@
                     // Keep track of whether the specified ingredient was deleted
                     ingrInputs.each(function (index) {
                         var ingrInput = $(this);
-                        //if (ingrInput.val() === ingrName || ingrInput.val() === "") {
-                        if (ingrInput.val() !== "" && ingrInput.val().toLowerCase().indexOf(ingrName.toLowerCase()) !== -1) {
+                        var ingrLabel = ingrInput.prev('label')
+                        if (index === indexToDelete || (index === ingrInputs.length - 1 && ingrInput.val() !== "")) {
                             ingrInput.remove();
+                            ingrLabel.remove()
                             ingrDeleted = true;
                             ingrCount--;
                             for (var i = index + 1; i < ingrInputs.length; i++) {
                                 var input = ingrInputs.eq(i);
                                 var newName = 'Recipe.Ingredients[' + (i - 1) + ']';
                                 input.attr('name', newName);
+                                input.prev('label').html(i + '.');
                             }
                             return false; // break out of each loop
                         }
                     });
-
                     if (ingrDeleted) {
                         var newIngrArray = [];
                         ingrInputs.each(function () {
@@ -253,7 +260,7 @@
                         });
                         $('#Ingredients').val(newIngrArray.join(','));
                     } else {
-                        alert('No matching ingredient is found.');
+                        alert('Invalid ingredient index.');
                     }
                 } else {
                     alert('At least one ingredient is required.')
