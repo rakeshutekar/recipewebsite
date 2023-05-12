@@ -27,6 +27,9 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         [BindProperty]
         public RecipeModel Recipe { get; set; }
 
+        // Boolean to keep track of if recipe is found
+        public bool RecipeNotFound { get; set; }
+
         // ID of the recipe passed in via URL/Path
         public int RecipeID;
 
@@ -41,7 +44,15 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         {
             RecipeID = id;
             Recipe = RecipeService.GetRecipe(id);
-            fullName = Recipe.FirstName + " " + Recipe.LastName;
+
+            // If recipe is not found, set RecipeNotFound to true
+            if (Recipe == null)
+            {
+                RecipeNotFound = true;
+            } else
+            {
+                fullName = Recipe.FirstName + " " + Recipe.LastName;
+            }
         }
 
         /// <summary>
