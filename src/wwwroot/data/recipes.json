@@ -125,7 +125,7 @@
       "Pickled Onions",
       "Beef Mince",
       "Taco",
-      "Mexico",
+      "mexican",
       "appetizers"
     ],
     "ImageCaption": null,
@@ -336,7 +336,8 @@
       "breakfast",
       "brunch",
       "green",
-      "appetizers"
+      "appetizers",
+      "thai"
     ],
     "ImageCaption": null,
     "Img": "https://chatelaine.com/wp-content/uploads/2018/06/Thai-basil-and-cilantro-salad-800x800.jpg"
@@ -628,7 +629,7 @@
     "EditDate": null,
     "Tags": [
       "rice",
-      "Japanese ",
+      "japanese",
       "eel",
       "grilled",
       "lunch"
@@ -700,7 +701,8 @@
       "healthy",
       "appetizers",
       "green",
-      "vegetarian"
+      "vegetarian",
+      "mexican"
     ],
     "ImageCaption": null,
     "Img": "https://cdn.loveandlemons.com/wp-content/uploads/2019/04/guacamole-recipe-580x832.jpg"
