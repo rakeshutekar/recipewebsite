@@ -31,11 +31,28 @@ namespace ContosoCrafts.WebSite.Controllers
         // The service to access the JSON file storing recipe data
         public JsonFileRecipeService RecipeService { get; }
 
+        /// <summary>
+        /// Get all recipes
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<RecipeModel> Get()
         {
             return RecipeService.GetRecipes();
         }
 
+        /// <summary>
+        /// Get all recipes with defined cuisine tags
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("ByCuisines")]
+        public IEnumerable<RecipeModel> GetByCuisines()
+        {
+            // Define cuisine tags
+            var cuisines = new List<string> { "Japanese", "Chinese", "Mexican", "Korean", "French", "Thai", "Vietnamese", "Indian"};
+
+            // Get all the recipes with the cuisine tags
+            return RecipeService.FilterRecipesByTags(cuisines);
+        }
     }
 }
