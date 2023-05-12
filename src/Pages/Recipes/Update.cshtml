@@ -1,11 +1,11 @@
 ﻿@page "{id:int}"
 @model ContosoCrafts.WebSite.Pages.Recipes.UpdateModel
 @if (Model.RecipeNotFound)
-    {
+ {
     <p>Error: The requested recipe was not found.</p>
-    }
+ }
     else
-    {
+ {
         ViewData["Title"] = "Update recipe page";
 
 <h1>Update Recipe</h1>
@@ -39,10 +39,13 @@
         <div class="form-group">
             <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
             @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
-                {
-                <input asp-for="@Model.Recipe.Tags[i]" class="form-control" id="tag-@(i + 1)" required maxlength="1000" minlength="1" />
-                <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
-                }
+             {
+                <div class="tagLabel-container">
+                    <label class="tag-label">@($"{i + 1}.")</label>
+                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" required maxlength="1000" minlength="1" />
+                    <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
+                </div>
+             }
             <div id="btnTagsContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnTags" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
@@ -136,26 +139,41 @@
 
         // Add button to add tags
         tagAddButton.click(function () {
-            var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').attr('required', '');
-            if (tagCount > 0) {
-                // Check if the previous tag input field is empty
-                var prevInput = $('input[name="Recipe.Tags[' + (tagCount - 1) + ']"]');
-                if (!prevInput.val()) {
-                    alert('Tag cannot be empty. Please enter a valid tag.');
-                    return; // do not proceed with adding the tag
-                }
+            //var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').attr('required', '');
+            //if (tagCount > 0) {
+            //    // Check if the previous tag input field is empty
+            //    var prevInput = $('input[name="Recipe.Tags[' + (tagCount - 1) + ']"]');
+            //    if (!prevInput.val()) {
+            //        alert('Tag cannot be empty. Please enter a valid tag.');
+            //        return; // do not proceed with adding the tag
+            //    }
+            //}
+
+            //tagContainer.before(input);
+            //tagCount++;
+
+            //tagAddButton.show();
+
+            var prevInput = $('input[name="Recipe.Tags[' + (tagCount - 1) + ']"]');
+            if (tagCount > 0 && !prevInput.val()) {
+                alert('Tag cannot be empty. Please enter a valid tag.');
+                return; // do not proceed with adding the tags
             }
 
-            tagContainer.before(input);
-            tagCount++;
+            var newInput = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').attr('required', '');
+            var newLabel = $('<label>').attr('class', 'ingr-label').text(tagCount + 1 + '.');
 
-            tagAddButton.show();
+            // Append a new div containing the label and input elements with the updated index
+            var newDiv = $('<div>').addClass('tagLabel-container').append(newLabel).append(newInput);
+            tagContainer.before(newDiv);
+            tagCount++;
         });
 
         // Delete button to delete tags
         tagDeleteButton.click(function () {
-            var tagName = prompt("Enter the name of the tag you want to delete:");
-            if (tagName) {
+            var indexToDelete = prompt("Enter the index of the tag you want to delete:");
+            if (indexToDelete) {
+                indexToDelete = parseInt(indexToDelete) - 1;
                 // Get all the tag input fields
                 var tagInputs = $('input[name^="Recipe.Tags"]');
                 if (tagInputs.length > 1) {
@@ -163,19 +181,21 @@
                     // Keep track of whether the specified tag was deleted
                     tagInputs.each(function (index) {
                         var tagInput = $(this);
-                        if (tagInput.val() === tagName || tagInput.val() === "" ){
+                        var tagLabel = tagInput.prev('label')
+                        if (index === indexToDelete || (index === tagInputs.length - 1 && tagInput.val() !== "")) {
                             tagInput.remove();
+                            tagLabel.remove()
                             tagDeleted = true;
                             tagCount--;
                             for (var i = index + 1; i < tagInputs.length; i++) {
                                 var input = tagInputs.eq(i);
                                 var newName = 'Recipe.Tags[' + (i - 1) + ']';
                                 input.attr('name', newName);
+                                input.prev('label').html(i + '.');
                             }
                             return false; // break out of each loop
                         }
                     });
-
                     if (tagDeleted) {
                         var newTagArray = [];
                         tagInputs.each(function () {
@@ -187,7 +207,7 @@
                         });
                         $('#Tags').val(newTagArray.join(','));
                     } else {
-                        alert('No matching tag is found.');
+                        alert('Invalid tag index.');
                     }
                 } else {
                     alert('At least one tag is required.')
@@ -218,7 +238,6 @@
             var newDiv = $('<div>').addClass('ingrLabel-container').append(newLabel).append(newInput);
             ingrContainer.before(newDiv);
             ingrCount++;
-
         });
 
         // Delete button to delete ingredients
@@ -348,4 +367,4 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-        }
+    }
