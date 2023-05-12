@@ -57,6 +57,7 @@ namespace UnitTests
                 newRecipe.EditDate = "TEST";
                 newRecipe.ImageCaption = "TEST";
                 newRecipe.Image = "TEST";
+                newRecipe.Comments = new string[] { "TEST" };
                 return newRecipe;
             }
         }
