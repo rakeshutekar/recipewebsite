@@ -196,7 +196,17 @@ ul {
 }
 
 .instrLabel-container input {
-    width: 97%;
+    width: 96%;
     display: inline-block;
 }
+
+.ingr-label {
+    margin-right: 10px;
+}
+
+.ingrLabel-container input {
+    width: 96%;
+    display: inline-block;
+}
+
 
