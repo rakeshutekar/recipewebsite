@@ -209,4 +209,11 @@ ul {
     display: inline-block;
 }
 
+.tag-label {
+    margin-right: 10px;
+}
 
+.tagLabel-container input {
+    width: 96%;
+    display: inline-block;
+}
