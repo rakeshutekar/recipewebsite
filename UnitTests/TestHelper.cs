@@ -13,6 +13,7 @@ using Moq;
 using ContosoCrafts.WebSite.Services;
 using NUnit.Framework.Internal;
 using ContosoCrafts.WebSite.Models;
+using System.Collections.Generic;
 
 namespace UnitTests
 {
@@ -57,7 +58,7 @@ namespace UnitTests
                 newRecipe.EditDate = "TEST";
                 newRecipe.ImageCaption = "TEST";
                 newRecipe.Image = "TEST";
-                newRecipe.Comments = new string[] { "TEST" };
+                newRecipe.Comments = new List<CommentModel>();
                 return newRecipe;
             }
         }
