@@ -69,7 +69,7 @@ namespace ContosoCrafts.WebSite.Services
                     new JsonSerializerOptions
                     {
                         PropertyNameCaseInsensitive = true
-                    }).First(x => x.RecipeID == recipeID);
+                    }).FirstOrDefault(x => x.RecipeID == recipeID);
             }
         }
 
