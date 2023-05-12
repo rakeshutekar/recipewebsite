@@ -180,7 +180,8 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
-        /// Filter recipes by keywords in tags
+        /// Filter recipes by keywords in tags (trimmed of whitespace and converted to
+        /// lower case before comparing)
         /// Used for individual filtered page under Recipes in navbar
         /// </summary>
         /// <param name="tags"></param>
