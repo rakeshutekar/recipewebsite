@@ -187,8 +187,9 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns></returns>
         public IEnumerable<RecipeModel> FilterRecipesByTags(IEnumerable<string> tags)
         {
+            var _tags = tags.Select(tag => tag.Trim().ToLower());
             var recipes = GetRecipes();
-            return recipes.Where(r => r.Tags.Any(t => tags.Contains(t, StringComparer.OrdinalIgnoreCase)));
+            return recipes.Where(r => r.Tags.Any(t => _tags.Contains(t.Trim().ToLower())));
         }
 
         /// <summary>
