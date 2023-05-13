@@ -13,6 +13,8 @@ ViewData["Title"] = "Delete recipe page";
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @Html.HiddenFor(x => x.Recipe.RecipeID)
+        @Html.HiddenFor(x => x.Recipe.Instructions)
+        @Html.HiddenFor(x => x.Recipe.Image)
 
         <div class="form-group mb-3">
             <label asp-for="@Model.Recipe.AuthorID" class="control-label">Author</label>
