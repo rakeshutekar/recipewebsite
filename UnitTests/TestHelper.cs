@@ -58,7 +58,16 @@ namespace UnitTests
                 newRecipe.EditDate = "TEST";
                 newRecipe.ImageCaption = "TEST";
                 newRecipe.Image = "TEST";
-                newRecipe.Comments = new List<CommentModel>();
+                newRecipe.Comments = new List<CommentModel>()
+                {
+                    new CommentModel()
+                    {
+                        FirstName = "TEST",
+                        LastName = "TEST",
+                        Comment = "TEST",
+                        Id = System.Guid.NewGuid().ToString()
+                    }
+                };
                 return newRecipe;
             }
         }
