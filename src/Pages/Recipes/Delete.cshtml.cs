@@ -63,17 +63,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// <returns></returns>
         public IActionResult OnPost()
         {
-            // Model needs to be revalidated as the delete page has minimal
-            // fields filled out and the OnPost() action is stateless so doesn't
-            // carry field information over for non-bound fields.
-            // https://learn.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-6.0
-            var id = Recipe.RecipeID;
-            Recipe = RecipeService.GetRecipe(id);
-
-
-            // Revalidate, then load /index or reload page
-            ModelState.ClearValidationState(nameof(Recipe));
-            if (!TryValidateModel(Recipe, nameof(Recipe)))
+            if(!ModelState.IsValid)
             {
                 return Page();
             }
