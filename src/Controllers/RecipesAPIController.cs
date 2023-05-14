@@ -10,6 +10,7 @@ using System;
 
 namespace ContosoCrafts.WebSite.Controllers
 {
+    
     /// <summary>
     /// RecipesAPIController is an API to access Recipe information via HTTP
     /// requests, either directly from the URL or embedded as HTTP requests
@@ -19,6 +20,18 @@ namespace ContosoCrafts.WebSite.Controllers
     [Route("[controller]")]
     public class RecipesAPIController : ControllerBase
     {
+        // Static Getter acts as a constant list of cuisine tag options
+        public static List<string> cuisines
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Japanese", "Chinese", "Mexican", "Korean", "French", "Thai", "Vietnamese", "Indian"
+                };
+            }
+        }
+
         /// <summary>
         /// Default constructor takes in the JsonFileRecipeService via DI
         /// </summary>
@@ -49,7 +62,7 @@ namespace ContosoCrafts.WebSite.Controllers
         public IEnumerable<RecipeModel> GetByCuisines()
         {
             // Define cuisine tags
-            var cuisines = new List<string> { "Japanese", "Chinese", "Mexican", "Korean", "French", "Thai", "Vietnamese", "Indian"};
+            // var cuisines = new List<string> { "Japanese", "Chinese", "Mexican", "Korean", "French", "Thai", "Vietnamese", "Indian"};
 
             // Get all the recipes with the cuisine tags
             return RecipeService.FilterRecipesByTags(cuisines);
