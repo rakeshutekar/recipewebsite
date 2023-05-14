@@ -30,11 +30,24 @@ namespace UnitTests.Pages
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Test to ensure OnGet correctly gets recipes from recipe service and sets
+        /// internal recipe model collection - recipe model collection should have
+        /// same size as service collection and should have same recipes.
+        /// </summary>
         [Test]
         public void OnGet_Should_Set_Recipes_To_All_Recipes_Retrieved_From_Recipe_Service()
         {
-
+            // Arrange
+            var recipes = TestHelper.RecipeService.GetRecipes();
+            // Act
+            pageModel.OnGet();
+            // Assert
+            Assert.AreEqual(pageModel.Recipes.Count(), recipes.Count());
+            Assert.AreEqual(pageModel.Recipes.First().RecipeID, recipes.First().RecipeID);
         }
         #endregion OnGet
+
+
     }
 }
