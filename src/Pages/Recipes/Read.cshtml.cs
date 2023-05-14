@@ -52,5 +52,20 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
                 RecipeNotFound = true;
             }
         }
+         // Property for a new comment
+        [BindProperty]
+        public CommentModel NewComment { get; set; }
+
+        // Method for handling form submissions
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            RecipeService.AddComment(RecipeID, NewComment);
+            return RedirectToPage(new { id = RecipeID });
+        }
     }
 }
