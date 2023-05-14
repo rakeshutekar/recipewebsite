@@ -9,6 +9,12 @@
         <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     </head>
+        <head>
+        ...
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        ...
+    </head>
+
 
     <body>
 
@@ -109,37 +115,42 @@
             </main>
         </div>
 
-        <!-- new footer -->
-        <footer style="background-color: #cad2c5; position: fixed; bottom: 0; width: 100%; ">
-            <div class="container p-3 pb-0">
+    <!-- new footer -->
+    <footer style="background-color: #cad2c5; position: fixed; bottom: 0; width: 100%; ">
+        <div class="container p-3 pb-0">
 
-                <!-- Section: sign up -->
-                <section class="">
-                    <p class="d-flex justify-content-center align-items-center">
-                        <span class="me-3 px-3" style="font-weight: bold;">Register for free</span>
-                        <button type="button" class="btn btn-outline-dark btn-rounded" style="background-color: #84a98c">
-                            Sign up
-                        </button>
-                    </p>
-                </section>
-                <!-- Section: sign up -->
-                <!-- Section: Text -->
-                <section class="mb-4">
-                    <p class="text-center">
-                        Want to learn cook but confused how to start? <br />
-                        No need to worry again! Let's start cooking with Recipe Repo!
-                    </p>
-                </section>
-                <!-- Section: Text -->
+            <!-- Section: sign up -->
+            <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                    <span class="me-3 px-3" style="font-weight: bold;">Register for free</span>
+                    <button type="button" class="btn btn-outline-dark btn-rounded" style="background-color: #84a98c">
+                        Sign up
+                    </button>
+                </p>
+            </section>
+            <!-- Section: sign up -->
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p class="text-center">
+                    Want to learn cook but confused how to start? <br />
+                    No need to worry again! Let's start cooking with Recipe Repo!
+                </p>
+            </section>
+            <!-- Section: Text -->
 
-            </div>
+        </div>
 
-            <div class="text-center p-2" style="background-color: #84a98c;">
-                &copy; 2023 <a class="text-dark" href="/" style="text-decoration: none;">Recipe Repo</a>
-                <a asp-area="" asp-page="/Privacy">Privacy</a>
+        <div class="text-center p-2" style="background-color: #84a98c;">
+            <!-- Social Media Icons -->
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com" role="button"><i class="fab fa-instagram"></i></a>
 
-            </div>
-        </footer>
+            &copy; 2023 <a class="text-dark" href="/" style="text-decoration: none;">Recipe Repo</a>
+            <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+<!-- end footer -->
 
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
