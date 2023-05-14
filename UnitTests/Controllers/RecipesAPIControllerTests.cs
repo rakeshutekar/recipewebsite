@@ -48,6 +48,25 @@ namespace UnitTests.Controllers
             IEnumerable<RecipeModel> models = aPIController.Get();
             Assert.AreEqual(TestHelper.RecipeService.GetRecipes().Count(), models.Count());
         }
+
+        /// <summary>
+        /// Test ensures that GetByCuisine method correctly filters recipes by cuisine. Uses same
+        /// cuisine filtering in service and in controller to ensure the same number of results and 
+        /// that the first entry is the same in each collection.
+        /// </summary>
+        [Test]
+        public void RecipesAPIController_GetByCuisines_Should_Return_Recipes_Filtered_By_Cuisine()
+        {
+            // Arrange
+            RecipesAPIController aPIController = new RecipesAPIController(TestHelper.RecipeService);
+            // Act
+            var controllerResults = aPIController.GetByCuisines();
+            var serviceResults = TestHelper.RecipeService.FilterRecipesByTags(RecipesAPIController.cuisines);
+            // Assert
+            Assert.IsNotNull(controllerResults);
+            Assert.AreEqual(controllerResults.Count(), serviceResults.Count());
+            Assert.AreEqual(controllerResults.First().RecipeID, serviceResults.First().RecipeID);
+        }
     }
 
 }
