@@ -207,5 +207,21 @@ namespace ContosoCrafts.WebSite.Services
             var jsonString = JsonSerializer.Serialize(recipes, options);
             File.WriteAllText(JsonFileName, jsonString);
         }
+        public void AddComment(int recipeID, CommentModel comment)
+        {
+            var recipes = GetRecipes().ToList();  // get the list of all recipes
+            var recipe = recipes.FirstOrDefault(r => r.RecipeID == recipeID);  // find the recipe in the list
+
+            if (recipe == null) return;
+
+            if (recipe.Comments == null)
+            {
+                recipe.Comments = new List<CommentModel>();
+            }
+
+            recipe.Comments.Add(comment);
+
+            SaveRecipes(recipes);  // save the updated list
+        }
     }
 }
