@@ -19,7 +19,7 @@ const inptGrp = "input-group";
 // Function prepared to listen to on-click events of the "+" button under the instructions
 // form group and add new instruction text areas for users to enter in their information
 $("#addBtnInstr").click(function () {
-    var instrs = $('[id ^= "instr"]');
+    var instrs = $('.inputGrpInstr');
     var count = instrs.length;
 
     // prepare html grouping to insert
@@ -54,11 +54,25 @@ $("#addBtnInstr").click(function () {
     // Insert inside the wrapper
     $("#wrapperInstr").append(inputDiv);
 
+    // Prepare validation grouping to insert
+    var nextValidation = document.createElement("span");
+    nextValidation.setAttribute("class", "text-danger field-validation-error");
+    nextValidation.setAttribute("data-valmsg-for", nameAttr);
+    nextValidation.setAttribute("data-valmsg-replace", "true");
+
+    // Insert inside the wrapper
+    $("#wrapperInstr").append(nextValidation);
+
 });
 
 // Delete the specific row of using the text area's delete button
 $("#wrapperInstr").on("click", ".btnRmv", function (e) {
     e.preventDefault();
+
+    // Delete the span used for its validation
+    $(this).parent("div").parent("div").next("span").remove();
+
+    // then delete the wrapper containing the row
     $(this).parent("div").parent("div").remove();
 
     // Get the count of the number of rows and re-id them
@@ -72,6 +86,7 @@ $("#wrapperInstr").on("click", ".btnRmv", function (e) {
         var placeholder = "Step #" + (counter + 1);
         $(this).children("input").attr("name", name);
         $(this).children("input").attr("placeholder", placeholder);
+        $(this).next("span").attr("data-valmsg-for", name);
         counter++;
     });
 });
@@ -80,8 +95,8 @@ $("#wrapperInstr").on("click", ".btnRmv", function (e) {
 // Function prepared to listen to on-click events of the "+" button under the ingredients
 // form group and add new ingredients text areas for users to enter in their information
 $("#addBtnIngr").click(function () {
-    var instrs = $('[id ^= "ingr"]');
-    var count = instrs.length;
+    var ingrs = $('.inputGrpIngr');
+    var count = ingrs.length;
 
     // prepare html grouping to insert
     var nextInput = document.createElement("input");
@@ -94,7 +109,6 @@ $("#addBtnIngr").click(function () {
     nextInput.setAttribute("type", textType);
     nextInput.setAttribute("name", nameAttr);
     nextInput.setAttribute("placeholder", placeholderAttr);
-
 
     var rmvBtn = $("<button></button>");
     var rmvBtnClass = "btnRmv";
@@ -115,11 +129,24 @@ $("#addBtnIngr").click(function () {
     // Insert inside the wrapper
     $("#wrapperIngr").append(inputDiv);
 
+    // Prepare validation grouping to insert
+    var nextValidation = document.createElement("span");
+    nextValidation.setAttribute("class", "text-danger field-validation-error");
+    nextValidation.setAttribute("data-valmsg-for", nameAttr);
+    nextValidation.setAttribute("data-valmsg-replace", "true");
+
+    // Insert inside the wrapper
+    $("#wrapperIngr").append(nextValidation);
 });
 
 // Delete the specific row of using the text area's delete button
 $("#wrapperIngr").on("click", ".btnRmv", function (e) {
     e.preventDefault();
+
+    // Delete the span used for its validation
+    $(this).parent("div").parent("div").next("span").remove();
+
+    // then delete the wrapper containing the row
     $(this).parent("div").parent("div").remove();
 
     // Get the count of the number of rows and re-id them
@@ -133,6 +160,7 @@ $("#wrapperIngr").on("click", ".btnRmv", function (e) {
         var placeholder = "Ingredient #" + (counter + 1);
         $(this).children("input").attr("name", name);
         $(this).children("input").attr("placeholder", placeholder);
+        $(this).next("span").attr("data-valmsg-for", name);
         counter++;
     });
 });
@@ -142,7 +170,6 @@ $("#wrapperIngr").on("click", ".btnRmv", function (e) {
 $("#addBtnTags").click(function () {
     var tags = $('.inputGrpTags');
     var count = tags.length;
-    console.log(count);
 
     // prepare html grouping to insert
     var nextInput = document.createElement("input");
