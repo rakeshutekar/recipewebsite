@@ -140,8 +140,9 @@ $("#wrapperIngr").on("click", ".btnRmv", function (e) {
 // Function prepared to listen to on-click events of the "+" button under the Tags
 // form group and add new tags text areas for users to enter in their information
 $("#addBtnTags").click(function () {
-    var tags = $('[id ^= "tag"]');
+    var tags = $('.inputGrpTags');
     var count = tags.length;
+    console.log(count);
 
     // prepare html grouping to insert
     var nextInput = document.createElement("input");
@@ -154,7 +155,6 @@ $("#addBtnTags").click(function () {
     nextInput.setAttribute("type", textType);
     nextInput.setAttribute("name", nameAttr);
     nextInput.setAttribute("placeholder", placeholderAttr);
-
 
     var rmvBtn = $("<button></button>");
     var rmvBtnClass = "btnRmv";
@@ -175,13 +175,25 @@ $("#addBtnTags").click(function () {
     // Insert inside the wrapper
     $("#wrapperTags").append(inputDiv);
 
+    // Prepare validation grouping to insert
+    var nextValidation = document.createElement("span");
+    nextValidation.setAttribute("class", "text-danger field-validation-error");
+    nextValidation.setAttribute("data-valmsg-for", nameAttr);
+    nextValidation.setAttribute("data-valmsg-replace", "true");
+
+    // Insert inside the wrapper
+    $("#wrapperTags").append(nextValidation);
 });
 
 // Delete the specific row of using the text area's delete button
 $("#wrapperTags").on("click", ".btnRmv", function (e) {
     e.preventDefault();
-    $(this).parent("div").parent("div").remove();
+    // Delete the span used for its validation
+    $(this).parent("div").parent("div").next("span").remove();
 
+    // then delete the wrapper containing the row
+    $(this).parent("div").parent("div").remove();
+    
     // Get the count of the number of rows and re-id them
     var tags = $(".inputGrpTags");
     var tagsCount = tags.length;
@@ -194,6 +206,7 @@ $("#wrapperTags").on("click", ".btnRmv", function (e) {
         var placeholder = "Tag #" + (counter + 1);
         $(this).children("input").attr("name", name);
         $(this).children("input").attr("placeholder", placeholder);
+        $(this).next("span").attr("data-valmsg-for", name);
         counter++;
     });
 });
