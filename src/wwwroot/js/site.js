@@ -69,7 +69,9 @@ $("#wrapperInstr").on("click", ".btnRmv", function (e) {
     // Loop over jquery object set and update the proper model names
     instrs.each(function () {
         var name = "Recipe.Instructions[" + counter + "]";
+        var placeholder = "Step #" + (counter + 1);
         $(this).children("input").attr("name", name);
+        $(this).children("input").attr("placeholder", placeholder);
         counter++;
     });
 });
@@ -128,7 +130,9 @@ $("#wrapperIngr").on("click", ".btnRmv", function (e) {
     // Loop over jquery object set and update the proper model names
     instrs.each(function () {
         var name = "Recipe.Ingredients[" + counter + "]";
+        var placeholder = "Ingredient #" + (counter + 1);
         $(this).children("input").attr("name", name);
+        $(this).children("input").attr("placeholder", placeholder);
         counter++;
     });
 });
@@ -183,10 +187,13 @@ $("#wrapperTags").on("click", ".btnRmv", function (e) {
     var tagsCount = tags.length;
     var counter = 0;
 
-    // Loop over jquery object set and update the proper model names
+    // Loop over jquery object set and update the proper model names as well as
+    // placeholder values
     tags.each(function () {
         var name = "Recipe.Tags[" + counter + "]";
+        var placeholder = "Tag #" + (counter + 1);
         $(this).children("input").attr("name", name);
+        $(this).children("input").attr("placeholder", placeholder);
         counter++;
     });
 });
