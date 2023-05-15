@@ -41,7 +41,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// Loads the data
         /// </summary>
         /// <param name="id"></param>
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             RecipeID = id;
             Recipe = RecipeService.GetRecipe(id);
@@ -51,6 +51,13 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             {
                 RecipeNotFound = true;
             }
+
+            if (Recipe.Deleted == true)
+            {
+                return RedirectToPage("../Error");
+            }
+
+            return Page();
         }
 
         /// <summary>
