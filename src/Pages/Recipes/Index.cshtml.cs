@@ -14,8 +14,23 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
     /// class retrieves the recipes and shows the user a full listing of the
     /// catalogue.
     /// </summary>
-    public class IndexList : PageModel
+    public class IndexModel : PageModel
     {
+        // Const string used for comparison
+        private const string CUISINES_FILTER = "cuisines";
+
+        // Static Getter acts as a constant list of cuisine tag options
+        public static List<string> cuisines
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Japanese", "Chinese", "Mexican", "Korean", "French", "Thai", "Vietnamese", "Indian"
+                };
+            }
+        }
+
         // Logger field
         private readonly ILogger<IndexModel> _logger;
 
@@ -25,7 +40,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// </summary>
         /// <param name="logger">Logger</param>
         /// <param name="recipeService">RecipeService that retrieves data</param>
-        public IndexList(ILogger<IndexModel> logger,
+        public IndexModel(ILogger<IndexModel> logger,
             JsonFileRecipeService recipeService)
         {
             _logger = logger;
@@ -34,16 +49,40 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
 
         // Service that retrieves the data
         public JsonFileRecipeService RecipeService{get;}
+
         // Collection of recipes retrieved from the database
         public IEnumerable<RecipeModel> Recipes {get; private set;}
+
+        // Filter parameter when searching for cuisines. Bound so that query
+        // can be executed via URI
+        [BindProperty(SupportsGet = true)]
+        public string Filter { get; set; }
 
         /// <summary>
         /// OnGet() method retrieves all the recipes from JSON file and returns
         /// it as an IEnumerable collection
         /// </summary>
-        public void OnGet()
+        /// <returns>IActionresult</returns>
+        public IActionResult OnGet()
         {
-            Recipes = RecipeService.GetRecipes();
+            // Ensure invalid filters do not return results
+            if (!string.IsNullOrEmpty(Filter) && !Filter.Equals(CUISINES_FILTER))
+            {
+                return RedirectToPage("../Error");
+            }
+
+            // If matching the cuisines filter, send back filter results
+            if (!string.IsNullOrEmpty(Filter) && Filter.Equals(CUISINES_FILTER))
+            {
+                Recipes = RecipeService.FilterRecipesByTags(cuisines);
+            }
+            // else return normal recipes
+            else
+            {
+                Recipes = RecipeService.GetRecipes();
+            }
+
+            return Page();
         }
     }
 }
