@@ -41,7 +41,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// Retrieves the specified recipe by its ID passed in via the URL
         /// </summary>
         /// <param name="id"></param>
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             RecipeID = id;
             Recipe = RecipeService.GetRecipe(id);
@@ -51,6 +51,14 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             {
                 RecipeNotFound = true;
             }
+
+            // Return error page if the recipe is deleted
+            if(Recipe.Deleted == true)
+            {
+                return RedirectToPage("../Error");
+            }
+
+            return Page();
         }
          // Property for a new comment
         [BindProperty]
