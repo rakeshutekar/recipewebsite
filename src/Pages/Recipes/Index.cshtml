@@ -20,18 +20,18 @@
         <tbody id="recipeBody">
             @* The recipes will be dispalyed by the JavaScript code below *@
 
-            @*@foreach (var recipe in Model.Recipes)
+            @foreach (var recipe in Model.Recipes)
             {
                 <tr>
                     <td>@recipe.Title</td>
                     <td><a asp-page="Read" asp-route-id="@recipe.RecipeID">Read</a></td>
                 </tr>
-            }*@
+            }
         </tbody>
     </table>
 </div>
 
-<script>
+@*<script>
     // Create URLSearchParams object from current URL query string
     const params = new URLSearchParams(window.location.search);
     // Get "filter" from query string
