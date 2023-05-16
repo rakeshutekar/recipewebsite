@@ -101,6 +101,27 @@ namespace UnitTests.Pages.Recipes
 
             Assert.NotNull(result);
         }
+        /// <summary>
+        /// Test ensures that OnPost returns valid result when model state is valid
+        /// including a new comment.
+        /// </summary>
+        [Test]
+        public void OnPost_Returns_Non_Null_Result_When_Model_State_Is_Valid()
+        {
+            // Find valid recipe ID
+            var validRecipeID = 0;
+            foreach(RecipeModel recipeModel in TestHelper.RecipeService.GetRecipes())
+            {
+                if (!recipeModel.Deleted) { validRecipeID = recipeModel.RecipeID; break; }
+            }
+            pageModel.OnGet(validRecipeID);
+
+            pageModel.NewComment = new CommentModel();
+
+            var result = pageModel.OnPost();
+
+            Assert.NotNull(result);
+        }
         #endregion OnGet
     }
 }
