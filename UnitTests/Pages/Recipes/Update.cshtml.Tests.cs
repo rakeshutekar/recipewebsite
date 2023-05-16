@@ -28,7 +28,6 @@ namespace UnitTests.Pages.Recipes
         {
             pageModel = new UpdateModel(TestHelper.RecipeService)
             {
-
             };
         }
 
@@ -45,13 +44,44 @@ namespace UnitTests.Pages.Recipes
             // Arragne
             var validRecipeID = 1;
             var validRecipeTitle = "Prawn and Avocado Omelette";
-            pageModel.OnGet(validRecipeID);
-
+            var result = pageModel.OnGet(validRecipeID);
             // Act
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(validRecipeTitle, pageModel.Recipe.Title);
+
+            // Check if the recipe is not null after the one get
+            var recipeNotNull = pageModel.Recipe != null;
+            Assert.AreEqual(true, recipeNotNull);
+        }
+
+        [Test]
+        public void OnGet_Deleted_Recipes_Should_Redirect_To_Error_Page()
+        {
+            // Arrange
+            TestHelper.RecipeService.DeleteRecipe(1);
+            var deletedID = 1;
+
+            // Act
+            var pageResult = pageModel.OnGet(deletedID) as RedirectToPageResult;
+
+            // Assert
+            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
+        }
+
+        [Test]
+        public void OnGet_Invalid_RecipeId_Should_Show_Recipe_Not_Found()
+        {
+            // Arrange
+            var numRecipes = TestHelper.RecipeService.GetRecipes().Count();
+            var invalidRecipeId = numRecipes + 1;
+
+            // Act
+            pageModel.OnGet(invalidRecipeId);
+
+            // Assert
+            Assert.AreEqual(true, pageModel.RecipeNotFound);
         }
 
         #endregion OnGet
