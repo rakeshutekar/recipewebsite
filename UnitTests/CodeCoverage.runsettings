@@ -39,7 +39,7 @@ Included items must then not match any entries in the exclude list to remain inc
                 <ModulePath>.*bunit.*</ModulePath>
                 <ModulePath>.*moq.*</ModulePath>
                 <ModulePath>.*biliweb.views.*</ModulePath>
-              </Exclude>
+			  </Exclude>
             </ModulePaths>
 
             <!-- Match fully qualified names of functions: -->
@@ -81,7 +81,8 @@ Included items must then not match any entries in the exclude list to remain inc
                 <Source>.*\\public\\sdk\\.*</Source>
                 <Source>.*\\microsoft sdks\\.*</Source>
                 <Source>.*\\vc\\include\\.*</Source>
-              </Exclude>
+				<Source>.*\.cshtml$</Source>
+			  </Exclude>
             </Sources>
 
             <!-- Match the company name property in the assembly: -->
