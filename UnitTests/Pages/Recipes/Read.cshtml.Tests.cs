@@ -3,6 +3,8 @@ using ContosoCrafts.WebSite.Pages.Recipes;
 using System;
 using ContosoCrafts.WebSite.Services;
 using System.Linq;
+using ContosoCrafts.WebSite.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UnitTests.Pages.Recipes
 {
@@ -45,6 +47,59 @@ namespace UnitTests.Pages.Recipes
             // After calling OnGet ReadModel.Recipe property should not be null
             result = pageModel.Recipe != null;
             Assert.AreEqual(true, result);
+        }
+
+        /// <summary>
+        /// Test ensures that OnGet sets recipe not found to true when recipe ID
+        /// does not correspond to a recipe in the data store
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_RecipeId_Should_Set_Recipe_Not_Found_To_True()
+        {
+            // Arrange
+            // Get a bad id - sum of all other ids
+            var badId = 0;
+            var recipes = TestHelper.RecipeService.GetRecipes();
+            foreach(RecipeModel recipeModel in recipes)
+            {
+                badId += recipeModel.RecipeID;
+            }
+            // Act 
+            pageModel.OnGet(badId);
+            // Assert
+            Assert.IsTrue(pageModel.RecipeNotFound);
+        }
+        /// <summary>
+        /// Test ensures that OnGet() with deleted recipe ID redirects to valid (non-null) page
+        /// </summary>
+        [Test]
+        public void OnGet_Valid_Recipe_ID_Deleted_Recipe_Should_Redirect_To_Error_Page()
+        {
+            // Arrage
+            TestHelper.RecipeService.DeleteRecipe(1);
+            var deletedID = 1;
+            
+            // Act
+            Console.WriteLine(deletedID);
+            
+            var result = pageModel.OnGet(deletedID);
+            // Assert
+            Assert.NotNull(result);
+        }
+        /// <summary>
+        /// Test ensures that OnPost returns valid result (returns current page)
+        /// when model state is invalid
+        /// </summary>
+        [Test]
+        public void OnPost_Returns_Non_Null_Result_When_Model_State_Is_Not_Valid()
+        {
+            // Arrange
+            // Set model state invalid
+            pageModel.ModelState.AddModelError("Test", "Test Error");
+            
+            var result = pageModel.OnPost();
+
+            Assert.NotNull(result);
         }
         #endregion OnGet
     }
