@@ -144,18 +144,17 @@ ul {
     font-family: 'Nunito', sans-serif; /******* Change font *******/
 }
 
+/*Social media icons appear round */
+.btn-rounded {
+    border-radius:20px;
+}
+
 /*Backgrounds*/
 .bg-navbar {
     background: -webkit-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
     background: -o-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
     background: -moz-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
     background: linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-}
-.bg-footer {
-    background: -webkit-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -o-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: -moz-linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
-    background: linear-gradient(110deg, #252152 60%, #e9a8a6 60%);
 }
 
 /* Change the background color of even rows */
