@@ -48,6 +48,22 @@ namespace UnitTests.Pages.Recipes
             Assert.AreEqual(validProductTitle, pageModel.Recipe.Title);
         }
 
+        /// <summary>
+        /// Tests that invalid recipes are not found and therefore not displayed on the
+        /// page
+        /// </summary>
+        [Test]
+        public void OnGet_Invalid_RecipeID_Should_Return_Not_Found_Recipe()
+        {
+            // Arange
+
+            // Act
+            var invalidProductId = 999;
+            pageModel.OnGet(invalidProductId);
+
+            // Assert
+            Assert.AreEqual(true, pageModel.RecipeNotFound);
+        }
         #endregion OnGet
 
 
