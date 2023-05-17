@@ -2,12 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitTests.Pages
 {
@@ -47,7 +42,5 @@ namespace UnitTests.Pages
             Assert.AreEqual(pageModel.Recipes.First().RecipeID, recipes.First().RecipeID);
         }
         #endregion OnGet
-
-
     }
 }
