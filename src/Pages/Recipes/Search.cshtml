@@ -15,30 +15,36 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<!-- Display the disclaimer -->
+@if (!string.IsNullOrEmpty(Model.Query) && !(Model.Tags != null && Model.Tags.Any()))
+{
+    <p>Please note: Search results may not be an exact match but will provide relevant results.</p>
+}
+
 <!-- Keep the Card Style as Index page -->
 @if (Model.SearchResults != null && Model.SearchResults.Any())
 {
-        <div class="container">
-            <div class="card-columns">
-                @foreach (var result in Model.SearchResults)
-                {
-                    <div class="card">
-                        <div class="card-img" style="background-image: url('@result.Image');">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">@result.Title</h5>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">
-                                <button onclick="window.location.href='/Recipes/Read/@result.RecipeID'" class="btn btn-primary" data-toggle="modal" data-target="#productModal">
-                                    More Info
-                                </button>
-                            </small>
-                        </div>
+    <div class="container">
+        <div class="card-columns">
+            @foreach (var result in Model.SearchResults)
+            {
+                <div class="card">
+                    <div class="card-img" style="background-image: url('@result.Image');">
                     </div>
-                }
-            </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@result.Title</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <button onclick="window.location.href='/Recipes/Read/@result.RecipeID'" class="btn btn-primary" data-toggle="modal" data-target="#productModal">
+                                More Info
+                            </button>
+                        </small>
+                    </div>
+                </div>
+            }
         </div>
+    </div>
 }
 else
 {
