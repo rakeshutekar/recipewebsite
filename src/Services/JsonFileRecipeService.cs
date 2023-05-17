@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 using ContosoCrafts.WebSite.Models;
 
@@ -149,32 +150,38 @@ namespace ContosoCrafts.WebSite.Services
         {
             // If query is null return empty results
             if (query == null) return Enumerable.Empty<RecipeModel>();
+
             // Modify the query
             query = query.Replace("+", " ");
-            //query = query?.Replace("+", " ");
             char[] Mychar = new Char[] { ' ', '*', '.', '?', '/', ';', '+'};
-            var searchTerm = query.Trim(Mychar).ToLower().Split(' ');
+
+            // Split query into words, removing trailing 's' from each word
+            // and constructing a regex for exact word matching
+            var searchTerm = query.Trim(Mychar).ToLower().Split(' ').Select(x => new Regex($@"\b{x.TrimEnd('s')}\b"));
+
+            // Get all recipes
             var recipes = GetRecipes();
 
             // Assign weight to each property
-            var titleWeight = 3;
-            var tagsWeight = 3;
+            var titleWeight = 4;
+            var tagsWeight = 4;
             var descriptionWeight = 2;
             var ingredientsWeight = 1;
             var instructionsWeight = 1;
 
-            // Get the filtered recipes in descending order by relevance 
-            var filteredRecipes = recipes.Where(r => searchTerm.All( s =>
-                                              r.Title.ToLower().Contains(s) ||
-                                              r.Description.ToLower().Contains(s) ||
-                                              r.Ingredients.Any(i => i.ToLower().Contains(s)) ||
-                                              r.Instructions.Any(i => i.ToLower().Contains(s)) ||
-                                              r.Tags.Any(i => i.ToLower().Contains(s))))
-                                         .OrderByDescending(r => titleWeight * searchTerm.Count(s => r.Title.ToLower().Contains(s)) +
-                                              descriptionWeight * searchTerm.Count(s => r.Description.ToLower().Contains(s)) +
-                                              tagsWeight * searchTerm.Count(s => r.Tags.Any(t => t.ToLower().Contains(s))) +
-                                              ingredientsWeight * searchTerm.Count(s => r.Ingredients.All(i => i.ToLower().Contains(s))) +
-                                              instructionsWeight * searchTerm.Count(s => r.Instructions.All(i => i.ToLower().Contains(s))));
+            // Get the filtered recipes in descending order by relevance
+            // For each regex, check if it matches anywhere in the recipe's fields
+            var filteredRecipes = recipes.Where(r => searchTerm.All(regex =>
+                                         regex.IsMatch(r.Title.ToLower().TrimEnd('s')) ||
+                                         regex.IsMatch(r.Description.ToLower().TrimEnd('s')) ||
+                                         r.Ingredients.Any(i => regex.IsMatch(i.ToLower().TrimEnd('s'))) ||
+                                         r.Instructions.Any(i => regex.IsMatch(i.ToLower().TrimEnd('s'))) ||
+                                         r.Tags.Any(i => regex.IsMatch(i.ToLower().TrimEnd('s')))))
+                                    .OrderByDescending(r => titleWeight * searchTerm.Count(s => s.IsMatch(r.Title.ToLower())) +
+                                         descriptionWeight * searchTerm.Count(s => s.IsMatch(r.Description.ToLower())) +
+                                         tagsWeight * searchTerm.Count(s => r.Tags.Any(t => s.IsMatch(t.ToLower()))) +
+                                         ingredientsWeight * searchTerm.Count(s => r.Ingredients.Any(i => s.IsMatch(i.ToLower()))) +
+                                         instructionsWeight * searchTerm.Count(s => r.Instructions.Any(i => s.IsMatch(i.ToLower()))));
 
             return filteredRecipes;
         }
