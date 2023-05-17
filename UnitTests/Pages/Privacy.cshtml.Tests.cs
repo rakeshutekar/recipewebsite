@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ContosoCrafts.WebSite.Pages;
+﻿using ContosoCrafts.WebSite.Pages;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
@@ -14,6 +9,9 @@ namespace UnitTests.Pages
     {
         // Page model used for testing
         public static PrivacyModel pageModel;
+        /// <summary>
+        /// Perform one-time setup before running tests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
