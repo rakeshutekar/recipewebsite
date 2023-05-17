@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTests.Pages.Recipes
 {
+    /// <summary>
+    /// Unit test class for the delete page
+    /// </summary>
     public class DeleteTests
     {
         #region TestSetup
@@ -66,7 +69,6 @@ namespace UnitTests.Pages.Recipes
         }
         #endregion OnGet
 
-
         #region OnPostAsync
         /// <summary>
         /// Tests succesful deletion of a recipe. Prepares a page model with
@@ -80,7 +82,6 @@ namespace UnitTests.Pages.Recipes
             // Arrange
             // Preparing a valid productID from the current dataset
             var validProductId = 1;
-            var validProductTitle = "Prawn and Avocado Omelette";
             pageModel.OnGet(validProductId);
 
             // Act
@@ -105,7 +106,6 @@ namespace UnitTests.Pages.Recipes
         {
             // Arrange - create a new fake recipe
             pageModel.Recipe = TestHelper.TEST_RECIPE_MODEL;
-
             pageModel.ModelState.AddModelError("Fake Error", "Fake Error");
 
             // Act
@@ -114,7 +114,6 @@ namespace UnitTests.Pages.Recipes
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
-
         #endregion OnPostAsync
     }
 }
