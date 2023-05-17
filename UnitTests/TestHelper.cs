@@ -44,6 +44,8 @@ namespace UnitTests
         
         // Constant string test value
         public const string STRING_TEST_VAL = "TEST";
+        // Test recipe model used for instantiating during tests
+        // and validating changes
         public static RecipeModel TEST_RECIPE_MODEL
         {
             get
