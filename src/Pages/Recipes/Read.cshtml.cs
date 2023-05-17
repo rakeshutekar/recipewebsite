@@ -67,15 +67,13 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         // Method for handling form submissions
         public IActionResult OnPost()
         {
-            RecipeID = Recipe.RecipeID;
-
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            RecipeService.AddComment(RecipeID, NewComment);
-            return RedirectToPage(new { id = RecipeID });
+            RecipeService.AddComment(Recipe.RecipeID, NewComment);
+            return RedirectToPage(new { id = Recipe.RecipeID });
         }
     }
 }
