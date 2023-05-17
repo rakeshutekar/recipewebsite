@@ -29,13 +29,14 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         public JsonFileRecipeService RecipeService { get; set; }
 
         // Individual recipe model
-        public RecipeModel Recipe { get; private set; }
+        [BindProperty]
+        public RecipeModel Recipe { get; set; }
 
         // Boolean to keep track of if recipe is found
         public bool RecipeNotFound { get; set; }
 
         // ID of the recipe passed in via URL/Path
-        public int RecipeID;
+        public int RecipeID { get; set; }
 
         /// <summary>
         /// Retrieves the specified recipe by its ID passed in via the URL
@@ -66,6 +67,8 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         // Method for handling form submissions
         public IActionResult OnPost()
         {
+            RecipeID = Recipe.RecipeID;
+
             if (!ModelState.IsValid)
             {
                 return Page();
