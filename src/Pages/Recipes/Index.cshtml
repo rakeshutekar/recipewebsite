@@ -18,8 +18,6 @@
             </tr>
         </thead>
         <tbody id="recipeBody">
-            @* The recipes will be dispalyed by the JavaScript code below *@
-
             @foreach (var recipe in Model.Recipes)
             {
                 <tr>
@@ -30,45 +28,3 @@
         </tbody>
     </table>
 </div>
-
-@*<script>
-    // Create URLSearchParams object from current URL query string
-    const params = new URLSearchParams(window.location.search);
-    // Get "filter" from query string
-    const filter = params.get('filter');
-    // Set default API endpoint
-    let apiEndpoint = '/RecipesAPI';
-    // If the "filter" parameter is "cuisines", change API endpoint
-    if (filter === 'cuisines') {
-        apiEndpoint = '/RecipesAPI/ByCuisines';
-    }
-    // Fetch data from determined API endpoint
-    fetch(apiEndpoint)
-        // *************** KEEP THE TABLE FORMAT *******************
-        .then(response => response.json())  // Response Body as JSON
-        .then(recipes => {
-            // Get 'recipeBody' element from the DOM
-            const recipeBody = document.getElementById('recipeBody');
-
-            recipes.forEach(recipe => {
-                // Create new table row
-                const row = document.createElement('tr');
-                // Create new cell for recipe title
-                const titleCell = document.createElement('td');
-                // Recipe title for cell text
-                titleCell.textContent = recipe.title;
-                // Append title to row
-                row.appendChild(titleCell);
-                // Create new cell for "Read"
-                const actionCell = document.createElement('td');    
-                const link = document.createElement('a');       // "Read" link
-                link.href = `/Recipes/Read/${recipe.recipeID}`;     // Link URL
-                link.textContent = 'Read';      // Link Text
-                actionCell.appendChild(link);   
-                // Append action cell to row
-                row.appendChild(actionCell);
-                // Append row to recipeBody
-                recipeBody.appendChild(row);
-            });
-        });
-</script>*@
