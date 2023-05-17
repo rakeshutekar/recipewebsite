@@ -30,7 +30,6 @@ namespace UnitTests.Pages.Recipes
         // A static page from the IndexList model class
         public static IndexModel pageModel;
 
-
         /// <summary>
         /// Tests that constructor correctly injects recipes service 
         /// to model
@@ -75,11 +74,9 @@ namespace UnitTests.Pages.Recipes
         public void OnGet_Invalid_Filter_Query_Redirects_To_Error_Page()
         {
             // Arrange
-
             // Act
             pageModel.Filter = "test";
             var pageResult = pageModel.OnGet() as RedirectToPageResult;
-
             // Assert
             Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
         }
@@ -92,11 +89,9 @@ namespace UnitTests.Pages.Recipes
         {
             // Arrange
             const string CUISINE_FILTER = "cuisines";
-
             // Act
             pageModel.Filter = CUISINE_FILTER;
             pageModel.OnGet();
-
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
         }
