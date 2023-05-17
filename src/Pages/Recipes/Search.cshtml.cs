@@ -48,13 +48,16 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             // If tags were selected, filter the recipes by those tags
             if (Tags != null && Tags.Length > 0)
             {
-                SearchResults = RecipeService.FilterRecipesByTags(Tags).Where(x => x.Deleted == false);
+                // Filter out any null or empty tags within the Tags array
+                var validTags = Tags.Where(tag => !string.IsNullOrEmpty(tag));
+                SearchResults = RecipeService.FilterRecipesByTags(validTags).Where(x => x.Deleted == false);
             }
+
             // If a search query was entered, search for recipes that
             // match that query
             else if (!string.IsNullOrEmpty(Query))
             {
-                SearchResults = RecipeService.SearchRecipes(Query).Where( x => x.Deleted == false);
+                SearchResults = RecipeService.SearchRecipes(Query).Where(x => x.Deleted == false);
             }
         }
     }
