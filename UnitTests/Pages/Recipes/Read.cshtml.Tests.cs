@@ -120,6 +120,19 @@ namespace UnitTests.Pages.Recipes
             Assert.NotNull(result);
         }
         #endregion OnGet
+
+        /// <summary>
+        /// Test ensures that the RecipeID getter returns the same recipe ID passed in via
+        /// OnGet
+        /// </summary>
+        [Test]
+        public void RecipeID_Get_Should_Return_Correct_Recipe_Model_ID()
+        {
+            // Test ID
+            var id = TestHelper.RecipeService.GetRecipes().First().RecipeID;
+            pageModel.OnGet(id);
+            Assert.AreEqual(id, pageModel.RecipeID);
+        }
     }
 }
 
