@@ -16,7 +16,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <!-- Display the disclaimer -->
-@if (!string.IsNullOrEmpty(Model.Query) && !(Model.Tags != null && Model.Tags.Any()))
+@if ((!string.IsNullOrEmpty(Model.Query) && !(Model.Tags != null && Model.Tags.Any())) && Model.SearchResults != null && Model.SearchResults.Any())
 {
     <p>Please note: Search results may not be an exact match but will provide relevant results.</p>
 }
