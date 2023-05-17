@@ -44,9 +44,10 @@ namespace ContosoCrafts.WebSite.Models
                 description = value;
             }
         }
-        // Array of instructions for the recipe
-        // ... Existing RecipeModel.cs content ...
 
+        /// <summary>
+        /// Defines a custom validation attribute named InstructionssAttribute to help with validating user input
+        /// </summary>
         public class InstructionsAttribute : ValidationAttribute
         {
             protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -67,7 +68,10 @@ namespace ContosoCrafts.WebSite.Models
         }
         [Instructions]
         public string[] Instructions { get; set; }
-        // Define a custom validation attribute named IngredientsAttribute
+
+        /// <summary>
+        /// Defines a custom validation attribute named IngredientsAttribute to help with validating user input
+        /// </summary>
         public class IngredientsAttribute : ValidationAttribute
         {
             // Override the IsValid method for custom validation logic
