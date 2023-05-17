@@ -195,7 +195,7 @@
       "If desired, meat, egg, or both can be placed in the center."
     ],
     "Ingredients": [
-      "2 cups medium-grain Korean, or Japanese rice",
+      "2 cups medium-grain rice",
       "1 large cucumber, sliced into thin strips",
       "1 teaspoon salt, divided, more as needed",
       "1 1/2 cups parboiled spinach, squeezed of excess water",
@@ -241,7 +241,7 @@
     "FirstName": "Serge",
     "LastName": "Swinden",
     "Title": "Healthy Salad Sandwich",
-    "Description": "This salad sandwich with herb mayo is the perfect quick and easy lunch recipe. Use any fresh vegetables you have to make a delicious, filling meal.",
+    "Description": "This salad sandwich with herb mayo is the perfect quick and easy brunch recipe. Use any fresh vegetables you have to make a delicious, filling meal.",
     "Instructions": [
       "Make the herb mayo: Combine the mayonnaise (or yogurt) with lemon juice, fresh herbs, salt and pepper. Blend with an immersion blender or food processor until smooth then set aside.",
       "Prep the vegetables: Thinly slice the tomato, cucumber and red onion and julienne the cucumber.",
@@ -268,7 +268,8 @@
       "healthy"
     ],
     "ImageCaption": null,
-    "Img": "https://simply-delicious-food.com/wp-content/uploads/2020/07/Easy-salad-sandwiches-with-herb-mayo-1.jpg"
+    "Img": "https://simply-delicious-food.com/wp-content/uploads/2020/07/Easy-salad-sandwiches-with-herb-mayo-1.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -296,10 +297,10 @@
       "1 lb raw shrimp (I use peel-on shrimp. We need 16 of them)",
       "16 rice paper wrappers (8.5\u0027\u0027-9\u0027\u0027 in diameter)",
       "2 cups soft lettuce, cut into smaller pieces or strips",
-      "Thai basil, tough stems removed",
+      "Basil, tough stems removed",
       "Chives, cut into 3\u0027\u0027-4\u0027\u0027 long pieces",
       "Other fresh herbs of your choice such as cilantro, mint",
-      "8 oz cooked rice vermicelli noodles"
+      "8 oz cooked rice vermicelli"
     ],
     "PublishDate": " ",
     "EditDate": " ",
@@ -307,11 +308,11 @@
       "appetizers",
       "easy",
       "quick",
-      "vietnamese",
-      "rice noodles"
+      "vietnamese"
     ],
     "ImageCaption": null,
-    "Img": "https://delightfulplate.com/wp-content/uploads/2020/07/Traditional-Vietnamese-Fresh-Spring-Rolls-Goi-cuon-tom-thit.jpg"
+    "Img": "https://delightfulplate.com/wp-content/uploads/2020/07/Traditional-Vietnamese-Fresh-Spring-Rolls-Goi-cuon-tom-thit.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -358,7 +359,8 @@
       "hot"
     ],
     "ImageCaption": null,
-    "Img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/03/18/0/FNK_HOT_POT_AT_HOME_OPENER_H_f_s4x3.jpg.rend.hgtvcom.826.620.suffix/1616107469470.jpeg"
+    "Img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/03/18/0/FNK_HOT_POT_AT_HOME_OPENER_H_f_s4x3.jpg.rend.hgtvcom.826.620.suffix/1616107469470.jpeg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -390,13 +392,14 @@
       "healthy",
       "salad",
       "breakfast",
-      "brunch",
       "green",
       "appetizers",
-      "thai"
+      "thai",
+      "vegan"
     ],
     "ImageCaption": null,
-    "Img": "https://chatelaine.com/wp-content/uploads/2018/06/Thai-basil-and-cilantro-salad-800x800.jpg"
+    "Img": "https://chatelaine.com/wp-content/uploads/2018/06/Thai-basil-and-cilantro-salad-800x800.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -435,7 +438,8 @@
       "breakfast"
     ],
     "ImageCaption": null,
-    "Img": "https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-7.jpg"
+    "Img": "https://simple-veganista.com/wp-content/uploads/2016/04/homemade-acai-bowl-7.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -464,7 +468,8 @@
       "easy"
     ],
     "ImageCaption": null,
-    "Img": "https://www.optimistdaily.com/wp-content/uploads/shutterstock_774365320-e1614177159300.jpg"
+    "Img": "https://www.optimistdaily.com/wp-content/uploads/shutterstock_774365320-e1614177159300.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -487,7 +492,7 @@
       "Vegetables: Onion, bell pepper, carrot. I like to add in spicier peppers",
       "Ginger-Garlic paste",
       "Seasonings: Yellow curry powder, ground coriander, paprika, cumin, turmeric, cardamom, salt, and black pepper. Garam masala is added at the end.",
-      "Long Grain Rice: Basmati rice or Thai jasmine rice",
+      "Long Grain Rice: Basmati rice or jasmine rice",
       "Water or Stock (or Broth): Chicken broth or vegetable broth is preferred for more flavor, but water is also suitable with the amount of spices used.",
       "Garnish: Red chili flakes, fresh chopped parsley, lemon"
     ],
@@ -499,7 +504,8 @@
       "lunch"
     ],
     "ImageCaption": null,
-    "Img": "https://cookingformysoul.com/wp-content/uploads/2022/03/curry-fried-rice-feat-min.jpg"
+    "Img": "https://cookingformysoul.com/wp-content/uploads/2022/03/curry-fried-rice-feat-min.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -552,7 +558,8 @@
       "lunch"
     ],
     "ImageCaption": null,
-    "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/12/Crossing-The-Bridge-Noodles-c951e67.jpg?quality=90\u0026webp=true\u0026resize=600,545"
+    "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/12/Crossing-The-Bridge-Noodles-c951e67.jpg?quality=90\u0026webp=true\u0026resize=600,545",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -583,7 +590,7 @@
     "EditDate": "23-04-2022",
     "Tags": [
       "Khaki",
-      "Red",
+      "vegan",
       "Puce",
       "Fuscia",
       "healthy",
@@ -592,7 +599,8 @@
       "appetizers"
     ],
     "ImageCaption": null,
-    "Img": "https://i.imgur.com/UAAnqx7.jpg"
+    "Img": "https://i.imgur.com/UAAnqx7.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -622,7 +630,8 @@
       "healthy"
     ],
     "ImageCaption": null,
-    "Img": "https://i.imgur.com/BXxveSO.jpg"
+    "Img": "https://i.imgur.com/BXxveSO.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -637,7 +646,7 @@
       "Heat a large heavy skillet over medium heat. Add the oil and the butter. Add the garlic and red pepper flakes and saute until fragrant, about 30 seconds. Add the beans and continue to saute until coated in the butter and heated through, about 5 minutes. Add lemon zest and season with salt and pepper."
     ],
     "Ingredients": [
-      "2 pounds green beans, ends trimmed",
+      "2 pounds greenbeans, ends trimmed",
       "1 tablespoon extra-virgin olive oil",
       "3 tablespoons butter",
       "2 large garlic cloves, minced",
@@ -652,10 +661,12 @@
       "Orange",
       "green",
       "healthy",
-      "lunch"
+      "lunch",
+      "vegan"
     ],
     "ImageCaption": null,
-    "Img": "https://www.tastingtable.com/img/gallery/lemon-garlic-green-beans-recipe/l-intro-1648589949.jpg"
+    "Img": "https://www.tastingtable.com/img/gallery/lemon-garlic-green-beans-recipe/l-intro-1648589949.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -691,7 +702,8 @@
       "lunch"
     ],
     "ImageCaption": null,
-    "Img": "https://cdn.media.amplience.net/i/japancentre/recipe-1434-unagi-don-grilled-eel-rice-bowl/recipe-1434-unagi-don-grilled-eel-rice-bowl?$poi$\u0026w=700\u0026h=410\u0026sm=c\u0026fmt=auto"
+    "Img": "https://cdn.media.amplience.net/i/japancentre/recipe-1434-unagi-don-grilled-eel-rice-bowl/recipe-1434-unagi-don-grilled-eel-rice-bowl?$poi$\u0026w=700\u0026h=410\u0026sm=c\u0026fmt=auto",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -728,7 +740,8 @@
       "Indian"
     ],
     "ImageCaption": null,
-    "Img": "https://littlesunnykitchen.com/wp-content/uploads/Chicke-tikka-masala-2-7-730x1095.jpg"
+    "Img": "https://littlesunnykitchen.com/wp-content/uploads/Chicke-tikka-masala-2-7-730x1095.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -758,10 +771,12 @@
       "appetizers",
       "green",
       "vegetarian",
-      "mexican"
+      "mexican",
+      "vegan"
     ],
     "ImageCaption": null,
-    "Img": "https://cdn.loveandlemons.com/wp-content/uploads/2019/04/guacamole-recipe-580x832.jpg"
+    "Img": "https://cdn.loveandlemons.com/wp-content/uploads/2019/04/guacamole-recipe-580x832.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -795,7 +810,8 @@
       "England"
     ],
     "ImageCaption": null,
-    "Img": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Contest-Winning-New-England-Clam-Chowder_EXPS_FT20_41095_F_0623_1.jpg"
+    "Img": "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Contest-Winning-New-England-Clam-Chowder_EXPS_FT20_41095_F_0623_1.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -827,7 +843,8 @@
       "French"
     ],
     "ImageCaption": null,
-    "Img": "https://www.cookingclassy.com/wp-content/uploads/2020/08/french-bread-pizza-14.jpg"
+    "Img": "https://www.cookingclassy.com/wp-content/uploads/2020/08/french-bread-pizza-14.jpg",
+    "Comments": []
   },
   {
     "Deleted": false,
@@ -861,6 +878,7 @@
       "green"
     ],
     "ImageCaption": null,
-    "Img": "https://cooktoria.com/wp-content/uploads/2021/06/healthy-tuna-salad-sq-1.jpg"
+    "Img": "https://cooktoria.com/wp-content/uploads/2021/06/healthy-tuna-salad-sq-1.jpg",
+    "Comments": []
   }
 ]
