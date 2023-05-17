@@ -1,10 +1,8 @@
 ﻿using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Recipes;
 using System;
-using ContosoCrafts.WebSite.Services;
 using System.Linq;
 using ContosoCrafts.WebSite.Models;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UnitTests.Pages.Recipes
 {
@@ -24,7 +22,6 @@ namespace UnitTests.Pages.Recipes
             {
             };
         }
-
         #endregion TestSetup
 
         #region OnGet
@@ -117,7 +114,7 @@ namespace UnitTests.Pages.Recipes
             pageModel.OnGet(validRecipeID);
 
             pageModel.NewComment = new CommentModel();
-
+            // result from post
             var result = pageModel.OnPost();
 
             Assert.NotNull(result);
