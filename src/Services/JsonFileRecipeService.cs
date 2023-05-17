@@ -195,6 +195,8 @@ namespace ContosoCrafts.WebSite.Services
         /// <returns></returns>
         public IEnumerable<RecipeModel> FilterRecipesByTags(IEnumerable<string> tags)
         {
+            if (tags == null) return Enumerable.Empty<RecipeModel>();
+
             // Create a regular expression pattern to match the trailing "s" in words
             var regex = new Regex("s$");
             // Process the tags using regex to remove the trailing "s" and convert to lowercase
