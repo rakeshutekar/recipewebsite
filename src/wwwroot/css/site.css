@@ -129,7 +129,7 @@ body {
 p {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
-h1 {
+h1,h2,h3,h4 {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
 ul {
