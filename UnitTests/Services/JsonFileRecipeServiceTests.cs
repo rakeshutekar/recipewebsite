@@ -1,12 +1,8 @@
-﻿using ContosoCrafts.WebSite.Services;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ContosoCrafts.WebSite.Models;
-using System.Security.Cryptography.X509Certificates;
 
 namespace UnitTests.Services
 {
@@ -20,7 +16,6 @@ namespace UnitTests.Services
         {
             
         }
-
 
         /// <summary>
         /// Verifies that the constructor of JsonFileRecipeService sets the WebHostEnvironment property.
@@ -244,7 +239,9 @@ namespace UnitTests.Services
             Assert.IsTrue(recipeInFilter);
         }
 
-
+        /// <summary>
+        /// Test ensures when filtering recipes by tag, method returns an empty enumerable if the provided array of tags is null
+        /// </summary>
         [Test]
         public void JsonFileRecipeService_FilterRecipesByTags_Should_Return_Empty_Enumerable_If_Tag_Array_Is_Null()
         {
