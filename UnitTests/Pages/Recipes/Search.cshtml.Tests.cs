@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Recipes;
-using System;
-using ContosoCrafts.WebSite.Services;
 using System.Linq;
 
 namespace UnitTests.Pages.Recipes
@@ -87,11 +85,9 @@ namespace UnitTests.Pages.Recipes
                     break;
                 }
             }
-
             // Verify that the retrieved recipe in the tag search
             Assert.IsTrue(recipeInQuerySearch);
         }
-
         #endregion OnGet
     }
 }
