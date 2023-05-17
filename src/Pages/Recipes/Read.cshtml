@@ -76,18 +76,23 @@ ViewData["Title"] = "Recipe page";
 
     <h5>Add a Comment</h5>
     <form method="post">
+        @Html.HiddenFor(x => x.Recipe.RecipeID)
+        @Html.HiddenFor(x => x.Recipe.Title)
+        @Html.HiddenFor(x => x.Recipe.Instructions)
+        @Html.HiddenFor(x => x.Recipe.Ingredients)
+        @Html.HiddenFor(x => x.Recipe.Image)
         <div class="form-group">
             <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" name="NewComment.FirstName" required />
-            </div>
-            <div class="form-group">
-                <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="NewComment.LastName" required />
-            </div>
-            <div class="form-group">
-                <label for="comment">Comment</label>
-                <textarea class="form-control" id="comment" name="NewComment.Comment" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <input type="text" class="form-control" id="firstName" name="NewComment.FirstName" required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" name="NewComment.LastName" required />
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea class="form-control" id="comment" name="NewComment.Comment" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
     }
