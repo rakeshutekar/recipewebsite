@@ -231,6 +231,7 @@ namespace ContosoCrafts.WebSite.Services
         /// <param name="comment"></param>
         public void AddComment(int recipeID, CommentModel comment)
         {
+            if (comment == null) return;
             var recipes = GetRecipes().ToList();  // get the list of all recipes
             var recipe = recipes.FirstOrDefault(r => r.RecipeID == recipeID);  // find the recipe in the list
 
