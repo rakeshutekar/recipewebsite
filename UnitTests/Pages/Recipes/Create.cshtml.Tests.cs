@@ -8,6 +8,9 @@ using Microsoft.Extensions.Logging;
 
 namespace UnitTests.Pages.Recipes
 {
+    /// <summary>
+    /// The test class for the Create page unit tests
+    /// </summary>
     public class CreateTests
     {
         #region TestSetup
