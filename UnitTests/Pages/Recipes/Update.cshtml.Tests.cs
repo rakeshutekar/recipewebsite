@@ -10,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace UnitTests.Pages.Recipes
 {
+    /// <summary>
+    /// Test class for the update page unit tests
+    /// </summary>
     public class UpdateTests
     {
         #region TestSetup
@@ -56,6 +57,10 @@ namespace UnitTests.Pages.Recipes
             Assert.AreEqual(true, recipeNotNull);
         }
 
+        /// <summary>
+        /// Unit tests that ensures deleted receipes when attempting to access
+        /// the page returns to the error page
+        /// </summary>
         [Test]
         public void OnGet_Deleted_Recipes_Should_Redirect_To_Error_Page()
         {
@@ -70,6 +75,10 @@ namespace UnitTests.Pages.Recipes
             Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
         }
 
+        /// <summary>
+        /// Unit test to ensure that invalid recipe ID return a recipe not found
+        /// of true value
+        /// </summary>
         [Test]
         public void OnGet_Invalid_RecipeId_Should_Show_Recipe_Not_Found()
         {
