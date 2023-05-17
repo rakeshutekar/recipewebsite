@@ -41,6 +41,9 @@ namespace UnitTests
         public static TempDataDictionary TempData;
         public static PageContext PageContext;
         public static JsonFileRecipeService RecipeService;
+        
+        // Constant string test value
+        public const string STRING_TEST_VAL = "TEST";
         public static RecipeModel TEST_RECIPE_MODEL
         {
             get
@@ -48,30 +51,43 @@ namespace UnitTests
                 var newRecipe = new RecipeModel();
                 newRecipe.Deleted = false;
                 newRecipe.AuthorID = 0;
-                newRecipe.FirstName = "TEST";
-                newRecipe.LastName = "TEST";
-                newRecipe.Title = "TEST";
-                newRecipe.Instructions = new string[] { "TEST" };
-                newRecipe.Ingredients = new string[] { "TEST" };
-                newRecipe.Tags = new string[] { "TEST" };
-                newRecipe.PublishDate = "TEST";
-                newRecipe.EditDate = "TEST";
-                newRecipe.ImageCaption = "TEST";
-                newRecipe.Image = "TEST";
+                newRecipe.FirstName = STRING_TEST_VAL;
+                newRecipe.LastName = STRING_TEST_VAL;
+                newRecipe.Title = STRING_TEST_VAL;
+                newRecipe.Instructions = new string[] { STRING_TEST_VAL };
+                newRecipe.Ingredients = new string[] { STRING_TEST_VAL };
+                newRecipe.Tags = new string[] { STRING_TEST_VAL };
+                newRecipe.PublishDate = STRING_TEST_VAL;
+                newRecipe.EditDate = STRING_TEST_VAL;
+                newRecipe.ImageCaption = STRING_TEST_VAL;
+                newRecipe.Image = STRING_TEST_VAL;
                 newRecipe.Comments = new List<CommentModel>()
                 {
                     new CommentModel()
                     {
-                        FirstName = "TEST",
-                        LastName = "TEST",
-                        Comment = "TEST",
+                        FirstName = STRING_TEST_VAL,
+                        LastName = STRING_TEST_VAL,
+                        Comment = STRING_TEST_VAL,
                         Id = System.Guid.NewGuid().ToString()
                     }
                 };
                 return newRecipe;
             }
         }
-
+        // Reusable Test Comment Model
+        public static CommentModel TEST_COMMENT_MODEL
+        {
+            get
+            {
+                return new CommentModel()
+                {
+                    FirstName = STRING_TEST_VAL,
+                    LastName = STRING_TEST_VAL,
+                    Comment = STRING_TEST_VAL,
+                    Id = System.Guid.NewGuid().ToString()
+                };
+            }
+        }
 
 
         /// <summary>
