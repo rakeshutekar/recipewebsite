@@ -12,11 +12,18 @@ using System.Threading.Tasks;
 
 namespace UnitTests.Pages
 {
+    /// <summary>
+    /// Test class for the About page unit tests
+    /// </summary>
     public class AboutTests
     {
         #region TestSetup
+        // Static AboutModel class used for interacting with the pages
         public static AboutModel pageModel;
 
+        /// <summary>
+        /// Initializes the test class with a mock logger
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -27,6 +34,10 @@ namespace UnitTests.Pages
         }
         #endregion TestSetup
 
+        /// <summary>
+        /// Tests that the about page is in a valid state when the page is requested
+        /// via the OnGet method
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Should_Return_Page_Result_And_Valid_Model()
