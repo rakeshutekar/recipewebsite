@@ -187,17 +187,24 @@ namespace ContosoCrafts.WebSite.Services
         }
 
         /// <summary>
-        /// Filter recipes by keywords in tags (trimmed of whitespace and converted to
-        /// lower case before comparing)
+        /// Filter recipes by keywords in tags (trimmed of whitespace, converted to
+        /// lower case before comparing and handles plural ending with "s")
         /// Used for individual filtered page under Recipes in navbar
         /// </summary>
         /// <param name="tags"></param>
         /// <returns></returns>
         public IEnumerable<RecipeModel> FilterRecipesByTags(IEnumerable<string> tags)
         {
-            var _tags = tags.Select(tag => tag.Trim().ToLower());
+            // Create a regular expression pattern to match the trailing "s" in words
+            var regex = new Regex("s$");
+            // Process the tags using regex to remove the trailing "s" and convert to lowercase
+            var _tags = tags.Select(tag => regex.Replace(tag.Trim().ToLower(), ""));
+
             var recipes = GetRecipes();
-            return recipes.Where(r => r.Tags.Any(t => _tags.Contains(t.Trim().ToLower())));
+
+            // Filter the recipes based on tags,
+            // Compare after removing the trailing "s" and converting to lowercase
+            return recipes.Where(r => r.Tags.Any(t => _tags.Contains(regex.Replace(t.Trim().ToLower(), ""))));
         }
 
         /// <summary>
@@ -214,6 +221,12 @@ namespace ContosoCrafts.WebSite.Services
             var jsonString = JsonSerializer.Serialize(recipes, options);
             File.WriteAllText(JsonFileName, jsonString);
         }
+
+        /// <summary>
+        /// Add comments and save the added comments
+        /// </summary>
+        /// <param name="recipeID"></param>
+        /// <param name="comment"></param>
         public void AddComment(int recipeID, CommentModel comment)
         {
             var recipes = GetRecipes().ToList();  // get the list of all recipes
