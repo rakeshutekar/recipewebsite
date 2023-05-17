@@ -244,5 +244,115 @@ namespace UnitTests.Services
             Assert.IsTrue(recipeInFilter);
         }
 
+
+        [Test]
+        public void JsonFileRecipeService_FilterRecipesByTags_Should_Return_Empty_Enumerable_If_Tag_Array_Is_Null()
+        {
+            // Arrange
+            // Act
+            var result = TestHelper.RecipeService.FilterRecipesByTags(null);
+
+            // Assert
+            Assert.IsEmpty(result);
+        }
+
+        /// <summary>
+        /// Test ensures that AddComment method can handle a null comment model argument
+        /// </summary>
+        [Test]
+        public void JsonFileRecipeService_AddComment_Should_Return_Immediate_With_Null_Comment_Model()
+        {
+            // Create test recipe model
+            var newRecipe = TestHelper.TEST_RECIPE_MODEL;
+            // Set comment list to null
+            newRecipe.Comments = null;
+            // Get next available recipe id
+            var testID = TestHelper.RecipeService.NextRecipeID();
+            // Assign id to test recipe
+            newRecipe.RecipeID = testID;
+            // Add test recipe to file
+            TestHelper.RecipeService.AddRecipe(newRecipe);
+            // Ensure new recipe has been correctly added to the data store
+            var getResult = TestHelper.RecipeService.GetRecipe(testID);
+            // Assert that a new recipe has been created with a null comment section
+            Assert.NotNull(getResult);
+
+            // Act
+            // Attempt to add a comment 
+            TestHelper.RecipeService.AddComment(testID, null);
+            // Assert
+            // Ensure that the test recipe has been added but the comment section is still
+            // null because add comment did not do anything when provided with a null comment
+            // model
+            var recipe = TestHelper.RecipeService.GetRecipe(testID);
+            Assert.NotNull(recipe);
+            Assert.IsNull(recipe.Comments);
+        }
+
+        /// <summary>
+        /// Test ensures that AddComment method can handle a bad (non existent) recipe id.
+        /// </summary>
+        [Test]
+        public void JsonFileRecipeService_AddComment_Should_Return_Immediate_Null_Recipe_Valid_Comment()
+        {
+            // Get a bad recipe id - sum of all other recipe id
+            var badID = 0;
+            // Sum up all other recipe id
+            var recipes = TestHelper.RecipeService.GetRecipes();
+            foreach(var recipe in recipes) { badID += recipe.RecipeID; }
+            // Ensure that reciep does not exist with id
+            var result = TestHelper.RecipeService.GetRecipe(badID);
+            Assert.IsNull(result);
+            // Attempt to add comment to non-existent recipe 
+            TestHelper.RecipeService.AddComment(badID, TestHelper.TEST_COMMENT_MODEL);
+        }
+
+        /// <summary>
+        /// Test ensures that AddComment will initialize the comment list if a recipe's comment list is null
+        /// </summary>
+        [Test]  
+        public void JsonFileRecipeService_AddComment_Valid_Recipe_Valid_Comment_Should_Initialize_Recipe_Comments_List_If_Null()
+        {
+            // Create test recipe
+            var newRecipe = TestHelper.TEST_RECIPE_MODEL;
+            // ensure 0/null comments
+            newRecipe.Comments = null;
+            // Get next id for later verification
+            var testID = TestHelper.RecipeService.NextRecipeID();
+            // Assign id to test recipe
+            newRecipe.RecipeID = testID;
+
+            // Add recipe to service
+            TestHelper.RecipeService.AddRecipe(newRecipe);
+            var recipe = TestHelper.RecipeService.GetRecipe(testID);
+            // Ensure that recipe was correctly added
+            Assert.NotNull(recipe);
+            // Attempt to add a new valid comment 
+            TestHelper.RecipeService.AddComment(testID, TestHelper.TEST_COMMENT_MODEL);
+        }
+
+        /// <summary>
+        /// Test ensures that valid comments are correctly added and saved to a valid recipe
+        /// </summary>
+        [Test]
+        public void JsonFileRecipeService_AddComment_Valid_ID_Valid_Comment_Should_Add_And_Save_Comment()
+        {
+            // Create test model and add to temporary data store
+            RecipeModel testModel = TestHelper.TEST_RECIPE_MODEL;
+            var nextID = TestHelper.RecipeService.NextRecipeID();
+            testModel.RecipeID = nextID;
+            TestHelper.RecipeService.AddRecipe(testModel);
+
+            // Add comment to new recipe
+            var recipe = TestHelper.RecipeService.GetRecipe(nextID);
+            Assert.NotNull(recipe);
+            TestHelper.RecipeService.AddComment(nextID, TestHelper.TEST_COMMENT_MODEL);
+
+            // Assert that recipe contains new comment with test value
+            recipe = TestHelper.RecipeService.GetRecipe(nextID);
+            Assert.NotNull(recipe);
+            Assert.NotNull(recipe.Comments);
+            Assert.IsTrue(recipe.Comments.Last().Comment == TestHelper.STRING_TEST_VAL);
+        }
     }
 }
