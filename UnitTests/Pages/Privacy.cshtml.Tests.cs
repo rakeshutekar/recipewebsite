@@ -5,6 +5,9 @@ using NUnit.Framework;
 
 namespace UnitTests.Pages
 {
+    /// <summary>
+    /// Test class for privacy page tests
+    /// </summary>
     public class PrivacyTests
     {
         // Page model used for testing
