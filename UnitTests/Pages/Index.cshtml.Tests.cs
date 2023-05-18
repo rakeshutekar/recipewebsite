@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace UnitTests.Pages
 {
+    /// <summary>
+    /// Test class for index page tests
+    /// </summary>
     public class IndexTests
     {
         #region TestSetup
