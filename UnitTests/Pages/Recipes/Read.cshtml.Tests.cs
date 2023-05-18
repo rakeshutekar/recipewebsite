@@ -6,6 +6,9 @@ using ContosoCrafts.WebSite.Models;
 
 namespace UnitTests.Pages.Recipes
 {
+    /// <summary>
+    /// The test class for the read page
+    /// </summary>
     public class ReadTests
     {
         #region TestSetup
@@ -135,4 +138,3 @@ namespace UnitTests.Pages.Recipes
         }
     }
 }
-
