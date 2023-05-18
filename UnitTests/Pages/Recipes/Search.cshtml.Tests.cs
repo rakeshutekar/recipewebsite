@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace UnitTests.Pages.Recipes
 {
+    /// <summary>
+    /// Class for search resulr page tests
+    /// </summary>
     public class SearchTests
     {
         #region TestSetup
