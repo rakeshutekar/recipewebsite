@@ -12,8 +12,12 @@ using System.Collections;
 
 namespace ContosoCrafts.WebSite.Pages.Recipes
 {
+    /// <summary>
+    /// Represents the search results page of the website
+    /// </summary>
 	public class SearchModel : PageModel
     {
+        // Data middle tier
         private readonly JsonFileRecipeService RecipeService;
 
         /// <summary>
