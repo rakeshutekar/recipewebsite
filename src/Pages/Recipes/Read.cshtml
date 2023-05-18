@@ -1,98 +1,166 @@
 ﻿@page "{id:int}"
 @model ContosoCrafts.WebSite.Pages.Recipes.ReadModel
 @if (Model.RecipeNotFound)
-    {
+{
     <p>Error: The requested recipe was not found.</p>
-    }
-    else
-    {
-ViewData["Title"] = "Recipe page";
-
-<div class="container">
-    <div class="row justify-content-end">
-        <a  asp-page="Delete" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-danger">Delete</a>
-        <a asp-page="./Update" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-primary">Update</a>
-    </div>
-</div> 
-<h1>@Model.Recipe.Title</h1>
-<div class="container" style="background">
-    <div class="row justify-content-center">
-        <figure class="figure">
-            @*CJH - Included css variable class (--img-height-500px) to set the max height for the images used on recipe pages
-                img-recipe-page is the class used in site.css *@
-            <img src="@Model.Recipe.Image" class="figure-img img-fluid rounded img-recipe-page" alt="Image of @Model.Recipe.Title">
-            <figcaption class="figure-caption">@Model.Recipe.ImageCaption</figcaption>
-            @*To be expanded to include additional recipe information*@
-        </figure>
-    </div>
-    <h5>Description</h5>
-    <div class="row">
-        <div class="col-md-8">
-            <p>@Model.Recipe.Description</p>
+}
+else
+{
+    ViewData["Title"] = "Recipe page";
+    <div>
+         <div class="clear">
         </div>
-    </div>
-    <h5>Ingredients</h5>
-    <div class="row">
-        <ul>
-            @foreach (var ingredient in Model.Recipe.Ingredients)
+        <div class="container">
+
+            <div class="recipe-container">
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="recipe-title text-center mx-auto">
+                        <h2>@Model.Recipe.Title</h2>
+                        <p class="mt-3">@Model.Recipe.Description</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <figure class="recipe-figure">
+                        <img src="@Model.Recipe.Image" class="figure-img rounded img-recipe-page img-square" alt="Image of @Model.Recipe.Title">
+                        @*<figcaption class="figure-caption">@Model.Recipe.ImageCaption</figcaption>*@
+                    </figure>
+                </div>
+            </div>
+
+            <p class="mt-3"></p>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!--<h5 class="section-title">
+                        Description
+                        <hr class="my-0" />-->
+                    <!-- horizontal rule -->
+                    <!--</h5>
+                    <p>@Model.Recipe.Description</p>-->
+
+                    <h5 class="section-title">
+                        Ingredients
+                        <hr class="my-0" /> <!-- horizontal rule -->
+                    </h5>
+                    <ul>
+                        @foreach (var ingredient in Model.Recipe.Ingredients)
+                        {
+                            <li>@ingredient</li>
+                        }
+                    </ul>
+
+                    <h5 class="section-title">
+                        Instructions
+                        <hr class="my-0" /> <!-- horizontal rule -->
+                    </h5>
+                    <ol class="instruction-font">
+                        @foreach (var instruction in Model.Recipe.Instructions)
+                        {
+                            <li>@instruction</li>
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-end recipe-actions">
+            <a asp-page="Delete" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-danger">Delete</a>
+            <a asp-page="./Update" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-primary">Update</a>
+        </div>
+
+        <div class="clear">
+        </div>
+
+        <!-- Recent Comments -->
+        <h5 class="section-title">
+            Recent Comments
+            <hr class="my-0" /> <!-- horizontal rule -->
+        </h5>
+
+        <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                @if (Model.Recipe.Comments == null || !Model.Recipe.Comments.Any())
                 {
-                <li>@ingredient</li>
+                    <p>Be the first to leave a comment! Share your thoughts below if you'd like.</p>
                 }
-        </ul>
-    </div>
-    <h5>Instructions</h5>
-    <div class="row">
-        <ol class="instruction-font">
-            @foreach (var instruction in Model.Recipe.Instructions)
+                else
                 {
-                <li>@instruction</li>
+                    foreach (var comment in Model.Recipe.Comments)
+                    {
+                        <div class="card text-dark mb-3">
+                            <div class="card-body p-4">
+                                <div class="d-flex flex-start">
+                                    <img class="rounded-circle shadow-1-strong me-3 mr-3"
+                                         src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Patrick_Star.svg/640px-Patrick_Star.svg.png" width="65" height="65" />
+                                    <div>
+                                        <h6 class="fw-bold mb-1">@comment.FirstName @comment.LastName</h6>
+                                        <p class="mb-0">@comment.Comment</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 }
-        </ol>
-    </div>
-</div>
-<div class="clear">
-</div>
-<h5>Comments</h5>
-    <div class="row">
-        <div class="col-md-8">
-            @if (Model.Recipe.Comments == null || !Model.Recipe.Comments.Any())
-            {
-                <p>There are no comments yet. Add one below if you want!</p>
-            }
-            else
-            {
-                foreach (var comment in Model.Recipe.Comments)
-                {
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">@comment.FirstName @comment.LastName</h5>
-                            <p class="card-text">@comment.Comment</p>
+            </div>
+        </div>
+
+        <!-- Add a comment-->
+        <section style="background-color: #f1faee">
+            <div class="container my-5 py-5 text-dark">
+                <div class="row d-flex justify-content-center">
+                    <!-- Expand / Reduce based on screen size -->
+                    <div class="col-md-10 col-lg-8 col-xl-6">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <form method="post">
+                                    @Html.HiddenFor(x => x.Recipe.RecipeID)
+                                    @Html.HiddenFor(x => x.Recipe.Title)
+                                    @Html.HiddenFor(x => x.Recipe.Instructions)
+                                    @Html.HiddenFor(x => x.Recipe.Ingredients)
+                                    @Html.HiddenFor(x => x.Recipe.Image)
+
+                                    <div class="d-flex flex-start w-100">
+                                        <!-- Sponge Bob -->
+                                        <img class="rounded-circle shadow-1-strong me-3 mr-3"
+                                             src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/640px-SpongeBob_SquarePants_character.svg.png" width="65" height="65" />
+
+                                        <div class="w-100">
+                                            <h5>Add a comment</h5>
+
+                                            <!-- Wrap first name and last name in a form-row div -->
+                                            <div class="form-row">
+                                                <!-- Set each to take up half of space -->
+                                                <div class="form-group col-md-6">
+                                                    <label for="firstName">First Name</label>
+                                                    <input type="text" class="form-control" id="firstName" name="NewComment.FirstName" required />
+                                                </div>
+
+                                                <div class="form-group col-md-6">
+                                                    <label for="lastName">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName" name="NewComment.LastName" required />
+                                                </div>
+                                            </div>
+                                            <!-- Comment -->
+                                            <div class="form-group">
+                                                <label for="comment">Comment</label>
+                                                <textarea class="form-control" id="comment" name="NewComment.Comment" rows="4" required></textarea>
+                                            </div>
+                                            <!-- Submit Button -->
+                                            <div class="d-flex justify-content-between mt-3">
+                                                <button type="submit" class="btn btn-danger">
+                                                    Send <i class="fas fa-long-arrow-alt-right ms-1"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                }
-            }
-        </div>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <h5>Add a Comment</h5>
-    <form method="post">
-        @Html.HiddenFor(x => x.Recipe.RecipeID)
-        @Html.HiddenFor(x => x.Recipe.Title)
-        @Html.HiddenFor(x => x.Recipe.Instructions)
-        @Html.HiddenFor(x => x.Recipe.Ingredients)
-        @Html.HiddenFor(x => x.Recipe.Image)
-        <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="NewComment.FirstName" required />
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="NewComment.LastName" required />
-        </div>
-        <div class="form-group">
-            <label for="comment">Comment</label>
-            <textarea class="form-control" id="comment" name="NewComment.Comment" rows="3" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    }
+}
