@@ -35,7 +35,15 @@ namespace ContosoCrafts.WebSite.Models
         public string Title { get; set; }
 
         // Short description of the recipe
-        public string Description { get; set; }
+        public string Description
+        {
+            get => description;
+            set
+            {
+                if (value.Length <= 1) return;
+                description = value;
+            }
+        }
 
         /// <summary>
         /// Defines a custom validation attribute named InstructionssAttribute to help with validating user input
