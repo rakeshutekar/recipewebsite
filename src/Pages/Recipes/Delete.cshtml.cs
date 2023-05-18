@@ -9,7 +9,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ContosoCrafts.WebSite.Pages.Recipes
 {
-	public class DeleteModel : PageModel
+    /// <summary>
+    /// The delete model class represents the delete page of the website
+    /// </summary>
+    public class DeleteModel : PageModel
     {
         /// <summary>
         /// Constructor of the DeleteModel class
