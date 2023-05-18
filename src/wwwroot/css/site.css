@@ -129,7 +129,7 @@ body {
 p {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
-h1,h2,h3,h4 {
+h1,h2,h3,h4, h5, h6 {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
 ul {
@@ -179,12 +179,64 @@ ul {
 }
 
 /* Clear div for vertical margins*/
-.clear{clear: both; height: 500px}
+.clear{clear: both; height: 60px}
 
 /*Change the color and font weight for View All under Recipes*/
 .view-all {
     color: black; 
     font-weight: bold;
+}
+
+
+.section-title {
+    display: flex;
+    align-items: center;
+}
+
+.section-title hr {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.recipe-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.recipe-title {
+    flex-basis: 100%;
+    flex-grow: 1;
+    text-align: center;
+    margin-left: auto;
+}
+
+.recipe-title h2 {
+    font-weight: bold;
+}
+
+
+.recipe-figure {
+    margin-right: 30px;  
+}
+
+.recipe-figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-figure .figure-img {
+    width: 500px;  
+    height: 500px; 
+    object-fit: cover;
+}
+
+.rule-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 /* Update page style
@@ -216,3 +268,11 @@ ul {
     width: 96%;
     display: inline-block;
 }
+
+/* Index page style
+-------------------------------------------------- */
+.sort-buttons button.active {
+    background-color: #fec89a;
+}
+
+
