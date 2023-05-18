@@ -12,7 +12,6 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
     /// <summary>
     /// Mange the Update of the data for a single recipe
     /// </summary>
-    
 	public class UpdateModel : PageModel
     {
         // Data middletier
