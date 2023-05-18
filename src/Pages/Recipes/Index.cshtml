@@ -7,8 +7,17 @@
 }
 
 <div class="container">
-
+    
     <a asp-page="Create" class="btn btn-link">+ Create</a>
+
+    <div class="sort-buttons">
+        <button onclick="sortTable(true)">
+            <i class="fas fa-sort-alpha-up arrow-up"></i>
+        </button>
+        <button onclick="sortTable(false)">
+            <i class="fas fa-sort-alpha-down arrow-down"></i>
+        </button>
+    </div>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -28,3 +37,55 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    function sortTable(ascending) {
+        // Select HTML element with ID "recipeBody"
+        var tableBody = document.getElementById("recipeBody");
+        // Retrieve all the table row (tr) elements within "recipeBody"
+        var rows = Array.from(tableBody.getElementsByTagName("tr"));
+        // Sort rows array
+        rows.sort(function (a, b) {
+            // Get the text content of the first <td> element within the row (=> Title)
+            // and convert it to uppercase
+            var titleA = a.getElementsByTagName("td")[0].innerText.toUpperCase();
+            var titleB = b.getElementsByTagName("td")[0].innerText.toUpperCase();
+
+            // If ascending is true
+            if (ascending) {
+                if (titleA < titleB) {
+                    return -1;
+                } else if (titleA > titleB) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            // If ascending is false
+            } else {
+                if (titleA > titleB) {
+                    return -1;
+                } else if (titleA < titleB) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+
+        // Append each sorted row back to the table body
+        for (var i = 0; i < rows.length; i++) {
+            tableBody.appendChild(rows[i]);
+        }
+
+        // Set active button
+        var buttons = document.querySelectorAll('.sort-buttons button');
+        buttons.forEach(function (button) {
+            if (button.classList.contains('active')) {
+                button.classList.remove('active');
+            }
+        });
+
+        var activeButton = ascending ? buttons[0] : buttons[1];
+        activeButton.classList.add('active');
+    }
+    </script>
