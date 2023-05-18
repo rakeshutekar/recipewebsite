@@ -6,6 +6,9 @@ using System.Diagnostics;
 
 namespace UnitTests.Pages
 {
+    /// <summary>
+    /// Test class for error page tests
+    /// </summary>
     public class ErrorTests
     {
         #region TestSetup
