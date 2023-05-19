@@ -7,6 +7,13 @@ using System.Collections.Generic;
 
 namespace ContosoCrafts.WebSite.Models
 {
+    public enum Reaction
+    {
+        Sad = 1, 
+        Content = 2, 
+        Happy = 3
+    }
+
     /// <summary>
     /// RecipeModel class is used to represent recipe JSON data in object form
     /// </summary>
@@ -125,6 +132,51 @@ namespace ContosoCrafts.WebSite.Models
 
         // List of CommentModels that stores each comment
         public List<CommentModel> Comments { get; set; } = new List<CommentModel>();
+
+        #region Reactions
+        // List of all reactions to this recipe
+        public List<Reaction> Reactions { get;set; }
+
+        public Dictionary<Reaction, int> ReactionCharacters = new Dictionary<Reaction, int>()
+        {
+            {Reaction.Sad,  128549},
+            {Reaction.Content,128528 },
+            {Reaction.Happy, 128525 }
+        };
+
+        public List<(Reaction, int)> GetReactions()
+        {
+            // Return default reaction list with 0 reaction
+            if (Reactions == null) return new List<(Reaction, int)>()
+            {
+                (Reaction.Sad, 0),
+                (Reaction.Content, 0),
+                (Reaction.Happy, 0),
+            };
+
+            // Ensure that reaction count dictionary contains all Reaction types
+            Dictionary<Reaction, int> reactionCount = new Dictionary<Reaction, int>()
+            {
+                {Reaction.Sad,0 },
+                {Reaction.Content, 0},
+                {Reaction.Happy, 0 }
+            };
+
+            // This will sum up all reaction but does not check if reaction type
+            // is currently in the dictionary - if new reactions are add
+            // ensure that they are added above in dictionary initializer
+            foreach(var reaction in Reactions) reactionCount[reaction]++;
+
+
+            List<(Reaction, int)> countList = new List<(Reaction, int)>();
+            foreach (KeyValuePair<Reaction, int> pair in reactionCount)
+            {
+                countList.Add((pair.Key, pair.Value));
+            }
+
+            return countList;
+        }
+        #endregion
 
         /// <summary>
         /// Overridden ToString method to serialize the object's data
