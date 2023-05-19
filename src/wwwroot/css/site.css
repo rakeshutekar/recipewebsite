@@ -50,6 +50,26 @@ for details on configuring this project to bundle and minify static web assets. 
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 
+.card-title {
+    text-align: center;
+}
+
+.card-columns .card-tags ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card-columns .card-tags ul li {
+    text-transform: uppercase;
+    text-align: center;
+ }
+
+.card-tags ul li a {
+    color: #a5a58d;
+    text-decoration: none;
+}
+
+
 .card-columns .card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
