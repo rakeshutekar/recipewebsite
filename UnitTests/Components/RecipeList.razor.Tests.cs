@@ -10,20 +10,27 @@ using Microsoft.AspNetCore.Components;
 
 namespace UnitTests.Components
 {
+    /// <summary>
+    /// This class contains unit tests for the RecipeList razor components.
+    /// </summary>
     public class RecipeListTests: Bunit.TestContext
     {
-
         #region TestSetup
         [SetUp]
+        /// <summary>
+        /// This setup method is executed before each test method is executed.
+        /// </summary>
         public void TestInitialize()
         {
             // Test Initialization
-
-
         }
         #endregion TestSetup
 
         [Test]
+        /// <summary>
+        /// This method tests that the RecipeList component correctly renders
+        /// contents.
+        /// </summary>
         public void RecipeList_Default_Should_Return_Content()
         {
             // Arrange
@@ -31,14 +38,11 @@ namespace UnitTests.Components
 
             // Act
             var page = RenderComponent<RecipeList>();
+            // Get the cards returned
             var result = page.Markup;
 
             // Assert
             Assert.AreEqual(true, result.Contains("Beef Taco"));
         }
-
-
-
-
     }
 }
