@@ -15,6 +15,14 @@
                 <div class="card-img" style="background-image: url('@recipe.Image');">
                 </div>
                 <div class="card-body">
+                    <div class="card-tags">
+                        <ul>
+                            @foreach (var tags in @recipe.Tags.Take(1))
+                            {
+                                <li><a href="/Recipes/Search?Tags=@tags">@tags</a></li>
+                            }
+                        </ul>
+                    </div>
                     <h5 class="card-title">@recipe.Title</h5>
                 </div>
                 <div class="card-footer">
