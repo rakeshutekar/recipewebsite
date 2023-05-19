@@ -246,5 +246,24 @@ namespace ContosoCrafts.WebSite.Services
 
             SaveRecipes(recipes);  // save the updated list
         }
+
+        /// <summary>
+        /// Add a new reaction to recipe by ID
+        /// </summary>
+        /// <param name="recipeID">ID for recipe to add reaction to</param>
+        /// <param name="reaction">Reaction to add</param>
+        public void AddReaction(int recipeID, Reaction reaction)
+        {
+            var recipes = GetRecipes();
+            foreach(RecipeModel model in recipes)
+            {
+                if (model.RecipeID == recipeID)
+                {
+                    if (model.Reactions == null) model.Reactions = new List<Reaction>();
+                    model.Reactions.Add(reaction);
+                }
+            }
+            SaveRecipes(recipes);
+        }
     }
 }
