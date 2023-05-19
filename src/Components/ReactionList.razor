@@ -1,0 +1,29 @@
+﻿@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonFileRecipeService RecipeService
+@inject NavigationManager NavigationManager
+
+<div>
+    @foreach (var reaction in Reactions)
+    {
+        <button>&#@Recipe.ReactionCharacters[reaction.Item1]; @reaction.Item1 @reaction.Item2</button>
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public int RecipeID { get; set; }
+
+    public RecipeModel Recipe { get; set; }
+
+    public List<(Reaction, int)> Reactions { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Recipe = RecipeService.GetRecipe(RecipeID);
+        Reactions = Recipe.GetReactions();
+    }
+}
+
