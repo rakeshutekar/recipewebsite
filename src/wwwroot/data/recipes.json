@@ -35,11 +35,10 @@
     "PublishDate": "",
     "EditDate": "",
     "Tags": [
-      "breakfast",
-      "healthy",
-      "prawn",
-      "omelette",
-      "brunch"
+      "Breakfast",
+      "Healthy",
+      "Omelette",
+      "Prawn"
     ],
     "ImageCaption": null,
     "Img": "https://img.delicious.com.au/TzM-Ms96/w759-h506-cfill/del/2019/10/super-greens-keto-omelette-with-prawn-and-avocado-116259-3.jpg",
@@ -93,11 +92,11 @@
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [
-      "lunch",
-      "japanese",
-      "rice",
-      "curry",
-      "fried"
+      "Lunch",
+      "Japanese",
+      "Rice",
+      "Curry",
+      "Fried"
     ],
     "ImageCaption": null,
     "Img": "https://www.foodandwine.com/thmb/hicXzmGIIpkwyX3Q55IYiupQjMo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Katsu-Curry-Japanese-Curry-with-Tonkatsu-Nuggets-and-Fried-Egg-FT-RECIPE0922-2000-bd3fa359de3544448906652f53f53bb3.jpg",
@@ -149,12 +148,9 @@
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [
-      "Spice Mix",
-      "Pickled Onions",
-      "Beef Mince",
       "Taco",
-      "mexican",
-      "appetizers"
+      "Mexican",
+      "Appetizers"
     ],
     "ImageCaption": null,
     "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/02/Next-level-tacos-e163429.jpg?quality=90\u0026webp=true\u0026resize=600,545",
@@ -212,10 +208,10 @@
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [
-      "korean",
-      "rice",
-      "mixed vegetables",
-      "lunch"
+      "Korean",
+      "Lunch",
+      "Fusion ",
+      "Rice"
     ],
     "ImageCaption": null,
     "Img": "https://www.thespruceeats.com/thmb/r2bG-lIQYgLYecbnwOW36hiLuk8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/classic-korean-bibimbap-recipe-2118765-hero-01-091c0e0f8c20426d8f70747955efa61d.jpg",
@@ -259,13 +255,12 @@
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [
-      "sandwich",
-      "breakfast",
-      "brunch",
-      "bread",
-      "easy",
-      "quick",
-      "healthy"
+      "Sandwich",
+      "Breakfast",
+      "Healthy",
+      "Bread",
+      "Easy",
+      "Quick"
     ],
     "ImageCaption": null,
     "Img": "https://simply-delicious-food.com/wp-content/uploads/2020/07/Easy-salad-sandwiches-with-herb-mayo-1.jpg",
@@ -305,10 +300,10 @@
     "PublishDate": " ",
     "EditDate": " ",
     "Tags": [
-      "appetizers",
-      "easy",
-      "quick",
-      "vietnamese"
+      "Appetizers",
+      "Easy",
+      "Vietnamese",
+      "Quick"
     ],
     "ImageCaption": null,
     "Img": "https://delightfulplate.com/wp-content/uploads/2020/07/Traditional-Vietnamese-Fresh-Spring-Rolls-Goi-cuon-tom-thit.jpg",
@@ -352,11 +347,10 @@
     "PublishDate": " ",
     "EditDate": " ",
     "Tags": [
-      "chinese",
-      "soup",
-      "spicy",
-      "mixed",
-      "hot"
+      "Chinese",
+      "Soup",
+      "Spicy",
+      "Mixed"
     ],
     "ImageCaption": null,
     "Img": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2021/03/18/0/FNK_HOT_POT_AT_HOME_OPENER_H_f_s4x3.jpg.rend.hgtvcom.826.620.suffix/1616107469470.jpeg",
@@ -389,14 +383,14 @@
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [
-      "healthy",
-      "salad",
-      "breakfast",
-      "green",
-      "appetizers",
-      "thai",
-      "vegan",
-      "vegetarian"
+      "Healthy",
+      "Salad",
+      "Thai",
+      "Green",
+      "Appetizers",
+      "Breakfast",
+      "Vegan",
+      "Vegetarian"
     ],
     "ImageCaption": null,
     "Img": "https://chatelaine.com/wp-content/uploads/2018/06/Thai-basil-and-cilantro-salad-800x800.jpg",
@@ -463,11 +457,10 @@
     "PublishDate": "08-07-2022",
     "EditDate": "25-07-2022",
     "Tags": [
-      "bread",
-      "breakfast",
-      "brunch",
-      "quick",
-      "easy"
+      "Bread",
+      "Breakfast",
+      "Quick",
+      "Easy"
     ],
     "ImageCaption": null,
     "Img": "https://www.optimistdaily.com/wp-content/uploads/shutterstock_774365320-e1614177159300.jpg",
@@ -501,9 +494,9 @@
     "PublishDate": "19-05-2022",
     "EditDate": "19-05-2022",
     "Tags": [
-      "curry",
-      "rice",
-      "lunch"
+      "Curry",
+      "Rice",
+      "Lunch"
     ],
     "ImageCaption": null,
     "Img": "https://cookingformysoul.com/wp-content/uploads/2022/03/curry-fried-rice-feat-min.jpg",
@@ -554,10 +547,10 @@
     "PublishDate": " ",
     "EditDate": "",
     "Tags": [
-      "chinese",
-      "noodles",
-      "soup",
-      "lunch"
+      "Chinese",
+      "Noodles",
+      "Soup",
+      "Lunch"
     ],
     "ImageCaption": null,
     "Img": "https://images.immediate.co.uk/production/volatile/sites/30/2021/12/Crossing-The-Bridge-Noodles-c951e67.jpg?quality=90\u0026webp=true\u0026resize=600,545",
@@ -592,14 +585,13 @@
     "EditDate": "23-04-2022",
     "Tags": [
       "Khaki",
-      "vegan",
+      "Vegan",
       "Puce",
       "Fuscia",
-      "healthy",
-      "easy",
-      "snacks",
-      "appetizers",
-      "vegetarian"
+      "Healthy",
+      "Easy",
+      "Appetizers",
+      "Vegetarian"
     ],
     "ImageCaption": null,
     "Img": "https://i.imgur.com/UAAnqx7.jpg",
@@ -627,10 +619,10 @@
     "PublishDate": "12-06-2022",
     "EditDate": "13-06-2022",
     "Tags": [
-      "breakfast",
-      "easy",
-      "quick",
-      "healthy"
+      "Breakfast",
+      "Healthy",
+      "Quick",
+      "Easy"
     ],
     "ImageCaption": null,
     "Img": "https://i.imgur.com/BXxveSO.jpg",
@@ -660,13 +652,10 @@
     "PublishDate": "24-11-2022",
     "EditDate": "24-11-2022",
     "Tags": [
-      "Yellow",
-      "Orange",
-      "green",
-      "healthy",
-      "lunch",
-      "vegan",
-      "vegetarian"
+      "Healthy",
+      "Lunch",
+      "Vegan",
+      "Vegetarian"
     ],
     "ImageCaption": null,
     "Img": "https://www.tastingtable.com/img/gallery/lemon-garlic-green-beans-recipe/l-intro-1648589949.jpg",
@@ -699,11 +688,10 @@
     "PublishDate": null,
     "EditDate": null,
     "Tags": [
-      "rice",
-      "japanese",
-      "eel",
-      "grilled",
-      "lunch"
+      "Japanese",
+      "Lunch",
+      "Rice",
+      "Eel"
     ],
     "ImageCaption": null,
     "Img": "https://cdn.media.amplience.net/i/japancentre/recipe-1434-unagi-don-grilled-eel-rice-bowl/recipe-1434-unagi-don-grilled-eel-rice-bowl?$poi$\u0026w=700\u0026h=410\u0026sm=c\u0026fmt=auto",
@@ -738,10 +726,10 @@
     "PublishDate": null,
     "EditDate": null,
     "Tags": [
-      "rice",
-      "lunch",
-      "chicken",
-      "Indian"
+      "Indian",
+      "Lunch",
+      "Chicken",
+      "Rice"
     ],
     "ImageCaption": null,
     "Img": "https://littlesunnykitchen.com/wp-content/uploads/Chicke-tikka-masala-2-7-730x1095.jpg",
@@ -771,13 +759,11 @@
     "PublishDate": null,
     "EditDate": null,
     "Tags": [
-      "healthy",
-      "appetizers",
-      "green",
-      "vegetarian",
-      "mexican",
-      "vegan",
-      "vegetarian"
+      "Healthy",
+      "Appetizers",
+      "Vegan",
+      "Vegetarian",
+      "Mexican"
     ],
     "ImageCaption": null,
     "Img": "https://cdn.loveandlemons.com/wp-content/uploads/2019/04/guacamole-recipe-580x832.jpg",
@@ -811,7 +797,7 @@
     "PublishDate": null,
     "EditDate": null,
     "Tags": [
-      "soup",
+      "Soup",
       "England"
     ],
     "ImageCaption": null,
@@ -825,7 +811,7 @@
     "FirstName": null,
     "LastName": null,
     "Title": "French Bread Pizza",
-    "Description": "The easiest way to make pizza at home, and it\u2019s ready in no time! Made with soft yet hearty French bread, robust, garlicky and herby pizza sauce, two types of rich cheese and all your favorite toppings! ",
+    "Description": "The easiest way to make pizza at home, and it\u2019s ready in no time! Made with soft yet hearty French bread, robust, garlicky and herby pizza sauce, two types of rich cheese and all your favorite toppings!",
     "Instructions": [
       "Prepare oven, and baking sheet: Move oven rack up one level and preheat oven to 425 degrees. Line a rimmed 18 by 13-inch baking sheet with aluminum foil for easier clean up if desired.",
       "Cut bread: Cut french bread in half evenly through the length, to create two long portions. Cut each portion in half and place on baking sheet.",
@@ -843,8 +829,8 @@
     "PublishDate": null,
     "EditDate": null,
     "Tags": [
-      "bread",
-      "quick",
+      "Bread",
+      "Easy",
       "French"
     ],
     "ImageCaption": null,
@@ -877,10 +863,10 @@
     "PublishDate": null,
     "EditDate": null,
     "Tags": [
-      "healthy",
-      "salad",
-      "tuna",
-      "green"
+      "Healthy",
+      "Salad",
+      "Tuna",
+      "Green"
     ],
     "ImageCaption": null,
     "Img": "https://cooktoria.com/wp-content/uploads/2021/06/healthy-tuna-salad-sq-1.jpg",
