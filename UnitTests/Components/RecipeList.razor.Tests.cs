@@ -7,13 +7,14 @@ using ContosoCrafts.WebSite.Models;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Microsoft.AspNetCore.Components;
+using Bunit.TestDoubles;
 
 namespace UnitTests.Components
 {
     /// <summary>
     /// This class contains unit tests for the RecipeList razor components.
     /// </summary>
-    public class RecipeListTests: Bunit.TestContext
+    public class RecipeListTests: BunitTestContext
     {
         #region TestSetup
         [SetUp]
@@ -43,6 +44,33 @@ namespace UnitTests.Components
 
             // Assert
             Assert.AreEqual(true, result.Contains("Beef Taco"));
+        }
+
+        [Test]
+        public void GoTo_When_Clicked_Goes_To_Recipe_Page()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileRecipeService>(TestHelper.RecipeService);
+            var ctx = new Bunit.TestContext();
+            var navMan = Services.GetRequiredService<FakeNavigationManager>();
+
+            // Act
+            var page = RenderComponent<RecipeList>();
+            var recipe = TestHelper.RecipeService.GetRecipes().FirstOrDefault();
+            var recipeId = recipe.RecipeID;
+            var htmlRecipeId = "recipe-" + recipeId.ToString();
+            var buttonList = page.FindAll("button");
+
+            var button = buttonList.First(x => x.Id == htmlRecipeId);
+
+            button.Click();
+
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, navMan.Uri.Contains("Recipe"));
+
+
         }
     }
 }
