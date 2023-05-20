@@ -31,16 +31,6 @@
     // The list of reaction values grabbed from the database
     List<(Reaction, int)> Reactions { get; set; }
 
-    // Total count of sad reactions
-    int SadCount { get; set; }
-
-    // Total count of content reactions
-    int ContentCount { get; set; }
-
-    // Total count of happy reactions
-    int HappyCount { get; set; }
-
-
     /// <summary>
     /// Initializes the blazor component on the first page load
     /// </summary>
@@ -49,19 +39,6 @@
         // Get the Reactions based on recipeId/Recipe on page load
         Recipe = RecipeService.GetRecipe(RecipeID);
         Reactions = Recipe.GetReactions();
-
-        // Retrieve the count of the reactions on initial page load
-        SetCounts();
-    }
-
-    /// <summary>
-    /// Sets the counts of the variables being used in the blazor component
-    /// </summary>
-    void SetCounts()
-    {
-        SadCount = Reactions[0].Item2;
-        ContentCount = Reactions[1].Item2;
-        HappyCount = Reactions[2].Item2;
     }
 
     /// <summary>
@@ -75,8 +52,7 @@
         RecipeService.AddReaction(Recipe.RecipeID, reactionType);
         Recipe = RecipeService.GetRecipe(RecipeID);
         Reactions = Recipe.GetReactions();
-        SetCounts();
-
+  
         // Ensure that the state is udpated and counts are refreshed
         InvokeAsync(() =>
         {
