@@ -15,12 +15,13 @@
             var ordinal = (int)reaction.Item1;
 
             string emojiVal = "&#" + Recipe.ReactionCharacters[reaction.Item1].ToString() + ";";
-
-        <button id="@ordinal" @onclick="(e => SubmitReaction(ordinal))">@emojiVal @reaction.Item1 @reaction.Item2</button>
+            // Need to figure out how to correctly display the emojis, removing for now
+        <button id="@ordinal" @onclick="(e => SubmitReaction(ordinal))">@reaction.Item1 @reaction.Item2</button>
     }
 </div>
 
 @code {
+    // The RecipeID of the current page
     [Parameter]
     public int RecipeID { get; set; }
 
@@ -39,12 +40,7 @@
     // Total count of happy reactions
     int HappyCount { get; set; }
 
-    private int myinteger = 0;
 
-    private void MyFunction()
-    {
-        myinteger++;
-    }
     /// <summary>
     /// Initializes the blazor component on the first page load
     /// </summary>
@@ -81,12 +77,11 @@
         Reactions = Recipe.GetReactions();
         SetCounts();
 
+        // Ensure that the state is udpated and counts are refreshed
         InvokeAsync(() =>
         {
             StateHasChanged();
         });
     }
-
-    
 }
 
