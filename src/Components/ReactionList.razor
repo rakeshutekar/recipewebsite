@@ -1,29 +1,92 @@
-﻿@using ContosoCrafts.WebSite.Models
-@using ContosoCrafts.WebSite.Services
+﻿@using Microsoft.AspNetCore.Components
+@using System.Net.Http
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.JSInterop
 @using Microsoft.AspNetCore.Components.Web
+@using ContosoCrafts.WebSite.Models
+@using ContosoCrafts.WebSite.Services
 @inject JsonFileRecipeService RecipeService
 @inject NavigationManager NavigationManager
 
 <div>
     @foreach (var reaction in Reactions)
-    {
-        <button>&#@Recipe.ReactionCharacters[reaction.Item1]; @reaction.Item1 @reaction.Item2</button>
+        {
+            var ordinal = (int)reaction.Item1;
+
+            string emojiVal = "&#" + Recipe.ReactionCharacters[reaction.Item1].ToString() + ";";
+
+        <button id="@ordinal" @onclick="(e => SubmitReaction(ordinal))">@emojiVal @reaction.Item1 @reaction.Item2</button>
     }
 </div>
-
 
 @code {
     [Parameter]
     public int RecipeID { get; set; }
 
+    // The RecipeModel for the reactions to be shown
     public RecipeModel Recipe { get; set; }
 
-    public List<(Reaction, int)> Reactions { get; set; }
+    // The list of reaction values grabbed from the database
+    List<(Reaction, int)> Reactions { get; set; }
 
+    // Total count of sad reactions
+    int SadCount { get; set; }
+
+    // Total count of content reactions
+    int ContentCount { get; set; }
+
+    // Total count of happy reactions
+    int HappyCount { get; set; }
+
+    private int myinteger = 0;
+
+    private void MyFunction()
+    {
+        myinteger++;
+    }
+    /// <summary>
+    /// Initializes the blazor component on the first page load
+    /// </summary>
     protected override void OnInitialized()
     {
+        // Get the Reactions based on recipeId/Recipe on page load
         Recipe = RecipeService.GetRecipe(RecipeID);
         Reactions = Recipe.GetReactions();
+
+        // Retrieve the count of the reactions on initial page load
+        SetCounts();
     }
+
+    /// <summary>
+    /// Sets the counts of the variables being used in the blazor component
+    /// </summary>
+    void SetCounts()
+    {
+        SadCount = Reactions[0].Item2;
+        ContentCount = Reactions[1].Item2;
+        HappyCount = Reactions[2].Item2;
+    }
+
+    /// <summary>
+    /// Submits the reaction to the database
+    /// </summary>
+    void SubmitReaction(int reactionOrdinalVal)
+    {
+        // Cast the ordinal value to enum Reaction type
+        var reactionType = (Reaction)reactionOrdinalVal;
+
+        RecipeService.AddReaction(Recipe.RecipeID, reactionType);
+        Recipe = RecipeService.GetRecipe(RecipeID);
+        Reactions = Recipe.GetReactions();
+        SetCounts();
+
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    
 }
 
