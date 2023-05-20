@@ -3,10 +3,7 @@ using NUnit.Framework;
 using System.Linq;
 using ContosoCrafts.WebSite.Components;
 using ContosoCrafts.WebSite.Services;
-using ContosoCrafts.WebSite.Models;
 using Microsoft.Extensions.DependencyInjection;
-using Moq;
-using Microsoft.AspNetCore.Components;
 using Bunit.TestDoubles;
 
 namespace UnitTests.Components
