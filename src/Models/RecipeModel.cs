@@ -135,7 +135,7 @@ namespace ContosoCrafts.WebSite.Models
 
         #region Reactions
         // List of all reactions to this recipe
-        public List<Reaction> Reactions { get;set; }
+        public List<Reaction> Reactions { get; set; }
 
         public Dictionary<Reaction, int> ReactionCharacters = new Dictionary<Reaction, int>()
         {
