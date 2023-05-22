@@ -351,5 +351,27 @@ namespace UnitTests.Services
             Assert.NotNull(recipe.Comments);
             Assert.IsTrue(recipe.Comments.Last().Comment == TestHelper.STRING_TEST_VAL);
         }
+        /// <summary>
+        /// Test that JsonFileRecipeService.AddReaction will add a reaction to a recipe
+        /// when provided a valid ID and reaction
+        /// </summary>
+        [Test]
+        public void JsonFileRecipeService_AddReaction_Valid_ID_Valid_Reaction_Should_Update_Save_Correctly()
+        {
+            // Create test model and add to temporary data store
+            var model = TestHelper.TEST_RECIPE_MODEL;
+            var modelID = TestHelper.RecipeService.NextRecipeID();
+            model.RecipeID = modelID;
+            TestHelper.RecipeService.AddRecipe(model);
+
+            // Add reaction to new recipe
+            TestHelper.RecipeService.AddReaction(modelID, Reaction.Content);
+
+            // Assert that recipe contains new reaction
+            var recipe = TestHelper.RecipeService.GetRecipe(modelID);
+            Assert.NotNull(recipe);
+            Assert.NotNull(recipe.Reactions);
+            Assert.Contains(Reaction.Content, recipe.Reactions);
+        }
     }
 }
