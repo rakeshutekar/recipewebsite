@@ -3,6 +3,7 @@ using ContosoCrafts.WebSite.Pages.Recipes;
 using System;
 using System.Linq;
 using ContosoCrafts.WebSite.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTests.Pages.Recipes
 {
@@ -54,7 +55,7 @@ namespace UnitTests.Pages.Recipes
         /// does not correspond to a recipe in the data store
         /// </summary>
         [Test]
-        public void OnGet_Invalid_RecipeId_Should_Set_Recipe_Not_Found_To_True()
+        public void OnGet_Invalid_RecipeId_Should_Redirect_To_Error_Page()
         {
             // Arrange
             // Get a bad id - sum of all other ids
@@ -64,10 +65,12 @@ namespace UnitTests.Pages.Recipes
             {
                 badId += recipeModel.RecipeID;
             }
-            // Act 
-            pageModel.OnGet(badId);
+
+            // Act
+            var pageResult = pageModel.OnGet(badId) as RedirectToPageResult;
+
             // Assert
-            Assert.IsTrue(pageModel.RecipeNotFound);
+            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
         }
         /// <summary>
         /// Test ensures that OnGet() with deleted recipe ID redirects to valid (non-null) page
