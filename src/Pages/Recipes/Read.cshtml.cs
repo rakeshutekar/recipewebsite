@@ -50,7 +50,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             // If recipe is not found, set RecipeNotFound to true
             if (Recipe == null)
             {
-                RecipeNotFound = true;
+                return RedirectToPage("../Error");
             }
             else if (Recipe.Deleted == true)
             {
