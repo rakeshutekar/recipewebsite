@@ -43,9 +43,10 @@ namespace UnitTests.Pages.Recipes
         public void OnGet_Valid_Should_Return_Recipes()
         {
             // Arragne
-            var validRecipeID = 1;
-            var validRecipeTitle = "Prawn and Avocado Omelette";
-            var result = pageModel.OnGet(validRecipeID);
+            var validRecipeId = 2;
+            var validRecipe = TestHelper.RecipeService.GetRecipe(validRecipeId);
+            var validRecipeTitle = validRecipe.Title;
+            var result = pageModel.OnGet(validRecipe.RecipeID);
             // Act
 
             // Assert
@@ -80,17 +81,17 @@ namespace UnitTests.Pages.Recipes
         /// of true value
         /// </summary>
         [Test]
-        public void OnGet_Invalid_RecipeId_Should_Show_Recipe_Not_Found()
+        public void OnGet_Invalid_RecipeId_Should_Redirect_To_Error_Page()
         {
             // Arrange
             var numRecipes = TestHelper.RecipeService.GetRecipes().Count();
             var invalidRecipeId = numRecipes + 1;
 
             // Act
-            pageModel.OnGet(invalidRecipeId);
+            var pageResult = pageModel.OnGet(invalidRecipeId) as RedirectToPageResult;
 
             // Assert
-            Assert.AreEqual(true, pageModel.RecipeNotFound);
+            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
         }
 
         #endregion OnGet
