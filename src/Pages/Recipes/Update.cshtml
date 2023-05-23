@@ -94,7 +94,6 @@
 </div>
 
 @section Scripts {
-
     <script>// Get the parent form element
         const description = document.getElementById('Description');
         const title = document.getElementById('Title')
@@ -115,8 +114,7 @@
                 span.textContent = input.validationMessage;
                 span.className = 'text-danger visible';
             }
-        }
-    </script>
+        }</script>
 
     <script>// Update Confirmation
         function confirmUpdate() {
@@ -124,8 +122,7 @@
             if (result) {
                 document.getElementById("update-form").submit();
             }
-        }
-    </script>
+        }</script>
 
     <script>
         // For Tags creation form group
@@ -363,5 +360,4 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
-}
 }
