@@ -43,19 +43,21 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         /// Retrieves the specified recipe by its ID passed in via the URL
         /// </summary>
         /// <param name="id"></param>
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             RecipeID = id;
             Recipe = RecipeService.GetRecipe(id);
 
-            // If recipe is not found, set RecipeNotFound to true
-            if (Recipe == null)
+            // If recipe is not found or deleted, redirect to error page
+            if (Recipe == null || Recipe.Deleted == true)
             {
-                RecipeNotFound = true;
-            } else
-            {
-                fullName = Recipe.FirstName + " " + Recipe.LastName;
+                // Return error page if the recipe is deleted
+                return RedirectToPage("../Error");
             }
+
+            // Set full name to be displayed, then display the page
+            fullName = Recipe.FirstName + " " + Recipe.LastName;
+            return Page();
         }
 
         /// <summary>
