@@ -30,9 +30,6 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         [BindProperty]
         public RecipeModel Recipe { get; set; }
 
-        // Boolean to keep track of if recipe is found
-        public bool RecipeNotFound { get; set; }
-
         // ID of the recipe passed in via URL/Path
         public int RecipeID;
 
