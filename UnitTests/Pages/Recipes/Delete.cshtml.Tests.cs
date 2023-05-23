@@ -56,16 +56,17 @@ namespace UnitTests.Pages.Recipes
         /// page
         /// </summary>
         [Test]
-        public void OnGet_Invalid_RecipeID_Should_Return_Not_Found_Recipe()
+        public void OnGet_Invalid_RecipeID_Should_Return_Page_Redirect()
         {
             // Arange
 
             // Act
             var invalidProductId = 999;
-            pageModel.OnGet(invalidProductId);
+            var pageResult = pageModel.OnGet(invalidProductId) as RedirectToPageResult;
+
 
             // Assert
-            Assert.AreEqual(true, pageModel.RecipeNotFound);
+            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
         }
         #endregion OnGet
 
