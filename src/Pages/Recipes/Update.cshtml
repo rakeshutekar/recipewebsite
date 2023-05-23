@@ -1,12 +1,8 @@
 ﻿@page "{id:int}"
 @model ContosoCrafts.WebSite.Pages.Recipes.UpdateModel
-@if (Model.RecipeNotFound)
- {
-    <p>Error: The requested recipe was not found.</p>
- }
-    else
- {
-        ViewData["Title"] = "Update recipe page";
+@{
+    ViewData["Title"] = "Update Recipe Page";
+}
 
 <h1>Update Recipe</h1>
 
@@ -39,13 +35,13 @@
         <div class="form-group">
             <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
             @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
-             {
+            {
                 <div class="tagLabel-container">
                     <label class="tag-label">@($"{i + 1}.")</label>
                     <input asp-for="@Model.Recipe.Tags[i]" class="form-control" required maxlength="1000" minlength="1" />
                     <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
                 </div>
-             }
+            }
             <div id="btnTagsContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnTags" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
@@ -58,13 +54,13 @@
         <div class="form-group">
             <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
             @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
-                {
+            {
                 <div class="ingrLabel-container">
                     <label class="ingr-label">@($"{i + 1}.")</label>
                     <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" required maxlength="1000" minlength="1" />
                     <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
                 </div>
-                }
+            }
             <div id="btnIngrContainer" class="container-fluid">
                 <div class="row justify-content-left">
                     <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Ingredient">
@@ -77,13 +73,13 @@
         <div class="form-group">
             <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
             @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
-                {
+            {
                 <div class="instrLabel-container">
                     <label class="instr-label">@($"{i + 1}.")</label>
                     <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" required maxlength="1000" minlength="1" />
                     <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
                 </div>
-                }
+            }
 
             <div id="btnInstrContainer" class="container-fluid">
                 <div class="row justify-content-left">
@@ -96,7 +92,6 @@
         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to update this recipe?')">Update</button>
     </form>
 </div>
-
 
 @section Scripts {
 
@@ -120,7 +115,8 @@
                 span.textContent = input.validationMessage;
                 span.className = 'text-danger visible';
             }
-        }</script>
+        }
+    </script>
 
     <script>// Update Confirmation
         function confirmUpdate() {
@@ -128,7 +124,8 @@
             if (result) {
                 document.getElementById("update-form").submit();
             }
-        }</script>
+        }
+    </script>
 
     <script>
         // For Tags creation form group
@@ -365,6 +362,4 @@
 
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
     }
