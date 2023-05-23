@@ -8,7 +8,7 @@ else
 {
     ViewData["Title"] = "Recipe page";
     <div>
-         <div class="clear">
+        <div class="clear">
         </div>
         <div class="container">
 
@@ -33,15 +33,12 @@ else
             </div>
 
             <p class="mt-3"></p>
+            <div class="row justify-content-end">
+                <button class="btn btn-primary" onclick="scrollToCommentSection()">Leave a Comment</button>
+            </div>
 
             <div class="row">
                 <div class="col-md-12">
-                    <!--<h5 class="section-title">
-                        Description
-                        <hr class="my-0" />-->
-                    <!-- horizontal rule -->
-                    <!--</h5>
-                    <p>@Model.Recipe.Description</p>-->
 
                     <h5 class="section-title">
                         Ingredients
@@ -66,12 +63,15 @@ else
                     </ol>
                 </div>
             </div>
+
+            <p class="mt-3"></p>
+            <div class="row justify-content-end recipe-actions">
+                <a asp-page="Delete" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-danger">Delete</a>
+                <a asp-page="./Update" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-primary">Update</a>
+            </div>
         </div>
 
-        <div class="row justify-content-end recipe-actions">
-            <a asp-page="Delete" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-danger">Delete</a>
-            <a asp-page="./Update" asp-route-id="@Model.Recipe.RecipeID" class="btn btn-primary">Update</a>
-        </div>
+       
 
         <div class="clear">
         </div>
@@ -110,8 +110,8 @@ else
             </div>
         </div>
 
-        <!-- Add a comment-->
-        <section style="background-color: #f1faee">
+        <!-- Leave a comment-->
+        <section id="comment-section" style="background-color: #f1faee">
             <div class="container my-5 py-5 text-dark">
                 <div class="row d-flex justify-content-center">
                     <!-- Expand / Reduce based on screen size -->
@@ -131,7 +131,7 @@ else
                                              src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/SpongeBob_SquarePants_character.svg/640px-SpongeBob_SquarePants_character.svg.png" width="65" height="65" />
 
                                         <div class="w-100">
-                                            <h5>Add a comment</h5>
+                                            <h5>Leave a Comment</h5>
 
                                             <!-- Wrap first name and last name in a form-row div -->
                                             <div class="form-row">
@@ -167,4 +167,11 @@ else
             </div>
         </section>
     </div>
+
+    <!-- Leave a comment Button -->
+    <script>function scrollToCommentSection() {
+            const commentSection = document.getElementById('comment-section');
+            commentSection.scrollIntoView({ behavior: 'smooth' });
+        }</script>
+
 }
