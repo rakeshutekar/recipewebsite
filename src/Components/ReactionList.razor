@@ -11,12 +11,15 @@
 
 <div>
     @foreach (var reaction in Reactions)
-        {
-            var ordinal = (int)reaction.Item1;
+    {
+        var ordinal = (int)reaction.Item1;
 
-            string emojiVal = "&#" + Recipe.ReactionCharacters[reaction.Item1].ToString() + ";";
-            // Need to figure out how to correctly display the emojis, removing for now
-        <button id="@ordinal" @onclick="(e => SubmitReaction(ordinal))">@reaction.Item1 @reaction.Item2</button>
+        string emojiVal = "&#" + Recipe.ReactionCharacters[reaction.Item1].ToString() + ";";
+        // Need to figure out how to correctly display the emojis, removing for now
+        @*<button id="@ordinal" @onclick="(e => SubmitReaction(ordinal))">@reaction.Item1 @reaction.Item2</button>*@
+
+        // Use the MarkUp String class to output the HTML content
+        <button id="@ordinal" @onclick="(e => SubmitReaction(ordinal))">@((MarkupString)emojiVal) @reaction.Item2</button>
     }
 </div>
 
