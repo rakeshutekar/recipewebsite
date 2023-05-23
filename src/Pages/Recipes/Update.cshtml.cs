@@ -30,9 +30,6 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
         [BindProperty]
         public RecipeModel Recipe { get; set; }
 
-        // Boolean to keep track of if recipe is found
-        public bool RecipeNotFound { get; set; }
-
         public int RecipeID;
 
         /// <summary>
@@ -48,7 +45,7 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             // If recipe is not found, set RecipeNotFound to true
             if (Recipe == null)
             {
-                RecipeNotFound = true;
+                return RedirectToPage("../Error");
             }
             else if (Recipe.Deleted == true)
             {
