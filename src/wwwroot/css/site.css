@@ -4,11 +4,11 @@
 }
 
 .img-recipe-page {
-    max-height: var(--img-height-recipes);
+    max-height: var(--img-height-recipes); /*original setting: 500px */
 }
 
 .checked {
-  color: orange;
+    color: var(--checked-color);    /*original color: orange */
 }
 
 .fa-star {
@@ -29,8 +29,8 @@ for details on configuring this project to bundle and minify static web assets. 
 .card-columns .card-body {
     height: 100px;
     font-family: 'Nunito', serif; /******* Change font *******/
-    color: #354f52; /*Card text color*/
-    background: #edede9; /*Card text box color*/
+    color: var(--text-color); /*Card text color: #354f52 */
+    background: var(--bg-color); /*Card text box color: #edede9 */
 }
 
 .card-columns .card-img {
@@ -51,10 +51,9 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-title {
-    color: var(--card-title-color);
+    color: var(--card-title-color); /*This is new */
     text-align: center;
 }
-
 
 .card-columns .card-tags ul {
     list-style-type: none;
@@ -71,13 +70,13 @@ for details on configuring this project to bundle and minify static web assets. 
     text-decoration: none;
 }
 
-
 .card-columns .card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
+
 .card-footer {
-    background: var(--card-footer-bg);
+    background: var(--card-footer-bg);  /*background color: #edede9 */
 }
 
 a.navbar-brand {
@@ -90,25 +89,40 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-   color: #0366d6;
+    color: var(--link-color); /*original color: #0366d6 */
 }
 
 .btn-primary {
     color: #fff;
-    background-color: #52796f; /*sign-in button color*/
-    border-color: #252152;
+    background-color: var(--primary-color); /*sign-in button original color: #52796f */
+    border-color: var(--border-color); /*original color: #252152 */
 }
+
 .btn-primary:hover {
-        color: #fff;
-        background-color: #84a98c;
-        border-color: #84a98c;
+    color: #fff;
+    background-color: var(--secondary-color);   /*original color: #84a98c */
+    border-color: var(--secondary-color);   /*original color: #84a98c */
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
-    background-color: #84a98c;
-    border-color: #84a98c;
+    background-color: var(--secondary-color);   /*original color: #84a98c */
+    border-color: var(--secondary-color);   /*original color: #84a98c */
 }
+
+.bg-navbar {
+    background: -webkit-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
+    background: -o-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
+    background: -moz-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
+    background: linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
+}
+
+/*.bg-navbar {
+    background: -webkit-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+    background: -o-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+    background: -moz-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+    background: linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -122,20 +136,22 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #656468;
+    border-top: 1px solid var(--border-color); /*original color: #656468 */
 }
+
 .border-bottom {
-  border-bottom: 1px solid #656468;
+    border-bottom: 1px solid var(--border-color); /*original color: #656468 */
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -145,52 +161,197 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height changed to 200px to avoid overlap */
-  margin-bottom: 200px;
+    /* Margin bottom by footer height changed to 200px to avoid overlap */
+    margin-bottom: 200px;
+    background-color: var(--bg-color);  /*This is new */
+    color: var(--text-color);   /*This is new */
 }
+
 p {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
+
 h1,h2,h3,h4, h5, h6 {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
+
 ul {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
-.footer {
-    position: absolute;
+
+/*Footer */
+footer {
+    position: fixed;
     bottom: 0;
     width: 100%;
-    white-space: nowrap;
-    line-height: 40px; /* Set the line-height to a smaller value */
-    font-family: 'Nunito', sans-serif; /******* Change font *******/
+    background-color: #cad2c5;
+    color: var(--footer-text-color);
 }
 
 /*Social media icons appear round */
 .btn-rounded {
     border-radius:20px;
 }
-
-/*Backgrounds*/
-.bg-navbar {
-    background: -webkit-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-    background: -o-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-    background: -moz-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-    background: linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
+ 
+/* Read page style
+-------------------------------------------------- */
+/*Change the instruction font of the Read page to Nunito*/
+.instruction-font {
+    font-family: 'Nunito', sans-serif;
 }
 
-/* Change the background color of even rows */
+/* Clear div for vertical margins*/
+.clear{clear: both; height: 60px}
+
+/*Change the color and font weight for View All under Recipes*/
+.view-all {
+    color: black; 
+    font-weight: bold;
+}
+
+/*Read page section title style */
+.section-title {
+    display: flex;
+    align-items: center;
+}
+
+.section-title hr {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+/*Recipe title and image container */
+.recipe-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/*Recipe Title Style Changes */
+.recipe-title {
+    flex-basis: 50%;
+    flex-grow: 1;
+    text-align: center;
+    margin-left: auto;
+}
+
+.recipe-title h2 {
+    font-weight: bold;
+}
+
+/*Recipe Image Style Changes */
+.recipe-figure {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Add position: relative */
+    overflow: hidden; /* Add overflow: hidden to hide the excess portion */
+}
+
+.recipe-figure .figure-img {
+    width: 500px;  
+    height: 500px; 
+    object-fit: cover;
+}
+
+.rule-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* Update page style
+-------------------------------------------------- */
+/*Keep the instruction index in line with instruction*/
+.instr-label {
+    margin-right: 10px;
+}
+
+.instrLabel-container input {
+    width: 96%;
+    display: inline-block;
+}
+
+.ingr-label {
+    margin-right: 10px;
+}
+
+.ingrLabel-container input {
+    width: 96%;
+    display: inline-block;
+}
+
+.tag-label {
+    margin-right: 10px;
+}
+
+.tagLabel-container input {
+    width: 96%;
+    display: inline-block;
+}
+
+/* Index page style
+-------------------------------------------------- */
+.sort-buttons button.active {
+    background-color: #fec89a;
+}
+
 .table-striped tbody tr:nth-child(even) {
-    background-color: #edede9;
+    background-color: var(--stripe-even-color); /*original color: #fec89a */
 }
 
-/* Change the background color of odd rows */
 .table-striped tbody tr:nth-child(odd) {
-    background-color: #cad2c5;
+    background-color: var(--stripe-odd-color); /*original color: #edede9 */
 }
 
 .table-header {
-    background-color: #84a98c;
+    background-color: var(--secondary-color); /*This is new */
+    color: var(--text-color); /* original color: #84a98c */
+}
+
+
+
+/* Style changes added for theme changing (ALL NEW CHANGES ADDED)
+----------------------------------------------------------------------------------------- */
+
+/* Theme settings (Light and Dark)
+-------------------------------------------------- */
+:root {
+    /*Image settings*/
+    --img-height-recipes: 500px;
+    /* Light theme */
+    --bg-color: #edede9;
+    --text-color: #354f52;
+    --primary-color: #52796f;
+    --secondary-color: #cad2c5;
+    --link-color: #0366d6;
+    --border-color: #656468;
+    --stripe-even-color: #edede9;
+    --stripe-odd-color: #cad2c5;
+    /* Dark theme */
+    --bg-color-dark: #333333;
+    --text-color-dark: #f3f3f3;
+    --primary-color-dark: #52796f;
+    --secondary-color-dark: #212529;
+    --link-color-dark: #3391ff;
+    --border-color-dark: #444444;
+    --stripe-even-color-dark: #444444;
+    --stripe-odd-color-dark: #555555;
+}
+
+/* This section will override the colors when the data-theme attribute is set to "dark" */
+[data-theme="dark"] {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --link-color: var(--link-color-dark);
+    --border-color: var(--border-color-dark);
+    --stripe-even-color: var(--stripe-even-color-dark);
+    --stripe-odd-color: var(--stripe-odd-color-dark);
 }
 
 [data-theme="dark"] {
@@ -236,12 +397,6 @@ ul {
     color: var(--register-bg-color);
     background-color: var(--register-text-color);
 }
-footer {
-    background-color: var(--footer-bg-color);
-    position: fixed; 
-    bottom: 0; 
-    width: 100%; 
-}
 
 .btn-footer {
     color: var(--social-icon-color);
@@ -251,411 +406,4 @@ footer {
 .btn-footer:hover {
     background-color: var(--social-icon-color);
     color: var(--footer-btn-color);
-}
-
-/* Read page style
--------------------------------------------------- */
-/*Change the instruction font of the Read page to Nunito*/
-.instruction-font {
-    font-family: 'Nunito', sans-serif;
-}
-
-/* Clear div for vertical margins*/
-.clear{clear: both; height: 60px}
-
-/*Change the color and font weight for View All under Recipes*/
-.view-all {
-    color: black; 
-    font-weight: bold;
-}
-
-/*Read page section title style */
-.section-title {
-    display: flex;
-    align-items: center;
-}
-
-.section-title hr {
-    flex-grow: 1;
-    margin-left: 10px;
-}
-
-/*Recipe title and image container */
-.recipe-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/*Recipe Title Style Changes */
-.recipe-title {
-    flex-basis: 50%;
-    flex-grow: 1;
-    text-align: center;
-    margin-left: auto;
-}
-
-.recipe-title h2 {
-    font-weight: bold;
-}
-
-/*Recipe Image Style Changes */
-.recipe-figure {
-    flex-basis: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Add position: relative */
-    overflow: hidden; /* Add overflow: hidden to hide the excess portion */
-}
-
-.recipe-figure .figure-img {
-    width: 500px;  
-    height: 500px; 
-    object-fit: cover;
-}
-
-.rule-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-
-/* Update page style
--------------------------------------------------- */
-/*Keep the instruction index in line with instruction*/
-.instr-label {
-    margin-right: 10px;
-}
-
-.instrLabel-container input {
-    width: 96%;
-    display: inline-block;
-}
-
-.ingr-label {
-    margin-right: 10px;
-}
-
-.ingrLabel-container input {
-    width: 96%;
-    display: inline-block;
-}
-
-.tag-label {
-    margin-right: 10px;
-}
-
-.tagLabel-container input {
-    width: 96%;
-    display: inline-block;
-}:root {
-    /*Image settings*/
-    --img-height-recipes: 500px;
-
-    /* Light theme */
-    --bg-color: #edede9;
-    --text-color: #354f52;
-    --primary-color: #52796f;
-    --secondary-color: #cad2c5;
-    --link-color: #0366d6;
-    --border-color: #656468;
-    --stripe-even-color: #edede9;
-    --stripe-odd-color: #cad2c5;
-
-    /* Dark theme */
-    --bg-color-dark: #333333;
-    --text-color-dark: #f3f3f3;
-    --primary-color-dark: #52796f;
-    --secondary-color-dark: #212529;
-    --link-color-dark: #3391ff;
-    --border-color-dark: #444444;
-    --stripe-even-color-dark: #444444;
-    --stripe-odd-color-dark: #555555;
-}
-
-/* This section will override the colors when the data-theme attribute is set to "dark" */
-[data-theme="dark"] {
-    --bg-color: var(--bg-color-dark);
-    --text-color: var(--text-color-dark);
-    --primary-color: var(--primary-color-dark);
-    --secondary-color: var(--secondary-color-dark);
-    --link-color: var(--link-color-dark);
-    --border-color: var(--border-color-dark);
-    --stripe-even-color: var(--stripe-even-color-dark);
-    --stripe-odd-color: var(--stripe-odd-color-dark);
-}
-
-body {
-    /* Margin bottom by footer height changed to 200px to avoid overlap */
-    margin-bottom: 200px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-.img-recipe-page {
-    max-height: var(--img-height-recipes);
-}
-
-.checked {
-    color: var(--checked-color);
-}
-
-
-.fa-star {
-  cursor: finger;
-}
-
-.icon-container {
-    cursor: url('https://cdn-icons-png.flaticon.com/512/2909/2909894.png'), finger;
-}
-
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-.card-columns .card:hover .card-img {
-    opacity: 1;
-    -webkit-transform-style: preserve-3d;
-}
-
-.card-columns .card-body {
-    height: 100px;
-    font-family: 'Nunito', serif; /******* Change font *******/
-    color: var(--text-color); /*Card text color*/
-    background: var(--bg-color); /*Card text box color*/
-}
-
-
-.card-columns .card-img {
-  height: 330px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  opacity: .8;
-}
-
-.modal .card-img {
-  height: 500px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
-
-.card-title {
-    text-align: center;
-}
-
-.card-columns .card-tags ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.card-columns .card-tags ul li {
-    text-transform: uppercase;
-    text-align: center;
- }
-
-.card-tags ul li a {
-    color: #a5a58d;
-    text-decoration: none;
-}
-
-
-.card-columns .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
-}
-.card-footer {
-    background: #edede9;
-}
-
-a.navbar-brand {
-    white-space: normal;
-    font-family: 'Nunito', cursive; /******* Change font *******/
-    font-size: xx-large;
-    text-align: center;
-    word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
-a {
-    color: var(--link-color);
-}
-
-.btn-primary {
-     color: #fff;
-     background-color: var(--primary-color);
-     border-color: var(--border-color);
-}
- .btn-primary:hover {
-         color: #fff;
-         background-color: var(--secondary-color);
-         border-color: var(--secondary-color);
- }
- 
- .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-     color: #fff;
-     background-color: var(--secondary-color);
-     border-color: var(--secondary-color);
- }
- 
- .border-top {
-   border-top: 1px solid var(--border-color);
- }
- .border-bottom {
-   border-bottom: 1px solid var(--border-color);
- }
- 
- .box-shadow {
-   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
- }
- 
- .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 40px; /* Set the line-height to a smaller value */
-    font-family: 'Nunito', sans-serif; /******* Change font *******/
-    background-color: var(--footer-bg-color);
-    color: var(--footer-text-color);
-}
- .btn-rounded {
-     border-radius:20px;
- }
- 
- .bg-navbar {
-     background: -webkit-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
-     background: -o-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
-     background: -moz-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
-     background: linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
- }
- 
- .table-striped tbody tr:nth-child(even) {
-     background-color: var(--stripe-even-color);
- }
- 
- .table-striped tbody tr:nth-child(odd) {
-     background-color: var(--stripe-odd-color);
- }
- 
- .table-header {
-     background-color: var(--secondary-color);
-     color: var(--text-color);
- }
-
-/* Read page style
--------------------------------------------------- */
-/*Change the instruction font of the Read page to Nunito*/
-.instruction-font {
-    font-family: 'Nunito', sans-serif;
-}
-
-/* Clear div for vertical margins*/
-.clear{clear: both; height: 60px}
-
-/*Change the color and font weight for View All under Recipes*/
-.view-all {
-    color: black; 
-    font-weight: bold;
-}
-
-/*Read page section title style */
-.section-title {
-    display: flex;
-    align-items: center;
-}
-
-.section-title hr {
-    flex-grow: 1;
-    margin-left: 10px;
-}
-
-/*Recipe title and image container */
-.recipe-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/*Recipe Title Style Changes */
-.recipe-title {
-    flex-basis: 50%;
-    flex-grow: 1;
-    text-align: center;
-    margin-left: auto;
-}
-
-.recipe-title h2 {
-    font-weight: bold;
-}
-
-/*Recipe Image Style Changes */
-.recipe-figure {
-    flex-basis: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Add position: relative */
-    overflow: hidden; /* Add overflow: hidden to hide the excess portion */
-}
-
-.recipe-figure .figure-img {
-    width: 500px;  
-    height: 500px; 
-    object-fit: cover;
-}
-
-.rule-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-
-/* Update page style
--------------------------------------------------- */
-/*Keep the instruction index in line with instruction*/
-.instr-label {
-    margin-right: 10px;
-}
-
-.instrLabel-container input {
-    width: 96%;
-    display: inline-block;
-}
-
-.ingr-label {
-    margin-right: 10px;
-}
-
-.ingrLabel-container input {
-    width: 96%;
-    display: inline-block;
-}
-
-.tag-label {
-    margin-right: 10px;
-}
-
-.tagLabel-container input {
-    width: 96%;
-    display: inline-block;
-}
-
-/* Index page style
--------------------------------------------------- */
-.sort-buttons button.active {
-    background-color: #fec89a;
-}
-
-
-
-/* Index page style
--------------------------------------------------- */
-.sort-buttons button.active {
-    background-color: #fec89a;
 }
