@@ -13,11 +13,11 @@
             <div class="col-md-6 d-flex align-items-center">
                 <div class="recipe-title text-center mx-auto">
                     <h2>@Model.Recipe.Title</h2>
-                    <!--TEST ADD REACTIONS-->
+                    <p class="mt-3">@Model.Recipe.Description</p>
+                    <!--ADD REACTIONS-->
                     <!--Renders the reactions via a reusable blazor component-->
                     @(await Html.RenderComponentAsync<Components.ReactionList>(RenderMode.ServerPrerendered, new { RecipeID = Model.RecipeID }))
-                    <!--END TEST ADD REACTIONS-->
-                    <p class="mt-3">@Model.Recipe.Description</p>
+                    <!--END REACTIONS-->
                 </div>
             </div>
 
