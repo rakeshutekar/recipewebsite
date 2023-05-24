@@ -376,10 +376,12 @@ footer {
     background-color: white;
 }
 
+/*Footer text class background color */
 .text-center {
     background-color: var(--social-bg-color);
 }
 
+/*Social media icon button color and border color */
 .btn-outline-dark {
     color: var(--social-icon-color);
     border-color: var(--social-icon-color);
@@ -390,28 +392,16 @@ footer {
     color: var(--social-bg-color);
 }
 
+/* Recipe Repo text color */
 .text-dark {
-    color: var(--link-dark);
+    color: var(--link-color);
 }
 
 .text-dark:hover {
     color: var(--social-icon-color);
 }
-.register-label {
-    font-weight: bold;
-    color: var(--register-text-color);
-}
 
-.btn-register {
-    color: var(--register-text-color);
-    background-color: var(--register-bg-color);
-}
-
-.btn-register:hover {
-    color: var(--register-bg-color);
-    background-color: var(--register-text-color);
-}
-
+/*Sign up button */
 .btn-footer {
     color: var(--social-icon-color);
     background-color: var(--footer-btn-color);
