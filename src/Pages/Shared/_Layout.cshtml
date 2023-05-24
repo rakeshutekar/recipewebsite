@@ -22,7 +22,8 @@
                 }
             }
             // Function to switch between light and dark mode
-            function switchTheme() {
+            function switchTheme(event) {
+                event.preventDefault();
                 if (document.documentElement.getAttribute('data-theme') === 'dark') {
                     document.documentElement.setAttribute('data-theme', 'light');
                     localStorage.setItem('theme', 'light');
@@ -44,9 +45,11 @@
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar border-bottom box-shadow mb-3">
                 <div class="container">
                     <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/Images/logo.png" alt="Recipe Repo" style="height: 150px;"></a>
-                  
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-
                         <ul class="navbar-nav flex-grow-1">
                             <!-- Recipes Dropdown Menu -->
                             <li class="nav-item dropdown">
@@ -97,9 +100,8 @@
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                             </li>
                         </ul>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#" onclick="switchTheme()"><i id="theme-icon" class="fas fa-sun"></i></a>
-                        </li>
+                        <a class="nav-link text-dark" href="#" onclick="switchTheme(event)"><i id="theme-icon" class="fas fa-sun"></i></a>
+
                     </div>
                 </div>
 
