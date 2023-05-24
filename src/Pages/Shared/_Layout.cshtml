@@ -10,29 +10,30 @@
         <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <base href="~/">
+        <!-- Theme Toggle -->
         <script>
-        // Use the HTML5 Local Storage to remember the user's theme choice
-        window.onload = function() {
-            if (localStorage.getItem('theme') === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                document.getElementById("theme-icon").className = "fas fa-moon";
-            } else {
-                document.getElementById("theme-icon").className = "fas fa-sun";
+            // Use the HTML5 Local Storage to remember the user's theme choice
+            window.onload = function () {
+                if (localStorage.getItem('theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.getElementById("theme-icon").className = "fas fa-moon";
+                } else {
+                    document.getElementById("theme-icon").className = "fas fa-sun";
+                }
             }
-        }
-        // Function to switch between light and dark mode
-        function switchTheme() {
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                document.getElementById("theme-icon").className = "fas fa-sun";
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                document.getElementById("theme-icon").className = "fas fa-moon";
+            // Function to switch between light and dark mode
+            function switchTheme() {
+                if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                    document.getElementById("theme-icon").className = "fas fa-sun";
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                    document.getElementById("theme-icon").className = "fas fa-moon";
+                }
             }
-        }
-    </script>
+        </script>
     </head>
 
 
@@ -43,10 +44,7 @@
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-navbar border-bottom box-shadow mb-3">
                 <div class="container">
                     <a class="navbar-brand" asp-area="" asp-page="/Index"><img src="~/Images/logo.png" alt="Recipe Repo" style="height: 150px;"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                  
                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 
                         <ul class="navbar-nav flex-grow-1">
