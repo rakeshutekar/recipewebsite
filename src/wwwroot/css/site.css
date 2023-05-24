@@ -157,8 +157,8 @@ html {
 body {
     /* Margin bottom by footer height changed to 200px to avoid overlap */
     margin-bottom: 200px;
-    background-color: var(--bg-color);  /*This is new */
-    color: var(--text-color);   /*This is new */
+    background-color: var(--body-bg-color); /*White background */
+    color: var(--text-color); /*This is new */
 }
 
 p {
@@ -330,6 +330,7 @@ footer {
 -------------------------------------------------- */
 :root {
     /* Light theme */
+    --body-bg-color: #ffffff;   /*Background color: white */
     --bg-color: #edede9;
     --text-color: #354f52;
     --primary-color: #84a98c; /* Nav bar color: #84a98c 70% */
@@ -338,8 +339,8 @@ footer {
     --border-color: #656468;
     --stripe-even-color: #edede9;
     --stripe-odd-color: #cad2c5;
-
     /* Dark theme */
+    --body-bg-color-dark: #333333;
     --bg-color-dark: #333333;
     --text-color-dark: #f3f3f3;
     --primary-color-dark: #52796f;
@@ -352,6 +353,7 @@ footer {
 
 /* This section will override the colors when the data-theme attribute is set to "dark" */
 [data-theme="dark"] {
+    --body-bg-color: var(--body-bg-color-dark);
     --bg-color: var(--bg-color-dark);
     --text-color: var(--text-color-dark);
     --primary-color: var(--primary-color-dark);
