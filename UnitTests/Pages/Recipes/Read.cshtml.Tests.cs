@@ -94,7 +94,7 @@ namespace UnitTests.Pages.Recipes
         /// when model state is invalid
         /// </summary>
         [Test]
-        public void OnPost_Returns_Non_Null_Result_When_Model_State_Is_Not_Valid()
+        public void OnPost_Should_Return_Non_Null_Result_When_Model_State_Is_Not_Valid()
         {
             // Arrange
             // Set model state invalid
@@ -109,7 +109,7 @@ namespace UnitTests.Pages.Recipes
         /// including a new comment.
         /// </summary>
         [Test]
-        public void OnPost_Returns_Non_Null_Result_When_Model_State_Is_Valid()
+        public void OnPost_Should_Return_Non_Null_Result_When_Model_State_Is_Valid()
         {
             // Find valid recipe ID
             var validRecipeID = 0;
