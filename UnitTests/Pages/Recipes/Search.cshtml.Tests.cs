@@ -31,7 +31,7 @@ namespace UnitTests.Pages.Recipes
         /// the tags associated with the first recipe from the database.
         /// </summary>
         [Test]
-        public void OnGet_Tags_Not_Null_And_Length_Not_Zero_Return_Search_Results()
+        public void OnGet_Tags_Not_Null_And_Length_Not_Zero_Should_Return_Search_Results()
         {
             // Arrange
             var recipe = TestHelper.RecipeService.GetRecipes().First();
@@ -65,7 +65,7 @@ namespace UnitTests.Pages.Recipes
         /// field the value with the title.
         /// </summary>
         [Test]
-        public void OnGet_Search_Query_Not_Null_Return_Search_Results()
+        public void OnGet_Search_Query_Not_Null_Should_Return_Search_Results()
         {
             // Arrange
             var recipe = TestHelper.RecipeService.GetRecipes().First();
