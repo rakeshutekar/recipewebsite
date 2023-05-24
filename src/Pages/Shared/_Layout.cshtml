@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <base href="~/">
-            <script>
+        <script>
         // Use the HTML5 Local Storage to remember the user's theme choice
         window.onload = function() {
             if (localStorage.getItem('theme') === 'dark') {
@@ -34,7 +34,6 @@
         }
     </script>
     </head>
-
 
 
     <body>
@@ -140,40 +139,40 @@
         </div>
 
     <!-- new footer -->
-<footer>
-    <div class="container p-2 pb-0">
+    <footer>
+        <div class="container p-2 pb-0">
 
-        <!-- Section: sign up -->
-        <section class="">
-            <p class="d-flex justify-content-center align-items-center">
-                <span class="me-3 px-3" style="font-weight: bold;">Register for free</span>
-                <button type="button" class="btn btn-outline-dark btn-rounded btn-footer">
-                    Sign up
-                </button>
-            </p>
-        </section>
-        <!-- Section: sign up -->
-        <!-- Section: Text -->
-        <section class="mb-2">
-            <p class="text-center">
-                Want to learn cook but confused how to start? <br />
-                No need to worry again! Let's start cooking with Recipe Repo!
-            </p>
-        </section>
-        <!-- Section: Text -->
+            <!-- Section: sign up -->
+            <section class="">
+                <p class="d-flex justify-content-center align-items-center">
+                    <span class="me-3 px-3" style="font-weight: bold;">Register for free</span>
+                    <button type="button" class="btn btn-outline-dark btn-rounded btn-footer">
+                        Sign up
+                    </button>
+                </p>
+            </section>
+            <!-- Section: sign up -->
+            <!-- Section: Text -->
+            <section class="mb-2">
+                <p class="text-center">
+                    Want to learn cook but confused how to start? <br />
+                    No need to worry again! Let's start cooking with Recipe Repo!
+                </p>
+            </section>
+            <!-- Section: Text -->
 
-    </div>
+        </div>
 
-    <div class="text-center p-1" style="background-color: #84a98c;">
-        <section>
-            <!-- Social Media Icons -->
-            <a class="btn btn-outline-dark btn-rounded m-1" href="https://www.facebook.com" role="button"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-dark btn-rounded m-1" href="https://twitter.com" role="button"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-dark btn-rounded m-1" href="https://www.instagram.com" role="button"><i class="fab fa-instagram"></i></a>
-        </section>
-        &copy; 2023 <a class="text-dark" href="/" style="text-decoration: none;">Recipe Repo</a>
-        <a asp-area="" asp-page="/Privacy">Privacy</a>
-    </div>
+        <div class="text-center p-1">
+            <section>
+                <!-- Social Media Icons -->
+                <a class="btn btn-outline-dark btn-rounded m-1" href="https://www.facebook.com" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-dark btn-rounded m-1" href="https://twitter.com" role="button"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-dark btn-rounded m-1" href="https://www.instagram.com" role="button"><i class="fab fa-instagram"></i></a>
+            </section>
+            &copy; 2023 <a class="text-dark" href="/" style="text-decoration: none;">Recipe Repo</a>
+            <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
     </footer>
 <!-- end footer -->
 
@@ -185,3 +184,4 @@
         @RenderSection("Scripts", required: false)
     </body>
     </html>
+
