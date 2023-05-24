@@ -43,8 +43,12 @@ namespace UnitTests.Components
             Assert.AreEqual(true, result.Contains("Beef Taco"));
         }
 
+        /// <summary>
+        /// This method tests that when the GoTo button is clicked the user is 
+        /// redirected to the Recipe Page
+        /// </summary>
         [Test]
-        public void GoTo_When_Clicked_Goes_To_Recipe_Page()
+        public void GoTo_When_Clicked_Should_Go_To_Recipe_Page()
         {
             // Arrange
             Services.AddSingleton<JsonFileRecipeService>(TestHelper.RecipeService);
