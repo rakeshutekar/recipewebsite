@@ -36,7 +36,7 @@ namespace UnitTests.Pages.Recipes
         /// Method checks that invalid models return an error
         /// </summary>
         [Test]
-        public void OnPost_Invalid_Model_NotValid_Return_Page()
+        public void OnPost_Invalid_Model_Should_Return_NotValid_Return_Page()
         {
             // Arrange
             // Force an invalid error state
