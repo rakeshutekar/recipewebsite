@@ -188,6 +188,11 @@ footer {
     color: var(--footer-text-color);
 }
 
+/*Footer bottom part background color */
+.text-center.p-1 {
+    background-color: #84a98c;         
+}
+
 /*Social media icons appear round */
 .btn-rounded {
     border-radius:20px;
@@ -262,6 +267,10 @@ footer {
     margin-bottom: 20px;
 }
 
+#comment-section {
+    background-color: #f1faee;
+}
+
 
 /* Update page style
 -------------------------------------------------- */
@@ -291,6 +300,12 @@ footer {
 .tagLabel-container input {
     width: 96%;
     display: inline-block;
+}
+
+/* Delete page style
+-------------------------------------------------- */
+#delete-section {
+    background-color: #f1faee;
 }
 
 /* Index page style
