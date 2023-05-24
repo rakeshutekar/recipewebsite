@@ -259,6 +259,14 @@ footer {
     background-color: var(--section-color);
 }
 
+/*Emoji reaction button color */
+.btn.btn-info {
+    background-color: var(--primary-color);
+}
+
+.btn.btn-info:hover {
+    background-color: var(--secondary-color);
+}
 
 /* Update page style
 -------------------------------------------------- */
