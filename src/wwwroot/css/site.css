@@ -255,12 +255,6 @@ footer {
     object-fit: cover;
 }
 
-.rule-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
 #comment-section {
     background-color: var(--section-color);
 }
@@ -341,6 +335,7 @@ footer {
     --stripe-odd-color: #cad2c5; /*Index table odd row color */
     --btn-color: #52796f; /*More info button color */
     --section-color: #f1faee; /*Comment and delete section background color */
+
     /* Dark theme */
     --body-bg-color-dark: #354f52;
     --bg-color-dark: #cad2c5;
@@ -368,14 +363,17 @@ footer {
     --stripe-odd-color: var(--stripe-odd-color-dark);
     --btn-color: var(--btn-color-dark);
     --section-color: var(--section-color-dark);
-}
 
-[data-theme="dark"] {
     --social-bg-color: var(--social-bg-color-dark);
     --social-icon-color: var(--social-icon-color-dark);
     --link-dark: var(--link-dark-dark);
     --footer-bg-color: var(--footer-bg-color-dark);
     --footer-btn-color: var(--footer-btn-color-dark);
+}
+
+/*Read page horizontal rule setting for dark theme */
+[data-theme="dark"] hr {
+    background-color: white;
 }
 
 .text-center {
