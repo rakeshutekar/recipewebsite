@@ -130,7 +130,7 @@ namespace UnitTests.Pages.Recipes
         /// Check that the model state is not valid
         /// </summary>
         [Test]
-        public void OnPost_Invalid_Model_NotValid_Return_Page()
+        public void OnPost_Invalid_Model_ActionResult_Should_Return_False()
         {
             // Arrange
             // Force an invalid error state
