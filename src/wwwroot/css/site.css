@@ -4,11 +4,11 @@
 }
 
 .img-recipe-page {
-    max-height: var(--img-height-recipes); /*original setting: 500px */
+    max-height: 500px;
 }
 
 .checked {
-    color: var(--checked-color);    /*original color: orange */
+    color: orange;
 }
 
 .fa-star {
@@ -76,7 +76,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-footer {
-    background: var(--card-footer-bg);  /*background color: #edede9 */
+    background: var(--bg-color); /*background color: #edede9 */
 }
 
 a.navbar-brand {
@@ -110,19 +110,13 @@ a {
     border-color: var(--secondary-color);   /*original color: #84a98c */
 }
 
+/*Nav bar background color setting */
 .bg-navbar {
     background: -webkit-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
     background: -o-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
     background: -moz-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
     background: linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
 }
-
-/*.bg-navbar {
-    background: -webkit-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-    background: -o-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-    background: -moz-linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-    background: linear-gradient(110deg, #84a98c 70%, #cad2c5 60%);
-}*/
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -315,16 +309,16 @@ footer {
 }
 
 .table-striped tbody tr:nth-child(even) {
-    background-color: var(--stripe-even-color); /*original color: #fec89a */
+    background-color: var(--stripe-even-color); /*original color: #edede9 */
 }
 
 .table-striped tbody tr:nth-child(odd) {
-    background-color: var(--stripe-odd-color); /*original color: #edede9 */
+    background-color: var(--stripe-odd-color); /*original color: #cad2c5 */
 }
 
 .table-header {
-    background-color: var(--secondary-color); /*This is new */
-    color: var(--text-color); /* original color: #84a98c */
+    background-color: var(--primary-color); /* original color: #84a98c */
+    color: var(--text-color); /* This is new */
 }
 
 
@@ -335,17 +329,16 @@ footer {
 /* Theme settings (Light and Dark)
 -------------------------------------------------- */
 :root {
-    /*Image settings*/
-    --img-height-recipes: 500px;
     /* Light theme */
     --bg-color: #edede9;
     --text-color: #354f52;
-    --primary-color: #52796f;
-    --secondary-color: #cad2c5;
+    --primary-color: #84a98c; /* Nav bar color: #84a98c 70% */
+    --secondary-color: #cad2c5; /*Nav bar color: #cad2c5 60% */
     --link-color: #0366d6;
     --border-color: #656468;
     --stripe-even-color: #edede9;
     --stripe-odd-color: #cad2c5;
+
     /* Dark theme */
     --bg-color-dark: #333333;
     --text-color-dark: #f3f3f3;
