@@ -94,7 +94,7 @@ a {
 
 .btn-primary {
     color: #fff;
-    background-color: var(--primary-color); /*sign-in button original color: #52796f */
+    background-color: var(--btn-color); /*sign-in button original color: #52796f */
     border-color: var(--border-color); /*original color: #252152 */
 }
 
@@ -178,13 +178,13 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #cad2c5;
+    background-color: var(--secondary-color);
     color: var(--footer-text-color);
 }
 
 /*Footer bottom part background color */
 .text-center.p-1 {
-    background-color: #84a98c;         
+    background-color: var(--primary-color);         
 }
 
 /*Social media icons appear round */
@@ -262,7 +262,7 @@ footer {
 }
 
 #comment-section {
-    background-color: #f1faee;
+    background-color: var(--section-color);
 }
 
 
@@ -299,7 +299,7 @@ footer {
 /* Delete page style
 -------------------------------------------------- */
 #delete-section {
-    background-color: #f1faee;
+    background-color: var(--section-color);
 }
 
 /* Index page style
@@ -330,25 +330,29 @@ footer {
 -------------------------------------------------- */
 :root {
     /* Light theme */
-    --body-bg-color: #ffffff;   /*Background color: white */
-    --bg-color: #edede9;
+    --body-bg-color: #ffffff; /*Background color: white */
+    --bg-color: #edede9; /*Card background color */
     --text-color: #354f52;
     --primary-color: #84a98c; /* Nav bar color: #84a98c 70% */
     --secondary-color: #cad2c5; /*Nav bar color: #cad2c5 60% */
     --link-color: #0366d6;
     --border-color: #656468;
-    --stripe-even-color: #edede9;
-    --stripe-odd-color: #cad2c5;
+    --stripe-even-color: #edede9; /*Index table even row color */
+    --stripe-odd-color: #cad2c5; /*Index table odd row color */
+    --btn-color: #52796f; /*More info button color */
+    --section-color: #f1faee; /*Comment and delete section background color */
     /* Dark theme */
-    --body-bg-color-dark: #333333;
-    --bg-color-dark: #333333;
+    --body-bg-color-dark: #354f52;
+    --bg-color-dark: #cad2c5;
     --text-color-dark: #f3f3f3;
     --primary-color-dark: #52796f;
-    --secondary-color-dark: #212529;
+    --secondary-color-dark: #84a98c;
     --link-color-dark: #3391ff;
     --border-color-dark: #444444;
-    --stripe-even-color-dark: #444444;
-    --stripe-odd-color-dark: #555555;
+    --stripe-even-color-dark: #84a98c;
+    --stripe-odd-color-dark: #cad2c5;
+    --btn-color-dark: #84a98c;
+    --section-color-dark: #a4c3b2;
 }
 
 /* This section will override the colors when the data-theme attribute is set to "dark" */
@@ -362,6 +366,8 @@ footer {
     --border-color: var(--border-color-dark);
     --stripe-even-color: var(--stripe-even-color-dark);
     --stripe-odd-color: var(--stripe-odd-color-dark);
+    --btn-color: var(--btn-color-dark);
+    --section-color: var(--section-color-dark);
 }
 
 [data-theme="dark"] {
