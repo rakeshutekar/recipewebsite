@@ -103,7 +103,7 @@ namespace UnitTests.Pages.Recipes
         /// and then redirect action
         /// </summary>
         [Test]
-        public void OnPost_InValid_Model_NotValid_Return_Page()
+        public void OnPost_InValid_Model_Should_Return_Page()
         {
             // Arrange - create a new fake recipe
             pageModel.Recipe = TestHelper.TEST_RECIPE_MODEL;
