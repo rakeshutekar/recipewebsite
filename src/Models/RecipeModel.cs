@@ -64,9 +64,9 @@ namespace ContosoCrafts.WebSite.Models
                 {
                     foreach (var item in list)
                     {
-                        if (string.IsNullOrWhiteSpace(item as string) || (item as string).Length > 500)
+                        if (string.IsNullOrWhiteSpace(item as string) || (item as string).Length > 800)
                         {
-                            return new ValidationResult("Each instruction must be between 1 and 500 characters.");
+                            return new ValidationResult("Each instruction must be between 1 and 800 characters.");
                         }
                     }
                 }
