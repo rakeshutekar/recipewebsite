@@ -275,32 +275,26 @@ footer {
 
 /* Update page style
 -------------------------------------------------- */
-/*Keep the instruction index in line with instruction*/
-.instr-label {
-    margin-right: 10px;
+/*Keep the instruction index in line with instruction and ensure they have the same width */
+.instr-label, .ingr-label, .tag-label {
+    display: inline-block;
+    width: 3%;
+    text-align: left;
 }
 
-.instrLabel-container input {
+.instrLabel-container input, .ingrLabel-container input, .tagLabel-container input {
     width: 96%;
     display: inline-block;
+    vertical-align: middle;
 }
 
-.ingr-label {
-    margin-right: 10px;
-}
-
-.ingrLabel-container input {
-    width: 96%;
-    display: inline-block;
-}
-
-.tag-label {
-    margin-right: 10px;
-}
-
-.tagLabel-container input {
-    width: 96%;
-    display: inline-block;
+/*Background color and border setting */
+.update-container {
+    background-color: var(--section-color);
+    padding: 20px;
+    border-radius: 5px; /* Add rounded corners */
+    box-sizing: border-box; 
+    width: 100%;
 }
 
 /* Delete page style
