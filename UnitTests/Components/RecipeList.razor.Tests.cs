@@ -70,8 +70,6 @@ namespace UnitTests.Components
 
             // Assert
             Assert.AreEqual(true, navMan.Uri.Contains("Recipe"));
-
-
         }
     }
 }
