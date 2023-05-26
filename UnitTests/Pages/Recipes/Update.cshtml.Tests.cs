@@ -73,7 +73,7 @@ namespace UnitTests.Pages.Recipes
             var pageResult = pageModel.OnGet(deletedID) as RedirectToPageResult;
 
             // Assert
-            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
+            Assert.AreEqual(true, pageResult.PageName.Contains("NotFound"));
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace UnitTests.Pages.Recipes
             var pageResult = pageModel.OnGet(invalidRecipeId) as RedirectToPageResult;
 
             // Assert
-            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
+            Assert.AreEqual(true, pageResult.PageName.Contains("NotFound"));
         }
 
         #endregion OnGet
