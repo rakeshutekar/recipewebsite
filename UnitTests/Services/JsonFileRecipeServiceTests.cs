@@ -63,14 +63,14 @@ namespace UnitTests.Services
         public void JsonFileRecipeService_DeleteRecipe_Should_Set_Deleted_Flag_True()
         {
             // Retrieve all recipes from the RecipeService instance and find the first recipe that is not marked as deleted.
-            var recipes = TestHelper.RecipeService.GetRecipes();
-            RecipeModel firstValidRecipe = null;
+            var recipes = TestHelper.RecipeService.GetRecipes(); // local version of all recipe models
+            RecipeModel firstValidRecipe = null; // First valid recipe found in recipes
+            bool validFound = false; // Replacing break statement - whether a valid model has been found in loop
             foreach (RecipeModel recipeModel in recipes)
             {
                 if (!recipeModel.Deleted)
                 {
-                    firstValidRecipe = recipeModel;
-                    break;
+                    if (!validFound) {firstValidRecipe = recipeModel; validFound = true;}   
                 }
             }
 
@@ -181,7 +181,6 @@ namespace UnitTests.Services
                 if (recipe.RecipeID == firstData.RecipeID)
                 {
                     recipeInSearch = true;
-                    break;
                 }
             }
 
@@ -231,7 +230,6 @@ namespace UnitTests.Services
                 if (filter.RecipeID == recipe.RecipeID)
                 {
                     recipeInFilter = true;
-                    break;
                 }
             }
 
