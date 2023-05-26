@@ -1,11 +1,13 @@
 @page
 @model AboutModel
+
 @{
     ViewData["Title"] = "About us";
 }
 
+<h1 class="text-center">@ViewData["Title"]</h1>
 
-<h1>@ViewData["Title"]</h1>
+<div class="fade-in">
     <p> Recipe Repo is your go-to source for delicious recipes and cooking inspiration. Whether you're a seasoned chef or just learning your way around the kitchen, we have recipes and cooking tips to help you create amazing meals for yourself and your loved ones.</p>
     <h2>Our Mission</h2>
     <p>At Recipe Repo, our mission is to make cooking accessible and enjoyable for everyone. We believe that cooking should be a fun and creative process, and we're here to help you experiment with new flavors and ingredients, and to discover your own unique style in the kitchen.</p>
@@ -14,7 +16,13 @@
     <h2>Contact Us</h2>
     <p>If you have any questions or feedback, we'd love to hear from you! You can contact us by email at reciperepo@gmail.com, or connect with us on social media:</p>
     <ul>
-    <li><a href="https://www.facebook.com">Facebook</a></li>
-    <li><a href="https://twitter.com">Twitter</a></li>
-    <li><a href="https://www.instagram.com">Instagram</a></li>
+        <li><a href="https://www.facebook.com">Facebook</a></li>
+        <li><a href="https://twitter.com">Twitter</a></li>
+        <li><a href="https://www.instagram.com">Instagram</a></li>
     </ul>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/animations.js"></script>
+}
