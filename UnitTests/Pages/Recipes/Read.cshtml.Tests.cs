@@ -115,7 +115,7 @@ namespace UnitTests.Pages.Recipes
             var validRecipeID = 0;
             foreach(RecipeModel recipeModel in TestHelper.RecipeService.GetRecipes())
             {
-                if (!recipeModel.Deleted) { validRecipeID = recipeModel.RecipeID; break; }
+                if (!recipeModel.Deleted) { validRecipeID = recipeModel.RecipeID;}
             }
             pageModel.OnGet(validRecipeID);
 
