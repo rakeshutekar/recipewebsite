@@ -38,13 +38,19 @@
                     <div class="card-body">
                         <h5 class="card-title">@result.Title</h5>
                     </div>
+
                     <div class="card-footer">
+                        <div class="container mb-2 text-center">
+                            @(await Html.RenderComponentAsync<Components.ReactionList>(RenderMode.ServerPrerendered, new { RecipeID = result.RecipeID }))
+                        </div>
                         <small class="text-muted">
-                            <button onclick="window.location.href='/Recipes/Read/@result.RecipeID'" class="btn btn-primary" data-toggle="modal" data-target="#productModal">
+                            <button onclick="window.location.href='/Recipes/Read/@result.RecipeID'"
+                                    data-toggle="modal" data-target="#productModal" class="btn btn-primary btn-block mt-3" id="recipe-@result.RecipeID">
                                 More Info
                             </button>
                         </small>
                     </div>
+
                 </div>
             }
         </div>
