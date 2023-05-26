@@ -144,21 +144,6 @@
 
         // Add button to add tags
         tagAddButton.click(function () {
-            //var input = $('<input>').attr('type', 'text').attr('class', 'form-control').attr('name', 'Recipe.Tags[' + tagCount + ']').attr('required', '');
-            //if (tagCount > 0) {
-            //    // Check if the previous tag input field is empty
-            //    var prevInput = $('input[name="Recipe.Tags[' + (tagCount - 1) + ']"]');
-            //    if (!prevInput.val()) {
-            //        alert('Tag cannot be empty. Please enter a valid tag.');
-            //        return; // do not proceed with adding the tag
-            //    }
-            //}
-
-            //tagContainer.before(input);
-            //tagCount++;
-
-            //tagAddButton.show();
-
             var prevInput = $('input[name="Recipe.Tags[' + (tagCount - 1) + ']"]');
             if (tagCount > 0 && !prevInput.val()) {
                 alert('Tag cannot be empty. Please enter a valid tag.');
