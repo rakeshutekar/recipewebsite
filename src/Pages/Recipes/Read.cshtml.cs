@@ -47,12 +47,15 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             // If recipe is not found, set RecipeNotFound to true
             if (Recipe == null)
             {
-                return RedirectToPage("../Error");
+                // Return error page if the recipe is deleted
+                // "1" indicates enum type for recipe-not-found
+                return RedirectToPage("../NotFound", new { type = 1 });
             }
             else if (Recipe.Deleted == true)
             {
                 // Return error page if the recipe is deleted
-                return RedirectToPage("../Error");
+                // "1" indicates enum type for recipe-not-found
+                return RedirectToPage("../NotFound", new { type = 1 });
             }
 
             return Page();
