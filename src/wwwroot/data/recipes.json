@@ -1078,5 +1078,41 @@
     "Img": "https://assets.epicurious.com/photos/62069cd50297ea306174e51d/1:1/w_4294,h_4294,c_limit/Naan_RECIPE_021022_27679.jpg",
     "Comments": [],
     "Reactions": null
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 27,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Honey Walnut Shrimp",
+    "Description": "Honey Walnut Shrimp is a popular Chinese dish. Crispy fried shrimp are coated in a creamy sweet sauce and topped with candied walnuts. This version tastes just as good as the restaurant or take-out version and is cheaper too.",
+    "Instructions": [
+      "Make a simple syrup of water and sugar. The syrup is reduced down in a small saucepan until it becomes thick and lightly golden in color.",
+      "The walnuts are then drained from the syrup and laid out to dry on a sheet of parchment paper. It only takes a few minutes for the syrup to dry and when it does, the walnuts will have a crunchy coating.",
+      "After the shrimp are fried in a large skillet, they are tossed in a creamy sweet sauce that consists of mayonnaise, condensed milk and honey. The condensed milk and honey sweeten and thin out the mayo sauce so that the shrimp can easily be tossed and coated in the sauce.",
+      "Place finished shrimp onto a large serving plate and top with candied walnuts. Garnish with scallions. Serve warm."
+    ],
+    "Ingredients": [
+      "Granulated sugar",
+      "Large eggs",
+      "Walnut",
+      "Cornstarch",
+      "Raw shrimp (21-25 count)",
+      "Scallions or green onions",
+      "Mayonnaise",
+      "Honey"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "Chinese",
+      "Shrimp",
+      "Lunch"
+    ],
+    "ImageCaption": null,
+    "Img": "https://bellyfull.net/wp-content/uploads/2021/07/Honey-Walnut-Shrimp-blog-2.jpg",
+    "Comments": [],
+    "Reactions": null
   }
 ]
