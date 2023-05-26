@@ -66,7 +66,7 @@ namespace UnitTests.Pages.Recipes
 
 
             // Assert
-            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
+            Assert.AreEqual(true, pageResult.PageName.Contains("NotFound"));
         }
         #endregion OnGet
 
