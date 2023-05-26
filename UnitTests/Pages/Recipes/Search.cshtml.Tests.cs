@@ -51,7 +51,6 @@ namespace UnitTests.Pages.Recipes
                 if (result.RecipeID == recipe.RecipeID)
                 {
                     recipeInTagSearch = true;
-                    break;
                 }
             }
 
@@ -85,7 +84,6 @@ namespace UnitTests.Pages.Recipes
                 if (result.RecipeID == recipe.RecipeID)
                 {
                     recipeInQuerySearch = true;
-                    break;
                 }
             }
             // Verify that the retrieved recipe in the tag search
