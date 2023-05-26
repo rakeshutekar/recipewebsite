@@ -191,6 +191,11 @@ footer {
 .btn-rounded {
     border-radius:20px;
 }
+
+/*Footer top hides when scrolling down */
+#footer-top.hidden {
+    display: none;
+}
  
 /* Read page style
 -------------------------------------------------- */
@@ -470,3 +475,4 @@ form#create-form .btn-outline-success:hover {
 body {
     animation: pageLoad 1s;
 }
+
