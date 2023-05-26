@@ -4,93 +4,104 @@
     ViewData["Title"] = "Update Recipe Page";
 }
 
-<h1>Update Recipe</h1>
+<h1 class="text-center">Update Recipe</h1>
+<p class="mt-3"></p>
+<div class="update-container">
+    <div class="container">
+        <form id="update-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(r => r.Recipe.RecipeID)
 
-<div class="container">
-    <form id="update-form" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        @Html.HiddenFor(r => r.Recipe.RecipeID)
-
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
-            <input asp-for="@Model.Recipe.Title" class="form-control" required maxlength="100" minlength="1" id="Title" />
-            <span asp-validation-for="@Model.Recipe.Title" class="text-danger"></span>
-        </div>
-
-        <!-- Description form -->
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
-            <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required maxlength="1000" minlength="1" id="Description"></textarea>
-            <span id="description-error" class="text-danger"></span>
-        </div>
-
-
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
-            <input asp-for="@Model.Recipe.Image" class="form-control" required maxlength="1000" minlength="1" />
-            <span asp-validation-for="@Model.Recipe.Image" class="text-danger"></span>
-        </div>
-
-        <!-- Tags creation form group -->
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
-            @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
-            {
-                <div class="tagLabel-container">
-                    <label class="tag-label">@($"{i + 1}.")</label>
-                    <input asp-for="@Model.Recipe.Tags[i]" class="form-control" required maxlength="1000" minlength="1" />
-                    <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
-                </div>
-            }
-            <div id="btnTagsContainer" class="container-fluid">
-                <div class="row justify-content-left">
-                    <input id="addBtnTags" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
-                    <input id="deleteBtnTags" class="btn btn-outline-danger btn-sm" type="button" value="- Tag">
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label asp-for="@Model.Recipe.Title" class="control-label">Recipe Title</label>
+                    <input asp-for="@Model.Recipe.Title" class="form-control" required maxlength="100" minlength="1" id="Title" />
+                    <span asp-validation-for="@Model.Recipe.Title" class="text-danger"></span>
                 </div>
             </div>
-        </div>
 
-        <!-- Ingredients creation form group -->
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
-            @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
-            {
-                <div class="ingrLabel-container">
-                    <label class="ingr-label">@($"{i + 1}.")</label>
-                    <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" required maxlength="1000" minlength="1" />
-                    <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
-                </div>
-            }
-            <div id="btnIngrContainer" class="container-fluid">
-                <div class="row justify-content-left">
-                    <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Ingredient">
-                    <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Ingredient">
+            <!-- Description form -->
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label asp-for="@Model.Recipe.Description" class="control-label">Description</label>
+                    <textarea asp-for="@Model.Recipe.Description" class="form-control" type="text" required maxlength="1000" minlength="1" id="Description"></textarea>
+                    <span id="description-error" class="text-danger"></span>
                 </div>
             </div>
-        </div>
-
-        <!-- Instructions creation form group -->
-        <div class="form-group">
-            <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
-            @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
-            {
-                <div class="instrLabel-container">
-                    <label class="instr-label">@($"{i + 1}.")</label>
-                    <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" required maxlength="1000" minlength="1" />
-                    <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
-                </div>
-            }
-
-            <div id="btnInstrContainer" class="container-fluid">
-                <div class="row justify-content-left">
-                    <input id="addBtnInstr" class="btn btn-outline-success btn-sm" type="button" value="+ Instruction">
-                    <input id="deleteBtnInstr" class="btn btn-outline-danger btn-sm" type="button" value="- Instruction">
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label asp-for="@Model.Recipe.Image" class="control-label">Image URL</label>
+                    <input asp-for="@Model.Recipe.Image" class="form-control" required maxlength="1000" minlength="1" />
+                    <span asp-validation-for="@Model.Recipe.Image" class="text-danger"></span>
                 </div>
             </div>
-        </div>
+            <!-- Tags creation form group -->
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label asp-for="@Model.Recipe.Tags" class="control-label">Tags</label>
+                    @for (int i = 0; i < Model.Recipe.Tags.Length; i++)
+                    {
+                        <div class="tagLabel-container">
+                            <label class="tag-label">@($"{i + 1}.")</label>
+                            <input asp-for="@Model.Recipe.Tags[i]" class="form-control" required maxlength="1000" minlength="1" />
+                            <span asp-validation-for="@Model.Recipe.Tags[i]" class="text-danger"></span>
+                        </div>
+                    }
+                    <div id="btnTagsContainer" class="container-fluid">
+                        <div class="row justify-content-left">
+                            <input id="addBtnTags" class="btn btn-outline-success btn-sm" type="button" value="+ Tag">
+                            <input id="deleteBtnTags" class="btn btn-outline-danger btn-sm" type="button" value="- Tag">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to update this recipe?')">Update</button>
-    </form>
+            <!-- Ingredients creation form group -->
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label asp-for="@Model.Recipe.Ingredients" class="control-label">Ingredients</label>
+                    @for (int i = 0; i < Model.Recipe.Ingredients.Length; i++)
+                    {
+                        <div class="ingrLabel-container">
+                            <label class="ingr-label">@($"{i + 1}.")</label>
+                            <input asp-for="@Model.Recipe.Ingredients[i]" class="form-control" required maxlength="1000" minlength="1" />
+                            <span asp-validation-for="@Model.Recipe.Ingredients[i]" class="text-danger"></span>
+                        </div>
+                    }
+                    <div id="btnIngrContainer" class="container-fluid">
+                        <div class="row justify-content-left">
+                            <input id="addBtnIngr" class="btn btn-outline-success btn-sm" type="button" value="+ Ingredient">
+                            <input id="deleteBtnIngr" class="btn btn-outline-danger btn-sm" type="button" value="- Ingredient">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructions creation form group -->
+            <div class="row">
+                <div class="col-12 form-group">
+                    <label asp-for="@Model.Recipe.Instructions" class="control-label">Instructions</label>
+                    @for (int i = 0; i < Model.Recipe.Instructions.Length; i++)
+                    {
+                        <div class="instrLabel-container">
+                            <label class="instr-label">@($"{i + 1}.")</label>
+                            <input asp-for="@Model.Recipe.Instructions[i]" class="form-control" required maxlength="1000" minlength="1" />
+                            <span asp-validation-for="@Model.Recipe.Instructions[i]" class="text-danger"></span>
+                        </div>
+                    }
+
+                    <div id="btnInstrContainer" class="container-fluid">
+                        <div class="row justify-content-left">
+                            <input id="addBtnInstr" class="btn btn-outline-success btn-sm" type="button" value="+ Instruction">
+                            <input id="deleteBtnInstr" class="btn btn-outline-danger btn-sm" type="button" value="- Instruction">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to update this recipe?')">Update</button>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
