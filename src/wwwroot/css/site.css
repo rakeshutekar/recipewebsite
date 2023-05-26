@@ -419,3 +419,11 @@ footer {
     background-color: var(--social-icon-color);
     color: var(--footer-btn-color);
 }
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
