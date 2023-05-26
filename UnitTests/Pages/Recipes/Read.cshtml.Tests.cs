@@ -70,7 +70,7 @@ namespace UnitTests.Pages.Recipes
             var pageResult = pageModel.OnGet(badId) as RedirectToPageResult;
 
             // Assert
-            Assert.AreEqual(true, pageResult.PageName.Contains("Error"));
+            Assert.AreEqual(true, pageResult.PageName.Contains("NotFound"));
         }
         /// <summary>
         /// Test ensures that OnGet() with deleted recipe ID redirects to valid (non-null) page
