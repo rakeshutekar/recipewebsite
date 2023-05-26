@@ -4,6 +4,9 @@ using NUnit.Framework;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// Test fixture class that sets up the testing framework
+    /// </summary>
     [SetUpFixture]
     public class TestFixture
     {
@@ -13,6 +16,10 @@ namespace UnitTests
         // Path to the data folder for the content
         public static string DataContentRootPath = "./data/";
 
+        /// <summary>
+        /// Initialization function that runs before any tests to grab a fres
+        /// copy of the json file "database"
+        /// </summary>
         [OneTimeSetUp]
         public void RunBeforeAnyTests()
         {
@@ -44,6 +51,9 @@ namespace UnitTests
             }
         }
 
+        /// <summary>
+        /// Teardown function after all tests have run
+        /// </summary>
         [OneTimeTearDown]
         public void RunAfterAnyTests()
         {
