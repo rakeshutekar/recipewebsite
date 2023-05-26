@@ -115,7 +115,7 @@
 
         <!-- new footer -->
         <footer>
-            <div class="container p-2 pb-0">
+            <div class="container p-2 pb-0" id="footer-top">
 
                 <!-- Section: sign up -->
                 <section class="">
@@ -138,7 +138,7 @@
 
             </div>
 
-            <div class="text-center p-1">
+            <div class="text-center p-1" id="footer-bottom">
                 <section>
                     <!-- Social Media Icons -->
                     <a class="btn btn-outline-dark btn-rounded m-1" href="https://www.facebook.com" role="button"><i class="fab fa-facebook-f"></i></a>
@@ -182,6 +182,21 @@
                 }
             }
         </script>
+
+        <script>
+            // Function to hide the footer top and only display the footer bottom
+            // when user scrolls down the website.
+            window.addEventListener('scroll', function () {
+                var footerTop = document.getElementById('footer-top');
+                // Current value is set to 300
+                if (window.scrollY > 300) {
+                    footerTop.classList.add('hidden');
+                } else {
+                    footerTop.classList.remove('hidden');
+                }
+            });
+        </script>
+
     </body>
 </html>
 
