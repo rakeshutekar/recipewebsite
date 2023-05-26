@@ -26,10 +26,14 @@
                     <h5 class="card-title">@recipe.Title</h5>
                 </div>
                 <div class="card-footer">
+                    <div class="container mb-2 text-center">
+                        @*blazor component to display reactions*@
+                        <ReactionList RecipeID="recipe.RecipeID"></ReactionList>
+                    </div>
                     <small class="text-muted">
                         <button @onclick="() => GoTo(recipe.RecipeID)"
-                        data-toggle="modal" data-target="#productModal" class="btn btn-primary" id="recipe-@recipe.RecipeID">
-                            More Info
+                        data-toggle="modal" data-target="#productModal" class="btn btn-primary btn-block mt-3" id="recipe-@recipe.RecipeID">
+                            Full Recipe Info
                         </button>
                     </small>
                 </div>
@@ -50,6 +54,4 @@
     }
 }
 
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
