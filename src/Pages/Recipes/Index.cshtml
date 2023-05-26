@@ -23,6 +23,7 @@
         <thead>
             <tr class="table-header">
                 <th>Title</th>
+                <th>Reactions</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -31,6 +32,10 @@
             {
                 <tr>
                     <td>@recipe.Title</td>
+                    <td>
+                        <!--Renders the reactions via a reusable blazor component-->
+                        @(await Html.RenderComponentAsync<Components.ReactionList>(RenderMode.ServerPrerendered, new { RecipeID = recipe.RecipeID }))
+                    </td>
                     <td><a asp-page="Read" asp-route-id="@recipe.RecipeID">Read</a></td>
                 </tr>
             }
