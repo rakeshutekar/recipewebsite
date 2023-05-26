@@ -49,13 +49,14 @@ namespace ContosoCrafts.WebSite.Pages.Recipes
             if (Recipe == null || Recipe.Deleted == true)
             {
                 // Return error page if the recipe is deleted
-                return RedirectToPage("../Error");
+                // "1" indicates enum type for recipe-not-found
+                return RedirectToPage("../NotFound", new {type = 1});
             }
 
             // Set full name to be displayed, then display the page
             fullName = Recipe.FirstName + " " + Recipe.LastName;
             return Page();
-        }
+            }
 
         /// <summary>
         /// Updates the designated recipe on the page to Deleted = true, saves
