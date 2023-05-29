@@ -196,7 +196,46 @@ footer {
 #footer-top.hidden {
     display: none;
 }
- 
+
+
+/* Create page style
+-------------------------------------------------- */
+/* Form styling */
+form#create-form {
+    background-color: var(--section-color);
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Input and Textarea styling */
+form#create-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button animation */
+form#create-form .btn-primary {
+    transition: all 0.3s ease;
+}
+
+form#create-form .btn-primary:hover {
+    transform: scale(1.1);
+}
+
+/* Button for adding tags, ingredients, instructions */
+form#create-form .btn-outline-success {
+    transition: all 0.3s ease;
+}
+
+form#create-form .btn-outline-success:hover {
+    transform: scale(1.1);
+}
+
+
+
 /* Read page style
 -------------------------------------------------- */
 /*Change the instruction font of the Read page to Nunito*/
@@ -273,6 +312,7 @@ footer {
     background-color: var(--secondary-color);
 }
 
+
 /* Update page style
 -------------------------------------------------- */
 /*Keep the instruction index in line with instruction and ensure they have the same width */
@@ -297,11 +337,13 @@ footer {
     width: 100%;
 }
 
+
 /* Delete page style
 -------------------------------------------------- */
 #delete-section {
     background-color: var(--section-color);
 }
+
 
 /* Index page style
 -------------------------------------------------- */
@@ -322,6 +364,7 @@ footer {
     color: var(--text-color); /* This is new */
 }
 
+
 /* Sign in page style
 -------------------------------------------------- */
 #sign-in {
@@ -334,6 +377,7 @@ footer {
 #sign-up {
     background-image: url('https://media.istockphoto.com/id/1136817041/photo/colorful-pizza-ingredients-on-white-background-top-view.jpg?s=612x612&w=0&k=20&c=VWn51m6abfK9Q8C2xW4QLz6LrVxNO-Ttb4LVlVVQgUg=');
 }
+
 
 /* Style changes added for theme changing (ALL NEW CHANGES ADDED)
 ----------------------------------------------------------------------------------------- */
@@ -438,38 +482,6 @@ footer {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Form styling */
-form#create-form {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-}
-
-/* Input and Textarea styling */
-form#create-form .form-control {
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* Button animation */
-form#create-form .btn-primary {
-    transition: all 0.3s ease;
-}
-
-form#create-form .btn-primary:hover {
-    transform: scale(1.1);
-}
-
-/* Button for adding tags, ingredients, instructions */
-form#create-form .btn-outline-success {
-    transition: all 0.3s ease;
-}
-
-form#create-form .btn-outline-success:hover {
-    transform: scale(1.1);
-}
 
 /* Page load animation */
 @keyframes pageLoad {
