@@ -417,6 +417,18 @@ form#create-form .btn-outline-success:hover {
     background-color: #fec89a;
 }
 
+.create-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;  /* Smooth transition for color change */
+}
+
+.create-link:hover {
+    color: var(--bg-color); 
+    text-decoration: none;
+    background-color: var(--btn-color);
+}
+
 .table-striped tbody tr:nth-child(even) {
     background-color: var(--stripe-even-color); /*original color: #edede9 */
 }
@@ -430,12 +442,24 @@ form#create-form .btn-outline-success:hover {
     color: var(--text-color); /* This is new */
 }
 
+.read-link {
+    color: #354f52;
+    text-decoration: none;
+}
+
+.read-link:hover {
+    text-decoration: underline;
+    color: #2f3e46;
+}
+
 
 
 /* Sign in page style
 -------------------------------------------------- */
 #sign-in {
     background-color: var(--section-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .image-container {
@@ -447,9 +471,17 @@ form#create-form .btn-outline-success:hover {
     border-radius: 1rem 0 0 1rem;
 }
 
+.signin-card {
+    border-radius: 1rem;
+}
+
 .form-logo {
     width: 8rem;
     height: 8rem;
+}
+
+.fw-normal.mb-3.pb-3 {
+    letter-spacing: 1px;
 }
 
 .signup-text, .signup-link {
@@ -462,6 +494,10 @@ form#create-form .btn-outline-success:hover {
 -------------------------------------------------- */
 #sign-up {
     background-image: url('https://media.istockphoto.com/id/1136817041/photo/colorful-pizza-ingredients-on-white-background-top-view.jpg?s=612x612&w=0&k=20&c=VWn51m6abfK9Q8C2xW4QLz6LrVxNO-Ttb4LVlVVQgUg=');
+}
+
+.signup-card {
+    border-radius: 1rem;
 }
 
 /*Keep the sign in and sign up card text color*/
@@ -544,7 +580,7 @@ ul {
     --text-color: #354f52;
     --primary-color: #84a98c; /* Nav bar color: #84a98c 70% */
     --secondary-color: #cad2c5; /*Nav bar color: #cad2c5 60% */
-    --link-color: #0366d6;
+    --link-color: #2f3e46;
     --border-color: #656468;
     --stripe-even-color: #edede9; /*Index table even row color */
     --stripe-odd-color: #cad2c5; /*Index table odd row color */
@@ -555,11 +591,11 @@ ul {
     /* Dark theme */
     --body-bg-color-dark: #354f52;
     --bg-color-dark: #cad2c5;
-    --text-color-dark: #f3f3f3;
+    --text-color-dark: #f3f3f3; /* Black */
     --primary-color-dark: #52796f;
     --secondary-color-dark: #84a98c;
-    --link-color-dark: #3391ff;
-    --border-color-dark: #444444;
+    --link-color-dark: #e8e8e4;
+    --border-color-dark: #444444; /* Dark grey */
     --stripe-even-color-dark: #84a98c;
     --stripe-odd-color-dark: #cad2c5;
     --btn-color-dark: #84a98c;
