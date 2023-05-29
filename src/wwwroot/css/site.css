@@ -322,6 +322,11 @@ footer {
     color: var(--text-color); /* This is new */
 }
 
+/* Sign in page style
+-------------------------------------------------- */
+#sign-in {
+    background-color: var(--section-color);
+}
 
 
 /* Style changes added for theme changing (ALL NEW CHANGES ADDED)
