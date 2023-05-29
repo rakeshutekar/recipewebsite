@@ -104,11 +104,9 @@ a {
     border-color: var(--secondary-color);   /*original color: #84a98c */
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #fff;
-    background-color: var(--secondary-color);   /*original color: #84a98c */
-    border-color: var(--secondary-color);   /*original color: #84a98c */
-}
+
+/* Nav bar styles
+-------------------------------------------------- */
 
 /*Nav bar background color setting */
 .bg-navbar {
@@ -117,6 +115,34 @@ a {
     background: -moz-linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
     background: linear-gradient(110deg, var(--primary-color) 70%, var(--secondary-color) 60%);
 }
+
+/*Nav bar menu text color */
+.navbar .nav-item .nav-link {
+    color: var(--text-color);
+    font-size: larger;
+}
+
+/*Dropdown menu color */
+.dropdown-menu {
+    background-color: var(--dropdown-bg-color);
+}
+
+/*Dropdown menu text style */
+.dropdown-item {
+    color: var(--text-color);
+}
+
+/*Dropdown item View all style */
+.dropdown-item.view-all {
+    color: var(--text-color);
+}
+
+/*User action dropdown menu style */
+.dropdown-menu-account {
+    background-color: var(--account-dropdown-bg-color);
+}
+
+
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -172,6 +198,7 @@ h1,h2,h3,h4, h5, h6 {
 ul {
     font-family: 'Nunito', serif; /******* Change font *******/
 }
+
 
 /*Footer */
 footer {
@@ -379,6 +406,40 @@ form#create-form .btn-outline-success:hover {
 }
 
 
+
+/* Privacy and About page style
+-------------------------------------------------- */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Page load animation */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: pageLoad 1s;
+}
+
+
 /* Style changes added for theme changing (ALL NEW CHANGES ADDED)
 ----------------------------------------------------------------------------------------- */
 
@@ -397,7 +458,8 @@ form#create-form .btn-outline-success:hover {
     --stripe-odd-color: #cad2c5; /*Index table odd row color */
     --btn-color: #52796f; /*More info button color */
     --section-color: #f1faee; /*Comment and delete section background color */
-
+    --dropdown-bg-color: #ffffff; /*Nav bar dropdown background color: white */
+    --account-dropdown-bg-color: #ffffff; /*Nav bar user action dropdown background color: white */
     /* Dark theme */
     --body-bg-color-dark: #354f52;
     --bg-color-dark: #cad2c5;
@@ -410,6 +472,8 @@ form#create-form .btn-outline-success:hover {
     --stripe-odd-color-dark: #cad2c5;
     --btn-color-dark: #84a98c;
     --section-color-dark: #a4c3b2;
+    --dropdown-bg-color-dark: #84a98c;
+    --account-dropdown-bg-color-dark: #52796f;
 }
 
 /* This section will override the colors when the data-theme attribute is set to "dark" */
@@ -425,6 +489,8 @@ form#create-form .btn-outline-success:hover {
     --stripe-odd-color: var(--stripe-odd-color-dark);
     --btn-color: var(--btn-color-dark);
     --section-color: var(--section-color-dark);
+    --dropdown-bg-color: var(--dropdown-bg-color-dark);
+    --account-dropdown-bg-color: var(--account-dropdown-bg-color-dark);
 
     --social-bg-color: var(--social-bg-color-dark);
     --social-icon-color: var(--social-icon-color-dark);
@@ -472,24 +538,5 @@ form#create-form .btn-outline-success:hover {
 .btn-footer:hover {
     background-color: var(--social-icon-color);
     color: var(--footer-btn-color);
-}
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-.fadeIn {
-    animation: fadeIn 1s ease-in-out;
-}
-
-
-/* Page load animation */
-@keyframes pageLoad {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-body {
-    animation: pageLoad 1s;
 }
 
