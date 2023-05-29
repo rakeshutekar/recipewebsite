@@ -502,6 +502,10 @@ body {
     animation: pageLoad 1s;
 }
 
+ul {
+    list-style: none;
+}
+
 
 /* About page style
 -------------------------------------------------- */
