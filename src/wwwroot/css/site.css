@@ -471,7 +471,7 @@ form#create-form .btn-outline-success:hover {
 
 
 
-/* Privacy and About page style
+/* Privacy page style
 -------------------------------------------------- */
 @keyframes fadeIn {
     0% {
@@ -486,8 +486,6 @@ form#create-form .btn-outline-success:hover {
 .fadeIn {
     animation: fadeIn 1s ease-in-out;
 }
-
-
 
 /* Page load animation */
 @keyframes pageLoad {
@@ -505,10 +503,34 @@ body {
 }
 
 
+/* About page style
+-------------------------------------------------- */
+.bg-image {
+    background-image: url('https://ekblog.s3.amazonaws.com/contentp/wp-content/uploads/2020/05/19004942/various-food-ingredients-LRU7XG3-1024x767.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-image h1 {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+/*Social media icons */
+.btn.btn-link.btn-floating.btn-lg.m-1 {
+    color: var(--text-color);
+}
+
+.btn.btn-link.btn-floating.btn-lg.m-1:hover{
+    color: var(--bg-color);
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+
+
 
 /* Style changes added for theme changing (ALL NEW CHANGES ADDED)
 ----------------------------------------------------------------------------------------- */
-
 /* Theme settings (Light and Dark)
 -------------------------------------------------- */
 :root {
@@ -526,7 +548,6 @@ body {
     --section-color: #f1faee; /*Comment and delete section background color */
     --dropdown-bg-color: #ffffff; /*Nav bar dropdown background color: white */
     --account-dropdown-bg-color: #ffffff; /*Nav bar user action dropdown background color: white */
-
     /* Dark theme */
     --body-bg-color-dark: #354f52;
     --bg-color-dark: #cad2c5;
