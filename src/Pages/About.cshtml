@@ -2,26 +2,92 @@
 @model AboutModel
 
 @{
-    ViewData["Title"] = "About us";
+    ViewData["Title"] = "Recipe Repo";
 }
 
-<h1 class="text-center">@ViewData["Title"]</h1>
 
-<div class="fade-in">
-    <p> Recipe Repo is your go-to source for delicious recipes and cooking inspiration. Whether you're a seasoned chef or just learning your way around the kitchen, we have recipes and cooking tips to help you create amazing meals for yourself and your loved ones.</p>
-    <h2>Our Mission</h2>
-    <p>At Recipe Repo, our mission is to make cooking accessible and enjoyable for everyone. We believe that cooking should be a fun and creative process, and we're here to help you experiment with new flavors and ingredients, and to discover your own unique style in the kitchen.</p>
-    <h2>Our Team</h2>
-    <p>Our team of experienced chefs and recipe developers are passionate about food and cooking, and they're committed to helping you create delicious and nutritious meals that you and your family will love. Whether you're looking for quick and easy weeknight meals, elegant dinner party recipes, or healthy snacks and desserts, our team has you covered.</p>
-    <h2>Contact Us</h2>
-    <p>If you have any questions or feedback, we'd love to hear from you! You can contact us by email at reciperepo@gmail.com, or connect with us on social media:</p>
-    <ul>
-        <li><a href="https://www.facebook.com">Facebook</a></li>
-        <li><a href="https://twitter.com">Twitter</a></li>
-        <li><a href="https://www.instagram.com">Instagram</a></li>
-    </ul>
+<!-- Title -->
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white">
+    <h1 class="mb-3 h2"> @ViewData["Title"] </h1>
 </div>
 
+<section>
+    <div class="row d-flex justify-content-center fadeIn">
+        <!-- About Us -->
+        <div class="col-md-10 col-xl-8 text-center">
+            <h3 class="mb-4">About Us</h3>
+            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                Recipe Repo is your go-to source for delicious recipes and cooking inspiration.
+                Whether you're a seasoned chef or just learning your way around the kitchen,
+                we have recipes and cooking tips to help you create amazing meals for yourself and your loved ones.
+            </p>
+        </div>
+        <!-- Our Mission -->
+        <div class="col-md-10 col-xl-8 text-center">
+            <h3 class="mb-4">Our Mission</h3>
+            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                At Recipe Repo, our mission is to make cooking accessible and enjoyable for everyone.
+                We believe that cooking should be a fun and creative process,
+                and we're here to help you experiment with new flavors and ingredients,
+                and to discover your own unique style in the kitchen.
+            </p>
+        </div>
+        <!-- Our Team -->
+        <div class="col-md-10 col-xl-8 text-center">
+            <h3 class="mb-4">Our Team</h3>
+            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                Our team of experienced chefs and recipe developers are passionate about food and cooking,
+                and they're committed to helping you create delicious and nutritious meals that you and your family will love.
+                Whether you're looking for quick and easy weeknight meals, elegant dinner party recipes, or healthy snacks and desserts,
+                our team has you covered.
+            </p>
+        </div>
+        <!-- Contact Us -->
+        <div class="col-md-10 col-xl-8 text-center">
+            <h3 class="mb-4">Contact Us</h3>
+            <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                If you have any questions or feedback, we'd love to hear from you!
+                You can contact us by email at reciperepo@gmail.com,
+                or connect with us on social media.
+            </p>
+
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg m-1"
+                   href="https://www.facebook.com"
+                   role="button"
+                   data-mdb-ripple-color="dark">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-link btn-floating btn-lg m-1"
+                   href="https://twitter.com"
+                   role="button"
+                   data-mdb-ripple-color="dark">
+                    <i class="fab fa-twitter"></i>
+                </a>
+    
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg m-1"
+                   href="https://instagram.com"
+                   role="button"
+                   data-mdb-ripple-color="dark">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-link btn-floating btn-lg m-1"
+                   href="https://github.com"
+                   role="button"
+                   data-mdb-ripple-color="dark">
+                    <i class="fab fa-github"></i>
+                </a>
+            
+            </section>
+        </div>
+    </div>
+</section>
 
 @section Scripts {
     <script src="~/js/animations.js"></script>
