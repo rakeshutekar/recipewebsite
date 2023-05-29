@@ -8,7 +8,7 @@
 
 <div class="container">
     
-    <a asp-page="Create" class="btn btn-link">+ Create</a>
+    
 
     <div class="sort-buttons">
         <button onclick="sortTable(true)">
@@ -17,6 +17,8 @@
         <button onclick="sortTable(false)">
             <i class="fas fa-sort-alpha-down arrow-down"></i>
         </button>
+
+        <a asp-page="Create" class="btn btn-link create-link">+ Create</a>
     </div>
 
     <table class="table table-bordered table-striped">
@@ -36,7 +38,7 @@
                         <!--Renders the reactions via a reusable blazor component-->
                         @(await Html.RenderComponentAsync<Components.ReactionList>(RenderMode.ServerPrerendered, new { RecipeID = recipe.RecipeID }))
                     </td>
-                    <td><a asp-page="Read" asp-route-id="@recipe.RecipeID">Read</a></td>
+                    <td><a asp-page="Read" asp-route-id="@recipe.RecipeID" class="read-link">Read</a></td>
                 </tr>
             }
         </tbody>
