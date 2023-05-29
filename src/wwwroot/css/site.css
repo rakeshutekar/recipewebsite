@@ -12,15 +12,14 @@
 }
 
 .fa-star {
-  cursor: finger;
-}
-
-.icon-container {
-    cursor: url('https://cdn-icons-png.flaticon.com/512/2909/2909894.png'), pointer;
+    cursor: finger;
 }
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+
+/* Card styles
+-------------------------------------------------- */
 .card-columns .card:hover .card-img {
     opacity: 1;
     -webkit-transform-style: preserve-3d;
@@ -51,7 +50,6 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .card-title {
-    color: var(--card-title-color); /*This is new */
     text-align: center;
 }
 
@@ -65,6 +63,7 @@ for details on configuring this project to bundle and minify static web assets. 
     text-align: center;
  }
 
+/* Card tag color and style */
 .card-tags ul li a {
     color: #a5a58d;
     text-decoration: none;
@@ -103,6 +102,7 @@ a {
     background-color: var(--secondary-color);   /*original color: #84a98c */
     border-color: var(--secondary-color);   /*original color: #84a98c */
 }
+
 
 
 /* Nav bar styles
@@ -172,9 +172,6 @@ button.accept-policy {
     line-height: inherit;
 }
 
-
-/* Sticky footer styles
--------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
@@ -184,7 +181,7 @@ body {
     /* Margin bottom by footer height changed to 200px to avoid overlap */
     margin-bottom: 200px;
     background-color: var(--body-bg-color); /*White background */
-    color: var(--text-color); /*This is new */
+    color: var(--text-color); /*Body page title, content text color */
 }
 
 p {
@@ -200,7 +197,9 @@ ul {
 }
 
 
-/*Footer */
+
+/* Footer styles
+-------------------------------------------------- */
 footer {
     position: fixed;
     bottom: 0;
@@ -209,20 +208,51 @@ footer {
     color: var(--footer-text-color);
 }
 
-/*Footer bottom part background color */
-.text-center.p-1 {
-    background-color: var(--primary-color);         
-}
-
-/*Social media icons appear round */
-.btn-rounded {
-    border-radius:20px;
-}
-
 /*Footer top hides when scrolling down */
 #footer-top.hidden {
     display: none;
 }
+
+/* Sign up button style */
+.btn-footer {
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+/* Style for hover state */
+.btn-footer:hover {
+    color: var(--bg-color);
+    border-color: var(--bg-color);
+    background-color: var(--text-color);
+}
+
+/*Footer bottom part background color */
+.text-center.p-1 {
+    background-color: var(--primary-color);
+}
+
+/*Recipe Repo and Privacy link color */
+.text-center.p-1 .repo-link, .text-center.p-1 .privacy {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;  /* Smooth transition for color change */
+}
+
+.text-center.p-1 .repo-link:hover, .text-center.p-1 .privacy:hover {
+    color: var(--bg-color); 
+    text-decoration: underline;  /* Add underline */
+}
+
+/*Social media icons appear round */
+.btn-rounded {
+    border-radius: 20px;
+    color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+
+
+
 
 
 /* Create page style
@@ -340,6 +370,7 @@ form#create-form .btn-outline-success:hover {
 }
 
 
+
 /* Update page style
 -------------------------------------------------- */
 /*Keep the instruction index in line with instruction and ensure they have the same width */
@@ -363,6 +394,7 @@ form#create-form .btn-outline-success:hover {
     box-sizing: border-box; 
     width: 100%;
 }
+
 
 
 /* Delete page style
@@ -392,11 +424,13 @@ form#create-form .btn-outline-success:hover {
 }
 
 
+
 /* Sign in page style
 -------------------------------------------------- */
 #sign-in {
     background-color: var(--section-color);
 }
+
 
 
 /* Sign up page style
@@ -424,6 +458,7 @@ form#create-form .btn-outline-success:hover {
 }
 
 
+
 /* Page load animation */
 @keyframes pageLoad {
     from {
@@ -438,6 +473,7 @@ form#create-form .btn-outline-success:hover {
 body {
     animation: pageLoad 1s;
 }
+
 
 
 /* Style changes added for theme changing (ALL NEW CHANGES ADDED)
@@ -460,6 +496,7 @@ body {
     --section-color: #f1faee; /*Comment and delete section background color */
     --dropdown-bg-color: #ffffff; /*Nav bar dropdown background color: white */
     --account-dropdown-bg-color: #ffffff; /*Nav bar user action dropdown background color: white */
+
     /* Dark theme */
     --body-bg-color-dark: #354f52;
     --bg-color-dark: #cad2c5;
@@ -504,39 +541,6 @@ body {
     background-color: white;
 }
 
-/*Footer text class background color */
-.text-center {
-    background-color: var(--social-bg-color);
-}
 
-/*Social media icon button color and border color */
-.btn-outline-dark {
-    color: var(--social-icon-color);
-    border-color: var(--social-icon-color);
-}
 
-.btn-outline-dark:hover {
-    background-color: var(--social-icon-color);
-    color: var(--social-bg-color);
-}
-
-/* Recipe Repo text color */
-.text-dark {
-    color: var(--link-color);
-}
-
-.text-dark:hover {
-    color: var(--social-icon-color);
-}
-
-/*Sign up button */
-.btn-footer {
-    color: var(--social-icon-color);
-    background-color: var(--footer-btn-color);
-}
-
-.btn-footer:hover {
-    background-color: var(--social-icon-color);
-    color: var(--footer-btn-color);
-}
 
