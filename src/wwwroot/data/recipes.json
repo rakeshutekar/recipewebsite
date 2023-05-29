@@ -1114,5 +1114,117 @@
     "Img": "https://bellyfull.net/wp-content/uploads/2021/07/Honey-Walnut-Shrimp-blog-2.jpg",
     "Comments": [],
     "Reactions": null
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 28,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Authentic Xiaolongbao ",
+    "Description": "Chinese Soup Dumplings, or xiaolongbao (\u5C0F\u7B3C\u5305), are perhaps the most perfect single bite of food ever conceived by man. This tantalizing, dreamy snack is probably the most famous dish to come out of the Jiangnan region of China. It is often associated with the city of Shanghai (the largest city in the region by population, and also the largest city in all of China!), which is why soup dumplings are often called \u201CShanghai Soup Dumplings.\u201D",
+    "Instructions": [
+      "In a small pot, add the pork skin and pork bones and cover with cold water. Bring to a rolling boil, and immediately drain and rinse off the bones and the skin. This gets rid of any impurities. Rinse out the pot and put everything back in. Add 4 cups (950 ml) water, ginger, scallion and wine. Bring the pot to a boil and then reduce the heat to low. Cover and simmer for 2 hours.",
+      "After 2 hours, turn off the heat, allow the soup to cool, and strain the liquid into a bowl. Once the liquid is completely cooled, cover and refrigerate overnight.",
+      "In a mixing bowl, add the flour and the warm water 1 tablespoon at a time. Work and knead the dough for 15-20 minutes. The dough should be very soft and smooth. Cover with a cloth and let it rest for 30 minutes.",
+      "Take your ground pork and put it in the food processor. Pulse for 30-60 seconds until the pork resembles paste. In a mixing bowl, add the pork and the rest of the ingredients except the aspic. Whip everything together thoroughly, for about 2 minutes. You want everything to be extremely well combined, and the pork should look like a light, airy paste. Gently fold in the diced aspic, and do not over-mix. ",
+      "Lightly dust a clean work surface with flour and roll the dough into a long cylinder/cigar, about an inch in diameter. Cut the dough into small equal pieces weighing about 11 grams each (the dough chunks should be a size resembling that of gnocchi). Roll out each piece into a round disc about 3 - 3 \u00BC inches diameter. Keep everything under a damp cloth.",
+      "When all that is prepared, take out the filling. You\u2019ll be making each bun one at a time. Place about 1 tablespoon of filling in the middle of your dumpling skin. Pleat with as many folds as you can muster: 12-20 folds should do it. Make sure the top is sealed. If the filling ever gets too wet or hard to handle, put it in the freezer for another 15 minutes and start again.",
+      "Place the buns in the lined steamer basket, about 2 inches apart.",
+      "In a metal steamer pot or wok, boil water. If using a wok, put the water at a level so that when you put the bamboo steamer into the wok, the water rises about \u00BD inch up the bottom of the bamboo base. You never want the water to touch the dumplings inside, though, so make sure not to fill it too high!",
+      "Carefully, slowly peel the xiaolongbao off of the steamer basket and dip it into the vinegar. Gently transfer the dumpling to your soupspoon and take a tiny bite out of the skin on the side of the bun to make a little hole. Proceed to slurp the soup out of the bun (Carefully. It\u2019s HOT). Then, with a little more vinegar, finish the whole thing off in one bite."
+    ],
+    "Ingredients": [
+      "\u00BD pound pork skin",
+      "1 pound pork neck bones",
+      "2 slices ginger",
+      "1 scallion (cut into 3 pieces)",
+      "1 tablespoon shaoxing wine",
+      "1 cup all-purpose flour",
+      "6 tablespoons warm water (90 ml)",
+      "1/2 teaspoon sesame oil",
+      "3/4 teaspoon sugar",
+      "1 heaping cup aspic (diced into \u00BD-inch pieces)",
+      "1/8 teaspoon ground white-pepper"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "Chinese",
+      "Shanghai",
+      "Dumplings",
+      "Breakfast"
+    ],
+    "ImageCaption": null,
+    "Img": "https://static.thehoneycombers.com/wp-content/uploads/sites/2/2019/09/xiao-long-bao-singapore.png",
+    "Comments": [],
+    "Reactions": [
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 29,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Shanghai Style Pork Zongzi",
+    "Description": "Zongzi, or sticky rice dumplings, are almost like a Chinese version of the tamale\u2013\u2013sticky rice is wrapped in bamboo leaves with other fillings, and steamed. While enjoyed mostly during the 2000-year-old Chinese Duan Wu Festival (Du\u0101nw\u01D4 Ji\u00E9 \u7AEF\u5348\u8282) or Dragon Boat Festival, zongzi can be enjoyed any time of the year.",
+    "Instructions": [
+      "The night before: Soak the zongzi leaves by weighing them down in a bowl of water with a heavy object. They should be completely submerged. In a large container, soak the glutinous rice in water, making sure the water level is 3-4 inches above the rice, as it will expand considerably as it soaks. Cut the pork belly into 1-inch x 2-inch chunks. Combine the pork with all the marinade ingredients except the water (the light soy sauce, dark soy sauce, salt, sugar, Shaoxing wine, white pepper, and five-spice powder), and mix everything well. ",
+      "The next day: Completely drain the rice using a fine-meshed colander or sieve. Mix in the rice marinade ingredients (the light soy sauce, dark soy sauce, sugar, and salt), and mix everything well. Set aside, and marinate for about 30 minutes. In the meantime, wash each leaf front and back with a soft cloth, and rinse. Transfer them to a bowl of fresh water until you\u2019re ready to wrap the zongzi so they don\u2019t dry out.",
+      "To cook the zongzi, neatly and tightly nest all the zongzi in a large soup pot. Ideally, there will be no visible gaps. If necessary, put a large heatproof plate directly on top of the zongzi to weigh them down. Fill the pot with cold water until they are completely submerged. Place the pot on the stove over high heat. Once the water boils, turn the heat to medium-low, and let it simmer for at least 4-5 hours. The water should be \u201Cmoving\u201D at a light simmer; definitely not boiling."
+    ],
+    "Ingredients": [
+      "75-80 dried bamboo leaves"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "Chinese"
+    ],
+    "ImageCaption": null,
+    "Img": "https://media.istockphoto.com/id/1224629375/photo/zongzi-alkaline-chinese-rice-dumpling-crystal-food-on-a-plate-to-eat-for-traditional-dragon.jpg?s=612x612\u0026w=0\u0026k=20\u0026c=EzG_C0yX7IwHJ0pQinIZswzIbqJq6DlasHhd9Zym_Yc=",
+    "Comments": [],
+    "Reactions": null
+  },
+  {
+    "Deleted": false,
+    "RecipeID": 30,
+    "AuthorID": 0,
+    "FirstName": null,
+    "LastName": null,
+    "Title": "Mochi Ice Cream",
+    "Description": "Japanese mochi ice cream can be made in your own home. You can customize it with your favorite ice cream flavors and keep them stored in the freezer for a fun and delicious treat.",
+    "Instructions": [
+      "In a large, microwave-safe bowl, add sugar and shiratamako and whisk together. Add in water and whisk until smooth and shiratamako is completely dissolved.",
+      "Cover surface of bowl with plastic wrap. Microwave at full power for about 1 minute. The mixture should look like it\u0027s starting to clump and cook in certain sections. Stir with a spatula to evenly mix. Place plastic wrap back on and cook in microwave for 1 minute. Now the entire mixture should have turned solid, like wet dough. Stir until dough becomes one clump. Place plastic wrap over the bowl again. Cook for about 30 more seconds in the microwave or until dough loses its white color, becoming slightly transculent.",
+      "Lay a large sheet of parchment paper down on your working surface. Add 3 tbsp of cornstarch to a mesh strainer and use that to sprinkle and lightly dust the surface of your parchment paper. Dust your rolling pin. Place your mochi dough onto the middle of your cornstarch dusted parchment paper. Add more cornstarch to the top of the dough. Begin to roll out your dough. ",
+      "Using a 3.5 inch cookie cutter, cut circles into your dough. Place finished circles into a pile, but wih a sheet of plastic wrap in between each one. You want each sheet of plastic wrap to be big enough to wrap the finished mochi in. When you have finished cutting out all the circles you can with the dough, re-roll dough scraps and repeat until all dough is used up. You should be able to get 12-13 circles.",
+      "Wrap the ice cream in the mochi.",
+      "When finished, let mochi ice cream sit in freezer for several hours. When ready to eat, let them thaw for about 1 minute (maybe less depending on the temperature of your house) to allow the mochi dough to soften, before eating."
+    ],
+    "Ingredients": [
+      "100 g Shiratamako",
+      "Granulated sugar",
+      "Cornstarch",
+      "Ice cream of your choice",
+      "180 ml water"
+    ],
+    "PublishDate": null,
+    "EditDate": null,
+    "Tags": [
+      "Dessert",
+      "Japanese",
+      "Ice Cream",
+      "Mochi"
+    ],
+    "ImageCaption": null,
+    "Img": "https://kirbiecravings.com/wp-content/uploads/2016/09/mochi-ice-cream-033.jpg",
+    "Comments": [],
+    "Reactions": null
   }
 ]
