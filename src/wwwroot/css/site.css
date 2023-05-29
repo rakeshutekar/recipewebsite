@@ -464,6 +464,11 @@ form#create-form .btn-outline-success:hover {
     background-image: url('https://media.istockphoto.com/id/1136817041/photo/colorful-pizza-ingredients-on-white-background-top-view.jpg?s=612x612&w=0&k=20&c=VWn51m6abfK9Q8C2xW4QLz6LrVxNO-Ttb4LVlVVQgUg=');
 }
 
+/*Keep the sign in and sign up card text color*/
+.text-black {
+    color: #354f52;
+}
+
 
 
 /* Privacy and About page style
@@ -553,12 +558,6 @@ body {
     --section-color: var(--section-color-dark);
     --dropdown-bg-color: var(--dropdown-bg-color-dark);
     --account-dropdown-bg-color: var(--account-dropdown-bg-color-dark);
-
-    --social-bg-color: var(--social-bg-color-dark);
-    --social-icon-color: var(--social-icon-color-dark);
-    --link-dark: var(--link-dark-dark);
-    --footer-bg-color: var(--footer-bg-color-dark);
-    --footer-btn-color: var(--footer-btn-color-dark);
 }
 
 /*Read page horizontal rule setting for dark theme */
