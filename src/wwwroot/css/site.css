@@ -329,6 +329,12 @@ footer {
 }
 
 
+/* Sign up page style
+-------------------------------------------------- */
+#sign-up {
+    background-color: var(--section-color);
+}
+
 /* Style changes added for theme changing (ALL NEW CHANGES ADDED)
 ----------------------------------------------------------------------------------------- */
 
