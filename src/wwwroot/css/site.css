@@ -137,6 +137,10 @@ a {
     color: var(--text-color);
 }
 
+.dropdown-item.view-all:hover {
+    color: black;
+}
+
 /*User action dropdown menu style */
 .dropdown-menu-account {
     background-color: var(--account-dropdown-bg-color);
@@ -250,8 +254,11 @@ footer {
     border-color: var(--text-color);
 }
 
-
-
+/*Social media icons appear round */
+.btn-rounded:hover {
+    color: var(--bg-color);
+    background-color: var(--text-color);
+}
 
 
 
@@ -540,7 +547,4 @@ body {
 [data-theme="dark"] hr {
     background-color: white;
 }
-
-
-
 
