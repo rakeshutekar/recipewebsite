@@ -28,7 +28,7 @@
                         <ul class="navbar-nav flex-grow-1">
                             <!-- Recipes Dropdown Menu -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Recipes
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -48,7 +48,7 @@
                             </li>
                             <!-- Cuisines Dropdown Menu -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Cuisines
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -66,15 +66,15 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Recipes/Create">Submit Recipe</a>
+                                <a class="nav-link" asp-area="" asp-page="/Recipes/Create">Submit Recipe</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/About">About Us</a>
+                                <a class="nav-link" asp-area="" asp-page="/About">About Us</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                                <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
                             </li>
                         </ul>
                         <a class="nav-link text-dark" href="#" onclick="switchTheme(event)"><i id="theme-icon" class="fas fa-sun"></i></a>
@@ -97,7 +97,7 @@
                         </button>
 
                         <!-- Add the dropdown menu items -->
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-account" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="/SignIn">Sign In</a>
                             <a class="dropdown-item" href="#">Sign Out</a>
                             <div class="dropdown-divider"></div>
