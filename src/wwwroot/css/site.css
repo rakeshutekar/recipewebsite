@@ -91,16 +91,42 @@ a {
     color: var(--link-color); /*original color: #0366d6 */
 }
 
-.btn-primary {
+.btn.btn-primary {
     color: #fff;
-    background-color: var(--btn-color); /*sign-in button original color: #52796f */
-    border-color: var(--border-color); /*original color: #252152 */
+    background-color: var(--btn-color);
+    border-color: var(--btn-color); 
 }
 
-.btn-primary:hover {
+.btn.btn-primary:hover {
     color: #fff;
-    background-color: var(--secondary-color);   /*original color: #84a98c */
-    border-color: var(--secondary-color);   /*original color: #84a98c */
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);   
+}
+
+/* Full Recipe Info button styles
+-------------------------------------------------- */
+.btn.btn-primary.btn-block.mt-3 {
+    color: #fff;
+    background-color: var(--btn-color);
+    border-color: var(--btn-color); 
+}
+
+.btn.btn-primary.btn-block.mt-3:hover {
+    color: #fff;
+    background-color: var(--primary-color); 
+    border-color: var(--primary-color);   
+}
+
+/* Emoji Reaction button styles
+-------------------------------------------------- */
+.btn.btn-info.mx-1 {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn.btn-info.mx-1:hover {
+    background-color: var(--link-color);
+    border-color: var(--link-color);
 }
 
 
@@ -367,14 +393,6 @@ form#create-form .btn-outline-success:hover {
     background-color: var(--section-color);
 }
 
-/*Emoji reaction button color */
-.btn.btn-info {
-    background-color: var(--primary-color);
-}
-
-.btn.btn-info:hover {
-    background-color: var(--secondary-color);
-}
 
 
 
@@ -580,7 +598,7 @@ ul {
     --text-color: #354f52;
     --primary-color: #84a98c; /* Nav bar color: #84a98c 70% */
     --secondary-color: #cad2c5; /*Nav bar color: #cad2c5 60% */
-    --link-color: #2f3e46;
+    --link-color: #354f52; /* Button hovering color */
     --border-color: #656468;
     --stripe-even-color: #edede9; /*Index table even row color */
     --stripe-odd-color: #cad2c5; /*Index table odd row color */
@@ -594,7 +612,7 @@ ul {
     --text-color-dark: #f3f3f3; /* Black */
     --primary-color-dark: #52796f;
     --secondary-color-dark: #84a98c;
-    --link-color-dark: #e8e8e4;
+    --link-color-dark: #eff6e0;
     --border-color-dark: #444444; /* Dark grey */
     --stripe-even-color-dark: #84a98c;
     --stripe-odd-color-dark: #cad2c5;
