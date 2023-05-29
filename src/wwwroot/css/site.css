@@ -438,6 +438,24 @@ form#create-form .btn-outline-success:hover {
     background-color: var(--section-color);
 }
 
+.image-container {
+    height: 100%;
+}
+
+.img-fluid {
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.form-logo {
+    width: 8rem;
+    height: 8rem;
+}
+
+.signup-text, .signup-link {
+    color: #393f81;
+}
+
 
 
 /* Sign up page style
