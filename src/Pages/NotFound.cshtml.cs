@@ -15,7 +15,7 @@ namespace ContosoCrafts.WebSite.Pages
         // Response when Not Found Type = recipe
         public const string RECIPE_NOT_FOUND_RESPONSE = "The recipe was not found";
         // Response when Not Found Type = Default
-        public const string RECIPE_DEFAULT_RESPONSE = "The page you are looking for could not be found";
+        public const string DEFAULT_NOT_FOUND_RESPONSE = "The page you are looking for could not be found";
 
         // Enum type used to represent the error type shown
         [BindProperty(SupportsGet = true)]
