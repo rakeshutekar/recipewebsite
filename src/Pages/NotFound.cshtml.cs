@@ -12,6 +12,9 @@ namespace ContosoCrafts.WebSite.Pages
     /// </summary>
     public class NotFoundModel : PageModel
     {
+        public const string NOT_FOUND_RESPONSE = "The recipe was not found";
+        public const string DEFAULT_RESPONSE = "The page you are looking for could not be found";
+
         // Enum type used to represent the error type shown
         [BindProperty(SupportsGet = true)]
         public NotFoundTypes? type { get; set; }
@@ -29,12 +32,12 @@ namespace ContosoCrafts.WebSite.Pages
             {
                 case NotFoundTypes.Recipe:
                     {
-                        response = "The recipe was not found";
+                        response = NOT_FOUND_RESPONSE;
                         break;
                     }
                 default:
                     {
-                        response = "The page you are looking for could not be found";
+                        response = DEFAULT_RESPONSE;
                         break;
                     }
             }
