@@ -39,7 +39,7 @@ namespace ContosoCrafts.WebSite.Pages
                     }
                 default:
                     {
-                        response = RECIPE_DEFAULT_RESPONSE;
+                        response = DEFAULT_NOT_FOUND_RESPONSE;
                         break;
                     }
             }
