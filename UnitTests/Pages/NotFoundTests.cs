@@ -50,7 +50,7 @@ namespace UnitTests.Pages
             // Act - call OnGet
             pageModel.OnGet();
             // Assert - response is equal to not found response
-            Assert.AreEqual(pageModel.response, NotFoundModel.NOT_FOUND_RESPONSE);
+            Assert.AreEqual(pageModel.response, NotFoundModel.RECIPE_NOT_FOUND_RESPONSE);
         }
 
         [Test]
@@ -61,7 +61,7 @@ namespace UnitTests.Pages
             // Act - Call OnGet
             pageModel.OnGet();
             // Assert - response is equal to default response
-            Assert.AreEqual(pageModel.response, NotFoundModel.DEFAULT_RESPONSE);
+            Assert.AreEqual(pageModel.response, NotFoundModel.RECIPE_DEFAULT_RESPONSE);
         }
         #endregion TestSetup
     }
