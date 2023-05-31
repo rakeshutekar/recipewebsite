@@ -3,7 +3,9 @@ using NUnit.Framework;
 
 namespace UnitTests.Pages
 {
-
+    /// <summary>
+    /// NotFoundTests handle the tests for the not found page
+    /// </summary>
     public class NotFoundTests
     {
         #region TestSetup
@@ -18,6 +20,9 @@ namespace UnitTests.Pages
             {
             };
         }
+        #endregion TestSetup
+
+        #region OnGet
         /// <summary>
         /// Tests that NotFoundModel.type correctly gets / sets type value
         /// </summary>
@@ -67,6 +72,6 @@ namespace UnitTests.Pages
             // Assert - response is equal to default response
             Assert.AreEqual(pageModel.response, NotFoundModel.DEFAULT_NOT_FOUND_RESPONSE);
         }
-        #endregion TestSetup
+        #endregion OnGet
     }
 }
