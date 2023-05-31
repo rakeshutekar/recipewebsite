@@ -3,6 +3,9 @@ using NUnit.Framework;
 
 namespace UnitTests.Pages
 {
+    /// <summary>
+    /// SignUp tests class to handle the tests for the sign up page
+    /// </summary>
     public class SignUpTests
     {
         #region TestSetup
